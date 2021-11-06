@@ -1,24 +1,13 @@
 ﻿FACTION.name = "Special Weapons And Tactics (SWAT)"
 FACTION.description = "Горстка выживших членов полицейского департамента, которая борется за свою жизнь."
-FACTION.color = Color(0, 128, 0, 255)
+FACTION.color = Color(0, 51, 153, 255)
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = true
 FACTION.canSeeWaypoints = true
 FACTION.canAddWaypoints = false
 FACTION.models = {
 	"models/pointofcontact/mobileinfantry/offduty/female_01.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/female_02.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/female_03.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/female_04.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_01.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_02.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_03.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_04.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_05.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_06.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_07.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_08.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_09.mdl"
+	""
 }
 
 function FACTION:OnTransfered(client)

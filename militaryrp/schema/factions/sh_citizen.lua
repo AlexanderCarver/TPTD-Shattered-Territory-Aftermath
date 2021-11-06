@@ -1,6 +1,6 @@
 ﻿FACTION.name = "Underground Survivors"
 FACTION.description = "Выжившие люди, которые, каким-то чудом, смогли пережить ад на Земле."
-FACTION.color = Color(34, 139, 34, 255)
+FACTION.color = Color(0, 102, 0, 255)
 FACTION.isDefault = true
 FACTION.isGloballyRecognized = false
 FACTION.canSeeWaypoints = false

@@ -4,21 +4,10 @@ FACTION.color = Color(136, 136, 68, 255)
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = true
 FACTION.canSeeWaypoints = true
-FACTION.canAddWaypoints = true
+FACTION.canAddWaypoints = false
 FACTION.models = {
 	"models/pointofcontact/mobileinfantry/offduty/female_01.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/female_02.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/female_03.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/female_04.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_01.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_02.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_03.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_04.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_05.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_06.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_07.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_08.mdl",
-	"models/pointofcontact/mobileinfantry/offduty/male_09.mdl"
+	""
 }
 
 function FACTION:OnTransfered(client)
