@@ -1,0 +1,10 @@
+ITEM.name = "Газированная вода"
+ITEM.description = "Очищенная вода, только газированная. Такую пить особенно хорошо, из-за приятного ощущения свежести во рту. Предел всех мечт."
+ITEM.model = "models/props_junk/popcan01a.mdl"
+ITEM.category = "Еда"
+ITEM.skin = 2
+ITEM.hunger = 0
+ITEM.thirst = 20
+ITEM.empty = false
+ITEM.permit = "food"
+ITEM.water = true
