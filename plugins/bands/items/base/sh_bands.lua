@@ -1,4 +1,4 @@
-ITEM.name = "Band"
+﻿ITEM.name = "Band"
 ITEM.model = "models/props_lab/clipboard.mdl"
 ITEM.description = "Opaska lojalisty."
 ITEM.category = "Bands"
@@ -14,7 +14,7 @@ if (CLIENT) then
 end
 
 ITEM.functions.Equip = {
-	name = "Equip",
+	name = "Закрепить",
 	tip = "equipTip",
 	icon = "icon16/tick.png",
 	OnRun = function(item)
@@ -71,7 +71,7 @@ ITEM:Hook("drop", function(item)
 end)
 
 ITEM.functions.EquipUn = { -- sorry, for name order.
-	name = "Unequip",
+	name = "Открепить",
 	tip = "equipTip",
 	icon = "icon16/cross.png",
 	OnRun = function(item)

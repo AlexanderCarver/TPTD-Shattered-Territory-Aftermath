@@ -1,4 +1,4 @@
-local character = ix.meta.character
+﻿local character = ix.meta.character
 
 function character:HasMoney(amount, currency)
 	local currency = currency or "default"
@@ -32,7 +32,7 @@ function character:GiveMoney(amount, bNoLog, currency)
 			local item, error = self:GetInventory():Add("currency_"..currency, 1, {money = amount})
 
 			if (!item) then
-				self:GetPlayer():ChatPrint("Looks like you accidentally dropped your "..ix.item.list["currency_"..currency].name.."!")
+				self:GetPlayer():ChatPrint("Кажется, Вы уронили часть своих "..ix.item.list["currency_"..currency].name.."!")
 				ix.item.Spawn("currency_"..currency, client:GetPos() + Vector(0, 0, 12), nil, nil, {money = amount})
 			end
 		end

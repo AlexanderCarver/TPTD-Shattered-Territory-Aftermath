@@ -73,7 +73,7 @@
 		left:AddItem( Perso )
 		
 		-----------------------------------------------------------
-		
+
 		local but = vgui.Create( "DButton", frame )
 		but:SetText( "Подняться на ноги" )
 		but:SetFont("ixSmallFont")
@@ -97,13 +97,254 @@
 		left:AddItem( but )
 		
 		local but = vgui.Create( "DButton", frame )
-		but:SetText( "Обыскать человека перед собой, который связан" )
+		but:SetText( "Обыскать человека перед собой" )
 		but:SetFont("ixSmallFont")
 		but:SetSize( 36, 50 )
 		but:Dock( TOP )
 		but.DoClick = function()
 			frame:Close()
 			RunConsoleCommand("say", "/charsearch")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "Посмотреть текущие задачи" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/viewobjectives")
+		end
+		left:AddItem( but )
+		
+		-----------------------------------------------------------
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO: Главная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_main_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO: Патрульная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_patrol_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO: Медицинская" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_medical_channel")
+		end
+		left:AddItem( but )
+		
+		-----------------------------------------------------------
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO CAPS: Главная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_maincaps_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO CAPS: Офицерская" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_officercaps_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO CAPS: 1-ая частота" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_bear_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO CAPS: 2-ая частота" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_ghost_channel")
+		end
+		left:AddItem( but )
+
+		-----------------------------------------------------------
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO ARMCOM: Главная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_mainarm_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO ARMCOM: Офицерская" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_officerarm_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO SQUADCOM: Главная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_mainsquad_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO SQUADCOM: Офицерская" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_officersquad_channel")
+		end
+		left:AddItem( but )
+		
+		-----------------------------------------------------------
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO CIS: Главная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_maincis_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO CIS: Офицерская" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_officercis_channel")
+		end
+		left:AddItem( but )
+
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO SAC: Главная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_mainsac_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO SAC: Офицерская" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_officersac_channel")
+		end
+		left:AddItem( but )
+		
+		-----------------------------------------------------------
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO IRB: Главная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_mainirb_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO IRB: Офицерская" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_officerirb_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO STP: Главная" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_mainstp_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO STP: Руководящая" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc dtccss_officerstp_channel")
+		end
+		left:AddItem( but )
+		
+		local but = vgui.Create( "DButton", frame )
+		but:SetText( "RADIO: UNKNOWN" )
+		but:SetFont("ixSmallFont")
+		but:SetSize( 36, 50 )
+		but:Dock( TOP )
+		but.DoClick = function()
+			frame:Close()
+			RunConsoleCommand("say", "/sc unknown")
 		end
 		left:AddItem( but )
 end

@@ -1,4 +1,4 @@
-PLUGIN.name = "Currencies"
+﻿PLUGIN.name = "Currencies"
 PLUGIN.author = "Vex"
 PLUGIN.description = "A plugin that adds support for both multiable currencies as well as item based currencies."
 
@@ -48,7 +48,7 @@ function ix.currency.Get(amount, currency)
 	local symbol, singular, plural = currency.symbol or default.symbol, currency.singular or default.singular, currency.plural or default.plural
 
 	if (amount == 1) then
-		return "one "..singular
+		return "один "..singular
 	else
 		return amount.." "..plural
 	end
@@ -112,7 +112,7 @@ hook.Add("InitializedConfig", "ixMoneyCommands", function()
 
 	ix.command.Add("GiveMoney", {
 		alias = {"GiveMoney"},
-		description = "@cmdGiveMoney",
+		description = "Передать определенное количество денег.",
 		arguments = {
 			ix.type.number,
 			bit.bor(ix.type.string, ix.type.optional)
@@ -152,7 +152,7 @@ hook.Add("InitializedConfig", "ixMoneyCommands", function()
 
 	ix.command.Add("CharGiveMoney", {
 		alias = {"CharGiveMoney"},
-		description = "@cmdCharGiveMoney",
+		description = "Установить персонажу определенное количество денег.",
 		superAdminOnly = true,
 		arguments = {
 			ix.type.character,
@@ -179,7 +179,7 @@ hook.Add("InitializedConfig", "ixMoneyCommands", function()
 
 	ix.command.Add("DropMoney", {
 		alias = {"DropMoney"},
-		description = "@cmdDropMoney",
+		description = "Бросить на пол часть денег.",
 		arguments = {
 			ix.type.number,
 			bit.bor(ix.type.string, ix.type.optional)

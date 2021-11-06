@@ -1,12 +1,13 @@
-ITEM.name = "Box Base"
+﻿ITEM.name = "Box Base"
 ITEM.model = Model("models/props_junk/cardboard_box001a.mdl")
 ITEM.description = "Unpack it."
 ITEM.width = 2
 ITEM.height = 2
 
 ITEM.functions.Unpack = {
-    name = "Распаковать",
-	icon = "icon16/group_add.png",
+	name = "Распаковать",
+	tip = "useTip",
+	icon = "icon16/package_go.png",
 	OnRun = function(item)
         if item.entunbox then
             local pos = item.entity:GetPos()

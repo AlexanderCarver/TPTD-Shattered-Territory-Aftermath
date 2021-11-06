@@ -1,11 +1,9 @@
-local bands = { --taka tablica, żeby nie zapierdalać po tabelach itemku
-	["brown"] = {Color(102, 51, 51),"Brązowa opaska lojalisty"},
-	["red"] = {Color(192, 57, 43),"Czerwona opaska lojalisty"},
-	["green"] = {Color(39, 174, 96),"Zielona opaska lojalisty"},
-	["blue"] = {Color(41, 128, 185),"Niebieska opaska lojalisty"},
-	["white"] = {Color(221, 221, 221),"Biała opaska lojalisty"},
-	["gold"] = {Color(241, 196, 15),"Złota opaska lojalisty"},
-	["violet"] = {Color(142, 68, 173),"Fioletowa opaska lojalisty"}
+﻿local bands = {
+	["gray"] = {Color(128,128,128),"===292th IRB: ARMORED BARRAGE CORPS Armband==="},
+	["blue"] = {Color(41, 128, 185),"===CAPS: GHOST SQUAD Armband==="},
+	["silver"] = {Color(192, 192, 192),"===292th IRB: SPECIAL OPERATIONS TEAM Armband==="},
+	["brown"] = {Color(165,42,42),"===DUTY TEAM Armband==="},
+	["orange"] = {Color(255,165,0), "===CAPS: BEAR SQUAD Armband==="}
 }
 
 function PLUGIN:PopulateCharacterInfo(client, character, tooltip)

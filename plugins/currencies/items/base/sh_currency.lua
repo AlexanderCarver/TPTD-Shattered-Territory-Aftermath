@@ -1,4 +1,4 @@
-ITEM.name = "Currency Base"
+﻿ITEM.name = "Currency Base"
 ITEM.description = "Currency Base"
 ITEM.model = "models/props_lab/box01a.mdl"
 
@@ -14,7 +14,7 @@ end
 
 function ITEM:GetDescription()
 	if (self:GetMoney() > 0) then
-		return self.description.."\n\nThere are "..ix.currency.Get(self:GetMoney(), self.currency).."."
+		return self.description.."\n\nЗдесь ровно "..ix.currency.Get(self:GetMoney(), self.currency).."."
 	else
 		return self.description
 	end
@@ -73,23 +73,22 @@ function ITEM:TakeMoney(amount)
 
 	return money
 end
-
 ITEM.functions.dropCurrency = {
-	tip = "Drop Currency",
+	name = "Выбросить количество",
 	icon = "icon16/money_delete.png",
 	OnRun = function(item)
 		local client = item.player
 
 		local plural = ix.currencies.GetValue(item.currency, "plural")
 
-		client:RequestString("How many?", "How many "..plural.." are you dropping?", function(number)
+		client:RequestString("Сколько денег Вы хотите выложить?", "Какие суммы "..plural.." Вы выложите?", function(number)
 			number = tonumber(number)
 
 			if (number) then
 				number = math.Round(number, 0)
 
 				if (number > item:GetMoney()) then
-					client:NotifyLocalized("You can't drop that many "..plural..".")
+					client:NotifyLocalized("Вы не можете выложить столько "..plural..".")
 				else
 					if (number == item:GetMoney()) then
 						item.functions.drop.OnRun(item)
@@ -101,7 +100,7 @@ ITEM.functions.dropCurrency = {
 					end
 				end
 			else
-				client:NotifyLocalized("You must provide a valid number.")
+				client:NotifyLocalized("Вы должны ввести корректное число.")
 			end
 		end, 0)
 
@@ -113,7 +112,7 @@ ITEM.functions.dropCurrency = {
 }
 
 ITEM.functions.mergeCurrency = {
-	tip = "Merge Currency",
+	name = "Объединить количество",
 	icon = "icon16/box.png",
 	OnRun = function(item)
 		local client = item.player
@@ -140,14 +139,14 @@ ITEM.functions.mergeCurrency = {
 }
 
 ITEM.functions.splitCurrency = {
-	tip = "Split Currency",
+	name = "Разделить количество",
 	icon = "icon16/box.png",
 	OnRun = function(item)
 		local client = item.player
 
 		local plural = ix.currencies.GetValue(item.currency, "plural")
 
-		client:RequestString("How many?", "How many "..plural.." are you moving into a new stack?", function(number)
+		client:RequestString("Сколько денег Вы хотите разделить?", "Какие суммы "..plural.." Вы делите?", function(number)
 			number = tonumber(number)
 
 			if (number) then
@@ -160,12 +159,12 @@ ITEM.functions.splitCurrency = {
 
 					if (success) then
 						item:TakeMoney(number)
-						client:NotifyLocalized(number.." "..plural.." has been moved into a new stack.")
+						client:NotifyLocalized(number.." "..plural.." были разделены.")
 					else
-						client:NotifyLocalized("Failed to create new stack.")
+						client:NotifyLocalized("Нет возможности объединить деньги.")
 					end
 				else
-					client:NotifyLocalized("You don't have enough to be able to do that.")
+					client:NotifyLocalized("У Вас нет таких сумм для того, чтобы сделать это.")
 				end
 			end
 		end, 0)

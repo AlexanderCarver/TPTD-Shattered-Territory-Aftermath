@@ -1,4 +1,4 @@
-ix.currencies.config = {
+﻿ix.currencies.config = {
 	currencies = {
 		-- !! DEFAULT MUST BE INCLUDED !! --
 		default = {
@@ -8,21 +8,21 @@ ix.currencies.config = {
 			-- The weight (for a single unit of currency), this only works with my Weight plugin. This is in kilograms.
 			weight = 0.001,
 			-- The default model for the default currency, also seconds as the fallback model for other currencies.
-			model = "models/props_lab/box01a.mdl",
+			model = "models/mark2580/gtav/mp_office_03c/accessories/cash_pile_02_1.mdl",
 			-- The name of the currency.
-			name = "United States Currency",
+			name = "United Corporate Euro",
 			-- The description of the currency.
-			description = "Greenback, otherwise as it is commonly known, the United States dollar.",
+			description = "Корпоративная валюта из нанокорбита и микрофибры. Не горит и не сгорает, гнется, но не перегибается, и отлично держится даже в открытом космосе. Идеальный аналог бумажных денег прошлого поколения, хотя большинство предпочитает электронные платежи.",
 			-- The symbol of the currency.
-			symbol = "$",
+			symbol = "UCE",
 			-- The currency in singular.
-			singular = "dollar",
+			singular = "United Corporate Euro",
 			-- The currency in plural.
-			plural = "dollars",
+			plural = "United Corporate Euro's",
 			-- The sound that plays when this currency is picked up or gained.
-			pickup = nil,
+			pickup = "physics/cardboard/cardboard_box_impact_soft4.wav",
 			-- The sound that plays with this currency is dropped or lost.
-			drop = nil,
+			drop = "physics/cardboard/cardboard_cup_impact_hard3.wav",
 		},
 
 		--[[drachma = {
@@ -39,13 +39,3 @@ ix.currencies.config = {
 		},]]--
 	}
 }
-
-ix.lang.AddTable("english", {
-	dropCurrency = "Drop Currency",
-	mergeCurrency = "Merge Currency",
-	splitCurrency = "Split Currency",
-
-	giveMoney = "You have given %s money.",
-
-	cmdCharGiveMoney = "Give money of a specified amount to the specified character.",
-})
