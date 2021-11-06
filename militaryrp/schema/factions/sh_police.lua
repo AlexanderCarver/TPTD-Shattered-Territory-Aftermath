@@ -2,9 +2,10 @@
 FACTION.description = "Горстка выживших членов полицейского департамента, которая борется за свою жизнь."
 FACTION.color = Color(0, 51, 153, 255)
 FACTION.isDefault = false
-FACTION.isGloballyRecognized = true
+FACTION.isGloballyRecognized = false
 FACTION.canSeeWaypoints = true
 FACTION.canAddWaypoints = false
+FACTION.runSounds = {[0] = "NPC_MetroPolice.RunFootstepLeft", [1] = "NPC_MetroPolice.RunFootstepRight"}
 FACTION.models = {
 	"models/pointofcontact/mobileinfantry/offduty/female_01.mdl",
 	""

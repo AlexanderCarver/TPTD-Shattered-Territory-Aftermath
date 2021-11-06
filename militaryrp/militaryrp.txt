@@ -1,7 +1,7 @@
 ﻿"militaryrp"
 {
 	"base" 			"helix"
-	"title"		"CorporationRP-MRP"
-	"author" 		"TPTD"
+	"title"		"DOC III: End of the World"
+	"author" 		"TPTD Development Team"
 	"menusystem"	"1"
 }

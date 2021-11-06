@@ -3,7 +3,8 @@ FACTION.description = "Выжившие люди, которые, каким-т�
 FACTION.color = Color(0, 102, 0, 255)
 FACTION.isDefault = true
 FACTION.isGloballyRecognized = false
-FACTION.canSeeWaypoints = false
+FACTION.canSeeWaypoints = true
+FACTION.canAddWaypoints = false
 
 function FACTION:OnTransfered(client)
 	local character = client:GetCharacter()
