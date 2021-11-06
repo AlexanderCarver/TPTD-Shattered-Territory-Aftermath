@@ -1,10 +1,10 @@
-﻿FACTION.name = "DTC The Conqueror-8157 Squadron Command"
-FACTION.description = ""
+﻿FACTION.name = "Special Weapons And Tactics (SWAT)"
+FACTION.description = "Горстка выживших членов полицейского департамента, которая борется за свою жизнь."
 FACTION.color = Color(0, 128, 0, 255)
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = true
 FACTION.canSeeWaypoints = true
-FACTION.canAddWaypoints = true
+FACTION.canAddWaypoints = false
 FACTION.models = {
 	"models/pointofcontact/mobileinfantry/offduty/female_01.mdl",
 	"models/pointofcontact/mobileinfantry/offduty/female_02.mdl",
@@ -29,12 +29,11 @@ function FACTION:OnTransfered(client)
 end
 
 FACTION.Ranks = {
-    [1] = {"RANK: [L1] | Ensign", nil, CLASS_SQUADRONREGULAR},
-    [2] = {"RANK: [L2] | Lieutenant", nil, CLASS_SQUADRONREGULAR},
-    [3] = {"RANK: [ML] | Master Lieutenant", nil, CLASS_SQUADRONREGULAR},
+    [1] = {"Шевроны: Police Officer", nil, CLASS_SQUADRONREGULAR},
+    [2] = {"Шевроны: Police Sergeant", nil, CLASS_SQUADRONREGULAR},
 	----------------------------------------------------------------------
-	[4] = {"RANK: [HQL] HQ Lieutenant", "icon16/asterisk_orange.png", CLASS_SQUADRONDEPCOM, true},
-	[5] = {"RANK: [HP] Hauptmann", "icon16/asterisk_yellow.png", CLASS_SQUADRONCOM, true}
+	[3] = {"Шевроны: Police Lieutenant", "icon16/asterisk_orange.png", CLASS_SQUADRONDEPCOM, true},
+	[4] = {"Шевроны: Police Captain", "icon16/asterisk_yellow.png", CLASS_SQUADRONCOM, true}
 }
 
 FACTION.radioChannels = {

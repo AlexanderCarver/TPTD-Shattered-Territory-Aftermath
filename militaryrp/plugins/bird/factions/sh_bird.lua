@@ -1,12 +1,11 @@
-FACTION.name = "Bird"
-FACTION.description = "A regular bird surviving on scrap and food."
-FACTION.color = Color(128, 128, 128, 255)
+FACTION.name = "Infected World"
+FACTION.description = "Птицы, которые выжили... Каким-то образом."
+FACTION.color = Color(0, 0, 0, 255)
 FACTION.isDefault = false
-FACTION.bAllowDatafile = false
+
 
 FACTION.models = {
-	"models/crow.mdl",
-	"models/pigeon.mdl"
+	"models/crow.mdl"
 }
 
 function FACTION:OnSpawn(client)
