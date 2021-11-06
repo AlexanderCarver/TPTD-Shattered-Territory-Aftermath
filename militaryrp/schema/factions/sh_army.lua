@@ -2,7 +2,7 @@
 FACTION.description = ""
 FACTION.color = Color(136, 136, 68, 255)
 FACTION.isDefault = false
-FACTION.isGloballyRecognized = true
+FACTION.isGloballyRecognized = false
 FACTION.canSeeWaypoints = true
 FACTION.canAddWaypoints = false
 FACTION.models = {

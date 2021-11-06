@@ -1,12 +1,25 @@
 FACTION.name = "Infected World"
 FACTION.description = "Птицы, которые выжили... Каким-то образом."
-FACTION.color = Color(0, 0, 0, 255)
+FACTION.color = Color(13, 13, 13, 255)
 FACTION.isDefault = false
-
+FACTION.isGloballyRecognized = false
+FACTION.canSeeWaypoints = true
+FACTION.canAddWaypoints = true
 
 FACTION.models = {
 	"models/crow.mdl"
 }
+
+function FACTION:OnTransfered(client)
+	local character = client:GetCharacter()
+
+	character:SetName(self:GetDefaultName())
+	character:SetModel(self.models[1])
+end
+
+function FACTION:GetDefaultName(client)
+	return "CROW: " .. Schema:ZeroNumber(math.random(1, 999), 3), true
+end
 
 function FACTION:OnSpawn(client)
 	local character = client:GetCharacter()
@@ -24,11 +37,12 @@ function FACTION:OnSpawn(client)
         if CLIENT then return end
         client:SetWalkSpeed(25)
         client:SetRunSpeed(50)
-        client:SetMaxHealth(ix.config.Get("birdHealth", 2))
-        client:SetHealth(ix.config.Get("birdHealth", 2))
+        client:SetMaxHealth(ix.config.Get("birdHealth", 100))
+        client:SetHealth(ix.config.Get("birdHealth", 100))
         client:Give("ix_bird")
         client:StripWeapon("ix_hands")
     end)
 end
+
 
 FACTION_BIRD = FACTION.index
