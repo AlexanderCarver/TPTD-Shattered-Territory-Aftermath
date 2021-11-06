@@ -31,7 +31,7 @@ ITEM.functions.Destroy = {
 		local trace = client:GetEyeTraceNoCursor() 
 		local entTrace = trace.Entity
 		 
-		return !IsValid(item.entity) and IsValid(client) and entTrace:GetClass() == "prop_dynamic" 
+		return !IsValid(item.entity) and IsValid(client) and entTrace:GetClass() == "prop_physics" 
 	end
 }
 
