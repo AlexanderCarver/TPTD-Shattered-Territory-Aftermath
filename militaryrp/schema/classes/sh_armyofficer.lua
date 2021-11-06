@@ -1,5 +1,5 @@
-﻿CLASS.name = "CIS: Commander"
-CLASS.faction = FACTION_CORPORATEINTELLIGENCESERVICE
+﻿CLASS.name = "IRB: Deputy commander"
+CLASS.faction = FACTION_INFANTRYRECONNAISSANCEBATTALION
 CLASS.isDefault = false
 
 function CLASS:OnSpawn(client)
@@ -8,4 +8,4 @@ function CLASS:OnSpawn(client)
     client:SetArmor(100)
 end
 
-CLASS_CISCOM = CLASS.index
+CLASS_IRBDEPCOM = CLASS.index

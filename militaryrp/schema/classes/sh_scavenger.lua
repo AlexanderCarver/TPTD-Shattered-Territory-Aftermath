@@ -1,4 +1,4 @@
-﻿CLASS.name = "Survivor"
+﻿CLASS.name = "STP: Regular personnel"
 CLASS.faction = FACTION_CITIZEN
 CLASS.isDefault = true
 
