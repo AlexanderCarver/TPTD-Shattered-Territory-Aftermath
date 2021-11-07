@@ -1,4 +1,4 @@
-﻿FACTION.name = "Underground Survivors"
+﻿FACTION.name = "Survivors"
 FACTION.description = "Выжившие люди, которые, каким-то чудом, смогли пережить ад на Земле."
 FACTION.color = Color(0, 102, 0, 255)
 FACTION.isDefault = true
@@ -14,9 +14,8 @@ function FACTION:OnTransfered(client)
 end
 
 FACTION.radioChannels = {
-['dtccss_main_channel'] = true,
-['dtccss_medical_channel'] = true,
-['dtccss_mainstp_channel'] = true
+	['territorial_channel'] = true,
+	['unknown_freq_channel'] = true
 }
 
 function FACTION:OnCharacterCreated(client, character)
@@ -26,4 +25,5 @@ function FACTION:OnCharacterCreated(client, character)
 
 end
 
-FACTION_CITIZEN = FACTION.index
+
+FACTION_SURVIVORS = FACTION.index
