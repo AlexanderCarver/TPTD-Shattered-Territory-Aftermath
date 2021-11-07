@@ -127,12 +127,12 @@ function ix.radio.CanPlayerSay(client, text)
 		end
 
 		if (!bValidChannel) then
-			client:Notify("Вам необходимо поставить верный канал!")
+			client:Notify("Вам необходимо поставить существующий канал радиосвязи!")
 			return false
 		end
 
 		if (!bFound) then
-			client:Notify("У Вас отсутствует какая-либо аппаратура для связи!")
+			client:Notify("У Вас отсутствует какая-либо аппаратура для радиосвязи!")
 			return false
 		end
 	end
@@ -156,7 +156,7 @@ function ix.radio.RadioSay(client, text, radioType)
 	local rtext = "говорит в рацию"
 
 	if (radioType == ix.radio.types.whisper) then
-		rtext = "тихо говорит в рацию"
+		rtext = "шепчет в рацию"
 	elseif (radioType == ix.radio.types.yell) then
 		rtext = "кричит в рацию"
 	end
@@ -193,7 +193,7 @@ function ix.radio.EavesdropSay(client, text, radioType)
 	local rtext = "говорит в рацию"
 
 	if (radioType == ix.radio.types.whisper) then
-		rtext = "тихо говорит в рацию"
+		rtext = "шепчет в рацию"
 	elseif (radioType == ix.radio.types.yell) then
 		rtext = "кричит в рацию"
 	end

@@ -22,7 +22,7 @@ function PLUGIN:HUDPaint(width, height, alpha)
 			end
 		end
 
-		channels_text = "Доступные частоты: " .. ((#radioChannels > 0) and table.concat(radioChannels, ", ") or "none")
+		channels_text = "Известные частоты: " .. ((#radioChannels > 0) and table.concat(radioChannels, ", ") or "none")
 		current_channel = "Текущая частота: " .. (character:GetRadioChannel() or "none")
 
 		local x, y = ix.gui.chat:GetPos()
