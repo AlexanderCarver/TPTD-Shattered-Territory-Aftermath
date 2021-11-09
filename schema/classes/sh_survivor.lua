@@ -1,5 +1,5 @@
 ﻿CLASS.name = "Survivor"
-CLASS.faction = FACTION_CITIZEN
+CLASS.faction = FACTION_SURVIVORS
 CLASS.isDefault = true
 
 function CLASS:OnSpawn(client)
@@ -7,4 +7,5 @@ function CLASS:OnSpawn(client)
     client:SetHealth(100)
 end
 
-CLASS_CITIZEN = CLASS.index
+
+CLASS_SURVIVOR = CLASS.index

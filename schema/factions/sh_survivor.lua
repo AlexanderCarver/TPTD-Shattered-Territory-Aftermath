@@ -40,7 +40,7 @@ FACTION.radioChannels = {
 function FACTION:OnCharacterCreated(client, character)
 	local inventory = character:GetInventory()
 
-	inventory:Add("ak47", 1)
+	--inventory:Add("ak47", 1)
 
 end
 
