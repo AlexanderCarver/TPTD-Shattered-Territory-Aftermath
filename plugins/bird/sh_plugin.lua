@@ -34,12 +34,12 @@ ix.config.Add("birdFlightSpeed", 100, "The speed at which a bird can fly.", nil,
 	category = "Bird"
 })
 
-ix.config.Add("birdHealth", 2, "The default health of birds.", nil, {
+ix.config.Add("birdHealth", 100, "The default health of birds.", nil, {
 	data = {min = 1, max = 100},
 	category = "Bird"
 })
 
-ix.config.Add("birdChat", true, "Allow the birds to talk?", nil, {
+ix.config.Add("birdChat", false, "Allow the birds to talk?", nil, {
 	category = "Bird"
 })
 
