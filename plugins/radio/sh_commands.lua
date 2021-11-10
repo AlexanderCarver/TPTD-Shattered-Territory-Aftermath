@@ -4,7 +4,7 @@ local PLUGIN = PLUGIN
 ix.command.Add("CharAddRadioChannel", {
 	description = "Добавить персонажу доступный канал связи.",
 	privilege = "Helix - Manage Radio",
-	superAdminOnly = true,
+	adminOnly = true,
 	arguments = {
 		ix.type.player,
 		ix.type.string
@@ -24,7 +24,7 @@ ix.command.Add("CharAddRadioChannel", {
 ix.command.Add("CharRemoveRadioChannel", {
 	description = "Забрать у персонажа доступ к определенному каналу связи.",
 	privilege = "Helix - Manage Radio",
-	superAdminOnly = true,
+	adminOnly = true,
 	arguments = {
 		ix.type.player,
 		ix.type.string
@@ -51,7 +51,7 @@ ix.command.Add("SetChannel", {
 		local freq = tonumber(text)
 
 		if (freq) then
-			local item = client:GetCharacter():GetInventory():HasItem("handheld_radio")
+			local item = client:GetCharacter():GetInventory():HasItem("army_radio") or HasItem("army_radio") or HasItem("corporate_radio")
 
 			if (item) then
 				if (!ix.radio.IsValidChannel("freq_" .. text)) then
