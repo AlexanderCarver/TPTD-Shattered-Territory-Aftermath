@@ -1,6 +1,6 @@
 ﻿ENT.Type = "anim"
 ENT.Author = "SleepyMode"
-ENT.PrintName = "Стационарная радиостанция «HDLC-060»"
+ENT.PrintName = "Радиостанция Spearhead HF"
 ENT.Spawnable = true
 ENT.AdminSpawnable = true
 

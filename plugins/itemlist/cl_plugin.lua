@@ -2,30 +2,24 @@
 local PLUGIN = PLUGIN
 
 local icons = {
-	["Ammunition"] = "attach",
-	["Armored Clothing"] = "shield",
-	["Cards"] = "vcard",
-	["Clothing"] = "user_suit",
-	["Communication"] = "transmit",
-	["Consumables"] = "cake",
-	["Crafting"] = "add",
-	["Deployables"] = "arrow_down",
-	["Filters"] = "weather_clouds",
-	["Gasmasks"] = "user_gray",
-	["Ingredients"] = "package_add",
-	["Junk"] = "bin_closed",
-	["Literature"] = "book",
-	["Medical"] = "heart_add",
-	["Miscellaneous"] = "box",
-	["Outfit"] = "user_add",
-	["Permits"] = "report",
-	["Raw Materials"] = "cog",
-	["Remains"] = "bullet_red",
-	["Reusables"] = "arrow_rotate_clockwise",
-	["Storage"] = "briefcase",
-	["Union Branded Items"] = "asterisk_yellow",
-	["Tools"] = "wrench_orange",
-	["Weapons"] = "gun"
+    ["Weapons"] = "gun",
+    ["Ammunition"] = "box",
+    ["Explosives"] = "bomb",
+    
+    ["Clothing"] = "group",
+    ["Armor"] = "group_add",
+    ["Misc Clothing"] = "group_error",
+    ["Storage"] = "briefcase",
+    
+    ["Food"] = "cake",
+    ["Liquids"] = "cup",
+    ["Supplies"] = "package_add",
+    ["Medicine"] = "heart_add",
+    ["Electronics"] = "phone",
+    
+    ["Tools"] = "wrench_orange",
+    ["Junk"] = "bin_closed",
+    ["Recipes"] = "report"
 }
 
 spawnmenu.AddContentType("ixItem", function(container, data)
