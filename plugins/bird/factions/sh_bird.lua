@@ -17,10 +17,6 @@ function FACTION:OnTransfered(client)
 	character:SetModel(self.models[1])
 end
 
-function FACTION:GetDefaultName(client)
-	return "CROW: " .. Schema:ZeroNumber(math.random(1, 999), 3), true
-end
-
 function FACTION:OnSpawn(client)
 	local character = client:GetCharacter()
 	local inventory = character:GetInventory()
