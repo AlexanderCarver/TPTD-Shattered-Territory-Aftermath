@@ -40,8 +40,7 @@ ix.lang.AddTable("english", {
 function PLUGIN:OnLoaded()
     timer.Simple(0, function()
         self.rankTable = {
-            [FACTION_ADMIN] = {"00", "10", "20", "30", "40", "50", "60", "70", "80", "90", "RL"},
-            [FACTION_CITIZEN] = {"OWS", "OWC", "EOW", "EOC"  }
+            [FACTION_ARMY] = {"[PVT] | Private", "[PSC] | Private Second Class", "[PFC] | Private First Class", "[SPC] | Specialist", "[CPL] | Corporal", "[SGT] | Sergeant", "[SSG] | Staff Sergeant", "[SFC] | Sergeant First Class", "[MSG] | Master Sergeant", "[FSG] | First Sergeant", "[SGM] | Sergeant Major"}
         }
     end)
 end
