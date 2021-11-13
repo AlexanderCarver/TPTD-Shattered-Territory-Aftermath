@@ -4,7 +4,6 @@ local PLUGIN = PLUGIN
 PLUGIN.name = "Protection Teams"
 PLUGIN.author = "wowm0d"
 PLUGIN.description = "Adds joinable squads to the tab menu."
-PLUGIN.schema = "HL2 RP"
 PLUGIN.license = [[
 Copyright 2020 wowm0d
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.

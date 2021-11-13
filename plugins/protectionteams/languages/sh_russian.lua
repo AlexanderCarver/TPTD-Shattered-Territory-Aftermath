@@ -1,7 +1,7 @@
 ﻿
 LANGUAGE = {
-	TeamName = "ЭО-%s",
-	TeamStatus = "ЭО-%s %s",
+	TeamName = "PLATOON-%s",
+	TeamStatus = "PLATOON-%s %s",
 
 	TeamMemberStatus = "ЧЛЕН ОТРЯДА",
 	TeamOwnerStatus = "ЛИДЕР ОТРЯДА",
@@ -28,8 +28,8 @@ LANGUAGE = {
 	TeamMustLeave = "Перед вступлением в другой ЭО, Вы обязаны ",
 
 	TeamAlreadyHasOwner = "Этот ЭО уже имеет лидера.",
-	TeamAlreadyExists = "Уже существует ЭО-'%s', так что создание ЭО с таким номером невозможно.",
-	TeamNonExistent = "ЭО-'%s' не существует.",
+	TeamAlreadyExists = "Уже существует PLATOON-'%s', так что создание ЭО с таким номером невозможно.",
+	TeamNonExistent = "PLATOON-'%s' не существует.",
 	AlreadyHasTeam = "Вы уже состоите в ЭО.",
 
 	KickedFromTeam = "Вы исключили %s из своего ЭО.",
