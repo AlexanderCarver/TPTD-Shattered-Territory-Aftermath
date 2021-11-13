@@ -21,7 +21,7 @@ function PLUGIN:CanTransferItem(item, old, inv) -- When a player attempts to tak
 		local character = ix.char.loaded[inv.owner]
 
 		if (!character:CanCarry(item)) then
-			character:GetPlayer():NotifyLocalized("You are carrying too much weight to take that.")
+			character:GetPlayer():NotifyLocalized("Вы уже перегружены, и не можете взять это!")
 			return false
 		end
 	end
@@ -52,7 +52,7 @@ function PLUGIN:CanPlayerTakeItem(client, item)
 
 	if (itm:GetWeight()) then
 		if (!character:CanCarry(itm)) then
-			client:NotifyLocalized("You are carrying too much weight to pick that up.")
+			client:NotifyLocalized("Вы уже перегружены, и не можете взять это!")
 			return false
 		end
 	end
