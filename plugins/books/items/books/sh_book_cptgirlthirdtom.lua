@@ -4,7 +4,7 @@ ITEM.price = 6
 ITEM.model = Model("models/props_lab/binderredlabel.mdl")
 ITEM.description = "Потрепання книга, в которой написан рассказ."
 ITEM.contents = [[
-<font color='red' size='4'>Written by Александр Пушкин</font>
+<font color='red' size='4'>Автор: Александр Пушкин</font>
 <br><br>
 <font color='grey' size='5'>ГЛАВА XI МЯТЕЖНАЯ СЛОБОДА</font>
 <br><br>

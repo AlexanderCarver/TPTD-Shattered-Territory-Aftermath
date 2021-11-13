@@ -3,7 +3,7 @@ ITEM.name = "Сборник стихотворений Александра Се
 ITEM.model = Model("models/props_lab/bindergraylabel01b.mdl")
 ITEM.description = "Первый сборник стихотворений Александра Сергеевича Пушкина";
 ITEM.contents = [[
-<font color='red' size='4'>Written by Александр Пушкин.</font>
+<font color='red' size='4'>Автор: Александр Пушкин.</font>
 <br><br>
 <font size='5' center>Я вас любил...</font>
 <br><br>

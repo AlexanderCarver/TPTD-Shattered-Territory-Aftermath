@@ -2,7 +2,7 @@ ITEM.name = "Сборник стихотворений Фета Афанасия
 ITEM.model = Model("models/props_lab/bindergraylabel01b.mdl")
 ITEM.description = "Первый сборник стихотворений Фета Афанасия Афанасьевича";
 ITEM.contents = [[
-<font color='red' size='4'>Written by Фет Афанасий Афанасьевич.</font>
+<font color='red' size='4'>Автор: Фет Афанасий Афанасьевич.</font>
 <br><br>
 <font size='5' center>"Шепот, робкое дыханье..."</font>
 <br><br>

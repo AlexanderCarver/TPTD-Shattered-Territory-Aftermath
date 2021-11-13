@@ -3,7 +3,7 @@ ITEM.name = "Евгений Онегин том I";
 ITEM.model = Model("models/props_lab/bindergraylabel01b.mdl")
 ITEM.description = "";
 ITEM.contents = [[
-<font color='red' size='4'>Written by Александр Пушкин.</font>
+<font color='red' size='4'>Автор: Александр Пушкин.</font>
 <br><br>
 <font size='6' center>ГЛАВА ПЕРВАЯ</font>
 <br><br>

@@ -2,7 +2,7 @@ ITEM.name = "Сборник стихотворений Ахматовой Анн
 ITEM.model = Model("models/props_lab/bindergraylabel01b.mdl")
 ITEM.description = "";
 ITEM.contents = [[
-<font color='red' size='4'>Written by Анна Ахматова.</font>
+<font color='red' size='4'>Автор: Анна Ахматова.</font>
 <br><br>
 <font size='5' center>"А ты думал - я тоже такая..."</font>
 <br><br>

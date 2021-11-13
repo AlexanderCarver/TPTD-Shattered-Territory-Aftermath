@@ -4,7 +4,7 @@ ITEM.price = 6
 ITEM.model = Model("models/props_lab/bindergreenlabel.mdl")
 ITEM.description = ""
 ITEM.contents = [[
-<font color='red' size='4'>Written by Братья Гримм.</font>
+<font color='red' size='4'>Автор: братья Гримм.</font>
 <br><br>
 
 Однажды вечером молодой барабанщик вышел один в поле и пришел к озеру; тут увидел он, что на берегу лежат три кусочка белого холста. «Какое полотно-то тонкое», — сказал он и один из этих кусочков сунул в карман.

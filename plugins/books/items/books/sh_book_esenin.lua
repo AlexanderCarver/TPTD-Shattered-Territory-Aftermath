@@ -2,7 +2,7 @@ ITEM.name = "Сборник стихотворений Есенина Серге
 ITEM.model = Model("models/props_lab/bindergraylabel01b.mdl")
 ITEM.description = "Первый сборник стихотворений Сергей Есенина";
 ITEM.contents = [[
-<font color='red' size='4'>Written by Фет Афанасий Афанасьевич.</font>
+<font color='red' size='4'>Автор: Фет Афанасий Афанасьевич.</font>
 <br><br>
 <font size='5' center>Береза</font>
 <br><br>

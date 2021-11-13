@@ -4,7 +4,7 @@ ITEM.price = 6
 ITEM.model = Model("models/props_lab/bindergreenlabel.mdl")
 ITEM.description = ""
 ITEM.contents = [[
-<font color='yellow' size='4'>by Книга Магнус Красный: Повелитель Просперо'</font>
+<font color='yellow' size='4'>Автор: Магнус Красный.'</font>
 <br><br>
 Мудрыми нас делают воспоминания о прошлом и сознание ответственности перед будущим.
 <br><br>

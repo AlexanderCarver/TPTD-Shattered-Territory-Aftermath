@@ -4,7 +4,7 @@ ITEM.price = 6
 ITEM.model = Model("models/props_lab/bindergreenlabel.mdl")
 ITEM.description = ""
 ITEM.contents = [[
-<font color='red' size='4'>Written by Ганс Христиан Андерсен</font>
+<font color='red' size='4'>Автор: Ганс Христиан Андерсен</font>
 <br><br>
 
 Жил в усадьбе старик хозяин, и было у него два сына, такие умные, что и вполовину хватило бы. И решили они посвататься к королевне — отчего же нет? Она сама объявила, что возьмет в мужья того, кто за словом в карман не лезет.

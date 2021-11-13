@@ -3,7 +3,7 @@ ITEM.price = 6
 ITEM.model = Model("models/props_lab/binderredlabel.mdl")
 ITEM.description = "Потрепання книга, в которой написан рассказ."
 ITEM.contents = [[
-<font color='red' size='4'>Written by Уильям Пирс</font>
+<font color='red' size='4'>Автор: Уильям Пирс</font>
 <br><br>
 <font size='5'><b>Глава I</b></font>
 <br><br>
