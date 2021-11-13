@@ -6,23 +6,47 @@
 			-- If this is switched from false to true the system will automatclly deplete their "digital" currency first before taking the physical.
 			physical = true,
 			-- The weight (for a single unit of currency), this only works with my Weight plugin. This is in kilograms.
-			weight = 0.001,
+			weight = 0.00001,
 			-- The default model for the default currency, also seconds as the fallback model for other currencies.
-			model = "models/mark2580/gtav/mp_office_03c/accessories/cash_pile_02_1.mdl",
+			model = "models/illusion/eftcontainers/dollar.mdl",
 			-- The name of the currency.
-			name = "United Corporate Euro",
+			name = "US Dollars",
 			-- The description of the currency.
-			description = "Корпоративная валюта из нанокорбита и микрофибры. Не горит и не сгорает, гнется, но не перегибается, и отлично держится даже в открытом космосе. Идеальный аналог бумажных денег прошлого поколения, хотя большинство предпочитает электронные платежи.",
+			description = "Денежная единица США, одна из основных резервных валют мира. Доллар США также имеет статус национальной валюты в некоторых других странах. Именно доллар США часто является дополнительной валютой в тех странах, где национальная валюта не является единственным законным средством платежа. Теперь, когда весь мир рухнул, Вам вряд-ли пригодится эта валюта... Или нет?",
 			-- The symbol of the currency.
-			symbol = "UCE",
+			symbol = "$",
 			-- The currency in singular.
-			singular = "United Corporate Euro",
+			singular = "dollar",
 			-- The currency in plural.
-			plural = "United Corporate Euro's",
+			plural = "dollar's",
 			-- The sound that plays when this currency is picked up or gained.
-			pickup = "physics/cardboard/cardboard_box_impact_soft4.wav",
+			pickup = nil,
 			-- The sound that plays with this currency is dropped or lost.
-			drop = "physics/cardboard/cardboard_cup_impact_hard3.wav",
+			drop = nil,
+		},
+
+		euro = {
+			-- NOTE: Switching this from true to false will cause any currency in character inventories to vanish.
+			-- If this is switched from false to true the system will automatclly deplete their "digital" currency first before taking the physical.
+			physical = true,
+			-- The weight (for a single unit of currency), this only works with my Weight plugin. This is in kilograms.
+			weight = 0.00001,
+			-- The default model for the default currency, also seconds as the fallback model for other currencies.
+			model = "models/illusion/eftcontainers/euro.mdl",
+			-- The name of the currency.
+			name = "European Euro",
+			-- The description of the currency.
+			description = "Официальная валюта 19 стран еврозоны. Является национальной единой валютой для более чем 340 миллионов европейцев. На ноябрь 2013 года в наличном обращении было 951 млрд евро, что делало эту валюту обладателем самой высокой суммарной стоимости наличных, циркулирующих во всём мире, опережая по этому показателю доллар США. Собственно, сейчас данные бумажки для Вас являются лишь отголоском былого времени. Или нет?",
+			-- The symbol of the currency.
+			symbol = "€",
+			-- The currency in singular.
+			singular = "euro",
+			-- The currency in plural.
+			plural = "euro's",
+			-- The sound that plays when this currency is picked up or gained.
+			pickup = nil,
+			-- The sound that plays with this currency is dropped or lost.
+			drop = nil,
 		},
 
 		--[[drachma = {
