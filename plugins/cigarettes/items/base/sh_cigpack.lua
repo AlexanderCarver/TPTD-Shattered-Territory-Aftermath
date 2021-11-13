@@ -27,7 +27,6 @@ end
 ITEM.functions.TakeCigarette = {
     name = "Вытащить одну сигарету",
     icon = "icon16/basket_put.png",
-    tip = "",
     OnCanRun = function(item)
         if item:GetData("open") then
             return true

@@ -9,7 +9,6 @@ ITEM.new = true
 
 ITEM.functions.TakeCigarette = {
     name = "Достать сигарету",
-    tip = "",
     icon = "icon16/brick.png",
     OnCanRun = function(item)
         if item:GetData("open") then
@@ -34,7 +33,6 @@ ITEM.functions.TakeCigarette = {
 
 ITEM.functions.OpenCigarettes = {
 	name = "Распаковать",
-	tip = "",
     icon = "icon16/door_open.png",
     OnCanRun = function(item)
         if item:GetData("open") == false then

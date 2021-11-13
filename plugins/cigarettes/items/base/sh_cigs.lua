@@ -89,8 +89,7 @@ end)
 
 -- On player uneqipped the item, Removes a weapon from the player and keep the ammo in the item.
 ITEM.functions.stubOut = { -- sorry, for name order.
-	name = "Потушить и закончить курение",
-	tip = "stubOut",
+	name = "Потушить",
 	icon = "icon16/cancel.png",
 	OnRun = function(item)
 		item:RemovePart(item.player)
@@ -108,7 +107,6 @@ ITEM.functions.stubOut = { -- sorry, for name order.
 -- On player eqipped the item, Gives a weapon to player and load the ammo data from the item.
 ITEM.functions.Smoke = {
 	name = "Закурить",
-	tip = "",
 	icon = "icon16/tick.png",
 	OnRun = function(item)
 		local char = item.player:GetCharacter()
@@ -144,11 +142,11 @@ ITEM.functions.Smoke = {
 		local client = item.player
 		local items = client:GetCharacter():GetInventory()
 
-		if items:HasItem("lighter") then
+		if items:HasItem("tinderbox") then
 			return !IsValid(item.entity) and IsValid(client) and item:GetData("smoking") != true and
 				hook.Run("CanPlayerEquipItem", client, item) != false and item.invID == client:GetCharacter():GetInventory():GetID()
 			else
-				item.player:Notify("You don't own a lighter!")
+				item.player:Notify("У Вас отсутствует что-либо, что закурить!")
 				--return false
 		end
 	end
