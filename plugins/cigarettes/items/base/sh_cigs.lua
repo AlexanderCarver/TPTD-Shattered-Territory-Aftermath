@@ -1,4 +1,4 @@
-
+﻿
 ITEM.name = "Cigarette"
 ITEM.description = "A cigarette base based on the PAC base."
 ITEM.category = "Outfit"
@@ -89,7 +89,7 @@ end)
 
 -- On player uneqipped the item, Removes a weapon from the player and keep the ammo in the item.
 ITEM.functions.stubOut = { -- sorry, for name order.
-	name = "Stub out",
+	name = "Потушить и закончить курение",
 	tip = "stubOut",
 	icon = "icon16/cancel.png",
 	OnRun = function(item)
@@ -107,8 +107,8 @@ ITEM.functions.stubOut = { -- sorry, for name order.
 
 -- On player eqipped the item, Gives a weapon to player and load the ammo data from the item.
 ITEM.functions.Smoke = {
-	name = "Smoke",
-	tip = "smokeTip",
+	name = "Закурить",
+	tip = "",
 	icon = "icon16/tick.png",
 	OnRun = function(item)
 		local char = item.player:GetCharacter()
@@ -119,7 +119,7 @@ ITEM.functions.Smoke = {
 				local itemTable = ix.item.instances[v.id]
 
 				if (itemTable.pacData and v.outfitCategory == item.outfitCategory and itemTable:GetData("smoking")) then
-					item.player:Notify("You're smoking right now!")
+					item.player:Notify("Вы уже закурили!")
 
 					return false
 				end

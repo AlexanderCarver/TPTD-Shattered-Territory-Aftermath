@@ -1,7 +1,7 @@
-ITEM.name = "Cigarette Pack"
+﻿ITEM.name = "Cigarette Pack"
 ITEM.model = Model("models/kek1ch/drink_cigar1.mdl")
 ITEM.description = "A pack of cigarettes."
-ITEM.category = "Recreation"
+ITEM.category = "Курение"
 ITEM.open = false
 ITEM.totalcigs = 5
 ITEM.new = true
@@ -14,20 +14,20 @@ end
 
 function ITEM:GetDescription()
     if self:GetData("totalcigs", 0) == self.totalcigs and (self:GetData("open", self.open) == false) and self:GetData("new", self.new) then
-        return L(self.description .. "\nIt is unopened.")
+        return L(self.description .. "\nПачка запакована.")
     else
         if self:GetData("open", false) == false then
-            return L(self.description .. "\nIt is closed.")
+            return L(self.description .. "\nПачка запакована.")
         else
-            return L(self.description .. "\nIt has " .. self:GetData("totalcigs", self.totalcigs) .. " cigarettes remaining.")
+            return L(self.description .. "\nВ пачке осталось " .. self:GetData("totalcigs", self.totalcigs) .. " сигарет.")
         end
     end
 end
 
 ITEM.functions.TakeCigarette = {
-    name = "Take Cigarette",
+    name = "Вытащить одну сигарету",
     icon = "icon16/basket_put.png",
-    tip = "Take a cigarette.",
+    tip = "",
     OnCanRun = function(item)
         if item:GetData("open") then
             return true

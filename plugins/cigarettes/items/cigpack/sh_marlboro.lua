@@ -1,15 +1,15 @@
-ITEM.name = "Pack of Soviet Cigarettes"
-ITEM.model = Model("models/kek1ch/drink_cigar1.mdl")
-ITEM.description = "A pack of pre-war Soviet cigarettes."
-ITEM.category = "Recreation"
+﻿ITEM.name = "Пачка сигарет «Marlboro»"
+ITEM.description = "Пачка сигарет, которые могут помочь утолить Вашу боль... Или забыться."
+ITEM.model = Model("models/closedboxshib.mdl")
+ITEM.category = "Курение"
 ITEM.open = false
 ITEM.totalcigs = 10
-ITEM.price = 15
+ITEM.price = 6
 ITEM.new = true
 
 ITEM.functions.TakeCigarette = {
-    name = "Take Cigarette",
-    tip = "Take a cigarette.",
+    name = "Достать сигарету",
+    tip = "",
     icon = "icon16/brick.png",
     OnCanRun = function(item)
         if item:GetData("open") then
@@ -33,8 +33,8 @@ ITEM.functions.TakeCigarette = {
 }
 
 ITEM.functions.OpenCigarettes = {
-	name = "Open Cigarettes",
-	tip = "Open the pack of cigarettes.",
+	name = "Распаковать",
+	tip = "",
     icon = "icon16/door_open.png",
     OnCanRun = function(item)
         if item:GetData("open") == false then

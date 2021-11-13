@@ -1,10 +1,10 @@
-ITEM.name = "Hand Rolled Cigarette"
-ITEM.description = "A single cigarette, very dry. Handrolled recently."
-ITEM.model = "models/props_junk/cigarette_001.mdl"
+﻿ITEM.name = "Самокрутка"
+ITEM.description = "Обычная продукция из табака, фильтра и специальной бумаги, которая была сделана вручную. Просто закурите, чтобы забыть эту жизнь..."
+ITEM.model = "models/phycignew.mdl"
 ITEM.width = 1
-ITEM.noBusiness = true
-ITEM.category = "Recreation"
 ITEM.height = 1
+ITEM.noBusiness = true
+ITEM.category = "Курение"
 ITEM.outfitCategory = "cigarette"
 ITEM.pacData = {
 	[1] = {
@@ -92,7 +92,7 @@ ITEM.pacData = {
 					["ModelFallback"] = "",
 					["Angles"] = Angle(0, 0, -5.5999999046326),
 					["TextureFilter"] = 3,
-					["Model"] = "models/props_junk/cigarette_001.mdl",
+					["Model"] = "models/phycigold.mdl",
 					["BlendMode"] = "",
 				},
 			},
