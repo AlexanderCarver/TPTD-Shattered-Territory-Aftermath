@@ -4,36 +4,17 @@ local PLUGIN = PLUGIN
 PLUGIN.name = "Offline Character Bans"
 PLUGIN.author = "Gary Tate"
 PLUGIN.description = "Allows staff to ban characters which are not actively loaded on the server."
-PLUGIN.license = [[
-The MIT License (MIT)
-Copyright (c) 2020 Gary Tate
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-]]
-
-ix.lang.AddTable("english", {
-	cmdCharBanOfflineDesc = "Ban a character not loaded onto the server.",
-	cmdCharUnbanOfflineDesc = "Unban a character not loaded onto the server.",
-	cmdCharUnbanOfflineNotBanned = "%s is not banned!",
-	cmdCharBanOfflineOverloadedResult = "More than one character matches the parameters.",
-	cmdCharBanOfflineNoResult = "No character matches the parameters.",
-	cmdCharBanOfflineAlreadyBanned = "%s is already banned!",
-	cmdCharBanOfflineSuccess = "%s has offline banned the character %s (%s).",
-	cmdCharUnbanOfflineSuccess = "%s has offline unbanned the character %s (%s).",
-	cmdCharBanOfflineCharacterLoaded = "%s is loaded on the server."
-})
 
 ix.lang.AddTable("russian", {
-	cmdCharBanOfflineDesc = "Заблокировать персонажа | Offline.",
-	cmdCharUnbanOfflineDesc = "Разблокировать персонажа | Offline.",
+	cmdCharBanOfflineDesc = "Заблокировать персонажа, за которого сейчас не играют.",
+	cmdCharUnbanOfflineDesc = "Разблокировать персонажа, за которого сейчас не играют.",
 	cmdCharUnbanOfflineNotBanned = "%s не заблокирован!",
-	cmdCharBanOfflineOverloadedResult = "Таких персонажей в БД больше одного! Уточните данные!.",
-	cmdCharBanOfflineNoResult = "Ни одного персонажа с такими аргументами.",
+	cmdCharBanOfflineOverloadedResult = "Указанных персонажей в базе данных больше одного! Уточните данные!.",
+	cmdCharBanOfflineNoResult = "Ни одного персонажа с такими аргументами не было найдено!",
 	cmdCharBanOfflineAlreadyBanned = "%s был заблокирован!",
 	cmdCharBanOfflineSuccess = "%s заблокировал персонажа %s (%s).",
 	cmdCharUnbanOfflineSuccess = "%s разблокировал персонажа %s (%s).",
-	cmdCharBanOfflineCharacterLoaded = "%s уже на сервере."
+	cmdCharBanOfflineCharacterLoaded = "%s зашёл на сервер."
 })
 
 function PLUGIN:IsCharacterLoaded(id)
