@@ -34,37 +34,37 @@ ix.char.RegisterVar("additionalLanguages", {
 })
 
 ix.command.Add("CharAddLanguage", {
-	description = "Let the specified player speak the specified language",
+	description = "Добавить персонажу возможность общаться на определённом языке.",
 	adminOnly = true,
 	arguments = {ix.type.character, ix.type.string},
 	OnRun = function(self, client, character, language)
 		if character and IsValid(character:GetPlayer()) then
 			if ix.languages:GetAll()[language] then
 				character:AddLanguage(language)
-				client:Notify('Character '..character:GetName()..' ('..character:GetPlayer():SteamID()..') successfully issued knowledge of the language: '..ix.languages:GetAll()[language].name)
+				client:Notify('Персонаж '..character:GetName()..' ('..character:GetPlayer():SteamID()..') получил знание следующего языка: '..ix.languages:GetAll()[language].name)
 			else
-				client:Notify('The specified language was not found.')
+				client:Notify('Указанный Вами язык не был найден!')
 			end
 		else
-			client:Notify('There is no such player')
+			client:Notify('Указанный Вами персонаж не был найден!')
 		end
 	end
 })
 
 ix.command.Add("CharRemoveLanguage", {
-	description = "Take away from the specified character the ability to speak the specified language",
+	description = "Забрать у персонажа возможность общаться на определённом языке.",
 	adminOnly = true,
 	arguments = {ix.type.character, ix.type.string},
 	OnRun = function(self, client, character, language)
 		if character and IsValid(character:GetPlayer()) then
 			if ix.languages:GetAll()[language] then
 				character:RemoveLanguage(language)
-				client:Notify('You have successfully removed the ability to speak in '..ix.languages:GetAll()[language].name..' language to the character '..character:GetName()..' ('..character:GetPlayer():SteamID()..')')
+				client:Notify('Вы успешно забрали возможность общаться на языке '..ix.languages:GetAll()[language].name..' у персонажа '..character:GetName()..' ('..character:GetPlayer():SteamID()..')')
 			else
-				client:Notify('The specified language was not found.')
+				client:Notify('Указанный Вами язык не был найден!')
 			end
 		else
-			client:Notify('There is no such player')
+			client:Notify('Указанный Вами персонаж не был найден!')
 		end
 	end
 })

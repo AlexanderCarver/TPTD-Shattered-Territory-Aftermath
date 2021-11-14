@@ -3,97 +3,67 @@ local PLUGIN = PLUGIN
 
 function PLUGIN:InitializedPlugins()
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Russian"
-        LANGUAGE.uniqueID = "language_ru"
+        LANGUAGE.name = "Русский язык"
+        LANGUAGE.uniqueID = "language_russian"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/ru.png"
-        LANGUAGE.format = "%s speaks in russian \"%s\""
-        LANGUAGE.formatUnknown = "%s says something in russian"
+        LANGUAGE.format = "%s говорит на русском \"%s\""
+        LANGUAGE.formatUnknown = "%s говорит что-то на русском языке, но Вы ничего не поняли"
 
-        LANGUAGE.formatWhispering = "%s whispers in russian \"%s\""
-        LANGUAGE.formatWhisperingUnknown = "%s whispers something in russian"
+        LANGUAGE.formatWhispering = "%s шепчет на русском \"%s\""
+        LANGUAGE.formatWhisperingUnknown = "%s шепчет что-то на русском языке, но Вы ничего не поняли"
 
-        LANGUAGE.formatYelling = "%s yelling in russian \"%s\""
-        LANGUAGE.formatYellingUnknown = "%s yelling something in russian"
+        LANGUAGE.formatYelling = "%s кричит на русском \"%s\""
+        LANGUAGE.formatYellingUnknown = "%s кричит что-то на русском языке, но Вы ничего не поняли"
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "German"
-        LANGUAGE.uniqueID = "language_ger"
+        LANGUAGE.name = "Немецкий язык"
+        LANGUAGE.uniqueID = "language_german"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/de.png"
-        LANGUAGE.format = "%s speaks in german \"%s\""
-        LANGUAGE.formatUnknown = "%s says something in german"
+        LANGUAGE.format = "%s говорит на немецком \"%s\""
+        LANGUAGE.formatUnknown = "%s говорит что-то на немецком языке, но Вы ничего не поняли"
 
-        LANGUAGE.formatWhispering = "%s whispers in german \"%s\""
-        LANGUAGE.formatWhisperingUnknown = "%s whispers something in german"
+        LANGUAGE.formatWhispering = "%s шепчет на немецком \"%s\""
+        LANGUAGE.formatWhisperingUnknown = "%s шепчет что-то на немецком языке, но Вы ничего не поняли"
 
-        LANGUAGE.formatYelling = "%s yelling in german \"%s\""
-        LANGUAGE.formatYellingUnknown = "%s yelling something in german"
+        LANGUAGE.formatYelling = "%s кричит на немецком \"%s\""
+        LANGUAGE.formatYellingUnknown = "%s кричит что-то на немецком языке, но Вы ничего не поняли"
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Bulgarian"
-        LANGUAGE.uniqueID = "language_bg"
+        LANGUAGE.name = "Болгарский язык"
+        LANGUAGE.uniqueID = "language_bolgarian"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/bg.png"
-        LANGUAGE.format = "%s speaks in bulgarian \"%s\""
-        LANGUAGE.formatUnknown = "%s says something in bulgarian"
+        LANGUAGE.format = "%s говорит на болгарском \"%s\""
+        LANGUAGE.formatUnknown = "%s говорит что-то на болгарском языке, но Вы ничего не поняли"
 
-        LANGUAGE.formatWhispering = "%s whispers in bulgarian \"%s\""
-        LANGUAGE.formatWhisperingUnknown = "%s whispers something in bulgarian"
+        LANGUAGE.formatWhispering = "%s шепчет на болгарском \"%s\""
+        LANGUAGE.formatWhisperingUnknown = "%s шепчет что-то на болгарском языке, но Вы ничего не поняли"
 
-        LANGUAGE.formatYelling = "%s yelling in bulgarian \"%s\""
-        LANGUAGE.formatYellingUnknown = "%s yelling something in bulgarian"
+        LANGUAGE.formatYelling = "%s кричит на болгарском \"%s\""
+        LANGUAGE.formatYellingUnknown = "%s кричит что-то на болгарском языке, но Вы ничего не поняли"
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Arabic"
-        LANGUAGE.uniqueID = "language_ara"
+        LANGUAGE.name = "Арабский язык"
+        LANGUAGE.uniqueID = "language_arabic"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/sa.png"
-        LANGUAGE.format = "%s speaks in arabic \"%s\""
-        LANGUAGE.formatUnknown = "%s says something in arabic"
+        LANGUAGE.format = "%s говорит на арабском \"%s\""
+        LANGUAGE.formatUnknown = "%s говорит что-то на арабском языке, но Вы ничего не поняли"
 
-        LANGUAGE.formatWhispering = "%s whispers in arabic \"%s\""
-        LANGUAGE.formatWhisperingUnknown = "%s whispers something in arabic"
+        LANGUAGE.formatWhispering = "%s шепчет на арабском \"%s\""
+        LANGUAGE.formatWhisperingUnknown = "%s шепчет что-то на арабском языке, но Вы ничего не поняли"
 
-        LANGUAGE.formatYelling = "%s yelling in arabic \"%s\""
-        LANGUAGE.formatYellingUnknown = "%s yelling something in arabic"
+        LANGUAGE.formatYelling = "%s кричит на арабском \"%s\""
+        LANGUAGE.formatYellingUnknown = "%s кричит что-то на арабском языке, но Вы ничего не поняли"
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Vortigese"
-        LANGUAGE.uniqueID = "language_vo"
-        LANGUAGE.category = "Off-Human"
-        LANGUAGE.chatIcon = "icon16/bullet_star.png"
-        LANGUAGE.format = "%s speaks in vortigese \"%s\""
-        LANGUAGE.formatUnknown = "%s says something in vortigese"
-
-        LANGUAGE.formatWhispering = "%s whispers in vortigese \"%s\""
-        LANGUAGE.formatWhisperingUnknown = "%s whispers something in vortigese"
-
-        LANGUAGE.formatYelling = "%s yelling in vortigese \"%s\""
-        LANGUAGE.formatYellingUnknown = "%s yelling something in vortigese"
-    LANGUAGE:Register()
-
-    local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Xenian"
-        LANGUAGE.uniqueID = "language_xen"
-        LANGUAGE.category = "Off-Human"
-        LANGUAGE.chatIcon = "icon16/flag_red.png"
-        LANGUAGE.format = "%s speaks in xenian \"%s\""
-        LANGUAGE.formatUnknown = "%s says something in xenian"
-
-        LANGUAGE.formatWhispering = "%s whispers in xenian \"%s\""
-        LANGUAGE.formatWhisperingUnknown = "%s whispers something in xenian"
-
-        LANGUAGE.formatYelling = "%s yelling in xenian \"%s\""
-        LANGUAGE.formatYellingUnknown = "%s yelling something in xenian"
-    LANGUAGE:Register()
-
-    local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Hindi"
+        LANGUAGE.name = "Язык хинди"
         LANGUAGE.uniqueID = "language_hin"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/in.png"
