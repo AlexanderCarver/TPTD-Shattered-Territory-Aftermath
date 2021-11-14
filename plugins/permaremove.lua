@@ -7,7 +7,7 @@ PLUGIN.desc = "Allows staff to permenantly remove map entities."
 
 do
 	local COMMAND = {
-		description = "Навсегда удаляет энтити карты.",
+		description = "Навсегда удалить энтити карты.",
 		superAdminOnly = true
 	}
 

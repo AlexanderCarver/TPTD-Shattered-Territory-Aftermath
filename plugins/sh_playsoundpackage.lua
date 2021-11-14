@@ -3,12 +3,6 @@ local PLUGIN = PLUGIN
 PLUGIN.name = "PlaySound Package"
 PLUGIN.author = "salt"
 PLUGIN.description = "Adds commands to play global/local sounds from a file, a global URL stream, and an entity mounted local sound. Also adds a global stopsound."
-PLUGIN.license = [[
-Copyright 2021 Captain Salt
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-]]
 
 if(SERVER)then
   util.AddNetworkString("SoundGlobal")
@@ -38,7 +32,7 @@ if(CLIENT)then
 end
 
 ix.command.Add("playSoundLocal", {
-       description = "Plays a sound in an specified area",
+       description = "Проиграть звук в локальной зоне.",
        adminOnly = true,
        arguments = {ix.type.string, bit.bor(ix.type.number, ix.type.optional)},
        OnRun = function (self, client, soundstring, range)
@@ -48,7 +42,7 @@ ix.command.Add("playSoundLocal", {
 })
 
 ix.command.Add("attachSound", {
-       description = "Plays a sound that follows the specified entity or yourself.",
+       description = "Проиграть звук, прикрепив его в энтити/персонажу.",
        adminOnly = true,
        arguments = {ix.type.string, bit.bor(ix.type.number,ix.type.optional)},
        OnRun = function (self, client, soundstring, range)
@@ -69,28 +63,28 @@ ix.command.Add("attachSound", {
 
 
 ix.command.Add("playSoundGlobal",{
-       description = "Plays a sound globally.",
+       description = "Програть звук в глобальной зоне.",
        arguments = ix.type.string,
        adminOnly = true,
        OnRun = function (self, client, path)
             PLUGIN:GlobalSound(path)
             for _, v in ipairs(player.GetAll()) do
                 if (v:IsAdmin()) then
-                    v:Notify(client:Name().." has started a global sound.")
+                    v:Notify(client:Name().." начал проигрывать звук в глобально.")
                 end
             end
        end
 })
 
 ix.command.Add("playURL",{
-  description = "Plays a global sound from a streamable URL.",
+  description = "Проиграть звук через URL в глобальной зоне.",
   arguments = ix.type.string,
   adminOnly = true,
   OnRun = function(self, client, path)
         PLUGIN:GlobalURL(path)
         for _, v in ipairs(player.GetAll()) do
                 if (v:IsAdmin()) then
-                    v:Notify(client:Name().." has started a global sound from a URL.")
+                    v:Notify(client:Name().." начал проигрывать звук в глобально через URL.")
                 end
         end
   end
@@ -102,7 +96,7 @@ ix.command.Add("stopsounds",{
        OnRun = function (self, client)
               for k, v in pairs (player.GetAll()) do
 			v:ConCommand("stopsound")
-			v:Notify("Sounds have been stopped.")
+			v:Notify("Все звуки были остановлены.")
        end
 end
 })
