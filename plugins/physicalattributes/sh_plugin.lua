@@ -2,6 +2,20 @@ PLUGIN.name = "Attribute System"
 PLUGIN.author = "Huargenn, TPTD Dev Team"
 PLUGIN.description = "Implementation of an attribute system for roleplay."
 
+
+
+ix.config.Add("defaultMaxHealth", 100, "Sets the default max health of characters.", nil, {
+	data = {min = 0, max = 200.0, decimals = 1},
+	category = "Characters"
+})
+
+ix.config.Add("constitutionMultiplier", 1, "Mutiplies the health that constitution adds to characters.", nil, {
+	data = {min = 0, max = 10.0, decimals = 1},
+	category = "Attributes"
+})
+
+
+
 ix.command.Add("RollStat", {
 	syntax = "<stat>",
 	description = "Бросить кубик с расчётом на определённый навык персонажа.",
