@@ -20,7 +20,7 @@ ix.config.Add("charSwapDisabled", false, "Should switching characters be disable
 })
 
 ix.lang.AddTable("russian", {
-	cmdToggleCharSwap = "Включить анти-свап для действующих персонажей."
+	cmdToggleCharSwap = "Переключение режима выбора игровых персонажей."
 })
 
 do
@@ -33,7 +33,7 @@ do
 		local newValue = !ix.config.Get("charSwapDisabled")
 
 		ix.config.Set("charSwapDisabled", newValue)
-		ix.util.Notify(newValue and "Свап персонажей теперь выключен." or "Свап персонажей был включен. Вы можете спокойно менять их в любое время.")
+		ix.util.Notify(newValue and "Свободное переключение персонажей было отключено." or "Свободное переключение персонажей было включено. Вы можете спокойно менять их в любое время.")
 	end
 
 	ix.command.Add("ToggleCharSwap", COMMAND)
