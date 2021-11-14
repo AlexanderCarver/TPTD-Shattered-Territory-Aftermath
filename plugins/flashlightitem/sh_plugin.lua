@@ -1,4 +1,3 @@
-
 PLUGIN.name = "Flashlight item"
 PLUGIN.author = "SleepyMode"
 PLUGIN.description = "Adds an item allowing players to toggle their flashlight."
