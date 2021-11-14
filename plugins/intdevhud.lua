@@ -77,7 +77,7 @@ if (CLIENT) then
 				)
 				--User Info
 				draw.SimpleText( 
-				"| ".. self.updatetext .." | " .. lclient:SteamID64() .. " | ".. lclient:SteamID() .. " | "..os.date( "%m/%d/%Y | %X" , os.time() ) .. " | ",
+				"| ".. self.updatetext .." | " .. lclient:SteamID64() .. " | ".. lclient:SteamID() .. " | "..os.date( "%d/%m/%Y | %X" , os.time() ) .. " | ",
 				"DevHudText",
 				w/5.25,
 				h/1.12,

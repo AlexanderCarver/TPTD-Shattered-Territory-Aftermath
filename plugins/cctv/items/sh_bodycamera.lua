@@ -1,9 +1,9 @@
-﻿ITEM.name = "Bodycamera"
-ITEM.model = "models/noahkrueger/bodycam.mdl"
-ITEM.width = 1
+﻿ITEM.name = "Нательная камера MIUFLY 1296P"
+ITEM.description = "Нательная камера или переносная камера - это переносная система записи. Нательные камеры имеют множество применений и конструкций, из которых наиболее известно использование в составе полицейского оборудования. Данная камера будет весьма полезной при фиксации Ваших злоключений."
+ITEM.model = "models/illusion/eftcontainers/wirelesstransmitter.mdl"
 ITEM.height = 1
-ITEM.category = "Communication"
-ITEM.description = ""
+ITEM.width = 1
+ITEM.weight = 0.285
 
 ITEM.isBodycamera = true
 
@@ -43,7 +43,6 @@ end
 
 ITEM.functions.Equip = {
 	name = "Переключить",
-	tip = "useTip",
 	icon = "icon16/connect.png",
 	OnRun = function(item)
 		local client = item.player
@@ -77,7 +76,7 @@ ITEM.functions.Equip = {
 					return false
 				else
 					if (itemTable.isBodycamera and itemTable:GetData("equip")) then
-						client:Notify("Вы не можете поставить на себя больше одной BC.")
+						client:Notify("Вы не можете поставить на себя больше одной нательной камеры!")
 						return false
 					end
 				end
