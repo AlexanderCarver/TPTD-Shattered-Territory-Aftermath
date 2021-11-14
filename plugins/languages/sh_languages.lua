@@ -3,7 +3,7 @@ local PLUGIN = PLUGIN
 
 function PLUGIN:InitializedPlugins()
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Русский язык"
+        LANGUAGE.name = "русский язык"
         LANGUAGE.uniqueID = "language_russian"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/ru.png"
@@ -18,7 +18,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Украинский язык"
+        LANGUAGE.name = "украинский язык"
         LANGUAGE.uniqueID = "language_ukrainian"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/ua.png"
@@ -33,7 +33,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Белорусский язык"
+        LANGUAGE.name = "белорусский язык"
         LANGUAGE.uniqueID = "language_belarusian"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/rb.png"
@@ -48,7 +48,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Сербский язык"
+        LANGUAGE.name = "сербский язык"
         LANGUAGE.uniqueID = "language_serbian"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/sr.png"
@@ -63,7 +63,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Немецкий язык"
+        LANGUAGE.name = "немецкий язык"
         LANGUAGE.uniqueID = "language_german"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/de.png"
@@ -78,7 +78,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Болгарский язык"
+        LANGUAGE.name = "болгарский язык"
         LANGUAGE.uniqueID = "language_bolgarian"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/bg.png"
@@ -93,7 +93,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Арабский язык"
+        LANGUAGE.name = "арабский язык"
         LANGUAGE.uniqueID = "language_arabic"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/sa.png"
@@ -108,7 +108,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Язык хинди"
+        LANGUAGE.name = "язык хинди"
         LANGUAGE.uniqueID = "language_hindi"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/in.png"
@@ -123,7 +123,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Бенгальский язык"
+        LANGUAGE.name = "бенгальский язык"
         LANGUAGE.uniqueID = "language_bengali"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/bd.png"
@@ -138,7 +138,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Французский язык"
+        LANGUAGE.name = "французский язык"
         LANGUAGE.uniqueID = "language_french"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/fr.png"
@@ -153,7 +153,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Итальянский язык"
+        LANGUAGE.name = "итальянский язык"
         LANGUAGE.uniqueID = "language_italian"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/it.png"
@@ -168,7 +168,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Японский язык"
+        LANGUAGE.name = "японский язык"
         LANGUAGE.uniqueID = "language_japan"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/jp.png"
@@ -183,7 +183,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Китайский язык"
+        LANGUAGE.name = "китайский язык"
         LANGUAGE.uniqueID = "language_chinese"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/ch.png"
@@ -198,7 +198,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Португальский язык"
+        LANGUAGE.name = "португальский язык"
         LANGUAGE.uniqueID = "language_portuguese"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/pt.png"
@@ -213,7 +213,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Испанский язык"
+        LANGUAGE.name = "испанский язык"
         LANGUAGE.uniqueID = "language_spanish"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/es.png"
@@ -228,7 +228,7 @@ function PLUGIN:InitializedPlugins()
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
-        LANGUAGE.name = "Малайский язык"
+        LANGUAGE.name = "малайский язык"
         LANGUAGE.uniqueID = "language_malay"
         LANGUAGE.category = "Human"
         LANGUAGE.chatIcon = "flags16/my.png"
