@@ -6,6 +6,8 @@ ITEM.hunger = 5
 ITEM.thirst = 5
 ITEM.empty = false
 ITEM.functions.Eat = {
+	name = "Употребить"
+	icon = "icon16/cup.png",
 	OnRun = function(item)
 	local client = item.player
 	if item.hunger > 0 then client:restoreHunger(item.hunger) end
@@ -29,8 +31,6 @@ ITEM.functions.Eat = {
 
 	OnCanRun = function(item)
 		return (!item.empty)
-	end,
-	icon = "icon16/cup.png",
-	name = "Употребить"
+	end
 }
 ITEM.permit = "food"
