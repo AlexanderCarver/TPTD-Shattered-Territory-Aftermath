@@ -17,7 +17,6 @@ function PLUGIN:InitializedPlugins()
         LANGUAGE.formatYellingUnknown = "%s кричит что-то на русском языке, но Вы ничего не поняли"
     LANGUAGE:Register()
 
-function PLUGIN:InitializedPlugins()
     local LANGUAGE = ix.languages:New()
         LANGUAGE.name = "Украинский язык"
         LANGUAGE.uniqueID = "language_ukrainian"
@@ -33,7 +32,6 @@ function PLUGIN:InitializedPlugins()
         LANGUAGE.formatYellingUnknown = "%s кричит что-то на украинском языке, но Вы ничего не поняли"
     LANGUAGE:Register()
 
-    function PLUGIN:InitializedPlugins()
     local LANGUAGE = ix.languages:New()
         LANGUAGE.name = "Белорусский язык"
         LANGUAGE.uniqueID = "language_belarusian"
@@ -47,6 +45,21 @@ function PLUGIN:InitializedPlugins()
         
         LANGUAGE.formatYelling = "%s кричит на белорусском \"%s\""
         LANGUAGE.formatYellingUnknown = "%s кричит что-то на белорусском языке, но Вы ничего не поняли"
+    LANGUAGE:Register()
+
+    local LANGUAGE = ix.languages:New()
+        LANGUAGE.name = "Сербский язык"
+        LANGUAGE.uniqueID = "language_serbian"
+        LANGUAGE.category = "Human"
+        LANGUAGE.chatIcon = "flags16/sr.png"
+        LANGUAGE.format = "%s говорит на сербском \"%s\""
+        LANGUAGE.formatUnknown = "%s говорит что-то на сербском языке, но Вы ничего не поняли"
+        
+        LANGUAGE.formatWhispering = "%s шепчет на сербском \"%s\""
+        LANGUAGE.formatWhisperingUnknown = "%s шепчет что-то на сербском языке, но Вы ничего не поняли"
+        
+        LANGUAGE.formatYelling = "%s кричит на сербском \"%s\""
+        LANGUAGE.formatYellingUnknown = "%s кричит что-то на сербском языке, но Вы ничего не поняли"
     LANGUAGE:Register()
 
     local LANGUAGE = ix.languages:New()
