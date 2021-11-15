@@ -1,7 +1,7 @@
 ﻿
-PLUGIN.name = "Writing"
+PLUGIN.name = "Writing (extented)"
 PLUGIN.description = "Adds purchasable items which players can write/edit."
-PLUGIN.author = "`impulse"
+PLUGIN.author = "Hikka, TPTD Dev Team"
 PLUGIN.maxLength = 2000
 
 ix.util.Include("sv_hooks.lua")
