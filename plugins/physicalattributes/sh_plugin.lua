@@ -4,12 +4,12 @@ PLUGIN.description = "Implementation of an attribute system for roleplay."
 
 
 
-ix.config.Add("defaultMaxHealth", 100, "Sets the default max health of characters.", nil, {
+ix.config.Add("defaultMaxHealth", 100, "Максимальное количество здоровья у персонажей.", nil, {
 	data = {min = 0, max = 200.0, decimals = 1},
 	category = "Characters"
 })
 
-ix.config.Add("constitutionMultiplier", 1, "Mutiplies the health that constitution adds to characters.", nil, {
+ix.config.Add("constitutionMultiplier", 2, "Коэффициент множителя здоровья от соматической конституции.", nil, {
 	data = {min = 0, max = 10.0, decimals = 1},
 	category = "Attributes"
 })
