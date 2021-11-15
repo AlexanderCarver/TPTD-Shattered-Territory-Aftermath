@@ -124,7 +124,7 @@ else
 end
 
 ix.command.Add("npcspawnadd", {
-	COMMAND.description = "Добавление спавнера NPC.",
+	description = "Добавление спавнера NPC.",
 	adminOnly = true,
 	syntax = "<string npcgroup>",
 	arguments = {ix.type.text},
@@ -138,7 +138,7 @@ ix.command.Add("npcspawnadd", {
 })
 
 ix.command.Add("npcspawnremove", {
-	COMMAND.description = "Удаление спавнера NPC.",
+	description = "Удаление спавнера NPC.",
 	adminOnly = true,
 	OnRun = function(self, client, arguments)
 		local trace = client:GetEyeTraceNoCursor()
@@ -157,7 +157,7 @@ ix.command.Add("npcspawnremove", {
 })
 
 ix.command.Add("npcspawndisplay", {
-	COMMAND.description = "Показать спавнеры NPC на следующие 10 секунд.",
+	description = "Показать спавнеры NPC на следующие 10 секунд.",
 	adminOnly = true,
 	OnRun = function(self, client, arguments)
 		if SERVER then
@@ -168,7 +168,7 @@ ix.command.Add("npcspawndisplay", {
 })
 
 ix.command.Add("npcspawntoggle", {
-	COMMAND.description = "Переключение работы спавнеров NPC.",
+	description = "Переключение работы спавнеров NPC (включить/выключить).",
 	adminOnly = true,
 	OnRun = function(self, client, arguments)
 		if(ix.config.Get("spawner_enabled", false)) then
