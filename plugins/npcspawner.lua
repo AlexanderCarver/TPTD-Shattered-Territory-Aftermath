@@ -125,7 +125,7 @@ end
 
 ix.command.Add("npcspawnadd", {
 	description = "Добавление спавнера NPC.",
-	adminOnly = true,
+	superAdminOnly = true,
 	syntax = "<string npcgroup>",
 	arguments = {ix.type.text},
 	OnRun = function(self, client, npcgroup)
@@ -139,7 +139,7 @@ ix.command.Add("npcspawnadd", {
 
 ix.command.Add("npcspawnremove", {
 	description = "Удаление спавнера NPC.",
-	adminOnly = true,
+	superAdminOnly = true,
 	OnRun = function(self, client, arguments)
 		local trace = client:GetEyeTraceNoCursor()
 		local hitpos = trace.HitPos + trace.HitNormal*5
