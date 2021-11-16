@@ -1,6 +1,6 @@
 ITEM.name = "Кувалда"
 ITEM.description = "Инструмент для быстрого деконструирования баррикад."
-ITEM.model = "models/props_propper/hammer1.mdl"
+ITEM.model = "models/mark2580/gtav/garage_stuff/impexp_hammer.mdl"
 ITEM.time = 15
 ITEM.width = 1
 ITEM.height = 2
