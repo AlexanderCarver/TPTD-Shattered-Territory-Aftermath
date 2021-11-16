@@ -7,12 +7,12 @@ PLUGIN.author = "`impulse"
 PLUGIN.maxNameLength = 32
 PLUGIN.maxDescriptionLength = 256
 
-ix.lang.AddTable("english", {
-	notLookingAtProp = "You aren't looking at a valid prop!",
-	objectDescRemoved = "You have removed this prop's description.",
-	objectDescSet = "You have set this prop's description.",
+ix.lang.AddTable("russian", {
+	notLookingAtProp = "Вы смотрите не на проп!",
+	objectDescRemoved = "Вы удалили описание с пропа!",
+	objectDescSet = "Вы поставили описание для данного пропа!",
 
-	cmdObjectSetDesc = "Sets the name and description of the prop you're looking at. Leave empty to remove a prop's description."
+	cmdObjectSetDesc = "Добавляет имя и описание для пропа, на который Вы смотрите."
 })
 
 if (SERVER) then

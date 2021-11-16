@@ -12,7 +12,7 @@ ix.lang.AddTable("english", {
 
 ix.lang.AddTable("russian", {
 	countoflifes = "Жизни",
-	livesover = "У вас кончились все жизни"
+	livesover = "У Вас закончились все жизни. Вас настигла смерть."
 })
 
 if SERVER then
@@ -21,7 +21,7 @@ if SERVER then
 	    if (character) then
 	        local deaths = character:GetData("deathCount", 0) + 1
 	        if (deaths >= 3) then
-	            character:Ban()
+	            character:Ban(nil)
 	            netstream.Start(ply, "permadeath.notify")
 	        else
 	            character:SetData("deathCount", deaths)

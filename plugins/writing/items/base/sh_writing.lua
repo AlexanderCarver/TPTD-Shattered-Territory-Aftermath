@@ -11,15 +11,15 @@ ITEM.business = true
 ITEM.bAllowMultiCharacterInteraction = true
 
 function ITEM:GetDescription()
-	local str = "Кажется, в нём что-то написано... Надо прочесть.\n %s"
+	local str = "Кажется, там что-то написано...\n %s"
 
 	local blocked_author = self:GetData("blocked_author", 0)
 	
 	if blocked_author == 0 then
-		str = "Кажется, в нём что-то написано... Надо прочесть.\n %s"
+		str = "Кажется, там что-то написано...\n %s"
 		return Format(str, self:GetData("blocked", "Не запечатано и не тронуто."))
 	else
-		str = "Кажется, в нём что-то написано... Надо прочесть.\n Сорвал печать: %s"
+		str = "Кажется, там что-то написано...\n Распечатал и ознакомился: %s"
 		
 		local character = ix.char.loaded[blocked_author]
 		return Format(str, character and character:GetName() or "Неизвестный")
@@ -66,7 +66,7 @@ ITEM.functions.take.OnCanRun = function(item)
 end
 
 ITEM.functions.Block = { -- sorry, for name order.
-	name = "Запечатать пергамент личной печатью",
+	name = "Запечатать",
 	tip = "useTip",
 	icon = "icon16/delete.png",
 	OnRun = function(item)
@@ -79,12 +79,12 @@ ITEM.functions.Block = { -- sorry, for name order.
 			has_wax:Remove()
 			
 			item:SetData("owner", character and character:GetID() or 0)
-			item:SetData("blocked", "Запечатано")
+			item:SetData("blocked", "Запечатано.")
 			
 			client:EmitSound("npc/barnacle/neck_snap1.wav")
 			item.model = "models/items/magic/scrolls/scroll_rolled.mdl"
 		else
-			client:Notify("У Вас отсутствует воск для запечатывания данного пергамента!")
+			client:Notify("У Вас отсутствует клей для печати!")
 		end
 		return false
 	end,
@@ -95,7 +95,7 @@ ITEM.functions.Block = { -- sorry, for name order.
 }
 
 ITEM.functions.UnBlock = { -- sorry, for name order.
-	name = "Сорвать печать и прочитать письмо",
+	name = "Распечатать",
 	tip = "useTip",
 	icon = "icon16/delete.png",
 	OnRun = function(item)
@@ -104,14 +104,14 @@ ITEM.functions.UnBlock = { -- sorry, for name order.
 		
 		local character = client:GetCharacter()
 		item:SetData("blocked_author", character and character:GetID() or 0)
-		item:SetData("blocked", "Печать сорвана.")
+		item:SetData("blocked", "Распечатано.")
 		
 		item.model = "models/items/magic/scrolls/scroll_open.mdl"
 		client:EmitSound("physics/cardboard/cardboard_box_impact_bullet1.wav")
 		return false
 	end,
 	OnCanRun = function(item)
-		if item:GetData("blocked", "Печать сорвана.") == "Печать сорвана." then
+		if item:GetData("blocked", "Распечатано.") == "Распечатано." then
 			return false
 		end
 	end,

@@ -59,7 +59,7 @@ ix.command.Add("CharRemoveLanguage", {
 		if character and IsValid(character:GetPlayer()) then
 			if ix.languages:GetAll()[language] then
 				character:RemoveLanguage(language)
-				client:Notify('Вы успешно забрали возможность общаться на языке '..ix.languages:GetAll()[language].name..' у персонажа '..character:GetName()..' ('..character:GetPlayer():SteamID()..')')
+				client:Notify('Вы успешно забрали возможность общаться на языке следующем языке: '..ix.languages:GetAll()[language].name..'. Персонаж: '..character:GetName()..' ('..character:GetPlayer():SteamID()..')')
 			else
 				client:Notify('Указанный Вами язык не был найден!')
 			end

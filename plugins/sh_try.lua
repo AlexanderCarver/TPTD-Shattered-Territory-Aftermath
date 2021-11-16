@@ -11,7 +11,7 @@ ix.chat.Register("try", {
 end
 
 ix.command.Add("try", {
-	description = "Попробовать сделать что-то.",
+	description = "Попробовать сделать что-то, указав это в прошедшем времени.",
 	arguments = ix.type.text,
 	OnRun = function(self, client, text)
         local str

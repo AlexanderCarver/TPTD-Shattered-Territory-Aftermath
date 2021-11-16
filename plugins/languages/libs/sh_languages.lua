@@ -39,7 +39,7 @@ function ix.languages:Register(language)
 
 	ix.command.Add(string.Replace(language.uniqueID, 'language_', ''), {
 		arguments = ix.type.text,
-		description = "Allows you to say something in " .. string.lower(language.name) .. " language",
+		description = "Общаться, используя " .. string.lower(language.name) .. "",
 		OnRun = function(this, client, message)
 			if !client:GetCharacter() then return end
 			if !message or string.Trim(message) == "" then return end
@@ -47,7 +47,7 @@ function ix.languages:Register(language)
 				ix.chat.Send(client, language.uniqueID, message)
 				ix.chat.Send(client, language.uniqueID .. "_unknown", message)
 			else
-				client:Notify('You don\'t know such a language!')
+				client:Notify('Вы не знаете данного языка!')
 			end
 		end
 	})
@@ -99,7 +99,7 @@ function ix.languages:Register(language)
 	-- Whispering
 	ix.command.Add('whisper_' .. string.Replace(language.uniqueID, 'language_', ''), {
 		arguments = ix.type.text,
-		description = "Allows you to whisper something on " .. string.lower(language.name) .. " language",
+		description = "Шептать, используя " .. string.lower(language.name) .. ".",
 		OnRun = function(this, client, message)
 			if !client:GetCharacter() then return end
 			if !message or string.Trim(message) == "" then return end
@@ -107,7 +107,7 @@ function ix.languages:Register(language)
 				ix.chat.Send(client, "whisper_" .. language.uniqueID, message)
 				ix.chat.Send(client, "whisper_" .. language.uniqueID .. "_unknown", message)
 			else
-				client:Notify('You don\'t know such a language!')
+				client:Notify('Вы не знаете данного языка!')
 			end
 		end
 	})
@@ -159,7 +159,7 @@ function ix.languages:Register(language)
 	-- Yelling
 	ix.command.Add('yell_' .. string.Replace(language.uniqueID, 'language_', ''), {
 		arguments = ix.type.text,
-		description = "Lets you yell something at " .. string.lower(language.name) .. " language",
+		description = "Кричать, используя " .. string.lower(language.name) .. " language",
 		OnRun = function(this, client, message)
 			if !client:GetCharacter() then return end
 			if !message or string.Trim(message) == "" then return end
@@ -167,7 +167,7 @@ function ix.languages:Register(language)
 				ix.chat.Send(client, "yell_" .. language.uniqueID, message)
 				ix.chat.Send(client, "yell_" .. language.uniqueID .. "_unknown", message)
 			else
-				client:Notify('You don\'t know such a language!')
+				client:Notify('Вы не знаете данного языка!')
 			end
 		end
 	})

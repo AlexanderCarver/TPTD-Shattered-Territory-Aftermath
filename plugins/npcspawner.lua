@@ -124,7 +124,8 @@ else
 end
 
 ix.command.Add("npcspawnadd", {
-	adminOnly = true,
+	description = "Добавление спавнера NPC.",
+	superAdminOnly = true,
 	syntax = "<string npcgroup>",
 	arguments = {ix.type.text},
 	OnRun = function(self, client, npcgroup)
@@ -132,12 +133,13 @@ ix.command.Add("npcspawnadd", {
 		local hitpos = trace.HitPos + trace.HitNormal*5
 		local spawngroup = npcgroup or "default"
 		table.insert(PLUGIN.spawnpoints, { hitpos, spawngroup })
-		client:Notify("You added ".. spawngroup .. " npc spawner.")
+		client:Notify("Спавнер NPC для следующей группы: ".. spawngroup .. ".")
 	end 
 })
 
 ix.command.Add("npcspawnremove", {
-	adminOnly = true,
+	description = "Удаление спавнера NPC.",
+	superAdminOnly = true,
 	OnRun = function(self, client, arguments)
 		local trace = client:GetEyeTraceNoCursor()
 		local hitpos = trace.HitPos + trace.HitNormal*5
@@ -150,29 +152,31 @@ ix.command.Add("npcspawnremove", {
 				mt = mt + 1
 			end
 		end
-		client:Notify(mt .. " npc spawners has been removed.")
+		client:Notify(mt .. " спавнеров NPC было удалено.")
 	end
 })
 
 ix.command.Add("npcspawndisplay", {
+	description = "Показать спавнеры NPC на следующие 10 секунд.",
 	adminOnly = true,
 	OnRun = function(self, client, arguments)
 		if SERVER then
 			netstream.Start(client, "nut_DisplaySpawnPoints", PLUGIN.spawnpoints)
-			client:Notify("Displayed All Points for 10 secs.")
+			client:Notify("Все спавнеры NPC стали видимыми на 10 секунд.")
 		end
 	end
 })
 
 ix.command.Add("npcspawntoggle", {
+	description = "Переключение работы спавнеров NPC (включить/выключить).",
 	adminOnly = true,
 	OnRun = function(self, client, arguments)
 		if(ix.config.Get("spawner_enabled", false)) then
 			ix.config.Set("spawner_enabled", false)
-			client:Notify("NPC Spawners have been turned off.")
+			client:Notify("Спавнеры NPC были отключены.")
 		else
 			ix.config.Set("spawner_enabled", true)
-			client:Notify("NPC Spawners have been turned on.")
+			client:Notify("Спавнеры NPC были включены.")
 		end
 	end
 })

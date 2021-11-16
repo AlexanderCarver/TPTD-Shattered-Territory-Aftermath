@@ -17,7 +17,7 @@ if CLIENT then
 			dlight.b = 255
 			dlight.brightness = 2.5
 			dlight.Decay = 3000
-			dlight.Size = 175
+			dlight.Size = 140
 			dlight.DieTime = CurTime() + 0.4
 		end
 	end
