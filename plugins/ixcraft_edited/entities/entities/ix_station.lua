@@ -3,7 +3,7 @@ local PLUGIN = PLUGIN
 
 ENT.Type = "anim"
 ENT.PrintName = "Station"
-ENT.Category = "Helix"
+ENT.Category = "IX: Crafting"
 ENT.Spawnable = false
 
 function ENT:SetupDataTables()
@@ -26,6 +26,7 @@ if (SERVER) then
 		self:SetMoveType(MOVETYPE_NONE)
 		self:SetSolid(SOLID_VPHYSICS)
 		self:PhysicsInit(SOLID_VPHYSICS)
+		self:SetUseType(SIMPLE_USE)
 
 		local physObj = self:GetPhysicsObject()
 
@@ -33,7 +34,25 @@ if (SERVER) then
 			physObj:EnableMotion(false)
 			physObj:Sleep()
 		end
+
+		self.InUse = false
 	end
+
+	function ENT:Use(act, call)
+
+		if (!call:IsPlayer()) then return end
+		if (self.InUse) then 
+			call:Notify("Someone else is using it.")
+		return end
+		netstream.Start(call, "IX_Crafting_OpenMenu", self:GetStationID(), self)
+		self.InUse = true
+
+		timer.Create( "WorkBenchAfkFix"..self:EntIndex(), 30, 1, function() 
+			if (!IsValid(self)) then return end
+			self.InUse = false
+		end)
+		
+	end	
 
 	function ENT:OnVarChanged(name, oldID, newID)
 		local stationTable = PLUGIN.craft.stations[newID]

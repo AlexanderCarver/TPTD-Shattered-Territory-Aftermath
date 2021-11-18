@@ -65,3 +65,20 @@ ix.util.Include("sh_hooks.lua", "shared")
 
 ix.util.Include("meta/sh_recipe.lua", "shared")
 ix.util.Include("meta/sh_station.lua", "shared")
+
+if (CLIENT) then
+	netstream.Hook("IX_Crafting_OpenMenu", function(stationID, ent)
+	vgui.Create("ix_crafting_entMenu"):Populate(stationID, ent)
+	end)	
+end
+
+if (SERVER) then
+	netstream.Hook("ix_craft_ReleaseWorkBench", function(ply, ent)
+	
+		ent.InUse = false
+		if ( timer.Exists( "WorkBenchAfkFix"..ent:EntIndex() ) ) then
+			timer.Remove( "WorkBenchAfkFix"..ent:EntIndex() )
+		end	
+
+	end)	
+end	

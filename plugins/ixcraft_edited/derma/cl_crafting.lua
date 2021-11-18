@@ -10,7 +10,7 @@ function PANEL:Init()
 	self:Dock(TOP)
 	self:SetTall(64)
 
-	self:SetText("Создание предметов")
+	self:SetText("")
 end
 
 function PANEL:SetRecipe(recipeTable)
@@ -159,13 +159,13 @@ end
 
 vgui.Register("ixCrafting", PANEL, "EditablePanel")
 
-hook.Add("CreateMenuButtons", "ixCrafting", function(tabs)
-	if (hook.Run("BuildCraftingMenu") != false) then
-		tabs["crafting"] = function(container)
-			container:Add("ixCrafting")
-		end
-	end
-end)
+-- hook.Add("CreateMenuButtons", "ixCrafting", function(tabs)
+-- 	if (hook.Run("BuildCraftingMenu") != false) then
+-- 		tabs["crafting"] = function(container)
+-- 			container:Add("ixCrafting")
+-- 		end
+-- 	end
+-- end)
 
 net.Receive("ixCraftRefresh", function()
 	local craftPanel = ix.gui.crafting
