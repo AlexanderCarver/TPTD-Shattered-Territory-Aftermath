@@ -20,20 +20,19 @@ function ITEM:GetDescription()
 	local durability = self:GetData("durability") or basicDur
 	local toadd = ""
 	if durability<=basicDur*.2 then
-		toadd="Destroyed"
+		toadd="уничтоженное"
 	elseif durability<=basicDur*.5 then
-		toadd="Damaged"
+		toadd="повреждённое"
 	elseif durability<=basicDur*.75 then
-		toadd="Used"
+		toadd="потрёпаное"
 	else 
-		toadd="New"
+		toadd="не ношенное"
 	end
-	return dDesc.."\nStatus: "..toadd.."\nClass:"..self.protectionlevel
+	return dDesc.."\nСостояние: "..toadd.."\nКласс защиты:"..self.protectionlevel
 end
 
 ITEM.functions.EquipUn = { -- sorry, for name order.
 	name = "Unequip",
-	tip = "equipTip",
 	icon = "icon16/cross.png",
 	OnRun = function(item)
 		item:RemovePlate(item.player)
@@ -49,7 +48,6 @@ ITEM.functions.EquipUn = { -- sorry, for name order.
 
 ITEM.functions.Equip = {
 	name = "Equip",
-	tip = "equipTip",
 	icon = "icon16/tick.png",
 	OnRun = function(item)
 		local client = item.player
@@ -61,7 +59,7 @@ ITEM.functions.Equip = {
 				local itemTable = ix.item.instances[v.id]
 
 				if (v.base == item.base and itemTable:GetData("equip")) then
-					client:Notify("Plate already equipped")
+					client:Notify("У Вас уже имеется бронежилет!")
 					return false
 				end
 			end
