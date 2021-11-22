@@ -35,9 +35,9 @@ end
 
 local armorLevels ={
     [1] = 15,
-    [2] = 25,
-    [3] = 35,
-    [4] = 45
+    [2] = 30,
+    [3] = 45,
+    [4] = 60
 }
 function  PLUGIN:ScalePlayerDamage(ply,hitgroup,dmginfo)
     local char = ply:GetCharacter()
