@@ -1,8 +1,7 @@
-
-"militaryrp"
+"stalkerrp"
 {
 	"base" 			"helix"
-	"title" 		"CORPORATERP"
+	"title" 		"LandsOfTerrorRP"
 	"author" 		"TPTD DevTeam"
 	"menusystem"	"1"
 }
