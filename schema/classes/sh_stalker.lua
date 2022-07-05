@@ -1,5 +1,5 @@
-﻿CLASS.name = "Survivor"
-CLASS.faction = FACTION_SURVIVORS
+﻿CLASS.name = "Stalker"
+CLASS.faction = FACTION_STALKERS
 CLASS.isDefault = true
 
 function CLASS:OnSpawn(client)
@@ -8,4 +8,4 @@ function CLASS:OnSpawn(client)
 end
 
 
-CLASS_SURVIVOR = CLASS.index
+CLASS_STALKERDEFAULT = CLASS.index
