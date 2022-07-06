@@ -257,11 +257,3 @@ ix.command.Add("discord", {
 	client:SendLua("gui.OpenURL(\"".. url.. "\")")
 	end
 })
-
-ix.command.Add("suicide", {
-	alias = {"unstuck", "respawn"},
-	description = "Kill yourself, use if stuck somewhere.",
-	OnRun = function(self, client)
-		client:Kill()
-	end
-})
