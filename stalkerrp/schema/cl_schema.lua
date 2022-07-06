@@ -1,1 +1,1 @@
-local Schema = Schema;
+-- this cant be empty

@@ -1,10 +1,10 @@
-
--- The shared init file. You'll want to fill out the info for your schema and include any other files that you need.
-
 -- Schema info
-Schema.name = "Corporate RP"
-Schema.author = "TPTD DevTeam"
-Schema.description = "~~~~"
+Schema.name = "Lands of the Terror: Chapter I"
+Schema.description = "Зона-Зона, яйцы на месте."
+Schema.author = "Orig: COTZ Community, Red: TPTD Dev Team"
+--Schema.logo = "vgui/background/wallpaper.jpg"
+
+ix.util.Include("libs/thirdparty/sh_netstream2.lua")
 
 -- Additional files that aren't auto-included should be included here. Note that ix.util.Include will take care of properly
 -- using AddCSLuaFile, given that your files have the proper naming scheme.
@@ -17,8 +17,61 @@ Schema.description = "~~~~"
 ix.util.Include("cl_schema.lua")
 ix.util.Include("sv_schema.lua")
 
+ix.util.Include("cl_skin.lua")
+
 ix.util.Include("cl_hooks.lua")
 ix.util.Include("sh_hooks.lua")
 ix.util.Include("sv_hooks.lua")
 
-ix.util.Include("libs/thirdparty/sh_netstream2.lua")
+-- You'll need to manually include files in the meta/ folder, however.
+ix.util.Include("meta/sh_item.lua")
+ix.util.Include("meta/sh_inventory.lua")
+
+
+ix.flag.Add("1", "Trader.")
+ix.flag.Add("A", "Admin")
+ix.flag.Add("N", "Event/Customization")
+
+ALWAYS_RAISED["weapon_flashlight"] = true
+ALWAYS_RAISED["stalker_bolt"] = true
+ALWAYS_RAISED["detector_bear"] = true
+ALWAYS_RAISED["detector_veles"] = true
+ALWAYS_RAISED["detector_echo"] = true
+ALWAYS_RAISED["guitar"] = true
+
+ix.currency.symbol = "₽" -- the rubles symbol was an issue for people not with UTF-8 or whatever was used
+ix.currency.singular = "рубль"
+ix.currency.plural = "рублей"
+
+-- We will use this better later
+/*local stalker_models = { 	
+	["models/stalkerisaac/playermodel/male_01_anorak.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_io7a.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_sunrise.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_sunset.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_wind.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_berill.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_radsuit.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_skat.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_cs2.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_cs3.mdl"] = true,
+	["models/stalkerisaac/playermodel/male_01_cs4.mdl"] = true,
+	["models/nasca/stalker/male_berill1.mdl"] = true,
+	["models/nasca/stalker/male_sunset_lone.mdl"] = true,
+	["models/nasca/stalker/male_ssp_eco.mdl"] = true,
+	["models/nasca/stalker/male_eagle_lone.mdl"] = true,
+	["models/nasca/stalker/male_expedition.mdl"] = true,
+	["models/nasca/stalker/male_gagarin.mdl"]= true,
+	["models/nasca/stalker/male_jupiter_duty.mdl"]= true,
+	["models/nasca/stalker/male_jupiter_eco.mdl"]= true,
+	["models/nasca/stalker/male_nbc_lone.mdl"] = true,
+}
+*/
+
+for k, v in pairs(stalker_models) do
+	player_manager.AddValidModel("stalker_default", k)
+	ix.anim.SetModelClass(k, "player")
+	util.PrecacheModel(k)
+end
+
+player_manager.AddValidHands( "stalker_default", "models/arms/c_arms_stalker.mdl", 0, 0 )
