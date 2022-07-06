@@ -155,13 +155,6 @@ function PANEL:Init()
 		end
 	end)
 
-	self.icon.Paint = function(this, w, h)
-		local client = self.player
-		surface.SetMaterial(Material(client:GetCharacter():GetPdaavatar()))
-		surface.SetDrawColor(255, 255, 255)
-		surface.DrawTexturedRect(0, 0, w, h)
-	end
-
 	self.name = self:Add("DLabel")
 	self.name:DockMargin(4, 1, 0, 0)
 	self.name:Dock(TOP)

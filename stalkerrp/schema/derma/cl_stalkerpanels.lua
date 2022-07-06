@@ -164,12 +164,6 @@ function PANEL:Init()
 	self.charbackgroundicon:SetPos(230, 13)
 	self.charbackgroundicon:SetZPos(-1)
 
-	if LocalPlayer():GetCharacter():GetPdaavatar() then 
-		self.charbackgroundicon:SetImage( LocalPlayer():GetCharacter():GetPdaavatar() )
-	else
-		self.charbackgroundicon:SetImage( "vgui/icons/face_31.png" )
-	end
-
 	self:IsVisible()
 end
 
@@ -187,11 +181,6 @@ function PANEL:Update()
 	end
 
 	-- avatar update
-	if LocalPlayer():GetCharacter():GetPdaavatar() then 
-		self.charbackgroundicon:SetImage( LocalPlayer():GetCharacter():GetPdaavatar() )
-	else
-		self.charbackgroundicon:SetImage( "vgui/icons/face_31.png" )
-	end
 end
 
 function PANEL:Think()
