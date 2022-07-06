@@ -188,7 +188,6 @@ function PANEL:Update()
 	local model = client:GetModel()
 	local skin = client:GetSkin()
 	local name = client:GetName()
-	local rep = client:getCurrentRankName()
 	local description = hook.Run("GetCharacterDescription", client) or
 		(client:GetCharacter() and client:GetCharacter():GetDescription()) or ""
 
