@@ -191,8 +191,6 @@ function PANEL:Update()
 	local description = hook.Run("GetCharacterDescription", client) or
 		(client:GetCharacter() and client:GetCharacter():GetDescription()) or ""
 
-	local reputation = client:getReputation()
-
 	local bRecognize = false
 	local localCharacter = LocalPlayer():GetCharacter()
 	local character = IsValid(self.player) and self.player:GetCharacter()
@@ -329,7 +327,6 @@ function PANEL:Update()
 		local bHasPlayers
 
 		local tab = team.GetPlayers(faction.index)
-		table.sort(tab, function(p1,p2) return p1:getReputation() < p2:getReputation() end)
 
 		for k, v in pairs(tab) do
 			if (!IsValid(v.ixScoreboardSlot)) then
