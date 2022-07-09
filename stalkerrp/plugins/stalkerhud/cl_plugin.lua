@@ -151,7 +151,7 @@ end
 local function cursorDraw()
 	if ix.option.Get("cursor", false) then
 	    local x, y = gui.MousePos()
-		local material = Material("stalker/cursor.vmt")
+		local material = Material("") -- stalker/cursor.vmt
 	    if (x != 0 && y != 0) then
 	        surface.SetDrawColor( 255, 255, 255, 255 );
 	        surface.SetMaterial(material)
