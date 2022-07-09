@@ -166,13 +166,13 @@ if ix.config.Get("allowVoice") then
 	self.mute:DockMargin(5, 0, 0, 0)
 	self.mute:Dock(RIGHT)
 end
-
+/*
 	self.rep = self:Add("DLabel")
 	self.rep:DockMargin(5, 0, 0, 0)
 	self.rep:Dock(TOP)
 	self.rep:SetTextColor(Color(138, 43, 226))
 	self.rep:SetFont("stalkerregularinvfont")
-
+*/
 	self.description = self:Add("DLabel")
 	self.description:DockMargin(5, 0, 0, 0)
 	self.description:Dock(TOP)
