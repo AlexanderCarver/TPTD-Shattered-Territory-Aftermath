@@ -148,7 +148,7 @@ function PLUGIN:RenderScreenspaceEffects()
 	DrawColorModify(color)
 end
 
-local function cursorDraw()
+/*local function cursorDraw()
 	if ix.option.Get("cursor", false) then
 	    local x, y = gui.MousePos()
 		local material = Material("") -- stalker/cursor.vmt
@@ -159,7 +159,8 @@ local function cursorDraw()
 	    end
     end
 end
-
+*/
+/*
 local function cursorThink()
 	if ix.option.Get("cursor", false) then
 	    local hover = vgui.GetHoveredPanel()
@@ -172,6 +173,7 @@ end;
 
 hook.Add("PostRenderVGUI", "Draw_Cursor_Function_FGSHAR", cursorDraw) -- PostRenderVGUI makes our custom cursor be drawn after the UI elements, this will make it work properly.
 hook.Add("Think", "Cursor_Think_Function_FGSHAR", cursorThink)
+*/
 
 function PLUGIN:HUDPaint()
 	--// HUD Code exported by verne using Exho's HUD Designer //--

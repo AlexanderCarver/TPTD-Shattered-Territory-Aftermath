@@ -161,10 +161,7 @@ function PANEL:Init()
 	self.name:SetTextColor(color_white)
 	self.name:SetFont("stalkerregularfont2")
 
-if ix.config.Get("allowVoice") then
-	self.mute = self:Add("DImageButton")
-	self.mute:DockMargin(5, 0, 0, 0)
-	self.mute:Dock(RIGHT)
+
 end
 /*
 	self.rep = self:Add("DLabel")
@@ -172,7 +169,7 @@ end
 	self.rep:Dock(TOP)
 	self.rep:SetTextColor(Color(138, 43, 226))
 	self.rep:SetFont("stalkerregularinvfont")
-*/
+
 	self.description = self:Add("DLabel")
 	self.description:DockMargin(5, 0, 0, 0)
 	self.description:Dock(TOP)
@@ -181,6 +178,7 @@ end
 
 	self.paintFunction = rowPaintFunctions[1]
 	self.nextThink = CurTime() + 1
+*/
 end
 
 function PANEL:Update()
@@ -190,6 +188,7 @@ function PANEL:Update()
 	local name = client:GetName()
 	local description = hook.Run("GetCharacterDescription", client) or
 		(client:GetCharacter() and client:GetCharacter():GetDescription()) or ""
+
 
 	local bRecognize = false
 	local localCharacter = LocalPlayer():GetCharacter()
@@ -218,39 +217,17 @@ function PANEL:Update()
 		self.name:SizeToContents()
 	end
 
-    if (client != LocalPlayer() and IsValid(self.mute)) then
-        if (client:IsMuted()) then
-            self.mute:SetImage("icon32/muted.png")
-            --  self.mute:SizeToContents()
-            self.mute:SetSize(30, 1)
-
-            self.mute.DoClick = function()
-                client:SetMuted(false)
-            end
-        else
-            self.mute:SetImage("icon32/unmuted.png")
-            self.mute:SetSize(30, 1)
-
-            self.mute.DoClick = function()
-                client:SetMuted(true)
-            end
-        end
-    end
-
-	if (self.rep:GetText() != rep) then
-		self.rep:SetText(rep)
-		self.rep:SizeToContents()
-	end
-
 	--if (self.description:GetText() != description) then
 	--	self.description:SetText(description)
 	--	self.description:SizeToContents()
 	--end
 
+	/*
 	if (self.description:GetText() != "Reputation: "..reputation) then
 		self.description:SetText("Reputation: "..reputation)
 		self.description:SizeToContents()
 	end
+	*/
 end
 
 function PANEL:Think()
@@ -312,7 +289,7 @@ end
 
 function PANEL:SetFaction(faction)
 	self:SetColor(faction.color)
-	self:SetText("Online Users: "..L(faction.name))
+	self:SetText("Игроки: "..L(faction.name))
 
 	self.faction = faction
 end
@@ -327,6 +304,7 @@ function PANEL:Update()
 		local bHasPlayers
 
 		local tab = team.GetPlayers(faction.index)
+		--table.sort(tab, function(p1,p2) return p1:getReputation() < p2:getReputation() end)
 
 		for k, v in pairs(tab) do
 			if (!IsValid(v.ixScoreboardSlot)) then
@@ -386,7 +364,7 @@ end
 vgui.Register("ixScoreboard", PANEL, "DScrollPanel")
 
 hook.Add("CreateMenuButtons", "ixScoreboard", function(tabs)
-	tabs["STALKERnet"] = function(container)
+	tabs["Игроки"] = function(container)
 		container:Add("ixScoreboard")
 	end
 end)
