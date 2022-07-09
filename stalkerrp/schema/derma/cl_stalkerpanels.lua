@@ -130,13 +130,6 @@ function PANEL:Init()
 	self.name:SetTall(self:GetTall()*0.1)
 	self.name:SetText(LocalPlayer():GetName())
 
-	self.rep = self:Add("DLabel")
-	self.rep:SetFont("stalkerregularfont3")
-	self.rep:SetTextColor(color_white)
-	self.rep:SetPos(24, 42)
-	self.rep:SetWide(190)
-	self.rep:SetContentAlignment(7)
-
 	self.money = self:Add("DLabel")
 	self.money:SetFont("stalkerregularfont3")
 	self.money:SetPos(24, 66)
@@ -155,14 +148,15 @@ function PANEL:Init()
 	if (ix.option.Get("imperial", false)) then
 		self.weight:SetText(math.Round(carry * 2.20462, 2).." lbs / "..math.Round(maxWeight * 2.20462, 2).." lbs")
 	else
-		self.weight:SetText(math.Round(carry, 2).." kg / "..maxWeight.." kg")
+		self.weight:SetText(math.Round(carry, 2).." L / "..maxWeight.." L")
 	end
 	
+	/*
 	self.charbackgroundicon = self:Add("DImage")
 	self.charbackgroundicon:SetSize(138, 76)
 	self.charbackgroundicon:SetPos(230, 13)
 	self.charbackgroundicon:SetZPos(-1)
-
+*/
 	self:IsVisible()
 end
 
@@ -176,7 +170,7 @@ function PANEL:Update()
 	if (ix.option.Get("imperial", false)) then
 		self.weight:SetText(math.Round(carry * 2.20462, 2).." lbs / "..math.Round(maxWeight * 2.20462, 2).." lbs")
 	else
-		self.weight:SetText(math.Round(carry, 2).." kg / "..maxWeight.." kg")
+		self.weight:SetText(math.Round(carry, 2).." L / "..maxWeight.." L")
 	end
 
 	-- avatar update
