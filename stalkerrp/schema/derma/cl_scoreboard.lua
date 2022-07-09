@@ -361,10 +361,4 @@ function PANEL:Think()
 	end
 end
 
-vgui.Register("ixScoreboard", PANEL, "DScrollPanel")
-
-hook.Add("CreateMenuButtons", "ixScoreboard", function(tabs)
-	tabs["Игроки"] = function(container)
-		container:Add("ixScoreboard")
-	end
-end)
+--vgui.Register("ixScoreboard", PANEL, "DScrollPanel")
