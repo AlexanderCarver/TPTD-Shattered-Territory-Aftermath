@@ -74,7 +74,7 @@ PLUGIN.addictionDefinitions["LightAlcoholic"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a drink right now...")
+			ply:Notify("Надо бы просушить горло...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
@@ -102,7 +102,7 @@ PLUGIN.addictionDefinitions["StrongAlcoholic"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a drink right now...")
+			ply:Notify("Нужен спирт в организм...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
@@ -130,7 +130,7 @@ PLUGIN.addictionDefinitions["LightSmoker"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a smoke right now...")
+			ply:Notify("Закурить бы...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
@@ -158,7 +158,7 @@ PLUGIN.addictionDefinitions["StrongSmoker"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a smoke right now...")
+			ply:Notify("Закурить бы по быстрей...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
@@ -186,7 +186,7 @@ PLUGIN.addictionDefinitions["DrugUser"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a hit of something right now...")
+			ply:Notify("Ломит...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then

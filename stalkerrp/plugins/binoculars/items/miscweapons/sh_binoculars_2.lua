@@ -1,5 +1,5 @@
-ITEM.name = "Explorer Binoculars"
-ITEM.description = "An older pair of binoculars."
+ITEM.name = "Бинокль Исследователя"
+ITEM.description = "Старый бинокль, который использовался много-много раз."
 ITEM.model = "models/weapons/w_binoculars_uk.mdl"
 
 ITEM.height = 1
@@ -59,5 +59,5 @@ ITEM.pacData = {
 }
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-    ix.util.PropertyDesc2(tooltip, "Binoculars", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
+    ix.util.PropertyDesc2(tooltip, "Бинокль", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
 end

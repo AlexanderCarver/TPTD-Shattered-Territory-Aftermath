@@ -1,7 +1,7 @@
 ﻿AddCSLuaFile()
 
 ENT.Type = "anim"
-ENT.PrintName = "Wooden Box"
+ENT.PrintName = "Деревянная коробка"
 ENT.Author = "Spenser&Kek1ch"
 ENT.Spawnable = true
 ENT.AdminOnly = true
@@ -15,7 +15,7 @@ if (SERVER) then
 		self:PhysicsInit(SOLID_VPHYSICS)
 		local physObj = self:GetPhysicsObject()
 
-		self.hp = 40
+		self.hp = 90
 
 		if (IsValid(physObj)) then
 			physObj:EnableMotion(true)
@@ -141,11 +141,11 @@ if (CLIENT) then
 	function ENT:OnPopulateEntityInfo(container)
 		local name = container:AddRow("name")
 		name:SetImportant()
-		name:SetText("Rotten Wooden Crate")
+		name:SetText("Коробка")
 		name:SizeToContents()
 
 		local description = container:AddRow("description")
-		description:SetText("This crate seems like it is on the brink of falling apart, and can be broken by hitting it.")
+		description:SetText("В этой корбке может что-то хранится, но это не точно. Её стоит открыть грубой силой, чтобы узнать что там.")
 		description:SizeToContents()
 	end
 end

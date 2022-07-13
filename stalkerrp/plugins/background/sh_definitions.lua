@@ -23,10 +23,10 @@
 ]]--
 
 ix.backgrounds["nothing"] = {
-	name = "Nothing",
-	description = "You have no idea how you ended up in this forsaken place, but you are not prepared.".. 
-	"\n\nStarting Equipment:"..
-	"\n  Nothing",
+	name = "«Как я тут оказался?»",
+	description = "Вы понятия не имеете, как оказались в этом заброшенном месте, и вы не готовы вообще ко всему. Может вас привезли сюда на грузовике смерти или вы стали жертвой криминала. Это не важно. Ваша цель - адаптироваться или уйти отсюдова по скорее.".. 
+	"\n\nСтартовое снаряжение:"..
+	"\n  Ничего",
 	OnCreated = function(client, character) 
 		--character:GetInventory():Add("value_personal_1")
 	end,
@@ -38,11 +38,11 @@ ix.backgrounds["nothing"] = {
 }
 
 ix.backgrounds["alcoholic_light"] = {
-	name = "Alcoholic (Light)",
-	description = "You started drinking when you were young and could never kick the habit.".. 
-	"\n\nAddicted to Light Alcohol"..
-	"\n\nStarting Equipment:"..
-	"\n  1x Contender (.45 ACP, .410 Magnum Buck) (Damaged)"..
+	name = "«Подслушал в баре»",
+	description = "Вы обычный любитель посидеть в барах и послушать всякие байке. В один из дней, вы слышите о странном месте, под названием «Закрытая Зона Отчуждения», где грибы аномальны, а закон там только волчий. Вас это могло заинтересовать или запугать. Но ясно одно – Вы уже тут, со снаряжением, готовы изучать или зарабатывать на этой опасной территории.".. 
+	"\n\nПристрастье к лёгкому алкоголю. Вы не представляете отдых без пива."..
+	"\n\nСтартовое снаряжение:"..
+	"\n  1x Пачка патрон (.45 ACP, .410 Magnum Buck) (Damaged)"..
 	"\n  15x rounds of .45 ACP"..
 	"\n  10x rounds of .410 Magnum Buck"..
 	"\n  1x Ochakovo Beer, 2l (Almost Full)"..
@@ -72,10 +72,10 @@ ix.backgrounds["alcoholic_light"] = {
 
 
 ix.backgrounds["alcoholic_heavy"] = {
-	name = "Alcoholic (Strong)",
-	description = "After a traumatic event, you couldn't get back on your feet and started hitting the bottle.".. 
-	"\n\nAddicted to Strong Alcohol"..
-	"\n\nStarting Equipment:"..
+	name = "«Потерянный»",
+	description = "Вы ничего не помните, гудящая голова как радио не настроенное на праведную чистоту давящая своим шумом. Мысли разрываются на тысячу лоскутов и медленно стекают по глазам. Вы не понимаете, почему ваш голос звучит так отвратно и противно. Душа просто отреклась от тела, оставив серому веществу в голове управления над жалким телом. Оно не знает – что такое ЧУВСТВА.".. 
+	"\n\nПристрастья к горячительным напиткам"..
+	"\n\nСтартовое снаряжение:"..
 	"\n  1x Bat"..
 	"\n  1x Smirnoff Vodka, 700ml"..
 	"\n  1x Shevkoff Black Ultra Premium Vodka, 500ml (Half-Empty)"..
@@ -101,10 +101,10 @@ ix.backgrounds["alcoholic_heavy"] = {
 }
 
 ix.backgrounds["smoker"] = {
-	name = "Smoker",
-	description = "Despite many tries, you could never get rid of the nicotine addiction.".. 
-	"\n\nAddicted to Nicotine"..
-	"\n\nStarting Equipment:"..
+	name = "«Серость»",
+	description = "Вся сознательная жизнь чувствовалась однообразной, нервной, бескрасочной. Без сигарет, вы не можете прожить и дня. Но закрыв глаза, отдавшись желанию о спасении из бесконечного круговорота однообразных событий – Вы оказываетесь в «Закрытой Зоне Отчуждения».".. 
+	"\n\nПристрастье к никотину"..
+	"\n\nСтартовое снаряжение:"..
 	"\n  1x Lead Pipe"..
 	"\n  1x 'Spark' Cigarettes (20pk) (Used)"..
 	"\n  1x Damaged Bag with Supplies"..
@@ -128,10 +128,10 @@ ix.backgrounds["smoker"] = {
 }
 
 ix.backgrounds["druggie"] = {
-	name = "Druggie",
-	description = "You've tried it all, and you're still hooked.".. 
-	"\n\nAddicted to drugs"..
-	"\n\nStarting Equipment:"..
+	name = "«Зависимый»",
+	description = "Вы – человек без личной жизни. Вы – не имеет власть над собой. Вы – Просто оболочка, которая возвращается в разум, когда у вас есть доза. Но это не законно. Так что «Закрытая Зона Отчуждения» – выбор для псевдо-свободы.".. 
+	"\n\nПристрастье к наркотикам"..
+	"\n\nСтартовое снаряжение:"..
 	"\n  1x Crowbar"..
 	"\n  1x Painkillers"..
 	"\n  1x Damaged Bag with Supplies"..

@@ -15,13 +15,13 @@ ix.chat.Register("iteminternal", {
 function PLUGIN:OnItemTransferred(item, curInv, inventory)
 	if curInv:GetID() == 0 then
 		local client = inventory:GetOwner()
-		ix.chat.Send(client, "iteminternal", Format("picks up the %s.", item.name), false)
+		ix.chat.Send(client, "iteminternal", Format("подобрал %s.", item.name), false)
 	end
 
 	if inventory:GetID() == 0 then
 		local client = curInv:GetOwner()
 		if client then
-			ix.chat.Send(client, "iteminternal", Format("drops their %s.", item.name), false)
+			ix.chat.Send(client, "iteminternal", Format("выбросил %s.", item.name), false)
 		end
 	end
 end
@@ -152,7 +152,7 @@ end
 
 local icon = Material("vgui/icons/news.png")
 
-ix.chat.Register("playerjoin", {
+--[[ix.chat.Register("playerjoin", {
 	CanSay = function(self, speaker, text)
 		return true
 	end,
@@ -196,7 +196,7 @@ if (SERVER) then
 			ix.chat.Send(nil, "playerleave", string.format("%s has lost connection to STALKERNET.", client:GetCharacter():GetName()))
 		end
 	end
-end
+end]]--
 
 
 hook.Add("ShouldSuppressMenu", "DeadMenuSuppress", function(client) 

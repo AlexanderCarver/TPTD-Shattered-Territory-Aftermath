@@ -15,7 +15,7 @@ PLUGIN.boxtypes = {
 	"ix_wood_entbox",
 }
 
-ix.config.Add("boxSpawnerThreshold", 50, "How many boxes should the controller keep on the map.", nil, {
+ix.config.Add("boxSpawnerThreshold", 50, "Сколько ящиков должен держать контроллер на карте?", nil, {
 	data = {min = 0, max = 200},
 	category = "Spawning"
 })
@@ -121,9 +121,9 @@ ix.command.Add("boxspawnadd", {
 
 		table.insert( PLUGIN.boxpoints, { hitpos, boxtype, customgroup } )
 		if(customgroup)then
-			client:Notify( "Boxspawner added, spawning '"..PLUGIN.boxtypes[boxtype].."' with custom group "..customgroup.." succesfully added"  )
+			client:Notify( "Добавлен спавн коробки '"..PLUGIN.boxtypes[boxtype].."' с пользовательской группой "..customgroup.."."  )
 		else
-			client:Notify( "Boxspawner added, spawning '"..PLUGIN.boxtypes[boxtype].."' succesfully added"  )
+			client:Notify( "Добавлен спавн коробки '"..PLUGIN.boxtypes[boxtype].."'."  )
 		end
 	end
 })
@@ -146,7 +146,7 @@ ix.command.Add("boxspawnremove", {
 				mt = mt + 1
 			end
 		end
-		client:Notify( mt .. " boxspawners has been removed.")
+		client:Notify( mt .. " Спавн коробки/коробок был удален.")
 	end
 })
 
@@ -155,7 +155,7 @@ ix.command.Add("boxspawndisplay", {
 	OnRun = function(self, client, arguments)
 		if SERVER then
 			netstream.Start(client, "nut_DisplaySpawnPoints", PLUGIN.boxpoints)
-			client:Notify( "Displayed All Points for 10 secs." )
+			client:Notify( "Отображены все точки спавна на 10 секунд." )
 		end
 	end
 })

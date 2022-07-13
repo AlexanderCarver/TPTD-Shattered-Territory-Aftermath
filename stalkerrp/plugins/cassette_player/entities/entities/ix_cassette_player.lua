@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 ENT.Type = "anim"
-ENT.PrintName = "Cassette Player"
+ENT.PrintName = "Кассетный плеер"
 ENT.Category = "Helix"
 ENT.Spawnable = true
 ENT.AdminOnly = true
@@ -62,9 +62,9 @@ else
 	function ENT:OnPopulateEntityInfo(container)
 		local name = container:AddRow("name")
 		name:SetImportant()
-		name:SetText("Old Cassette Player")
+		name:SetText("«Океан-209»")
 		name:SizeToContents()
-		local descriptionText = self:GetNetVar("Description", "This cassette player accepts a various amount of tapes.")
+		local descriptionText = self:GetNetVar("Description", "Самая популярная модель из серии приемников под маркой «Океан» выпускалась Минским ПТО «Горизонт» с незначительными изменениями.")
 		if (descriptionText != nil) then
 			local description = container:AddRow("Description")
 			description:SetText(descriptionText)

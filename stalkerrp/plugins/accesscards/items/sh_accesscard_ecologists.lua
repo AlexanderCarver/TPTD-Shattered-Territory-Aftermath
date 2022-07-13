@@ -1,6 +1,6 @@
-ITEM.name = "Access Card (Ecologist)"
-ITEM.description = "A small plastic card."
-ITEM.longdesc = "This small, slim card is meant to open a variety of doors. The icon on the top left indicates this unlocks various ecologist doors."
+ITEM.name = "Карта доступа"
+ITEM.description = "Небольшая пластиковая карта."
+ITEM.longdesc = "Эта маленькая, тонкая карта предназначена для открытия множества дверей. Значок в левом верхнем углу стёрт и его невозможно разобрать."
 ITEM.model = "models/lostsignalproject/items/quest/keycard.mdl"
 
 ITEM.width = 1
@@ -36,7 +36,7 @@ function ITEM:GetDescription()
 end
 
 ITEM.functions.usetarget = {
-	name = "Unlock Ecobunker Door",
+	name = "Использовать",
 	icon = "icon16/stalker/unlock.png",
 	OnRun = function(item)
 		local data = {}
@@ -46,7 +46,7 @@ ITEM.functions.usetarget = {
 		local target = util.TraceLine(data).Entity
         
 		if (IsValid(target) and target:GetClass() == "func_door_rotating") and target:GetName() == "ecoundergrounddoor" then
-			ix.chat.Send(item.player, "iteminternal", "takes out their "..item.name.." and uses it on the door.", false)
+			ix.chat.Send(item.player, "iteminternal", "достает карту доступа и прислоняет к панеле.", false)
 
             target:Input("Unlock")
             target:Input("Open")
@@ -55,7 +55,7 @@ ITEM.functions.usetarget = {
                 target:Input("Lock")
             end)
 		else
-			item.player:Notify("Not looking at the correct door!")
+			item.player:Notify("Не возымела ни какого эффекта!")
 		end
 
 		return false

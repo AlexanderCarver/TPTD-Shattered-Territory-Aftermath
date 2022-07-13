@@ -220,7 +220,7 @@ ix.command.Add("anomalyadd", {
 
 		
 		table.insert( PLUGIN.anomalypoints, { hitpos, radius, anomalies } )
-		client:Notify( "Anomaly point successfully added" )
+		client:Notify( "Аномальная точка успешно добавлена" )
 	end
 })
 
@@ -247,9 +247,9 @@ ix.command.Add("anomalyremove", {
 			end
 		end
 		if mt > 0 then
-			client:Notify( mt .. " anomaly locations has been removed.")
+			client:Notify( mt .. " аномальные места были удалены.")
 		else
-			client:Notify( "No anomaly spawn points found at location.")
+			client:Notify( "На локации не найдены точки возрождения аномалий.")
 		end
 	end
 })
@@ -260,7 +260,7 @@ ix.command.Add("anomalydisplay", {
 	OnRun = function(self, client, arguments)
 		if SERVER then
 			netstream.Start(client, "ix_DisplaySpawnPoints", PLUGIN.anomalypoints)
-			client:Notify( "Displayed All Points for 10 secs." )
+			client:Notify( "Отображены все точки в течение 10 секунд." )
 		end
 	end
 })
@@ -285,9 +285,9 @@ ix.command.Add("anomalyentremove", {
 			end
 		end
 		if mt > 0 then
-			client:Notify( "Removed " .. mt .. " anomalies.")
+			client:Notify( "Удаленно " .. mt .. " аномалий.")
 		else
-			client:Notify( "No anomalies found at location.")
+			client:Notify( "Аномалий в облости не обнаружено.")
 		end
 	end
 })
@@ -298,7 +298,7 @@ ix.command.Add("cleananomalies", {
 
 		ix.plugin.list["anomalycontroller"]:cleanAnomalies()
 
-		client:Notify("All anomalies have been cleaned up from the map.")
+		client:Notify("Все аномалии были убраны с карты.")
 	end
 })
 
@@ -308,6 +308,6 @@ ix.command.Add("spawnanomalies", {
 
 		ix.plugin.list["anomalycontroller"]:spawnAnomalies()
 
-		client:Notify("Spawned anomalies on points (if any).")
+		client:Notify("Спавн аномалий на точках (если есть).")
 	end
 })

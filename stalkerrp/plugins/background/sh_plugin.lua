@@ -90,7 +90,7 @@ ix.char.RegisterVar("backgrounds", {
 
 		local labeltitle = panel:Add("DLabel")
 		labeltitle:Dock(TOP)
-		labeltitle:SetText("Description")
+		labeltitle:SetText("Описание")
 		labeltitle:SetFont("stalkertitlefont")
 		labeltitle:SizeToContents()
 		labeltitle.Paint = function(panel, width, height)
@@ -100,7 +100,7 @@ ix.char.RegisterVar("backgrounds", {
 		local label = panel:Add("DLabel")
 		label:Dock(FILL)
 		label:SetWrap(true)
-		label:SetText("Select a Background for your character above.")
+		label:SetText("Выберите предысторию для своего персонажа выше.")
 		label:SetFont("stalkerregularfont")
 		label:SetContentAlignment(7)
 		label:SetTall(container:GetTall()*0.5)

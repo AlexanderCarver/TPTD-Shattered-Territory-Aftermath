@@ -1,6 +1,6 @@
-ITEM.name = "Anomaly Detector"
-ITEM.description = "A device that beeps when anomalies are close."
-ITEM.longdesc = "This hacked dosimteter is a prototype made by unknown sources. It seems to have been produced in quite large numbers, albeit it's mysterious appearances in the hands of most stalkers around the zone. Some speculate the emissions have turned these dosimeters into detecting anomalies as well, but it's nowhere near confirmed."
+ITEM.name = "Детектор Аномалий"
+ITEM.description = "Устройство, которое издает звуковой сигнал при приближении к аномалии."
+ITEM.longdesc = "Этот взломанный дозимтетер является прототипом, сделанным неизвестными источниками. Кажется, он был произведен в довольно больших количествах, хотя его появления в руках большинства жителей закрытой зоны - загадочны. Некоторые предполагают, что выбросы превратили эти дозиметры в обнаружение аномалий, но это не подтверждено."
 ITEM.model = "models/lostsignalproject/items/devices/dosimeter.mdl"
 ITEM.category = "Electronics"
 
@@ -35,12 +35,12 @@ end
 
 function ITEM:PopulateTooltip(tooltip)
     if !self.entity then
-        ix.util.PropertyDesc2(tooltip, "Anomaly Detector", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
+        ix.util.PropertyDesc2(tooltip, "Детектор Аномалий", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
     end
 end
 
 ITEM.functions.Equip = { -- sorry, for name order.
-	name = "Attach to Belt",
+	name = "Надеть на пояс",
 	tip = "useTip",
 	icon = "icon16/stalker/equip.png",
 	OnRun = function(item)
@@ -57,7 +57,7 @@ ITEM.functions.Equip = { -- sorry, for name order.
 }
 
 ITEM.functions.EquipUn = { -- sorry, for name order.
-	name = "Detach from Belt",
+	name = "Снять с пояса",
 	tip = "equipTip",
 	icon = "icon16/stalker/unequip.png",
 	OnRun = function(item)
@@ -86,7 +86,7 @@ function ITEM:Equip(client)
 				return false
 			else
 				if (itemTable.isAnomalydetector and itemTable:GetData("equip")) then
-					client:NotifyLocalized("You are already equipping an anomaly detector.")
+					client:NotifyLocalized("На вас уже есть такой же детектор.")
 
 					return false
 				end

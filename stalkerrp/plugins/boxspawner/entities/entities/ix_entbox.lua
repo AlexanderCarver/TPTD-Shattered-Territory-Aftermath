@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 ENT.Type = "anim"
-ENT.PrintName = "Metal Box"
+ENT.PrintName = "Металлический ящик"
 ENT.Author = "Spenser&Kek1ch"
 ENT.Spawnable = true
 ENT.AdminOnly = true
@@ -15,7 +15,7 @@ if (SERVER) then
 		self:PhysicsInit(SOLID_VPHYSICS)
 		local physObj = self:GetPhysicsObject()
 
-		self.hp = 20
+		self.hp = 120
 
 		if (IsValid(physObj)) then
 			physObj:EnableMotion(true)
@@ -87,11 +87,11 @@ if (CLIENT) then
 	function ENT:OnPopulateEntityInfo(container)
 		local name = container:AddRow("name")
 		name:SetImportant()
-		name:SetText("Damaged Metal Box")
+		name:SetText("Металлический ящик")
 		name:SizeToContents()
 
 		local description = container:AddRow("description")
-		description:SetText("This box seems like it is on the brink of falling apart, and can be broken quite easily by hitting it.")
+		description:SetText("В этом металлическом ящичке имеется какой-то предмет внутри. Стоит его всё же вскрыть при помощи продвинутых инструментов.")
 		description:SizeToContents()
 	end
 end
