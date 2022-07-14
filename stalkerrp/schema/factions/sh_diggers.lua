@@ -1,5 +1,5 @@
-﻿FACTION.name = "Stalkers"
-FACTION.description = "Люди, которые сосут жопы."
+﻿FACTION.name = "Diggers"
+FACTION.description = "Нелегалы и все те, кто проник на запретную территорию. Не стоит обращать на них серьезное внимание."
 FACTION.color = Color(0, 102, 0, 255)
 FACTION.isDefault = true
 FACTION.isGloballyRecognized = false
@@ -68,4 +68,4 @@ function FACTION:OnCharacterCreated(client, character)
 end
 
 
-FACTION_STALKERS = FACTION.index
+FACTION_DIGGERS = FACTION.index
