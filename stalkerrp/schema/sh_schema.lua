@@ -1,6 +1,6 @@
 -- Schema info
-Schema.name = "Lands of the Terror: Chapter I"
-Schema.description = "Зона-Зона, яйцы на месте."
+Schema.name = "[TPTD] Shattered Territory: Aftermath"
+Schema.description = "Ты сам загнал себя в этот кошмар... Хотя мог бы жить обычной жизнью."
 Schema.author = "Orig: COTZ Community, Red: TPTD Dev Team"
 --Schema.logo = "vgui/background/wallpaper.jpg"
 
@@ -42,36 +42,5 @@ ALWAYS_RAISED["guitar"] = true
 ix.currency.symbol = "₽" -- the rubles symbol was an issue for people not with UTF-8 or whatever was used
 ix.currency.singular = "рубль"
 ix.currency.plural = "рублей"
-
--- We will use this better later
-/*local stalker_models = { 	
-	["models/stalkerisaac/playermodel/male_01_anorak.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_io7a.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_sunrise.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_sunset.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_wind.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_berill.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_radsuit.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_skat.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_cs2.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_cs3.mdl"] = true,
-	["models/stalkerisaac/playermodel/male_01_cs4.mdl"] = true,
-	["models/nasca/stalker/male_berill1.mdl"] = true,
-	["models/nasca/stalker/male_sunset_lone.mdl"] = true,
-	["models/nasca/stalker/male_ssp_eco.mdl"] = true,
-	["models/nasca/stalker/male_eagle_lone.mdl"] = true,
-	["models/nasca/stalker/male_expedition.mdl"] = true,
-	["models/nasca/stalker/male_gagarin.mdl"]= true,
-	["models/nasca/stalker/male_jupiter_duty.mdl"]= true,
-	["models/nasca/stalker/male_jupiter_eco.mdl"]= true,
-	["models/nasca/stalker/male_nbc_lone.mdl"] = true,
-}
-*/
-
-for k, v in pairs(stalker_models) do
-	player_manager.AddValidModel("stalker_default", k)
-	ix.anim.SetModelClass(k, "player")
-	util.PrecacheModel(k)
-end
 
 player_manager.AddValidHands( "stalker_default", "models/arms/c_arms_stalker.mdl", 0, 0 )
