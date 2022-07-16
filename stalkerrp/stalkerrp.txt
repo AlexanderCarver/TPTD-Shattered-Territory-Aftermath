@@ -1,0 +1,7 @@
+"stalkerrp"
+{
+	"base" 			"helix"
+	"title" 		"LandsOfTerrorRP"
+	"author" 		"TPTD DevTeam"
+	"menusystem"	"1"
+}

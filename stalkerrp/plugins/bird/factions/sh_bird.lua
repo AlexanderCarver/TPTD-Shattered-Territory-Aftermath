@@ -1,0 +1,44 @@
+FACTION.name = "Infected World"
+FACTION.description = "Птицы, которые выжили... Каким-то образом."
+FACTION.color = Color(13, 13, 13, 255)
+FACTION.isDefault = false
+FACTION.isGloballyRecognized = false
+FACTION.canSeeWaypoints = true
+FACTION.canAddWaypoints = true
+
+FACTION.models = {
+	"models/crow.mdl"
+}
+
+function FACTION:OnTransfered(client)
+	local character = client:GetCharacter()
+
+	character:SetName(self:GetDefaultName())
+	character:SetModel(self.models[1])
+end
+
+function FACTION:OnSpawn(client)
+	local character = client:GetCharacter()
+	local inventory = character:GetInventory()
+    timer.Simple(.1, function()
+        local hull = Vector(10, 10, 10)
+        client:SetHull(-Vector(hull.x / 2, hull.y / 2, 0), Vector(hull.x / 2, hull.y / 2, hull.z))
+        client:SetHullDuck(-Vector(hull.x / 2, hull.y / 2, 0), Vector(hull.x / 2, hull.y / 2, hull.z))
+        client:SetViewOffset(Vector(0,0,10))
+        client:SetViewOffsetDucked(Vector(0,0,10))
+        client:SetCurrentViewOffset(Vector(0,10,0))
+		if ix.config.Get("birdInventory", true) then
+			inventory:SetSize(2,1)
+		end
+        if CLIENT then return end
+        client:SetWalkSpeed(25)
+        client:SetRunSpeed(50)
+        client:SetMaxHealth(ix.config.Get("birdHealth", 100))
+        client:SetHealth(ix.config.Get("birdHealth", 2))
+        client:Give("ix_bird")
+        client:StripWeapon("ix_hands")
+    end)
+end
+
+
+FACTION_BIRD = FACTION.index
