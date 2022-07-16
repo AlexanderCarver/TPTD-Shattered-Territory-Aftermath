@@ -1,10 +1,8 @@
 FACTION.name = "Special Group 'Jawel'"
 FACTION.description = "Нелегалы и все те, кто проник на запретную территорию. Не стоит обращать на них серьезное внимание."
 FACTION.color = Color(0, 102, 0, 255)
-FACTION.isDefault = true
+FACTION.isDefault = false
 FACTION.isGloballyRecognized = false
-FACTION.canSeeWaypoints = true
-FACTION.canAddWaypoints = false
 FACTION.models = {
     "models/humans/rajio/female_01.mdl",
     "models/humans/rajio/female_02.mdl",
@@ -55,7 +53,6 @@ FACTION.models = {
 
 function FACTION:OnTransfered(client)
 	local character = client:GetCharacter()
-
 	character:SetName(self:GetDefaultName())
 	character:SetModel(self.models[1])
 end

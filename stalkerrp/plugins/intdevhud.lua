@@ -2,8 +2,8 @@ PLUGIN.title = "In-Development Hud"
 PLUGIN.author = "Shooter#5269"
 PLUGIN.description = "Implements a small hud for players to see at all times, admins will have access to a dev varient as well."
 
-PLUGIN.servername = "[TPTD] Dawn of the Corporation: The Last Days of Old World"
-PLUGIN.updatetext = "Development Beta Version | Update: 15.11.2021"
+PLUGIN.servername = "[TPTD] Lands of Terror: Chapter I"
+PLUGIN.updatetext = "Development Beta Version | Update: 06.07.2022"
 
 ix.config.Add("DevHud", true, "Weather or not players see the hud at all.", nil, {
 	category = "Dev Hud"
