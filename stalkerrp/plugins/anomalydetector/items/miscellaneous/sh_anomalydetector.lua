@@ -1,6 +1,6 @@
-ITEM.name = "Детектор Аномалий"
-ITEM.description = "Устройство, которое издает звуковой сигнал при приближении к аномалии."
-ITEM.longdesc = "Этот взломанный дозимтетер является прототипом, сделанным неизвестными источниками. Кажется, он был произведен в довольно больших количествах, хотя его появления в руках большинства жителей закрытой зоны - загадочны. Некоторые предполагают, что выбросы превратили эти дозиметры в обнаружение аномалий, но это не подтверждено."
+ITEM.name = "ДВП-085"
+ITEM.description = "Детектор колебаний пространства. Устройство, которое издает звуковой сигнал при приближении к пространственным искажениям."
+ITEM.longdesc = "Сложно устроенный технически прибор с множеством датчиков, который улавливает показания внешней среды и издаёт звукой сигнал, если данные расходятся с нормами баз данных. Вы можете заметить маркировку @ПРОПИСАТЬ НАЗВАНИЕ БАЗЫ@ на его обратной стороне..."
 ITEM.model = "models/lostsignalproject/items/devices/dosimeter.mdl"
 ITEM.category = "Electronics"
 
@@ -10,8 +10,6 @@ ITEM.price = 1100
 ITEM.weight = 0.720
 
 ITEM.isAnomalydetector = true
-
-ITEM.equipIcon = ix.util.GetMaterial("materials/vgui/ui/stalker/misc/equip.png")
 
 ITEM.exRender = true
 ITEM.iconCam = {
@@ -35,12 +33,12 @@ end
 
 function ITEM:PopulateTooltip(tooltip)
     if !self.entity then
-        ix.util.PropertyDesc2(tooltip, "Детектор Аномалий", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
+        ix.util.PropertyDesc2(tooltip, "Детектор (искажения в пространстве)", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
     end
 end
 
 ITEM.functions.Equip = { -- sorry, for name order.
-	name = "Надеть на пояс",
+	name = "Включить",
 	tip = "useTip",
 	icon = "icon16/stalker/equip.png",
 	OnRun = function(item)
@@ -57,7 +55,7 @@ ITEM.functions.Equip = { -- sorry, for name order.
 }
 
 ITEM.functions.EquipUn = { -- sorry, for name order.
-	name = "Снять с пояса",
+	name = "Выключить",
 	tip = "equipTip",
 	icon = "icon16/stalker/unequip.png",
 	OnRun = function(item)
@@ -86,7 +84,7 @@ function ITEM:Equip(client)
 				return false
 			else
 				if (itemTable.isAnomalydetector and itemTable:GetData("equip")) then
-					client:NotifyLocalized("На вас уже есть такой же детектор.")
+					client:NotifyLocalized("У Вас уже активирован один детектор. Зачем Вам второй?..")
 
 					return false
 				end
