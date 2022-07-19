@@ -46,7 +46,7 @@ ITEM.functions.usetarget = {
 		local target = util.TraceLine(data).Entity
         
 		if (IsValid(target) and target:GetClass() == "func_door_rotating") and target:GetName() == "ecoundergrounddoor" then
-			ix.chat.Send(item.player, "iteminternal", "достает карту доступа и прислоняет к панеле.", false)
+			ix.chat.Send(item.player, "iteminternal", "достает карту доступа и проводит через старенькую, еще заставшую советские времена, систему своеобразного СКУД'а. Дверь со скрипом и грохотом открывается. Кажется, комплекс не был обесточен.", false)
 
             target:Input("Unlock")
             target:Input("Open")
@@ -55,7 +55,7 @@ ITEM.functions.usetarget = {
                 target:Input("Lock")
             end)
 		else
-			item.player:Notify("Не возымела ни какого эффекта!")
+			item.player:Notify("Ваша попытка не возымела какого-либо эффекта.")
 		end
 
 		return false
