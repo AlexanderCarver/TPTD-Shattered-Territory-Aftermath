@@ -152,7 +152,7 @@ if (CLIENT) then
 	function ITEM:PopulateTooltip(tooltip)
 		if !self.entity then
 			local ballistictitle = tooltip:AddRowAfter("description", "ballistictitle")
-			ballistictitle:SetText("\nУровень баллистической:")
+			ballistictitle:SetText("\nУровень баллистической защиты:")
 			ballistictitle:SizeToContents()
 
 			for i = 1, #self.ballisticlevels do				

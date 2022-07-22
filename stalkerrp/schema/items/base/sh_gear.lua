@@ -11,7 +11,7 @@ ITEM.price = 0
 ITEM.pacData = {}
 ITEM.equipIcon = ix.util.GetMaterial("materials/vgui/ui/stalker/misc/equip.png")
 ITEM.ballisticlevels = {"0"}
-ITEM.ballisticareas = {"  Head:"}
+ITEM.ballisticareas = {"  Голова:"}
 ITEM.br = 0
 ITEM.fbr = 0
 ITEM.ar = 0
@@ -86,7 +86,7 @@ if (CLIENT) then
 	function ITEM:PopulateTooltip(tooltip)
 		if !self.entity then
 			local ballistictitle = tooltip:AddRowAfter("description", "ballistictitle")
-			ballistictitle:SetText("\nBALLISTIC PROTECTION LEVELS:")
+			ballistictitle:SetText("\nУровень баллистической защиты:")
 			ballistictitle:SizeToContents()
 
 			for i = 1, #self.ballisticlevels do
@@ -98,34 +98,34 @@ if (CLIENT) then
 				brighttext:MoveRightOf(ballisticdesc)
 				brighttext:SetText(self.ballisticlevels[i])
 				brighttext:SetContentAlignment(1)
-				if self.ballisticlevels[i] == "0" then
+				if self.ballisticlevels[i] == "1" then
 					brighttext:SetTextColor(Color(255, 0, 0))
-				elseif self.ballisticlevels[i] == "l" then
+				elseif self.ballisticlevels[i] == "2" then
 					brighttext:SetTextColor(Color(255, 80, 0))
-				elseif self.ballisticlevels[i] == "ll-a" then
+				elseif self.ballisticlevels[i] == "2а" then
 					brighttext:SetTextColor(Color(255, 160, 0))
-				elseif self.ballisticlevels[i] == "ll" then
+				elseif self.ballisticlevels[i] == "3" then
 					brighttext:SetTextColor(Color(255, 255, 0))
-				elseif self.ballisticlevels[i] == "lll-a" then
+				elseif self.ballisticlevels[i] == "4" then
 					brighttext:SetTextColor(Color(130, 255, 0))
-				elseif self.ballisticlevels[i] == "lll" then
+				elseif self.ballisticlevels[i] == "5" then
 					brighttext:SetTextColor(Color(0, 255, 0))
-				elseif self.ballisticlevels[i] == "lll+" then
+				elseif self.ballisticlevels[i] == "5а" then
 					brighttext:SetTextColor(Color(0, 255, 130))
-				elseif self.ballisticlevels[i] == "lV" then
+				elseif self.ballisticlevels[i] == "6" then
 					brighttext:SetTextColor(Color(0, 255, 255))
-				elseif self.ballisticlevels[i] == "V" then
+				elseif self.ballisticlevels[i] == "6а" then
 					brighttext:SetTextColor(Color(0, 135, 255))
 				end
 				brighttext:SetFont("ixSmallFont")
 			end
 
 			local envirotitle = tooltip:AddRowAfter("ballisticdesc", "envirotitle")
-			envirotitle:SetText("\nENVIRONMENTAL PROTECTION LEVELS:")
+			envirotitle:SetText("\nУровень защиты от агрессивной среды:")
 			envirotitle:SizeToContents()
 
 			local anomalytitle = tooltip:AddRowAfter("envirotitle", "anomalytitle")
-			anomalytitle:SetText("  Anomaly:")
+			anomalytitle:SetText("  Аномалия:")
 			anomalytitle:SizeToContents()
 
 			local arighttext = anomalytitle:Add("DLabel")
@@ -133,25 +133,25 @@ if (CLIENT) then
 			arighttext:SetText(self:AnomProtTranslator(self.ar or 0))
 			arighttext:SetContentAlignment(4)
 			arighttext:SetSize(anomalytitle:GetWide(), anomalytitle:GetTall())
-			if self:AnomProtTranslator(self.ar or 0) == "None" then
+			if self:AnomProtTranslator(self.ar or 0) == "Отсутствует" then
 				arighttext:SetTextColor(Color(255, 0, 0))
-			elseif self:AnomProtTranslator(self.ar or 0) == "Negligible" then
+			elseif self:AnomProtTranslator(self.ar or 0) == "Незначительная" then
 				arighttext:SetTextColor(Color(255, 80, 0))
-			elseif self:AnomProtTranslator(self.ar or 0) == "Bad" then
+			elseif self:AnomProtTranslator(self.ar or 0) == "Плохая" then
 				arighttext:SetTextColor(Color(255, 160, 0))
-			elseif self:AnomProtTranslator(self.ar or 0) == "Decent" then
+			elseif self:AnomProtTranslator(self.ar or 0) == "Средняя" then
 				arighttext:SetTextColor(Color(255, 255, 0))
-			elseif self:AnomProtTranslator(self.ar or 0) == "Good" then
+			elseif self:AnomProtTranslator(self.ar or 0) == "Хорошая" then
 				arighttext:SetTextColor(Color(130, 255, 0))
-			elseif self:AnomProtTranslator(self.ar or 0) == "Very Good" then
+			elseif self:AnomProtTranslator(self.ar or 0) == "Отличная" then
 				arighttext:SetTextColor(Color(0, 255, 0))
-			elseif self:AnomProtTranslator(self.ar or 0) == "Excellent" then
+			elseif self:AnomProtTranslator(self.ar or 0) == "Полная" then
 				arighttext:SetTextColor(Color(0, 135, 255))
 			end
 			arighttext:SetFont("ixSmallFont")
 
 			local radtitle = tooltip:AddRowAfter("anomalytitle", "radtitle")
-			radtitle:SetText("  Radiation:")
+			radtitle:SetText("  Радиация:")
 			radtitle:SizeToContents()
 
 			local rrighttext = radtitle:Add("DLabel")
@@ -160,24 +160,24 @@ if (CLIENT) then
 			rrighttext:SetContentAlignment(4)
 			rrighttext:SetSize(radtitle:GetWide(), radtitle:GetTall())
 			rrighttext:SetFont("ixSmallFont")
-			if self:RadProtTranslator(self.radProt or 0) == "None" then
+			if self:RadProtTranslator(self.radProt or 0) == "Отсутствует" then
 				rrighttext:SetTextColor(Color(255, 0, 0))
-			elseif self:RadProtTranslator(self.radProt or 0) == "Negligible" then
+			elseif self:RadProtTranslator(self.radProt or 0) == "Незначительная" then
 				rrighttext:SetTextColor(Color(255, 80, 0))
-			elseif self:RadProtTranslator(self.radProt or 0) == "Bad" then
+			elseif self:RadProtTranslator(self.radProt or 0) == "Плохая" then
 				rrighttext:SetTextColor(Color(255, 160, 0))
-			elseif self:RadProtTranslator(self.radProt or 0) == "Decent" then
+			elseif self:RadProtTranslator(self.radProt or 0) == "Средняя" then
 				rrighttext:SetTextColor(Color(255, 255, 0))
-			elseif self:RadProtTranslator(self.radProt or 0) == "Good" then
+			elseif self:RadProtTranslator(self.radProt or 0) == "Хорошая" then
 				rrighttext:SetTextColor(Color(130, 255, 0))
-			elseif self:RadProtTranslator(self.radProt or 0) == "Very Good" then
+			elseif self:RadProtTranslator(self.radProt or 0) == "Отличная" then
 				rrighttext:SetTextColor(Color(0, 255, 0))
-			elseif self:RadProtTranslator(self.radProt or 0) == "Excellent" then
+			elseif self:RadProtTranslator(self.radProt or 0) == "Полная" then
 				rrighttext:SetTextColor(Color(0, 135, 255))
 			end
 
 			local duratitle = tooltip:AddRow("duratitle")
-			duratitle:SetText("\nDurability: " .. math.floor(self:GetData("durability", 100)) .. "%")
+			duratitle:SetText("\nПрикреплено: " .. math.floor(self:GetData("durability", 100)) .. "%")
 			duratitle:SizeToContents()
 
 			if self.isGasmask then
@@ -197,37 +197,37 @@ end
 
 function ITEM:RadProtTranslator(value)
 	if value == 0 then
-		return "None"
+		return "Отсутствует"
 	elseif value <= 0.1 then
-		return "Negligible"
+		return "Незначительная"
 	elseif value <= 0.2 then
-		return "Bad"
+		return "Плохая"
 	elseif value <= 0.3 then
-		return "Decent"
+		return "Средняя"
 	elseif value <= 0.4 then
-		return "Good"
+		return "Хорошая"
 	elseif value < 0.8 then
-		return "Very Good"
+		return "Отличная"
 	elseif value >= 0.8 then
-		return "Excellent"
+		return "Полная"
 	end
 end
 
 function ITEM:AnomProtTranslator(value)
 	if value == 0 then
-		return "None"
+		return "Отсутствует"
 	elseif value <= 0.02 then
-		return "Negligible"
+		return "Незначительная"
 	elseif value <= 0.04 then
-		return "Bad"
+		return "Плохая"
 	elseif value <= 0.06 then
-		return "Decent"
+		return "Средняя"
 	elseif value <= 0.08 then
-		return "Good"
+		return "Хорошая"
 	elseif value <= 0.10 then
-		return "Very Good"
+		return "Отличная"
 	elseif value > 0.10 then
-		return "Excellent"
+		return "Полная"
 	end
 end
 
@@ -261,13 +261,13 @@ end)
 
 -- On player uneqipped the item, Removes a weapon from the player and keep the ammo in the item.
 ITEM.functions.EquipUn = { -- sorry, for name order.
-	name = "Take Off",
+	name = "Снять",
 	tip = "equipTip",
 	icon = "icon16/stalker/unequip.png",
 	OnRun = function(item)
 		item:RemovePart(item.player)
 
-		ix.util.PlayerPerformBlackScreenAction(item.player, "Taking off...", 4, function(player)
+		ix.util.PlayerPerformBlackScreenAction(item.player, "Снимаем...", 4, function(player)
 		end)
 
 		item.player:RecalculateResistances()
@@ -285,7 +285,7 @@ ITEM.functions.EquipUn = { -- sorry, for name order.
 
 -- On player eqipped the item, Gives a weapon to player and load the ammo data from the item.
 ITEM.functions.Equip = {
-	name = "Put On",
+	name = "Надеть",
 	tip = "equipTip",
 	icon = "icon16/stalker/equip.png",
 	OnRun = function(item)
@@ -297,20 +297,20 @@ ITEM.functions.Equip = {
 				local itemTable = ix.item.instances[v.id]
 
 				if (v.isHelmet == true and item.isHelmet == true and itemTable:GetData("equip")) then
-					item.player:Notify("You are already equipping a helmet!")
+					item.player:Notify("На Вас уже надет шлем!")
 
 					return false
 				end
 
 				if (v.isGasmask == true and item.isGasmask == true and itemTable:GetData("equip")) then
-					item.player:Notify("You are already equipping a gasmask!")
+					item.player:Notify("На Вас уже надет противогаз!")
 
 					return false
 				end
 			end
 		end
 
-		ix.util.PlayerPerformBlackScreenAction(item.player, "Putting on...", 4, function(player)
+		ix.util.PlayerPerformBlackScreenAction(item.player, "Надеваем противогаз...", 4, function(player)
 		end)
 
 		item:SetData("equip", true)
