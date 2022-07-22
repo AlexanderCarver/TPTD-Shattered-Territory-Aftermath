@@ -3,8 +3,6 @@ PLUGIN.name = "Radiation"
 PLUGIN.author = "gumlefar"
 PLUGIN.desc = "Radiation System"
 
-ix.util.Include("cl_plugin.lua")
-
 ix.char.RegisterVar("radiation", {
 	field = "radiation",
 	fieldType = ix.type.number,

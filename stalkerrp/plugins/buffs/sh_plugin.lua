@@ -8,7 +8,6 @@ local playerMeta = FindMetaTable("Player")
 
 ix.util.Include("sh_buffs.lua")
 ix.util.Include("sh_buffhooks.lua")
-ix.util.Include("cl_hud.lua")
 
 -- player:GetBuffs()
 -- returns table

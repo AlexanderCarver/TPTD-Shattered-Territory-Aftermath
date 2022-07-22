@@ -158,14 +158,6 @@ function PLUGIN:AdjustStaminaOffset(client, offset)
 	end
 end
 
-function PLUGIN:HUDPaint()
-	local lp = LocalPlayer()
-	if (!lp:GetCharacter() or !lp:Alive() or ix.gui.characterMenu:IsVisible() or ix.option.Get("disablehud", false)) then return end
-
-	ix.util.DrawStatusIcon("stalker/ui/thirst.png", LocalPlayer():GetThirst(), ScrW()*0.84, ScrH()*0.79)
-	ix.util.DrawStatusIcon("stalker/ui/hunger.png", LocalPlayer():GetHunger(), ScrW()*0.82, ScrH()*0.79)
-end
-
 ix.command.Add("charsetthirst", {
 	adminOnly = true,
 	arguments = {

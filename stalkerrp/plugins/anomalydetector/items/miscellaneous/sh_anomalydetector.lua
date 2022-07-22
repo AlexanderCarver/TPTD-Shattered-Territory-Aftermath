@@ -25,8 +25,7 @@ if (CLIENT) then
 		else
 			surface.SetDrawColor(255, 110, 110, 255)
 		end
-
-		surface.SetMaterial(item.equipIcon)
+		
 		surface.DrawTexturedRect(w-23,h-23,19,19)
 	end
 end

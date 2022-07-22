@@ -229,11 +229,3 @@ if (SERVER) then
 		end
 	end
 end
-
-function PLUGIN:HUDPaint()
-	local lp = LocalPlayer()
-	if (!lp:GetCharacter() or !lp:Alive() or ix.gui.characterMenu:IsVisible() or ix.option.Get("disablehud", false)) then return end
-
-	local psyicon = "stalker/ui/psy.png"
-	ix.util.DrawStatusIcon(psyicon, lp:GetPsyHealth(), ScrW()*0.94, ScrH()*0.79)
-end
