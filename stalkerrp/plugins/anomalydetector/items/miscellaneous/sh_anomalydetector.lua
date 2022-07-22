@@ -32,7 +32,7 @@ end
 
 function ITEM:PopulateTooltip(tooltip)
     if !self.entity then
-        ix.util.PropertyDesc2(tooltip, "Детектор (искажения в пространстве)", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
+        ix.util.PropertyDesc2(tooltip, "Детектор (искажения в пространстве)", Color(64, 224, 208))
     end
 end
 
