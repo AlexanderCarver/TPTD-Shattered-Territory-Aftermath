@@ -2,9 +2,9 @@
 -- The shared init file. You'll want to fill out the info for your schema and include any other files that you need.
 
 -- Schema info
-Schema.name = "Corporate RP"
-Schema.author = "TPTD DevTeam"
-Schema.description = "~~~~"
+Schema.name = "Shattered Territory: Aftermath"
+Schema.description = "We've lost the Syberia... And the end of the humanity begun."
+Schema.author = "TPTD Dev Team"
 
 -- Additional files that aren't auto-included should be included here. Note that ix.util.Include will take care of properly
 -- using AddCSLuaFile, given that your files have the proper naming scheme.
