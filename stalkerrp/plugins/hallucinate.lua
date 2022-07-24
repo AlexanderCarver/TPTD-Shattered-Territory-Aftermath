@@ -1,11 +1,8 @@
 PLUGIN.name = "Hallucinations"
 PLUGIN.author = "SpicyLemones"
 PLUGIN.description = "Woo crazy."
-/*
 
-
---include("psyhealth.lua")
-
+include("psyhealth.lua")
 include("charcreation/sh_defs.lua")
 
 
@@ -131,8 +128,8 @@ ix.chat.Register("meme", {
 })
 
 ix.chat.Register("fakeic", {
-			--format = "%s says \"%s\"",
-			--indicator = "chatTalking",
+			format = "%s says \"%s\"",
+			indicator = "chatTalking",
             OnChatAdd = function(self, speaker, text)
                 chat.AddText(Color(255, 255, 150), text)
             end,
