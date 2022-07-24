@@ -60,7 +60,7 @@ PLUGIN.addictionDefinitions["LightAlcoholic"] = {
 }]]
 
 PLUGIN.addictionDefinitions["LightAlcoholic"] = {
-	name = "Alcoholic (Light)",
+	name = "Зависимость от алкоголя",
 	checkChance = 60,
 	satisfyStruct = {{"CheapAlcohol", 75, 2}, {"MediumAlcohol", 100, 2}, {"ExpensiveAlcohol", 100, 4}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -74,7 +74,7 @@ PLUGIN.addictionDefinitions["LightAlcoholic"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a drink right now...")
+			ply:Notify("Я чувствую, что хочу выпить алкоголь...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
@@ -88,7 +88,7 @@ PLUGIN.addictionDefinitions["LightAlcoholic"] = {
 }
 
 PLUGIN.addictionDefinitions["StrongAlcoholic"] = {
-	name = "Alcoholic (Strong)",
+	name = "Зависимость от алкоголя (хроническое)",
 	checkChance = 60,
 	satisfyStruct = {{"CheapAlcohol", 50, 1}, {"MediumAlcohol", 75, 2}, {"ExpensiveAlcohol", 100, 3}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -102,7 +102,7 @@ PLUGIN.addictionDefinitions["StrongAlcoholic"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a drink right now...")
+			ply:Notify("Мне нужно выпить алкоголь...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
@@ -116,7 +116,7 @@ PLUGIN.addictionDefinitions["StrongAlcoholic"] = {
 }
 
 PLUGIN.addictionDefinitions["LightSmoker"] = {
-	name = "Smoker (Light)",
+	name = "Зависимость от никотина",
 	checkChance = 100,
 	satisfyStruct = {{"WeakSmokes", 50, 1}, {"StrongSmokes", 75, 3}, {"SpecialSmokes", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -130,7 +130,7 @@ PLUGIN.addictionDefinitions["LightSmoker"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a smoke right now...")
+			ply:Notify("Я чувствую, что мне надо закурить...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
@@ -144,7 +144,7 @@ PLUGIN.addictionDefinitions["LightSmoker"] = {
 }
 
 PLUGIN.addictionDefinitions["StrongSmoker"] = {
-	name = "Smoker (Strong)",
+	name = "Зависимость от никотина (хроническое)",
 	checkChance = 100,
 	satisfyStruct = {{"WeakSmokes", 25, 1}, {"StrongSmokes", 50, 4}, {"SpecialSmokes", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -158,7 +158,7 @@ PLUGIN.addictionDefinitions["StrongSmoker"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a smoke right now...")
+			ply:Notify("Мне нужно перекурить...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
@@ -172,7 +172,7 @@ PLUGIN.addictionDefinitions["StrongSmoker"] = {
 }
 
 PLUGIN.addictionDefinitions["DrugUser"] = {
-	name = "Drug User",
+	name = "Зависимость от наркотиков",
 	checkChance = 100,
 	satisfyStruct = {{"PrescriptionDrugs", 75, 2}, {"Marijuana", 100, 2}, {"StrongerDrugs", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -186,7 +186,37 @@ PLUGIN.addictionDefinitions["DrugUser"] = {
 	end,
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
-			ply:Notify("I could really go for a hit of something right now...")
+			ply:Notify("Мне... Надо вмазаться. Срочно.")
+		end
+
+		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
+			ply:DamagePsyHealth(10)
+		end
+
+		if (lvl >= ADDICTION_STATE_WITHDRAWAL) then
+			ply:DamagePsyHealth((lvl - ADDICTION_STATE_NEED)*2)
+		end
+	end,
+}
+
+--======================================================================================================--
+
+PLUGIN.addictionDefinitions["OpiateAddiction"] = {
+	name = "Зависимость от опиатов",
+	checkChance = 50,
+	satisfyStruct = {{"Содержит опиоиды", 75, 2}},
+	updateFunction 	= function(ply, oldlvl, newlvl)
+		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
+			ply:DamagePsyHealth(20)
+		end
+
+		if (newlvl < oldlvl) then
+			ply:DamagePsyHealth(-10 * (oldlvl - newlvl))
+		end
+	end,
+	tickFunction 	= function(ply, lvl)
+		if (lvl >= ADDICTION_STATE_NEED) then
+			ply:Notify("Мне очень сильно хочется принять обезболивающее...")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
