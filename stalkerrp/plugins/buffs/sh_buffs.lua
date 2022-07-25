@@ -138,7 +138,6 @@ PLUGIN.buffs[ "debuff_psy" ] = {
 	end,
 }
 
-/*
 PLUGIN.buffs[ "leghurt" ] = {
 	name = "Leg Injury",
 	desc = "Your legs are injured and your movement has been handicapped.",
@@ -163,7 +162,6 @@ PLUGIN.buffs[ "leghurt" ] = {
 		end
 	end,
 }
-*/
 
 PLUGIN.buffs[ "buff_hijump" ] = {
 	name = "High Jump",
