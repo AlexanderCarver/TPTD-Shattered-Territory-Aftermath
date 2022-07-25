@@ -1,5 +1,6 @@
-ITEM.name = "Geiger Counter"
-ITEM.description = "A personal geiger counter that measures local radiation levels."
+ITEM.name = "Белла"
+ITEM.description = "Бытовой дозиметр, предназначенный для оценки мощности дозы гамма-излучения."
+ITEM.longdesc =  "Портативный, носимый в карманах и подсумках прибор, предназначенный для обнаружения и оценки с помощью звуковой сигнализации интенсивности гамма-излучения, а также для измерения мощности полевой эквивалентной лозы (МЭД) гамма-излучения по цифровому табло. Применяется для индивидуального оперативного контроля населением радиационной обстановки. Результаты измерений этим прибором не могут использоваться для официальных заключений о радиационной обстановке, так как существует погрешность."
 ITEM.model = "models/lostsignalproject/items/devices/geiger.mdl"
 ITEM.category = "Electronics"
 
@@ -34,12 +35,12 @@ end
 
 function ITEM:PopulateTooltip(tooltip)
     if !self.entity then
-        ix.util.PropertyDesc2(tooltip, "Geiger Counter", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
+        ix.util.PropertyDesc2(tooltip, "Детектор (радиактивное излучение)", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
     end
 end
 
 ITEM.functions.Equip = { -- sorry, for name order.
-	name = "Attach to Belt",
+	name = "Включить",
 	tip = "useTip",
 	icon = "icon16/stalker/equip.png",
 	sound = "stalkersound/inv_dozimetr.ogg",
@@ -57,7 +58,7 @@ ITEM.functions.Equip = { -- sorry, for name order.
 }
 
 ITEM.functions.EquipUn = { -- sorry, for name order.
-	name = "Detach from Belt",
+	name = "Выключить",
 	tip = "equipTip",
 	icon = "icon16/stalker/unequip.png",
 	OnRun = function(item)
@@ -86,7 +87,7 @@ function ITEM:Equip(client)
 				return false
 			else
 				if (itemTable.isGeiger == true and itemTable:GetData("equip")) then
-					client:NotifyLocalized("You are already equipping a geiger counter detector.")
+					client:NotifyLocalized("У Вас уже активирован один детектор. Зачем Вам второй?..")
 
 					return false
 				end
