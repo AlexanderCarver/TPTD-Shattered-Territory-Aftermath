@@ -71,11 +71,11 @@ ix.config.Add("spawnTime", 20, "The time it takes to respawn.", nil, {
 	data = {min = 0, max = 10000},
 	category = "characters"
 })
-ix.config.Add("inventoryWidth", 6, "How many slots in a row there is in a default inventory.", nil, {
+ix.config.Add("inventoryWidth", 8, "How many slots in a row there is in a default inventory.", nil, {
 	data = {min = 0, max = 20},
 	category = "characters"
 })
-ix.config.Add("inventoryHeight", 4, "How many slots in a column there is in a default inventory.", nil, {
+ix.config.Add("inventoryHeight", 16, "How many slots in a column there is in a default inventory.", nil, {
 	data = {min = 0, max = 20},
 	category = "characters"
 })
