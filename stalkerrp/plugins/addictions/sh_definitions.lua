@@ -204,7 +204,7 @@ PLUGIN.addictionDefinitions["DrugUser"] = {
 PLUGIN.addictionDefinitions["OpiateAddiction"] = {
 	name = "Зависимость от опиатов",
 	checkChance = 50,
-	satisfyStruct = {{"Содержит опиоды", 75, 2}},
+	satisfyStruct = {{"Содержит опиоиды", 75, 2}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
 		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
 			ply:DamagePsyHealth(20)
