@@ -204,7 +204,7 @@ PLUGIN.addictionDefinitions["DrugUser"] = {
 PLUGIN.addictionDefinitions["OpiateAddiction"] = {
 	name = "Зависимость от опиатов",
 	checkChance = 50,
-	satisfyStruct = {{"Содержит опиоиды", 75, 2}},
+	satisfyStruct = {{"Содержит опиоды", 75, 2}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
 		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
 			ply:DamagePsyHealth(20)
@@ -217,6 +217,34 @@ PLUGIN.addictionDefinitions["OpiateAddiction"] = {
 	tickFunction 	= function(ply, lvl)
 		if (lvl >= ADDICTION_STATE_NEED) then
 			ply:Notify("Мне очень сильно хочется принять обезболивающее...")
+		end
+
+		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
+			ply:DamagePsyHealth(10)
+		end
+
+		if (lvl >= ADDICTION_STATE_WITHDRAWAL) then
+			ply:DamagePsyHealth((lvl - ADDICTION_STATE_NEED)*2)
+		end
+	end,
+}
+
+PLUGIN.addictionDefinitions["NeurolepticsAddiction"] = {
+	name = "Зависимость от нейролептиков",
+	checkChance = 50,
+	satisfyStruct = {{"Нейролептик", 75, 2}},
+	updateFunction 	= function(ply, oldlvl, newlvl)
+		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
+			ply:DamagePsyHealth(20)
+		end
+
+		if (newlvl < oldlvl) then
+			ply:DamagePsyHealth(-10 * (oldlvl - newlvl))
+		end
+	end,
+	tickFunction 	= function(ply, lvl)
+		if (lvl >= ADDICTION_STATE_NEED) then
+			ply:Notify("Мне очень сильно хочется принять нейролептик... Мой разум как будто бы разрушен.")
 		end
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
