@@ -46,7 +46,7 @@ if (CLIENT) then
 end
 
 ITEM.functions.insert = {
-	name = "Вставить в цель",
+	name = "Включить",
 	icon = "icon16/stalker/attach.png",
 	OnRun = function(item)
 		local client = item.player

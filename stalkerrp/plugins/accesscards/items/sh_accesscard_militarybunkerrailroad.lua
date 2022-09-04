@@ -1,5 +1,5 @@
 ITEM.name = "Карта доступа"
-ITEM.description = "Небольшая пластиковая карта."
+ITEM.description = "Небольшая пластиковая карта с потёртой надписью 'ЖЕЛЕЗНАЯ ДОРОГА'."
 ITEM.longdesc = "Эта маленькая, тонкая карта предназначена для открытия множества дверей. Значок в левом верхнем углу стёрт и его невозможно разобрать."
 ITEM.model = "models/lostsignalproject/items/quest/keycard.mdl"
 
@@ -45,12 +45,12 @@ ITEM.functions.usetarget = {
 			data.filter = item.player
 		local target = util.TraceLine(data).Entity
         
-		if (IsValid(target) and target:GetClass() == "func_door_rotating") and target:GetName() == "ecoundergrounddoor" then
+		if (IsValid(target) and target:GetClass() == "func_door_rotating") and target:GetName() == "gate_a_button" then
 			ix.chat.Send(item.player, "iteminternal", "достает карту доступа и проводит через старенькую, еще заставшую советские времена, систему своеобразного СКУД'а. Дверь со скрипом и грохотом открывается. Кажется, комплекс не был обесточен.", false)
 
             target:Input("Unlock")
             target:Input("Open")
-            timer.Simple(10, function()
+            timer.Simple(15, function()
                 target:Input("Close")
                 target:Input("Lock")
             end)
