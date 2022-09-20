@@ -100,7 +100,6 @@ if (CLIENT) then
 		ix.option.Set("minimalTooltips", true, true)
 
 		-- sets options for players that we want them to have
-		ix.option.Set("disableAnimations", true, true)
 		ix.option.Set("cheapBlur", true, true)
 		ix.option.Set("language", "russian", true)
 		ix.option.Set("observerTeleportBack", false, true)
@@ -129,11 +128,6 @@ end
 --removal of helix commands we dont use
 --removal of helix chats we dont use
 function PLUGIN:InitializedPlugins()
-	ix.command.list["becomeclass"] = nil
-	ix.command.list["chardesc"] = nil
-	ix.command.list["eventpda"] = nil
-	ix.command.list["charfallover"] = nil
-	ix.command.list["chargetup"] = nil
 	ix.command.list["setvoicemail"] = nil
 end
 
@@ -142,9 +136,6 @@ function PLUGIN:InitializedChatClasses()
 	ix.chat.classes["connect"] = nil
 	ix.chat.classes["disconnect"] = nil
 end
-
-
-local icon = Material("vgui/icons/news.png")
 
 --[[ix.chat.Register("playerjoin", {
 	CanSay = function(self, speaker, text)
