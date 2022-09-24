@@ -12,8 +12,8 @@
 local PLUGIN = PLUGIN
 
 PLUGIN.buffs[ "buff_slowheal" ] = {
-	name = "Healing",
-	desc = "You're healing.",
+	name = "Лечение",
+	desc = "Вы медленно излечиваетесь",
 	func = function( player, parameter)
 		player.timeNextHeal = player.timeNextHeal or CurTime()
 		if player.timeNextHeal < CurTime() then
@@ -25,8 +25,8 @@ PLUGIN.buffs[ "buff_slowheal" ] = {
 }
 
 PLUGIN.buffs[ "buff_rapidheal" ] = {
-	name = "Healing",
-	desc = "You're healing.",
+	name = "Лечение",
+	desc = "Вы медленно излечиваете свои травмы.",
 	func = function( player, parameter)
 		player.timeNextFastHeal = player.timeNextFastHeal or CurTime()
 		if player.timeNextFastHeal < CurTime() then

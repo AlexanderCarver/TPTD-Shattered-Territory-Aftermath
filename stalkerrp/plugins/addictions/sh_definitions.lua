@@ -60,7 +60,7 @@ PLUGIN.addictionDefinitions["LightAlcoholic"] = {
 }]]
 
 PLUGIN.addictionDefinitions["LightAlcoholic"] = {
-	name = "Зависимость от алкоголя",
+	name = "Алкоголизм",
 	checkChance = 60,
 	satisfyStruct = {{"CheapAlcohol", 75, 2}, {"MediumAlcohol", 100, 2}, {"ExpensiveAlcohol", 100, 4}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -88,7 +88,7 @@ PLUGIN.addictionDefinitions["LightAlcoholic"] = {
 }
 
 PLUGIN.addictionDefinitions["StrongAlcoholic"] = {
-	name = "Зависимость от алкоголя (хроническое)",
+	name = "Хронический алкоголизм",
 	checkChance = 60,
 	satisfyStruct = {{"CheapAlcohol", 50, 1}, {"MediumAlcohol", 75, 2}, {"ExpensiveAlcohol", 100, 3}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -116,7 +116,7 @@ PLUGIN.addictionDefinitions["StrongAlcoholic"] = {
 }
 
 PLUGIN.addictionDefinitions["LightSmoker"] = {
-	name = "Зависимость от никотина",
+	name = "Никотиновая зависимость",
 	checkChance = 100,
 	satisfyStruct = {{"WeakSmokes", 50, 1}, {"StrongSmokes", 75, 3}, {"SpecialSmokes", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -144,7 +144,7 @@ PLUGIN.addictionDefinitions["LightSmoker"] = {
 }
 
 PLUGIN.addictionDefinitions["StrongSmoker"] = {
-	name = "Зависимость от никотина (хроническое)",
+	name = "Никотиновая зависимость (хроническое)",
 	checkChance = 100,
 	satisfyStruct = {{"WeakSmokes", 25, 1}, {"StrongSmokes", 50, 4}, {"SpecialSmokes", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
@@ -172,7 +172,7 @@ PLUGIN.addictionDefinitions["StrongSmoker"] = {
 }
 
 PLUGIN.addictionDefinitions["DrugUser"] = {
-	name = "Зависимость от наркотиков",
+	name = "Наркомания",
 	checkChance = 100,
 	satisfyStruct = {{"PrescriptionDrugs", 75, 2}, {"Marijuana", 100, 2}, {"StrongerDrugs", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
