@@ -142,7 +142,7 @@ function ITEM:DecideFunction()
 				local thirst = item.player:GetCharacter():GetData("thirst", 100)
 				local client = item.player
 
-				ix.util.PlayerPerformBlackScreenAction(item.player, "Употребление...", 5, function(player) 
+				ix.util.PlayerPerformBlackScreenAction(item.player, "Употребление пищи...", 5, function(player) 
 					player:SetHunger(hunger + item.hunger)
 					player:SetThirst(thirst + item.thirst)
 				end)
