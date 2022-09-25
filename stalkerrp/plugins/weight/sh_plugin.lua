@@ -48,7 +48,7 @@ end
 
 if (CLIENT) then
 	ix.option.Add("imperial", ix.type.bool, false, {
-		category = "_stalkersettings"
+		category = "Weight"
 	})
 
 	function PLUGIN:PopulateItemTooltip(tooltip, item)
@@ -57,14 +57,111 @@ if (CLIENT) then
 
 		if !item.entity then
 			if (carryinc) then
-				ix.util.PropertyDesc2(tooltip, "Carry Capacity Increase: "..ix.weight.WeightString(carryinc, ix.option.Get("imperial", false)), Color(255, 255, 255), Material("vgui/ui/stalker/armorupgrades/carryweightinc.png"))
+				ix.util.PropertyDesc2(tooltip, "Увеличение переносимого веса: "..ix.weight.WeightString(carryinc, ix.option.Get("imperial", false)), Color(255, 255, 255))
 			end
 		end
 
 		if (weight) then
-			ix.util.PropertyDesc3(tooltip, "Weight: "..ix.weight.WeightString(weight, ix.option.Get("imperial", false)), Color(255, 255, 255), Material("vgui/ui/stalker/weaponupgrades/weight.png"), 999)
+			ix.util.PropertyDesc3(tooltip, "Вес: "..ix.weight.WeightString(weight, ix.option.Get("imperial", false)), Color(255, 255, 255))
 		end
 	end
+
+	hook.Add("CreateMenuButtons", "ixInventory", function(tabs) -- We use the same special ID because the idea is to completely override it.
+		if (hook.Run("CanPlayerViewInventory") == false) then
+			return
+		end
+
+		tabs["inv"] = {
+			bDefault = true,
+			Create = function(info, container)
+				local canvas = container:Add("DTileLayout")
+				local canvasLayout = canvas.PerformLayout
+				canvas.PerformLayout = nil -- we'll layout after we add the panels instead of each time one is added
+				canvas:SetBorder(0)
+				canvas:SetSpaceX(2)
+				canvas:SetSpaceY(2)
+				canvas:Dock(FILL)
+
+				ix.gui.menuInventoryContainer = canvas
+
+				local panel = canvas:Add("ixInventory")
+				panel:SetPos(0, 0)
+				panel:SetDraggable(false)
+				panel:SetSizable(false)
+				panel:SetTitle(nil)
+				panel.bNoBackgroundBlur = true
+				panel.childPanels = {}
+
+				local inventory = LocalPlayer():GetCharacter():GetInventory()
+
+				if (inventory) then
+					panel:SetInventory(inventory)
+				end
+
+				ix.gui.inv1 = panel
+
+				if (ix.option.Get("openBags", true)) then
+					for _, v in pairs(inventory:GetItems()) do
+						if (!v.isBag) then
+							continue
+						end
+
+						v.functions.View.OnClick(v)
+					end
+				end
+
+				local character = LocalPlayer():GetCharacter()
+				local carry = character:GetData("carry", 0)
+				local color = ix.config.Get("color")
+				local maxWeight = ix.config.Get("maxWeight", 30)
+
+				local w, h = panel:GetSize()
+
+				panel:SetTall(h + 24)
+
+				w = w - 10
+
+				local weight = panel:Add("DPanel")
+					weight:SetPos(5, h - 4)
+					weight:SetSize(w, 24)
+					weight.Paint = function(self, w, h)
+						surface.SetDrawColor(35, 35, 35, 85)
+						surface.DrawRect(1, 1, w, h)
+
+						surface.SetDrawColor(0, 0, 0, 250)
+						surface.DrawOutlinedRect(0, 0, w, h)
+					end
+					local bar = weight:Add("DPanel")
+						bar:SetSize(w, 24)
+						bar.Paint = function(self)
+							surface.SetDrawColor(color)
+							surface.DrawRect(4, 4, math.min(((w - 8) / maxWeight) * carry, w - 8), 16)
+						end
+					local barO = weight:Add("DPanel")
+						barO:SetSize(w, 24)
+						barO.Paint = function(self)
+							surface.SetDrawColor(Color(205, 50, 50))
+							if (carry > maxWeight) then
+								surface.DrawRect(4, 4, math.min(((w - 8) / maxWeight) * (carry - maxWeight), w - 8), 16)
+							end
+						end
+					local barT = weight:Add("DLabel")
+						barT:SetSize(w, 24)
+						barT:SetContentAlignment(5)
+						barT.Think = function()
+							carry = character:GetData("carry", 0)
+							if (ix.option.Get("imperial", false)) then
+								barT:SetText(math.Round(carry * 2.20462, 2).." lbs / "..math.Round(maxWeight * 2.20462, 2).." lbs")
+							else
+								barT:SetText(math.Round(carry, 2).." kg / "..maxWeight.." kg")
+							end
+						end
+
+				canvas.PerformLayout = canvasLayout
+				canvas:Layout()
+			end
+		}
+	end)
 end
 
 function PLUGIN:HUDPaint()
@@ -74,9 +171,4 @@ function PLUGIN:HUDPaint()
 
 	local max = (ix.weight.BaseWeight(char) + ix.config.Get("maxOverWeight", 5))
 	local curWeight = char:GetData("carry", 0)
-
-	-- weight calculation to make it fit to DrawStatusIcon function is a bit weird, but works
-	if curWeight > (0.9 * ix.weight.BaseWeight(char)) then
-		ix.util.DrawStatusIcon("stalker/ui/overencumbered.png", (max - (curWeight * 1.3)) / max * 100, ScrW()*0.92, ScrH()*0.79)
-	end
 end

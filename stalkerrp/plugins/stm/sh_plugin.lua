@@ -166,16 +166,6 @@ else
 		end
 	end
 
-	function PLUGIN:HUDPaint()
-		if (!LocalPlayer():GetCharacter() or !LocalPlayer():Alive() or ix.gui.characterMenu:IsVisible() or ix.option.Get("disablehud", false)) then return end
-
-		local Texture2 = Material("cotz/panels/hp1.png", "noclamp smooth")
-
-		surface.SetMaterial(Texture2)
-		surface.SetDrawColor(Color(170, 170, 255, 255))
-		surface.DrawTexturedRectUV(ScrW()*0.05, ScrH()*0.92,  math.Clamp(math.Round(predictedStamina / 100, 3), 0, 1) * ScrW()*0.15, ScrH()*0.008, 0, 0,  math.Clamp(math.Round(predictedStamina / 100, 3), 0, 1), 0)
-	end
-
 /*
 	ix.bar.Add(function()
 		return predictedStamina / 100

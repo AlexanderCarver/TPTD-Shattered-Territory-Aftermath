@@ -82,17 +82,20 @@ function ITEM:DecideFunction()
 				if item.alcohol > 0 then
 					item.player:IncreaseDrunkLevel(item.alcohol)
 				end
-				
-				if item.empty then
-					local inv = item.player:GetCharacter():GetInventory()
-					inv:Add(item.empty)
-				end
 
 				quantity = quantity - 1
 				
 				if (quantity >= 1) then
 					item:SetData("quantity", quantity)
 					return false
+				end
+				if (quantity <= 0) then
+					if (item.empty_item and ix.item.Get(item.empty_item)) then
+						if (!client:GetCharacter():GetInventory():Add(item.empty_item)) then
+							ix.item.Spawn(item.empty_item, client)
+							return true
+						end
+					end
 				end
 			end
 		}

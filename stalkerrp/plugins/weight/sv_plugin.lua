@@ -52,7 +52,7 @@ function PLUGIN:CanTransferItem(item, old, inv) -- When a player attempts to tak
 		local character = ix.char.loaded[inv.owner]
 
 		if (!character:CanCarry(item)) then
-			character:GetPlayer():NotifyLocalized("You are extremely overencumbered and cannot take that.")
+			character:GetPlayer():NotifyLocalized("Вы сильно перегружены и взять в сумку что-либо.")
 			return false
 		end
 	end
@@ -61,7 +61,7 @@ function PLUGIN:CanTransferItem(item, old, inv) -- When a player attempts to tak
 		local character = ix.char.loaded[old.owner]
 
 		if (!character:CanRemoveCarry(item)) then
-			character:GetPlayer():NotifyLocalized("You would be too overencumbered without that.")
+			character:GetPlayer():NotifyLocalized("Вы будете сильно перегружены без этого.")
 			return false
 		end
 	end
@@ -92,7 +92,7 @@ function PLUGIN:CanPlayerTakeItem(client, item)
 
 	if (itm:GetWeight()) then
 		if (!character:CanCarry(itm)) then
-			client:NotifyLocalized("You are carrying too much weight to pick that up.")
+			client:NotifyLocalized("Вы сильно перегружены и взять в сумку что-либо.")
 			return false
 		end
 	end
@@ -103,7 +103,7 @@ function PLUGIN:CanPlayerTradeWithVendor(client, entity, uniqueID, selling)
 		local item = ix.item.list[uniqueID]
 
 		if (item:GetWeight() and !client:GetCharacter():CanCarry(item)) then
-			client:NotifyLocalized("You are carrying too much weight to buy that.")
+			client:NotifyLocalized("Вы сильно перегружены и взять в сумку что-либо.")
 			return false
 		end
 	end
