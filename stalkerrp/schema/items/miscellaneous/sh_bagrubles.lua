@@ -1,8 +1,8 @@
-ITEM.name = "Ukrainian rubles"
-ITEM.description = "A bunch of weathered ukrainian currency."
-ITEM.longdesc = "Trade in the Zone is conducted mainly by means of electronic transactions for safety and managing reasons. But many stalkers keep at least a few rubles in their pockets in case they want to buy smaller things like cigarettes. This makes life easier and conserves battery life."
-ITEM.quantdesc = "This bundle of cash has a value of %d rubles."
-ITEM.model = "models/kek1ch/money_ukraina.mdl"
+ITEM.name = "Деньги"
+ITEM.description = "Пачка долларов. Вечно зеленые, вечно ценные."
+ITEM.longdesc = "Чёрная экономика внутри Территории существует на основе американской валюты - на основе доллара США, что обсусловлено контактами с чёрным рынком СНГ, сеть которого здесь нашла настоящую золотую жилу."
+ITEM.quantdesc = "Здесь %d долларов."
+ITEM.model = "models/kek1ch/money_ukraina.mdl" -- заменить модельку
 
 ITEM.width = 1
 ITEM.height = 1
@@ -22,7 +22,7 @@ if (CLIENT) then
 end
 
 ITEM.functions.use = {
-	name = "Put in Wallet",
+	name = "Положить в кошелек",
 	icon = "icon16/stalker/sell.png",
 	sound = "stalkersound/money_1.mp3",
 	OnRun = function(item)
@@ -30,7 +30,7 @@ ITEM.functions.use = {
 		local client = item.player
 		local quant = item:GetData("quantity", 0)
 		client:GetCharacter():GiveMoney(quant)
-		ix.chat.Send(item.player, "iteminternal", "counts up some rubles and puts them in their wallet.", false)
+		ix.chat.Send(item.player, "iteminternal", "крайне педантично пересчитывает деньги и, достав свой кошелек, убирает их в него.", false)
 	end,
 	OnCanRun = function(item)
 		return (!IsValid(item.entity)) and item.invID == item:GetOwner():GetCharacter():GetInventory():GetID()

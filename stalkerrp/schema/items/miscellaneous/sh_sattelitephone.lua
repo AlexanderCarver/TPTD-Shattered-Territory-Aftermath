@@ -1,5 +1,5 @@
-ITEM.name = "Sattelite Phone"
-ITEM.description = "A sattelite phone used by traders to make connection to their contacts and their storage."
+ITEM.name = "Спутниковый телефон"
+ITEM.description = "Спутниковый телефон, ведущий напрямую к контрабандистам... Ну и технологии, нынче: телефону даже провод не нужен."
 ITEM.model = "models/illusion/eftcontainers/gphone.mdl"
 ITEM.width = 1
 ITEM.height = 1
@@ -7,7 +7,7 @@ ITEM.price = "500"
 ITEM.flag = "1"
 
 ITEM.functions.connection = { -- sorry, for name order.
-	name = "Contact Connections",
+	name = "Наладить контакты с поставщиками",
 	icon = "icon16/stalker/sell.png",
 	OnRun = function(item)
 		
@@ -20,7 +20,7 @@ ITEM.functions.connection = { -- sorry, for name order.
 }
 
 ITEM.functions.storage = { -- sorry, for name order.
-	name = "Open Traders Storage",
+	name = "Наладить контакт с хранилищем",
 	icon = "icon16/stalker/unlock.png",
 	OnRun = function(item)
 		
