@@ -1,7 +1,7 @@
-ITEM.name = "Charcoal"
-ITEM.description = "Low tier cooking fuel."
-ITEM.longdesc = "Some odorless, tasteless, clump of fine black powder that is a low tier of a cooking fuel source within the Zone. Charcoal is one of the main sources STALKERs used to cook with, though it tends to run out pretty fast after a couple uses."
-ITEM.quantdesc = "This bag has enough charcoal for another %d refills."
+ITEM.name = "Уголь"
+ITEM.description = "Маленький мешок древесного угля."
+ITEM.longdesc = "Бумажный мешок угля. Уголь здесь, на Территории, в основном используется для костров и переносных кухонь. Топливо дорогое в транспортировке, а вот уголь добыть можно прямо здесь... Вы даже уверены, что этот мешок - часть деревьев, которые ранее росли здесь."
+ITEM.quantdesc = "Мешка ещё хватает на %d использований."
 ITEM.model = "models/lostsignalproject/items/misc/charcoal.mdl"
 
 ITEM.width = 2
@@ -16,7 +16,7 @@ ITEM.splitSize = {1, 2}
 if (CLIENT) then
 	function ITEM:PaintOver(item, w, h)
 		draw.SimpleText(
-			item:GetData("quantity", item.quantity).."/"..item.quantity, "stalkerregularinvfont", 3, h - 1, color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM, 1, color_black
+			item:GetData("quantity", item.quantity).."/"..item.quantity, "smallfont", 3, h - 1, color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM, 1, color_black
 		)
 	end
 end
@@ -59,7 +59,7 @@ ITEM.functions.combine = {
 }
 
 ITEM.functions.split = {
-    name = "Split",
+    name = "Разделить",
     tip = "useTip",
     icon = "icon16/stalker/split.png",
     isMulti = true,
@@ -104,7 +104,7 @@ ITEM.functions.split = {
 
 
 ITEM.functions.use = {
-	name = "Refuel",
+	name = "Насыпать",
 	tip = "useTip",
 	icon = "icon16/stalker/attach.png",
 	isMulti = true,

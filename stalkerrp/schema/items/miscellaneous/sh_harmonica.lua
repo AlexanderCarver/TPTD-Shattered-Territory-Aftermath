@@ -1,14 +1,12 @@
-ITEM.name = "Harmonica"
-ITEM.description = "A playable harmonica."
-ITEM.longdesc = "A free reed wind instrument that is used throughout the Zone in which it is featured in many musical genres. The instrument appears to have around 10 holes which the user would blow into to produce a sound. Some STALKERS have mastered the Harmonica and use it over a Guitar for their instrument choice, mostly due to how easy it is to carry around."
+ITEM.name = "Губная гармоника"
+ITEM.description = "Редкий представитель музыкальных инструментов... Нечасто такое тут увидишь."
+ITEM.longdesc = "Музыкальный инструмент семейства гармоник. Представляет собой небольшой брусок со множеством отверстий сбоку. Выбор извлекаемых звуков осуществляется положением губ и языка на отверстиях, а также направлением движения воздуха на вдох или выдох. Можете попробовать подуть в неё."
 ITEM.model = "models/lostsignalproject/items/misc/harmonica.mdl"
 
 ITEM.width = 1
 ITEM.height = 1
 
 ITEM.price = 400
-
-ITEM.img = ix.util.GetMaterial("vgui/hud/harmonica.png")
 
 ITEM.sounds = {
 	Sound("stalkersound/harmonica/harmonica_1.ogg"),
@@ -19,7 +17,7 @@ ITEM.sounds = {
 }
 
 ITEM.functions.use = { -- sorry, for name order.
-	name = "Play",
+	name = "Сыграть",
 	icon = "icon16/stalker/sell.png",
 	OnRun = function(item)
 
@@ -27,7 +25,7 @@ ITEM.functions.use = { -- sorry, for name order.
 
 			local soundplay = table.Random(item.sounds)
 			item.player:EmitSound(soundplay, 50, 100, 0.5)
-			ix.chat.Send(item.player, "iteminternal", "puts their "..item.name.." to their mouths and plays a tune.", false)
+			ix.chat.Send(item.player, "iteminternal", "берет губную гармонику двумя руками и подносит ее ко рту, начиная играть. Музыка мелодично заполняет пространство...", false)
 
 			item:SetData("cooldown", os.time() + 15 )
 		end

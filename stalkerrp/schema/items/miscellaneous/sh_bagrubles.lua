@@ -2,7 +2,7 @@ ITEM.name = "Деньги"
 ITEM.description = "Пачка долларов. Вечно зеленые, вечно ценные."
 ITEM.longdesc = "Чёрная экономика внутри Территории существует на основе американской валюты - на основе доллара США, что обсусловлено контактами с чёрным рынком СНГ, сеть которого здесь нашла настоящую золотую жилу."
 ITEM.quantdesc = "Здесь %d долларов."
-ITEM.model = "models/kek1ch/money_ukraina.mdl" -- заменить модельку
+ITEM.model = "models/illusion/eftcontainers/dollar.mdl"
 
 ITEM.width = 1
 ITEM.height = 1

@@ -1,6 +1,6 @@
-ITEM.name = "Wood-Fueled Cooker"
-ITEM.description = "A low tier cooker."
-ITEM.longdesc = "A small metallic portable pocket stove that allows you to cook up various foods. Some STALKERs like to carry a mini portable cooker around when they camp out. It requires a fuel source to cook with. Those who are experienced STALKERs tend to use the likes of a heat producing artifact to cook their food as it acts as an unlimited fuel source. The rest typically use some wooden branches they find or some charcoal to add a nice smokey flavour."
+ITEM.name = "Походная печь"
+ITEM.description = "Маленькая самодельная печка-буржуйка на древесном угле."
+ITEM.longdesc = "ОПИСАНИЕ ЗДЕСЬ СДЕЛАТЬ"
 ITEM.model = "models/lostsignalproject/items/misc/wood_stove.mdl"
 
 ITEM.width = 2
