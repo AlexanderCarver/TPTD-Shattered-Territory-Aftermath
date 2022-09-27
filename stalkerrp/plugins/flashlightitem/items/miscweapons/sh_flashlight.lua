@@ -11,8 +11,6 @@ ITEM.class = "weapon_flashlight"
 ITEM.weaponCategory = "flashlight"
 ITEM.canAttach = false
 
-ITEM.img = ix.util.GetMaterial("cotz/ui/icons/misc_flashlight.png")
-
 ITEM.pacData = {
 [1] = {
 	["children"] = {
@@ -54,6 +52,6 @@ ITEM.pacData = {
 
 function ITEM:PopulateTooltip(tooltip)
     if !self.entity then
-        ix.util.PropertyDesc2(tooltip, "Flashlight", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
+        ix.util.PropertyDesc2(tooltip, "Flashlight", Color(64, 224, 208))
     end
 end

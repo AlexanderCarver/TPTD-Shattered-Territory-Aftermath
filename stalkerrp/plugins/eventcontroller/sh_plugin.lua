@@ -18,8 +18,6 @@ PLUGIN.saferadius = 1500
 
 PLUGIN.spawnrate = 30
 
-local icon = Material("vgui/icons/news.png")
-
 ix.config.Add("eventControllerThreshold", 70, "How many mutants should the controller keep on the map.", nil, {
 	data = {min = 10, max = 100},
 	category = "Spawning"

@@ -1,7 +1,7 @@
-﻿ITEM.name = "Плеер «Walkman TPS-L2»"
-ITEM.description = "Портотивный проигрыватель кассеток."
-ITEM.longdesc = "Этот достаточно новый кассетный плеер, который может проигрывать кассеты транслируя его на громкий динамик, чтобы каждый прохожий мог услышать ваш музыкальный вкус. Его история только начинается в ваших руках, так как на нём нет ни пыли, ни царапин."
-ITEM.price = 15000
+﻿ITEM.name = "Плеер 'SONY WALKMAN TPS-L2'"
+ITEM.description = "Портативный кассетный плеер."
+ITEM.longdesc = ""
+ITEM.price = 1200
 ITEM.model = "models/kek1ch/portable_player.mdl"
 ITEM.width = 2
 ITEM.height = 1
@@ -24,9 +24,9 @@ function ITEM:GetDescription()
 	end
 
 	if self:GetData("CurTape", nil) == nil then
-		str = str.." \n\nСлот для кассеты: Пуст."
+		str = str.." \n\nКассета: пусто."
 	else
-		str = str.." \n\nСейчас проигрывает: "..ix.item.list[self:GetData("CurTape", nil)].name.."."
+		str = str.." \n\nСейчас проигрывается: "..ix.item.list[self:GetData("CurTape", nil)].name.."."
 	end
 
 	return str
@@ -37,9 +37,8 @@ if (CLIENT) then
 		if !self.entity then
 			
 
-			ix.util.PropertyDesc(tooltip, "Раритетный предмет", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Редкий предмет", Color(200, 200, 200))
 			ix.util.PropertyDesc(tooltip, "Электронный девайс", Color(200, 200, 200))
-			ix.util.PropertyDesc(tooltip, "Батареи в комплекте", Color(200, 200, 200))
 
 			tooltip:SizeToContents()
 		end
@@ -48,7 +47,6 @@ end
 
 ITEM.functions.play = {
     name = "Нажать «Play»",
-    tip = "useTip",
     icon = "icon16/stalker/split.png",
     OnCanRun = function(item)				
 		return (!IsValid(item.entity) and item:GetData("CurTape", nil) != nil)
@@ -80,7 +78,6 @@ ITEM.functions.play = {
 
 ITEM.functions.insert = {
     name = "Вставить кассету",
-    tip = "useTip",
     icon = "icon16/stalker/attach.png",
     isMulti = true,
     OnCanRun = function(item)				
@@ -141,8 +138,7 @@ ITEM.functions.insert = {
 }
 
 ITEM.functions.remove = {
-    name = "Вынуть кассету",
-    tip = "useTip",
+    name = "Вытащить кассету",
     icon = "icon16/stalker/detach.png",
     OnCanRun = function(item)				
 		return (!IsValid(item.entity) and item:GetData("CurTape", nil) != nil)
@@ -162,7 +158,6 @@ ITEM.functions.remove = {
 
 ITEM.functions.stopsound = {
     name = "Нажать «Stop»",
-    tip = "useTip",
     icon = "icon16/stalker/throw.png",
     OnCanRun = function(item)
 		return (!IsValid(item.entity) and item:GetData("CurTape", nil) != nil)

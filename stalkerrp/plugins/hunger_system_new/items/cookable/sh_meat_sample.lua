@@ -12,10 +12,8 @@ ITEM.BaseWeight = 3.436
 ITEM.WeightPerLevel = 1.284
 
 ITEM.meal = "meal_bloodsucker"
-
-ITEM.img = ix.util.GetMaterial("cotz/ui/icons/food_15.png")
-
 ITEM.sound = "stalkersound/inv_eat_mutant_food.mp3"
+
 ITEM:Hook("use", function(item)
 	item.player:EmitSound(item.sound or "items/battery_pickup.wav")
 	item.player:AddBuff("debuff_radiation", 10, { amount = 45/20 })

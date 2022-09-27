@@ -18,10 +18,10 @@ end
 -- Enables/Disables compass for everyone in the entire server
 PLUGIN.Compass_Enabled = true
 PLUGIN.Force_Server_Style = true -- Force the below compass settings on the client.
-PLUGIN.Style_Selected = "cotz"
+PLUGIN.Style_Selected = "default"
 
 PLUGIN.Styles = {
-    ["cotz"] = {
+    ["default"] = {
         heading = true, -- Whether or not the precise bearing is displayed. (Default: true)
         compassX = 0.5, -- This value is multiplied by users screen width. (Default: 0.5)
         compassY = 0.05, -- This value is multiplied by users screen height. (Default: 0.05)
@@ -48,7 +48,7 @@ if CLIENT then
 
     local function updateCompassSettings()
         -- ternary operators sorry not sorry
-        cl_style_selected_str = 1 and "cotz"
+        cl_style_selected_str = 1 and "default"
 
         compass_style = PLUGIN.Force_Server_Style and PLUGIN.Styles[PLUGIN.Style_Selected] or {
             style = cl_style_selected_str,
@@ -120,15 +120,15 @@ if CLIENT then
     end
 
     local adv_compass_tbl = {
-        [0] = "N",
-        [45] = "NE",
-        [90] = "E",
-        [135] = "SE",
-        [180] = "S",
-        [225] = "SW",
-        [270] = "W",
-        [315] = "NW",
-        [360] = "N"
+        [0] = "С",
+        [45] = "СВ",
+        [90] = "В",
+        [135] = "ЮВ",
+        [180] = "Ю",
+        [225] = "ЮЗ",
+        [270] = "З",
+        [315] = "СЗ",
+        [360] = "С"
     }
 
     function PLUGIN:HUDPaint()
@@ -166,7 +166,7 @@ if CLIENT then
                     surface.SetTextColor(Color(255, 255, 255, calculation))
                     surface.SetFont(font)
 
-                    if compass_style.style == "cotz" then
+                    if compass_style.style == "default" then
                         if font == "exo_compass_Numbers_" .. ratio then
                             surface.DrawLine(x, compassY, x, compassY + height * 0.2)
                             surface.DrawLine(x, compassY, x, compassY + height * 0.3)

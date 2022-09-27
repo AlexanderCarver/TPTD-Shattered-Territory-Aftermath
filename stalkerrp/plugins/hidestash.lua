@@ -45,7 +45,7 @@ else
 end
 
 function PLUGIN:StashHide(client)
-	ix.util.PlayerPerformBlackScreenAction(client, "Hiding the stash...", 3, function(client) 
+	ix.util.PlayerPerformBlackScreenAction(client, "Вы прячете тайник...", 15, function(client) 
 		local trace = client:GetEyeTraceNoCursor()
 		local hitpos = trace.HitPos + trace.HitNormal*5
 		local stasheditem = ents.FindInSphere(hitpos, 32)
@@ -56,22 +56,22 @@ function PLUGIN:StashHide(client)
 			for k, v in pairs( stasheditem ) do
 				if v:GetClass() == "ix_item" then
 					table.insert( PLUGIN.stashpoints, { hitpos, v:GetItemTable().uniqueID, v:GetAngles(), v:GetItemTable().data } )
-					ix.log.Add(client, "command", "created a stash at x:"..hitpos.x.." y:"..hitpos.y.." z:"..hitpos.z.." containing: "..v:GetItemTable().name)
+					ix.log.Add(client, "command", "создан тайник по следующим координатам: x - "..hitpos.x..", y - "..hitpos.y..", z - "..hitpos.z..". Содержание тайника: "..v:GetItemTable().name)
 
 					v:Remove()
 					mt = mt + 1
 				end
 			end
 			if mt > 0 then
-				client:Notify( "You hid ".. mt .. " items." )
-				ix.chat.Send(client, "iteminternal", "hides something away.", false)
+				client:Notify( "Вы спрятали ".. mt .. " предметов." )
+				ix.chat.Send(client, "iteminternal", "прячет что-то, делая едва заметный тайник.", false)
 			end
 		end
 	end)
 end
 
 function PLUGIN:StashUnhide(client)
-	ix.util.PlayerPerformBlackScreenAction(client, "Searching for a stash...", 8, function(client) 
+	ix.util.PlayerPerformBlackScreenAction(client, "Вы ищете тайники...", 15, function(client) 
 		local trace = client:GetEyeTraceNoCursor()
 		local hitpos = trace.HitPos + trace.HitNormal*5
 		local dist = hitpos:Distance(client:GetPos())
@@ -88,10 +88,10 @@ function PLUGIN:StashUnhide(client)
 			end
 		end
 		if mt == 0 then
-			client:Notify( "You didn't find anything" )
+			client:Notify( "Вы не смогли что-либо." )
 		else
-			client:Notify( "You found ".. mt .. " items.")
-			ix.chat.Send(client, "iteminternal", "uncovers something.", false)
+			client:Notify( "Вы нашли ".. mt .. " предметов.")
+			ix.chat.Send(client, "iteminternal", "достаёт несколько вещей.", false)
 		end
 	end)
 end
@@ -115,7 +115,7 @@ ix.command.Add("stashdisplay", {
 	OnRun = function(self, client, arguments)
 		if SERVER then
 			netstream.Start(client, "nut_DisplaySpawnPoints", PLUGIN.stashpoints)
-			client:Notify( "Displayed all stashes for 10 secs." )
+			client:Notify( "Отображение всех тайников в течении 10 секунд." )
 		end
 	end
 })

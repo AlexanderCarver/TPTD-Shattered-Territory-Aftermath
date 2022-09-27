@@ -9,7 +9,7 @@ ITEM.throwforce = 2500
 -- You can use hunger table? i guess? 
 ITEM.functions = ITEM.functions or {}
 ITEM.functions.throw = {
-	name = "Активировать",
+	name = "Зажечь флаер",
 	icon = "icon16/arrow_up.png",
 	OnRun = function(item)
 		local client = item.player
