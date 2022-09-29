@@ -4,14 +4,14 @@ ITEM.longdesc = "Пищевой продукт, получаемый части�
 ITEM.model = "models/banka.mdl"
 ITEM.skin = 1
 
-ITEM.price = 295
+ITEM.price = 356
 ITEM.height = 1
 ITEM.width = 1
 ITEM.weight = 0.190
-ITEM.flatweight = 0.038
+ITEM.flatweight = 0.032
 
-ITEM.hunger = 25
-ITEM.thirst = -10
+ITEM.hunger = 24
+ITEM.thirst = -16
 ITEM.quantity = 2
 --ITEM.alcohol = 10
 
@@ -19,11 +19,13 @@ ITEM.sound = "stalkersound/inv_flask.mp3" --cannedfoodeat.mp3
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc(tooltip, "Консервированная пища", Color(64, 224, 208))
+	ix.util.PropertyDesc(tooltip, "Сладости", Color(64, 224, 208))
+	ix.util.PropertyDesc(tooltip, "Вызывает жажду", Color(64, 224, 208))
 end
 
 ITEM:Hook("use", function(item)
 	item.player:EmitSound(item.sound or "items/battery_pickup.wav")
-	ix.chat.Send(item.player, "iteminternal", "аккуратно вскрывает консервированную банку и употребляет находящийся внутри продукт. Сгущенное молоко очень сладкое на вкус и употребляется любителями 'с ложки', однако ее, как правило, лучше наносить на хлеб, чтобы не испортить себе зубы. Идеальна с чаем.", false)
+	ix.chat.Send(item.player, "iteminternal", "достаёт консервированную банку и употребляет находяющееся внутри сладкое сгущенное молоко.", false)
 end)
 
 ITEM:DecideFunction()

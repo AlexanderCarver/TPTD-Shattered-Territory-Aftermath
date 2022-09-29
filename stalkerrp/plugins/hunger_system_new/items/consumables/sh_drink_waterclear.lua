@@ -3,14 +3,16 @@ ITEM.description = "Бутилированная вода, отлично уто
 ITEM.longdesc = "Запакованая бутылка чистой воды марки 'Шаянская'. Отличный выбор, чтобы утолить жажду или приготовить что-либо..."
 ITEM.model = "models/lostsignalproject/items/consumable/mineral_water.mdl"
 
-ITEM.price = 85
+ITEM.price = 190
 ITEM.height = 1
 ITEM.width = 1
-ITEM.weight = 0.160
-ITEM.flatweight = 0.038
+ITEM.weight = 0.120
+ITEM.flatweight = 0.028
+
+ITEM.isDrink = true
 
 --ITEM.hunger = 15
-ITEM.thirst = 15
+ITEM.thirst = 16
 ITEM.quantity = 2
 --ITEM.alcohol = 10
 
@@ -22,7 +24,7 @@ end
 
 ITEM:Hook("use", function(item)
 	item.player:EmitSound(item.sound or "items/battery_pickup.wav")
-	ix.chat.Send(item.player, "iteminternal", "достает светло-голубую бутылку и делает несколько глотков, убирая ее обратно.", false)
+	ix.chat.Send(item.player, "iteminternal", "достает светло-голубую бутылку и делает несколько глотков.", false)
 end)
 
 ITEM:DecideFunction()

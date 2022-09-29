@@ -3,13 +3,13 @@ ITEM.description = "Консервированная пища, пригодна�
 ITEM.longdesc = "Бобы красной фасоли, которые были подвергнуты процессу консерации вместе с томатным соусом. Достаточно соленые и отлично утоляют голод."
 ITEM.model = "models/lostsignalproject/items/consumable/chili.mdl"
 
-ITEM.price = 145
+ITEM.price = 160
 ITEM.height = 1
 ITEM.width = 1
 ITEM.weight = 0.160
-ITEM.flatweight = 0.038
+ITEM.flatweight = 0.034
 
-ITEM.hunger = 25
+ITEM.hunger = 22
 ITEM.thirst = -10
 ITEM.quantity = 1
 --ITEM.alcohol = 10
@@ -18,6 +18,7 @@ ITEM.sound = "stalkersound/inv_flask.mp3" --cannedfoodeat.mp3
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc(tooltip, "Консервированная пища", Color(64, 224, 208))
+	ix.util.PropertyDesc(tooltip, "Хорошо утоляет голод", Color(64, 224, 208))
 end
 
 ITEM:Hook("use", function(item)
