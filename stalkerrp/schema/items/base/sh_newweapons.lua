@@ -143,10 +143,10 @@ function ITEM:PopulateTooltip(tooltip)
     if (!self.entity) then
         ix.util.PropertyDesc(tooltip, "Firearm", Color(64, 224, 208))
         if self.weaponCategory == "secondary" then
-        	ix.util.PropertyDesc2(tooltip, "Secondary Weapon", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
+        	ix.util.PropertyDesc2(tooltip, "Secondary Weapon", Color(64, 224, 208))
         end
         if self.weaponCategory == "primary" then
-        	ix.util.PropertyDesc2(tooltip, "Primary Weapon", Color(64, 224, 208), Material("vgui/ui/stalker/weaponupgrades/handling.png"))
+        	ix.util.PropertyDesc2(tooltip, "Primary Weapon", Color(64, 224, 208))
         end
     end
 

@@ -66,7 +66,7 @@ function ITEM:OnInstanced(invID, x, y)
 end
 
 ITEM.functions.split = {
-    name = "Split",
+    name = "Разделить",
     tip = "useTip",
     icon = "icon16/stalker/split.png",
     isMulti = true,
