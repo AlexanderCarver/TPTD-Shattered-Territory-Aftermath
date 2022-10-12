@@ -11,7 +11,6 @@ ITEM.class = "weapon_pistol"
 ITEM.isWeapon = true
 ITEM.isGrenade = false
 ITEM.weaponCategory = "sidearm"
-ITEM.equipIcon = ix.util.GetMaterial("materials/vgui/ui/stalker/misc/equip.png")
 ITEM.exRender = true
 ITEM.canRepair = true
 
