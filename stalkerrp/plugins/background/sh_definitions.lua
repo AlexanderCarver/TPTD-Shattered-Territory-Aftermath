@@ -22,8 +22,8 @@
 	}
 ]]--
 
-/*ix.backgrounds["nothing"] = {
-	name = "«Диггер»",
+ix.backgrounds["nothing"] = {
+	name = "«Как я тут оказался?»",
 	description = "Вы понятия не имеете, как оказались в этом заброшенном месте, и вы не готовы вообще ко всему. Может вас привезли сюда на грузовике смерти или вы стали жертвой криминала. Это не важно. Ваша цель - адаптироваться или уйти отсюдова по скорее.".. 
 	"\n\nСтартовое снаряжение:"..
 	"\n  Ничего",
@@ -35,13 +35,12 @@
 		--client:SetRunSpeed(400) -- These things dont actually work, they're overridden by the stamina plugin almost instantly
 		--client:SetWalkSpeed(200)
 	end,
-}*/
+}
 
-ix.backgrounds["veteran"] = {
-	name = "«Ветеран боевых действий»",
+ix.backgrounds["alcoholic_light"] = {
+	name = "«Подслушал в баре»",
 	description = "Вы обычный любитель посидеть в барах и послушать всякие байке. В один из дней, вы слышите о странном месте, под названием «Закрытая Зона Отчуждения», где грибы аномальны, а закон там только волчий. Вас это могло заинтересовать или запугать. Но ясно одно – Вы уже тут, со снаряжением, готовы изучать или зарабатывать на этой опасной территории.".. 
-	"\n\nПристрастье к лёгкому алкоголю."..
-	"\nЗависимость от нейролептиков."
+	"\n\nПристрастье к лёгкому алкоголю. Вы не представляете отдых без пива."..
 	"\n\nСтартовое снаряжение:"..
 	"\n  1x Пачка патрон (.45 ACP, .410 Magnum Buck) (Damaged)"..
 	"\n  15x rounds of .45 ACP"..
@@ -63,7 +62,6 @@ ix.backgrounds["veteran"] = {
 		character:GetInventory():Add("kit_newchar", 1)
 		character:GetInventory():Add("knife_1", 1)
 		character:GetPlayer():AddAddiction("LightAlcoholic")
-		character:GetPlayer():AddAddiction("NeurolepticsAddiction")
 	end,
 	OnLoaded = function(character)
 		--local client = character:GetPlayer()  

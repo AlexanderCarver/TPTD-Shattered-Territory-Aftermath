@@ -80,7 +80,6 @@ ix.char.RegisterVar("backgrounds", {
 		local combo = panel:Add("DComboBox")
 		combo:Dock(TOP) -- TODO: don't fill so we can allow other panels
 		combo:DockMargin(0, 0, container:GetWide()*0.7, combo:GetTall())
-		--combo:SetFont("stalkerregulartitlefont")
 		combo:SizeToContents()
 		combo.Paint = function(panel, width, height)
 			derma.SkinFunc("DrawImportantBackground", 0, 0, width, height, Color(255, 255, 255, 25))
@@ -91,7 +90,6 @@ ix.char.RegisterVar("backgrounds", {
 		local labeltitle = panel:Add("DLabel")
 		labeltitle:Dock(TOP)
 		labeltitle:SetText("Описание")
-		--labeltitle:SetFont("regularfont")
 		labeltitle:SizeToContents()
 		labeltitle.Paint = function(panel, width, height)
 			return false
@@ -101,7 +99,6 @@ ix.char.RegisterVar("backgrounds", {
 		label:Dock(FILL)
 		label:SetWrap(true)
 		label:SetText("Выберите предысторию для своего персонажа выше.")
-		--label:SetFont("stalkerregularfont")
 		label:SetContentAlignment(7)
 		label:SetTall(container:GetTall()*0.5)
 		label:SizeToContents()
