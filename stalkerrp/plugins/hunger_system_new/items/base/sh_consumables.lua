@@ -89,14 +89,6 @@ function ITEM:DecideFunction()
 					item:SetData("quantity", quantity)
 					return false
 				end
-				if (quantity <= 0) then
-					if (item.empty_item and ix.item.Get(item.empty_item)) then
-						if (!client:GetCharacter():GetInventory():Add(item.empty_item)) then
-							ix.item.Spawn(item.empty_item, client)
-							return true
-						end
-					end
-				end
 			end
 		}
 	elseif ITEM.hunger > 0 then
@@ -164,26 +156,6 @@ function ITEM:DecideFunction()
 					item:SetData("quantity", quantity)
 					return false
 				end
-			end
-		}
-	elseif ITEM.quantity > 0 then
-		ITEM.functions.use = {
-			name = "Наполнить",
-			icon = "icon16/stalker/eat.png",
-			OnRun = function(item)
-				local player = item.player;
-				local plyArea = (ix.area.stored[player:GetArea()] or {});
-				if player:WaterLevel() > 0 then
-					item:SetData('thirst', item.thirst)
-					item:SetData('quantity', item.quantity)
-					player:EmitSound("ambient/water/water_splash"..math.random(1, 3)..".wav")
-				end;
-				return false;
-			end,
-			OnCanRun = function(item)
-				local player = item.player;
-				print(item:GetData('quantity') < item.quantity)
-				return item.refillable && item:GetData('quantity') < item.quantity && !IsValid(item.entity) && player:WaterLevel() > 0
 			end
 		}
 	end	

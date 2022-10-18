@@ -9,12 +9,14 @@ ITEM.width = 1
 ITEM.weight = 0.090
 ITEM.flatweight = 0.420
 
-ITEM.isDrink = true
 
 --ITEM.hunger = 15
 ITEM.thirst = 12
 ITEM.quantity = 2
 --ITEM.alcohol = 10
+ITEM.foodtype = "drink"
+ITEM.canGarbage = true;
+ITEM.refillable = true;
 
 ITEM.sound = "stalkersound/inv_flask.mp3" --cannedfoodeat.mp3
 
