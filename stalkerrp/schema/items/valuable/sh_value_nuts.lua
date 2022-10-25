@@ -1,6 +1,6 @@
-ITEM.name = "Nuts"
-ITEM.description = "A bunch of metal nuts."
-ITEM.longdesc = "Nuts for fastening bolts and screws."
+ITEM.name = "Гайки"
+ITEM.description = "Связка металлических гаек."
+ITEM.longdesc = "Гайки для крепления болтов и винтов."
 ITEM.model = "models/illusion/eftcontainers/nuts.mdl"
 
 ITEM.width = 1

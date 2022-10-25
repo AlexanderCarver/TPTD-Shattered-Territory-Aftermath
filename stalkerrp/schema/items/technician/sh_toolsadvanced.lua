@@ -1,6 +1,6 @@
-ITEM.name = "Advanced Tools"
-ITEM.description = "Used by technicians to do advanced work on equipment."
-ITEM.longdesc = "A decent set of old tools, but despite their age they appear to be in good condition. Contains a handful set of small pliers, tipped tweezers, probe and pick set. With enough knowledge and experience, this kit can be used for the creation of better equipment."
+ITEM.name = "Расширенные инструменты"
+ITEM.description = "Используется техниками для выполнения сложных работ на оборудовании."
+ITEM.longdesc = "Приличный набор старых инструментов, но, несмотря на их возраст, они выглядят в хорошем состоянии. Содержит небольшой набор маленьких плоскогубцев, пинцета с наконечниками, зонда и набора отмычек. При наличии достаточных знаний и опыта этот комплект можно использовать для создания более качественного снаряжения."
 ITEM.model = "models/lostsignalproject/items/quest/toolkit_2.mdl"
 ITEM.width = 2
 ITEM.height = 1
@@ -26,9 +26,9 @@ function ITEM:GetDescription()
 	end
 
 	if (self.entity) then
-		return self.description.."\n \nThis tool has "..math.Round(quant).."/100 durability."
+		return self.description.."\n \nЭтот инструмент имеет "..math.Round(quant).."/100 прочность."
 	else
-        return (str.."\n \nThis tool has "..math.Round(quant).."/100 durability.")
+        return (str.."\n \nЭтот инструмент имеет "..math.Round(quant).."/100 прочность.")
 	end
 end
 
@@ -44,7 +44,7 @@ function ITEM:GetName()
 end
 
 ITEM.functions.Custom = {
-	name = "Customize",
+	name = "Использовать",
 	tip = "Customize this item",
 	icon = "icon16/wrench.png",
 	OnRun = function(item)		
@@ -60,7 +60,7 @@ ITEM.functions.Custom = {
 }
 
 ITEM.functions.Inspect = {
-	name = "Inspect",
+	name = "Осмотреть",
 	tip = "Inspect this item",
 	icon = "icon16/picture.png",
 	OnClick = function(item, test)
@@ -98,18 +98,18 @@ ITEM.functions.Inspect = {
 }
 
 ITEM.functions.Clone = {
-	name = "Clone",
+	name = "Дублировать",
 	tip = "Clone this item",
 	icon = "icon16/wrench.png",
 	OnRun = function(item)
 		local client = item.player	
 	
-		client:requestQuery("Are you sure you want to clone this item?", "Clone", function(text)
+		client:requestQuery("Вы уверены, что хотите клонировать этот элемент?", "Clone", function(text)
 			if text then
 				local inventory = client:GetCharacter():GetInventory()
 				
 				if(!inventory:Add(item.uniqueID, 1, item.data)) then
-					client:Notify("Inventory is full")
+					client:Notify("Инвентарь заполнен")
 				end
 			end
 		end)
@@ -135,7 +135,7 @@ end
 
 /*
 ITEM.functions.craftmenu = { -- sorry, for name order.
-	name = "Open Crafting Menu",
+	name = "Открыть меню крафта",
 	icon = "icon16/stalker/repair.png",
 	OnRun = function(item)
 		
@@ -149,7 +149,7 @@ ITEM.functions.craftmenu = { -- sorry, for name order.
 */
 
 ITEM.functions._use = {
-	name = "Disassemble",
+	name = "Разобрать",
 	tip = "useTip",
 	icon = "icon16/stalker/scrap.png",
 	isMulti = true,
@@ -197,7 +197,7 @@ ITEM.functions._use = {
 					break
 				end
 			else
-				client:Notify("No item selected.")
+				client:Notify("Предмет не выбран!")
 				return false
 			end
 		end
@@ -219,7 +219,7 @@ ITEM.functions._use = {
 }
 
 ITEM.functions.repairgun = {
-	name = "Repair Gun",
+	name = "Починить оружие",
 	tip = "useTip",
 	icon = "icon16/stalker/repair.png",
 	isMulti = true,
@@ -237,7 +237,7 @@ ITEM.functions.repairgun = {
 				for k, v in pairs(items) do
 					if v.isWeapon and v:GetData("durability", 0) < 100 then
 						table.insert(targets, {
-							name = L("Repair "..v.name.." with "..math.Round(v:GetData("durability",0), 2).." percent durability to "..math.Clamp(math.Round(v:GetData("durability",0), 2)+item.repairAmount*(1+(client:GetCharacter():GetAttribute("technician", 0)/100)), 0, 100).." percent durability | Costs "..math.Round(v.repairCost*(1-(client:GetCharacter():GetAttribute("technician", 0)/100))).." components."),
+							name = L("Починка "..v.name.." используя "..math.Round(v:GetData("durability",0), 2).." его прочность становится "..math.Clamp(math.Round(v:GetData("durability",0), 2)+item.repairAmount*(1+(client:GetCharacter():GetAttribute("technician", 0)/100)), 0, 100).." прочности | расходы "..math.Round(v.repairCost*(1-(client:GetCharacter():GetAttribute("technician", 0)/100))).." компонентов."),
 							data = {v:GetID()},
 						})
 					else
@@ -268,7 +268,7 @@ ITEM.functions.repairgun = {
 					break
 				end
 			else
-				client:Notify("No weapon selected.")
+				client:Notify("Оружие не выбрано.")
 				return false
 			end
 		end
@@ -276,10 +276,10 @@ ITEM.functions.repairgun = {
 		if target:GetData("equip") != true then
 			if comp and (comp:GetData("quantity", 1)) >= target.repairCost then
 				target:SetData("durability", math.Clamp(target:GetData("durability",100) + item.repairAmount*(1+(client:GetCharacter():GetAttribute("technician", 0)/100)), 0, 100))
-				client:Notify(target.name.." successfully repaired.")
+				client:Notify(target.name.." успешно отремонтирован.")
 				comp:SetData("quantity", comp:GetData("quantity") - target.repairCost*(1-(client:GetCharacter():GetAttribute("technician", 0)/100)))
 				item.player:EmitSound(item.sound or "items/battery_pickup.wav")
-				ix.chat.Send(item.player, "iteminternal", "uses their "..item.name.." to repair their "..target.name..".", false)
+				ix.chat.Send(item.player, "iteminternal", "использует "..item.name.." для починки "..target.name..".", false)
 				if item:GetData("quantity",100) > 1 then
 					item:SetData("quantity", item:GetData("quantity",100) - 1)
 					return false
@@ -287,18 +287,18 @@ ITEM.functions.repairgun = {
 					return true
 				end
 			else
-				client:Notify("Not enough components.")
+				client:Notify("Недостаточно компонентов.")
 				return false
 			end
 		else
-			client:Notify("Unequip the weapon first!")
+			client:Notify("Сначала снимите оружие!")
 			return false	
 		end
 	end,
 }
 
 ITEM.functions.repairarmor = {
-	name = "Repair Armor",
+	name = "Ремонт брони",
 	tip = "useTip",
 	icon = "icon16/stalker/repair.png",
 	isMulti = true,
@@ -316,7 +316,7 @@ ITEM.functions.repairarmor = {
 				for k, v in pairs(items) do
 					if v.isBodyArmor and v:GetData("durability", 0) < 100 then
 						table.insert(targets, {
-							name = L("Repair "..v.name.." with "..math.Round(v:GetData("durability",0), 2).." percent durability to "..math.Clamp(math.Round(v:GetData("durability",0), 2)+item.repairAmount*(1+(client:GetCharacter():GetAttribute("technician", 0)/100)), 0, 100).." percent durability | Costs "..math.Round((v.price/100)*(1-(client:GetCharacter():GetAttribute("technician", 0)/100))).." components."),
+							name = L("Чинит "..v.name.." при помощи "..math.Round(v:GetData("durability",0), 2).." percent durability to "..math.Clamp(math.Round(v:GetData("durability",0), 2)+item.repairAmount*(1+(client:GetCharacter():GetAttribute("technician", 0)/100)), 0, 100).." percent durability | Costs "..math.Round((v.price/100)*(1-(client:GetCharacter():GetAttribute("technician", 0)/100))).." components."),
 							data = {v:GetID()},
 						})
 					else
@@ -347,7 +347,7 @@ ITEM.functions.repairarmor = {
 					break
 				end
 			else
-				client:Notify("No outfit selected.")
+				client:Notify("Броня не выбрана.")
 				return false
 			end
 		end
@@ -355,10 +355,10 @@ ITEM.functions.repairarmor = {
 		if target:GetData("equip") != true then
 			if comp and (comp:GetData("quantity", 1)) >= (target.price/100) then
 				target:SetData("durability", math.Clamp(target:GetData("durability",100) + item.repairAmount*(1+(client:GetCharacter():GetAttribute("technician", 0)/100)), 0, 100))
-				client:Notify(target.name.." successfully repaired.")
+				client:Notify(target.name.." успешно отремонтирован.")
 				comp:SetData("quantity", comp:GetData("quantity") - (target.price/100)*(1-(client:GetCharacter():GetAttribute("technician", 0)/100)))
 				item.player:EmitSound(item.sound or "items/battery_pickup.wav")
-				ix.chat.Send(item.player, "iteminternal", "uses their "..item.name.." to repair their "..target.name..".", false)
+				ix.chat.Send(item.player, "iteminternal", "использует "..item.name.." для починки "..target.name..".", false)
 				if item:GetData("quantity",100) > 1 then
 					item:SetData("quantity", item:GetData("quantity",100) - 1)
 					return false
@@ -366,11 +366,11 @@ ITEM.functions.repairarmor = {
 					return true
 				end
 			else
-				client:Notify("Not enough components.")
+				client:Notify("Недостаточно компонентов.")
 				return false
 			end
 		else
-			client:Notify("Unequip the outfit first!")
+			client:Notify("Сначала снимите снаряжение!")
 			return false	
 		end
 	end,

@@ -1,6 +1,6 @@
-ITEM.name = "Electrical Wire"
-ITEM.description = "Thin electric wires, used in electronics."
-ITEM.longdesc = "Light wiring used in electrical and electronic work."
+ITEM.name = "Электрический Провод"
+ITEM.description = "Тонкие электрические провода, используемые в электронике."
+ITEM.longdesc = "Световая проводка, используемая в электрических и электронных работах."
 ITEM.model = "models/illusion/eftcontainers/wires.mdl"
 
 ITEM.width = 1

@@ -1,6 +1,6 @@
-ITEM.name = "Manufacture of Gear Wheels"
-ITEM.description = "Factory manual on creation of gears."
-ITEM.longdesc = "A quite new manual for factory workers on how to create a various assortion of gears, from start of production to the end product"
+ITEM.name = "Производство зубчатых колес"
+ITEM.description = "Заводское руководство по созданию зубчатых колес."
+ITEM.longdesc = "Совершенно новое руководство для заводских рабочих о том, как создавать различные типы зубчатых колес, от начала производства до конечного продукта."
 ITEM.model = "models/lostsignalproject/items/misc/book2.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

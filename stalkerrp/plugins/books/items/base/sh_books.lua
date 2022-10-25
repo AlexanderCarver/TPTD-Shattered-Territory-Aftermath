@@ -14,6 +14,8 @@ local BOOK_HTML = [[
 ]]
 
 ITEM.functions.Read = {
+	name = "Прочитать",
+	icon = "icon16/book_open.png",
 	OnClick = function(itemTable)
 		local frame = vgui.Create("DFrame")
 		frame:SetSize(540, 680)
@@ -27,6 +29,5 @@ ITEM.functions.Read = {
 	end,
 	OnRun = function(itemTable)
 		return false
-	end,
-	icon = "icon16/book_open.png"
+	end
 }

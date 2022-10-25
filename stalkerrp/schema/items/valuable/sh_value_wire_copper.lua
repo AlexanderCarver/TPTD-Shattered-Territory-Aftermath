@@ -1,6 +1,6 @@
-ITEM.name = "Copper Wire"
-ITEM.description = "A spool of thin copper wire."
-ITEM.longdesc = "A thick coil of copper wire. Quite heavy, and extremely useful for all kinds of electric work, however it is also quite common. "
+ITEM.name = "Медный Провод"
+ITEM.description = "Катушка тонкой медной проволоки."
+ITEM.longdesc = "Толстый моток медной проволоки. Довольно тяжелый и чрезвычайно полезный для всех видов электрических работ, однако он также довольно распространен. "
 ITEM.model = "models/lostsignalproject/items/quest/wire.mdl"
 
 ITEM.width = 1

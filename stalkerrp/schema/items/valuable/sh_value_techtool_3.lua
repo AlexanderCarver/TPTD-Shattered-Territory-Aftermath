@@ -1,6 +1,6 @@
-ITEM.name = "Box of Specialty Tools"
-ITEM.description = "A box of assorted tools."
-ITEM.longdesc = "A box of specialty tools for very specific technical work. Not very useful on their own, however they seem to have been preserved very nicely"
+ITEM.name = "Инструменты для калибровки"
+ITEM.description = "Коробка с разными инструментами."
+ITEM.longdesc = "Коробка со специальными инструментами для очень специфических технических работ. Сами по себе они не очень полезны, но, кажется, они очень хорошо сохранились."
 ITEM.model = "models/lostsignalproject/items/quest/toolkit_3.mdl"
 
 ITEM.width = 2
@@ -14,4 +14,4 @@ ITEM.iconCam = {
 	pos = Vector(0, 0, 200),
 	ang = Angle(90, 180, 0),
 	fov = 5.5,
-}
+} 

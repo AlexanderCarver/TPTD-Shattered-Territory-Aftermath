@@ -1,6 +1,6 @@
-ITEM.name = "Expert Tools"
-ITEM.description = "Used by technicians to do expert work on equipment."
-ITEM.longdesc = "A professional set of high quality tools for fine-tuning equipment. Contains drill bit set, precision tweezers, soldiering iron, 4 mm Screwdriver bits and a multimeter. With enough knowledge and experience, this kit can be used for the creation of advanced equipment."
+ITEM.name = "Инструменты эксперта"
+ITEM.description = "Используется техниками для выполнения экспертных работ на оборудовании."
+ITEM.longdesc = "Профессиональный набор высококачественных инструментов для тонкой настройки оборудования. Содержит набор свёрл, пинцет, закалённое железо, отвёртку 4 мм и мультиметр. При наличии достаточных знаний и опыта этот комплект можно использовать для создания продвинутого снаряжения."
 ITEM.model = "models/lostsignalproject/items/quest/toolkit_3.mdl"
 ITEM.width = 2
 ITEM.height = 1
@@ -43,21 +43,7 @@ function ITEM:GetName()
 	return name
 end
 
-ITEM.functions.Custom = {
-	name = "Customize",
-	tip = "Customize this item",
-	icon = "icon16/wrench.png",
-	OnRun = function(item)		
-		ix.plugin.list["customization"]:startCustom(item.player, item)
-		
-		return false
-	end,
-	
-	OnCanRun = function(item)
-		local client = item.player
-		return client:GetCharacter():HasFlags("N") and !IsValid(item.entity)
-	end
-}
+
 
 ITEM.functions.Inspect = {
 	name = "Inspect",

@@ -28,7 +28,6 @@ end
 
 -- removes plugins we dont need, TPTD: Взять стамину свою так уж, а то опять играться с чужими плагинами - такое себе.
 ix.plugin.SetUnloaded("stamina", true)
-ix.plugin.SetUnloaded("strength", true)
 
 
 ix.config.Add("charloadremove", true, "If enabled, instantly loads first character.", nil, {
@@ -128,6 +127,8 @@ end
 --removal of helix commands we dont use
 --removal of helix chats we dont use
 function PLUGIN:InitializedPlugins()
+	ix.command.list["charfallover"] = nil
+	ix.command.list["chargetup"] = nil
 	ix.command.list["setvoicemail"] = nil
 end
 
@@ -137,17 +138,16 @@ function PLUGIN:InitializedChatClasses()
 	ix.chat.classes["disconnect"] = nil
 end
 
---[[ix.chat.Register("playerjoin", {
+ix.chat.Register("playerjoin", {
 	CanSay = function(self, speaker, text)
 		return true
 	end,
 	OnChatAdd = function(self, speaker, text)
-		chat.AddText(Color(0,191,255), "[GPDA-SYSTEM] ", Color(0,241,255), icon, ": "..text)
+		chat.AddText(Color(0,191,255), "[OOC-TPTD]", Color(0,241,255),": "..text)
 	end,
 	prefix = {},
 	CanHear = function(self, speaker, listener)
 		if IsValid(listener) then
-			listener:EmitSound( "stalkersound/pda/pda_news.wav", 55, 100, 0.2, CHAN_AUTO )
 			return true
 		end
 
@@ -160,12 +160,11 @@ ix.chat.Register("playerleave", {
 		return true
 	end,
 	OnChatAdd = function(self, speaker, text)
-		chat.AddText(Color(0,191,255), "[GPDA-SYSTEM] ", Color(0,241,255), icon, ": "..text)
+		chat.AddText(Color(0,191,255), "[OOC-TPTD]", Color(0,241,255),": "..text)
 	end,
 	prefix = {},
 	CanHear = function(self, speaker, listener)
 		if IsValid(listener) then
-			listener:EmitSound( "stalkersound/pda/pda_news.wav", 55, 100, 0.2, CHAN_AUTO ) 
 		end
 		return true
 	end,
@@ -173,15 +172,15 @@ ix.chat.Register("playerleave", {
 
 if (SERVER) then
 	function PLUGIN:CharacterLoaded(character)
-		ix.chat.Send(nil, "playerjoin", string.format("%s has connected to STALKERNET.", character:GetName()))
+		ix.chat.Send(nil, "playerjoin", string.format("%s подключился к серверу.", character:GetName()))
 	end
 
 	function PLUGIN:PlayerDisconnected(client)
 		if( client:GetCharacter() ) then
-			ix.chat.Send(nil, "playerleave", string.format("%s has lost connection to STALKERNET.", client:GetCharacter():GetName()))
+			ix.chat.Send(nil, "playerleave", string.format("%s отключился от сервера.", client:GetCharacter():GetName()))
 		end
 	end
-end]]--
+end
 
 
 hook.Add("ShouldSuppressMenu", "DeadMenuSuppress", function(client) 

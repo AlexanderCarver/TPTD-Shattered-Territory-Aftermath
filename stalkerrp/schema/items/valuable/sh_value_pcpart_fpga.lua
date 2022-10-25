@@ -1,6 +1,6 @@
-ITEM.name = "FPGA Board"
-ITEM.description = "A field-programmable gate array board, used for special circuitry needs."
-ITEM.longdesc = "A field-programmable gate array, used in electronics. Could prove to have some use in the zone, if one had a way to program it."
+ITEM.name = "Плата ПЛИС"
+ITEM.description = "Программируемая в полевых условиях плата матрицы вентилей, используемая для специальных схемных нужд."
+ITEM.longdesc = "Программируемая в полевых условиях матрица вентилей, используемая в электронике. Могло бы оказаться полезным в зоне, если бы у кого-то был способ его запрограммировать."
 ITEM.model = "models/illusion/eftcontainers/virtex.mdl"
 
 ITEM.width = 1

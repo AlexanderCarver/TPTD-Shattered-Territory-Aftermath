@@ -1,6 +1,6 @@
-ITEM.name = "Spark Plug"
-ITEM.description = "A spark plug from an engine."
-ITEM.longdesc = "A sparking plug for an engine. Useful for zone inhabitants that use generators to power their dwellings."
+ITEM.name = "Свеча зажигания"
+ITEM.description = "Свеча зажигания от двигателя."
+ITEM.longdesc = "Свеча зажигания для двигателя. Полезно для жителей зоны, которые используют генераторы для питания своих жилищ."
 ITEM.model = "models/illusion/eftcontainers/sparkplug.mdl"
 
 ITEM.width = 1

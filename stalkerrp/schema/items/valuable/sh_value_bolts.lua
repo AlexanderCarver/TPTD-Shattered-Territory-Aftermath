@@ -1,6 +1,6 @@
-ITEM.name = "Bolts"
-ITEM.description = "A bunch of metal bolts."
-ITEM.longdesc = "Bolts, most often used in construction and maintenance work."
+ITEM.name = "Болты"
+ITEM.description = "Связка металлических болтов."
+ITEM.longdesc = "Болты, чаще всего используемые при строительных и ремонтных работах."
 ITEM.model = "models/illusion/eftcontainers/screwnutbolt.mdl"
 
 ITEM.width = 1

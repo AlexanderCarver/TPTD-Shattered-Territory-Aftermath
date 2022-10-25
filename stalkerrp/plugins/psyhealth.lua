@@ -189,16 +189,16 @@ ix.command.Add("CharSetPsyHealth", {
 		local psyhealth = tonumber(psyhealth)
 
 		if !target then
-			client:Notify("Invalid Target!")
+			client:Notify("ОШИБКА: НЕПРАВИЛЬНАЯ ЦЕЛЬ.")
 			return
 		end
 		target:SetPsyHealth(psyhealth)
 
 		if client == target then
-            client:Notify("You have set your psyhealth to "..psyhealth)
+            client:Notify("Вы установили себе психическое здоровье: "..psyhealth.."%.")
         else
-            client:Notify("You have set "..target:Name().."'s psyhealth to "..psyhealth)
-            target:Notify(client:Name().." has set your psyhealth to "..psyhealth)
+            client:Notify("Вы установили "..target:Name().." психическое здоровье: "..psyhealth.."%.")
+            target:Notify("Администратор "..client:Name().." установил Ваше психическое здоровье: "..psyhealth.."%.")
         end
         target:UpdatePsyHealthState(target)
 	end

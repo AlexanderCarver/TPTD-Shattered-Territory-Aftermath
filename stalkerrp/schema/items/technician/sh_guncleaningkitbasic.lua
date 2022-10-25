@@ -1,7 +1,7 @@
-ITEM.name = "Gun Cleaning Kit"
+ITEM.name = "Набор для чистки оружия"
 ITEM.model = "models/lostsignalproject/items/repair/cleaning_kit_p.mdl"
-ITEM.description = "Common tools and materials for taking care of weaponry."
-ITEM.longdesc = "Advanced gun cleaning kit fitting all common weapon calibers. Besides cleaning and maintenance, it can also be used as an effective repair tool. The set comprises a small portion of efficient lubricant and cleaning solvent as well as some light tools to facilitate access to inner mechanisms of a firearm. In order to maximize effectiveness, combine with additional materials or specialized repair sets."
+ITEM.description = "Общие инструменты и материалы для ухода за оружием."
+ITEM.longdesc = "Усовершенствованный набор для чистки оружия, подходящий для всех распространенных калибров оружия. Помимо очистки и обслуживания, его также можно использовать в качестве эффективного инструмента для ремонта. В набор входит небольшая порция эффективной смазки и чистящего растворителя, а также несколько легких инструментов для облегчения доступа к внутренним механизмам огнестрельного оружия. Для максимальной эффективности комбинируйте с дополнительными материалами или специализированными ремонтными наборами."
 ITEM.flag = "A"
 ITEM.price = "3000"
 ITEM.repairAmount = 5
@@ -10,7 +10,7 @@ ITEM.quantity = 3
 ITEM.sound = "stalkersound/inv_repair_kit_use_fast_2p8.mp3"
 
 ITEM.functions.use = {
-	name = "Clean Gun",
+	name = "Использовать",
 	tip = "useTip",
 	icon = "icon16/stalker/repair.png",
 	isMulti = true,
@@ -41,7 +41,7 @@ ITEM.functions.use = {
 		return targets
 		end,
 	OnCanRun = function(item)				
-		return (!IsValid(item.entity)) and item.invID == item:GetOwner():GetCharacter():GetInventory():GetID()
+		return (!IsValid(item.entity))
 	end,
 	OnRun = function(item, data)
 		local client = item.player

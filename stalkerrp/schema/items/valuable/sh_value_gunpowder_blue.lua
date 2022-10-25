@@ -1,6 +1,6 @@
-ITEM.name = "'Kite' Gunpowder"
-ITEM.description = "'Kite' brand gunpowder with a blue top."
-ITEM.longdesc = "High quality smokeless gunpowder from the 'Kite' brand, a top end producer of gunpowder. Used by some technicians in the zone to reload ammunition for sale."
+ITEM.name = "Порох Воздушный змей"
+ITEM.description = "Порох марки Кайт с синим верхом."
+ITEM.longdesc = "Высококачественный бездымный порох от бренда Кайт, ведущего производителя пороха. Используется некоторыми техниками в зоне для перезарядки боеприпасов для продажи."
 ITEM.model = "models/illusion/eftcontainers/gpblue.mdl"
 
 ITEM.width = 1

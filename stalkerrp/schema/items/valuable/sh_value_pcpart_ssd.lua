@@ -1,6 +1,6 @@
 ITEM.name = "SSD"
-ITEM.description = "A solid state drive for a computer."
-ITEM.longdesc = "A storage solution for computers. It is very modern and in good condition, giving it great resale value."
+ITEM.description = "Твердотельный накопитель для компьютера."
+ITEM.longdesc = "Решение для хранения данных для компьютеров. Он очень современный и в хорошем состоянии, что придает ему большую ценность при перепродаже."
 ITEM.model = "models/illusion/eftcontainers/flashstorage.mdl"
 
 ITEM.width = 1

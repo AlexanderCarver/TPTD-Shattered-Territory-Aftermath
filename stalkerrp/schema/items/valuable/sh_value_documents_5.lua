@@ -1,6 +1,6 @@
-ITEM.name = "Handdrawn Anomaly Map"
-ITEM.description = "A hastily drawn, and soaked, anomaly map."
-ITEM.longdesc = "A handdrawn map detailing the location of anomalies and their migration patterns in an indeterminate area. It might be valuable to someone studying anomaly positions."
+ITEM.name = "Нарисованная от руки Карта Аномалий"
+ITEM.description = "Наспех нарисованная и промокшая карта аномалий."
+ITEM.longdesc = "Нарисованная от руки карта с подробным описанием местоположения аномалий и характера их миграции в неопределенной области. Это может быть полезно для тех, кто изучает позиции аномалий."
 ITEM.model = "models/lostsignalproject/items/quest/notes_paper_1.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

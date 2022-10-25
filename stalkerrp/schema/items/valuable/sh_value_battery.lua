@@ -1,6 +1,6 @@
-ITEM.name = "1.5 Volt Battery"
-ITEM.description = "AA battery."
-ITEM.longdesc = "Small AA batteries, often used for powering flashlights and other small electronic devices. Fetches a small price."
+ITEM.name = "1,5-Вольтовая батарея"
+ITEM.description = "Батарейка типа АА."
+ITEM.longdesc = "Небольшие батарейки типа АА, часто используемые для питания фонариков и других небольших электронных устройств. За небольшую цену."
 ITEM.model = "models/illusion/eftcontainers/aabattery.mdl"
 
 ITEM.width = 1

@@ -1,6 +1,6 @@
-ITEM.name = "Wireless Transmitter Module"
-ITEM.description = "Electronic equipment used to transmit data."
-ITEM.longdesc = "A box with many internals for sending out many kinds of wireless signals."
+ITEM.name = "Модуль Беспроводного Передатчика"
+ITEM.description = "Электронное оборудование, используемое для передачи данных."
+ITEM.longdesc = "Коробка со множеством внутренних устройств для отправки множества видов беспроводных сигналов."
 ITEM.model = "models/illusion/eftcontainers/wirelesstransmitter.mdl"
 
 ITEM.width = 2

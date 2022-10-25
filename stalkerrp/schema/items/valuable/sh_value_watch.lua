@@ -1,6 +1,6 @@
-ITEM.name = "Watch"
-ITEM.description = "A nice looking watch."
-ITEM.longdesc = "A nice watch. Seems to be made of gilded silver."
+ITEM.name = "Часы"
+ITEM.description = "Красивые часы."
+ITEM.longdesc = "Хорошие часы. Кажется, он сделан из позолоченного серебра."
 ITEM.model = "models/illusion/eftcontainers/rolex.mdl"
 
 ITEM.width = 1

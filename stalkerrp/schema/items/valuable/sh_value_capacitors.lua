@@ -1,6 +1,6 @@
-ITEM.name = "Capacitors"
-ITEM.description = "Some capacitors."
-ITEM.longdesc = "A bunch of 3300µF capacitors, used in electronics work. Fetches a decent price, especially if one manages to find a couple."
+ITEM.name = "Конденсаторы"
+ITEM.description = "Несколько конденсаторов."
+ITEM.longdesc = "Набор конденсаторов емкостью 3300 мкФ, используемых в электронике. За приличную цену, особенно если удастся найти пару."
 ITEM.model = "models/illusion/eftcontainers/capacitors.mdl"
 
 ITEM.width = 1

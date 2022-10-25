@@ -1,6 +1,6 @@
-ITEM.name = "Gold Chain"
-ITEM.description = "A golden chain."
-ITEM.longdesc = "An 8 karat gold chain, most likely from some sort of jewelry. Quite pricey and rare."
+ITEM.name = "Золотая цепочка"
+ITEM.description = "Золотая цепочка."
+ITEM.longdesc = "Цепочка из 8-каратного золота, скорее всего, из какого-то ювелирного изделия. Довольно дорогой и редкий."
 ITEM.model = "models/illusion/eftcontainers/goldchain.mdl"
 
 ITEM.width = 1

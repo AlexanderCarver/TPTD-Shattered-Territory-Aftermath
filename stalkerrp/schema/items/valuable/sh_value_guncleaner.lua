@@ -1,5 +1,5 @@
-ITEM.name = "Military-Grade Weapon Cleaner"
-ITEM.description = "A small plastic container that contains cleaning materials for firearms."
+ITEM.name = "Очиститель Оружия военного Класса"
+ITEM.description = "Небольшой пластиковый контейнер, содержащий чистящие средства для огнестрельного оружия."
 ITEM.longdesc = ""
 ITEM.model = "models/lostsignalproject/items/repair/solvent.mdl"
 

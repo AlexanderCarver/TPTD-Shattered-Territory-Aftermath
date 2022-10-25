@@ -1,6 +1,6 @@
-ITEM.name = "Basic Tools"
-ITEM.description = "Used by technicians to do basic work on equipment."
-ITEM.longdesc = "A basic repair toolkit. Unlikely to be suitable for advanced maintenance, but they could be useful in the hands of a thrifty technician. Contains different types and sizes of pliers, screws, adhesives and assorted fasteners. With enough knowledge and experience, this kit can be used for the creation of basic equipment."
+ITEM.name = "Обычные инструменты"
+ITEM.description = "Используется техниками для выполнения основных работ на оборудовании."
+ITEM.longdesc = "Базовый набор инструментов для ремонта. Вряд ли подойдут для расширенного обслуживания, но в руках бережливого техника могут пригодиться. Содержит различные типы и размеры плоскогубцев, винтов, клеев и различных застежек. При наличии достаточных знаний и опыта этот набор можно использовать для создания базовой экипировки."
 ITEM.model = "models/lostsignalproject/items/quest/toolkit_1.mdl"
 ITEM.width = 2
 ITEM.height = 1
@@ -26,9 +26,9 @@ function ITEM:GetDescription()
 	end
 
 	if (self.entity) then
-		return self.description.."\n \nThis tool has "..math.Round(quant).."/100 durability."
+		return self.description.."\n \nэтот инструмент имеет "..math.Round(quant).."/100 прочность."
 	else
-        return (str.."This tool has "..math.Round(quant).."/100 durability.")
+        return (str.."Этот инструмент имеет "..math.Round(quant).."/100 прочность.")
 	end
 end
 
@@ -44,7 +44,7 @@ function ITEM:GetName()
 end
 
 ITEM.functions.Custom = {
-	name = "Customize",
+	name = "Починить",
 	tip = "Customize this item",
 	icon = "icon16/wrench.png",
 	OnRun = function(item)		
@@ -60,7 +60,7 @@ ITEM.functions.Custom = {
 }
 
 ITEM.functions.Inspect = {
-    name = "Inspect",
+    name = "Проверить",
     tip = "Inspect this item",
     icon = "icon16/picture.png",
     OnClick = function(item, test)

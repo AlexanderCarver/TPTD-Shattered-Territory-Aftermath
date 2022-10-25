@@ -1,5 +1,5 @@
-ITEM.name = "Alkaline Booster"
-ITEM.description = "A plastic can of chemicals used in a washing machine."
+ITEM.name = "Щелочной усилитель"
+ITEM.description = "Пластиковая банка с химикатами, используемая в стиральной машине."
 ITEM.longdesc = ""
 ITEM.model = "models/illusion/eftcontainers/alkali.mdl"
 

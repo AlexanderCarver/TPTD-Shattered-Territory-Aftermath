@@ -1,6 +1,6 @@
-ITEM.name = "Empty Noteblock"
-ITEM.description = "A Noteblock. All the pages are empty."
-ITEM.longdesc = "This Noteblock has none of it's pages written on. It's worth very little, as paper rarely has any value in the zone, as many messages are done digitally. Some old fashioned people might find use for it however, but you most likely won't net a large sum of money."
+ITEM.name = "Пустой блокнот для заметок"
+ITEM.description = "Блокнот для заметок. Все страницы пусты."
+ITEM.longdesc = "В этом блоке заметок нет ни одной написанной страницы. Это стоит очень мало, так как бумага редко имеет какую-либо ценность в зоне, так как многие сообщения передаются в цифровом виде. Однако некоторые старомодные люди могут найти ему применение, но вы, скорее всего, не заработаете большую сумму денег."
 ITEM.model = "models/lostsignalproject/items/quest/notes_writing_book_2.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

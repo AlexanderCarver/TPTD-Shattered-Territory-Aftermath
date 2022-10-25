@@ -1,6 +1,6 @@
-ITEM.name = "Scientist Curriculum Vitae"
-ITEM.description = "A folder containing the employment and achievements of a local professor."
-ITEM.longdesc = "This Curriculum Vitae contains the various employment dates of a scientist at different companies, most institutes in Ukraine. You can tell most of these are very old, the last being near the collapse of the Soviet Union."
+ITEM.name = "Биографические данные ученого"
+ITEM.description = "Папка, содержащая информацию о работе и достижениях местного профессора."
+ITEM.longdesc = "Эта биографическая справка содержит различные даты работы ученого в разных компаниях, большинстве институтов Украины. Вы можете сказать, что большинство из них очень старые, последние были незадолго до распада Советского Союза."
 ITEM.model = "models/lostsignalproject/items/quest/notes_photo.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

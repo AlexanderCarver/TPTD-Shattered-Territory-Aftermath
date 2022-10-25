@@ -1,6 +1,6 @@
-ITEM.name = "Duct Tape"
-ITEM.description = "A roll of duct tape, used for many things."
-ITEM.longdesc = "Duct tape, useful for keeping things together. Often used by technicians for many different kinds of work."
+ITEM.name = "Клейкая лента"
+ITEM.description = "Рулон клейкой ленты, используемой для многих вещей."
+ITEM.longdesc = "Клейкая лента, полезная для скрепления вещей. Часто используется техниками для самых разных видов работ."
 ITEM.model = "models/illusion/eftcontainers/ducttape.mdl"
 
 ITEM.width = 1

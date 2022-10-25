@@ -1,6 +1,6 @@
-ITEM.name = "'Eagle' Gunpowder"
-ITEM.description = "'Eagle' brand gunpowder with a green top."
-ITEM.longdesc = "Smokeless gunpowder from the 'Eagle' brand, a mid tier producer of gunpowder. Used by some technicians in the zone to reload ammunition for sale."
+ITEM.name = "Порох Орел"
+ITEM.description = "Порох марки Орел с зеленым верхом."
+ITEM.longdesc = "Бездымный порох от бренда Орел, производителя пороха среднего уровня. Используется некоторыми техниками в зоне для перезарядки боеприпасов для продажи."
 ITEM.model = "models/illusion/eftcontainers/gpgreen.mdl"
 
 ITEM.width = 1

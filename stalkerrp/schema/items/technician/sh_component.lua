@@ -1,8 +1,8 @@
-ITEM.name = "Components"
+ITEM.name = "Компоненты"
 ITEM.category = "Technician"
 ITEM.model = "models/lostsignalproject/items/quest/condensers.mdl"
-ITEM.description = "Components used for crafting various items."
-ITEM.longdesc = "This box contains components salvaged from various items within the zone. They can be used by technicians to craft and repair various items."
+ITEM.description = "Компоненты, используемые для создания различных предметов."
+ITEM.longdesc = "В этом ящике находятся компоненты, извлеченные из различных предметов в зоне. Они могут быть использованы техниками для изготовления и ремонта различных предметов."
 ITEM.flag = "A"
 ITEM.price = 1
 ITEM.quantity = 5000
@@ -47,7 +47,7 @@ function ITEM:GetName()
 end
 
 ITEM.functions.Custom = {
-	name = "Customize",
+	name = "Использовать",
 	tip = "Customize this item",
 	icon = "icon16/wrench.png",
 	OnRun = function(item)		
@@ -184,7 +184,7 @@ ITEM.functions.use = {
         return targets
 	end,
 	OnCanRun = function(item)				
-		return (!IsValid(item.entity)) and item.invID == item:GetOwner():GetCharacter():GetInventory():GetID()
+		return (!IsValid(item.entity))
 	end,
     OnRun = function(item, data)
 		if data[1] then

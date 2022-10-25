@@ -1,6 +1,6 @@
-ITEM.name = "Expert Disassembling Kit"
+ITEM.name = "Экспертный комплект для разборки"
 ITEM.model = "models/lostsignalproject/items/repair/ramrod_tool.mdl"
-ITEM.description = "Tools for disassembling items into components."
+ITEM.description = "Инструменты для разборки предметов на составные части."
 ITEM.flag = "A"
 ITEM.price = "15000"
 ITEM.quantity = 100
@@ -62,7 +62,7 @@ ITEM.functions.combine = {
 }
 
 ITEM.functions.use = {
-	name = "Disassemble",
+	name = "Использовать",
 	tip = "useTip",
 	icon = "icon16/stalker/scrap.png",
 	isMulti = true,
@@ -92,7 +92,7 @@ ITEM.functions.use = {
 		return targets
 		end,
 	OnCanRun = function(item)
-		return (!IsValid(item.entity)) and !(item:GetData("equip")) and item.invID == item:GetOwner():GetCharacter():GetInventory():GetID()
+		return (!IsValid(item.entity)) and !(item:GetData("equip"))
 	end,
 	OnRun = function(item, data)
 		local client = item.player

@@ -37,7 +37,7 @@ ix.config.Add("genericFont", "Roboto", "The font used to display generic texts."
 	end
 end, {category = "appearance"})
 
-ix.config.Add("maxAttributes", 40, "The maximum amount each attribute can be.", nil, {
+ix.config.Add("maxAttributes", 10, "The maximum amount each attribute can be.", nil, {
 	data = {min = 0, max = 100},
 	category = "characters"
 })

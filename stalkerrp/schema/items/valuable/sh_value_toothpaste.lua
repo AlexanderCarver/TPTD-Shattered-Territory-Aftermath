@@ -1,6 +1,6 @@
-ITEM.name = "Toothpaste"
-ITEM.description = "A tube of toothpaste."
-ITEM.longdesc = "A tube of toothpaste. Handy for keeping oral hygiene."
+ITEM.name = "Зубная паста"
+ITEM.description = "Тюбик зубной пасты."
+ITEM.longdesc = "Тюбик зубной пасты. Удобно для поддержания гигиены полости рта."
 ITEM.model = "models/illusion/eftcontainers/toothpaste.mdl"
 
 ITEM.width = 1

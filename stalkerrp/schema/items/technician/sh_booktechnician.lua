@@ -1,5 +1,5 @@
-ITEM.name = "Technician's Manual"
-ITEM.desc = "A book that can introduce someone to the art of being a technician."
+ITEM.name = "Руководство техника"
+ITEM.desc = "Книга, которая может познакомить кого-то с искусством быть техническим специалистом."
 ITEM.model = "models/lostsignalproject/items/misc/book2.mdl"
 ITEM.width = 1
 ITEM.height = 1
@@ -8,7 +8,7 @@ ITEM.flag = "A"
 
 
 ITEM.functions.read = {
-	name = "Learn",
+	name = "читать",
 	icon = "icon16/stalker/read.png",
 	OnCanRun = function(item)				
 		return (!IsValid(item.entity))

@@ -14,8 +14,6 @@ ITEM.sound = "stalkersound/inv_cooking2.ogg"
 
 -- Inventory drawing
 if (CLIENT) then
-	local bar = Material("cotz/panels/hp1.png", "noclamp smooth")
-
 	function ITEM:PaintOver(item, w, h)
 		local cancook = item:GetData("cancook", false)
 

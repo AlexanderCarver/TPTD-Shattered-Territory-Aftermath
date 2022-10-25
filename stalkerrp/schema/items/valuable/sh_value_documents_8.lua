@@ -1,6 +1,6 @@
-ITEM.name = "Unreadable Torn Note"
-ITEM.description = "A piece of paper with unintelligible handwriting."
-ITEM.longdesc = "The note seems to be an order or something, as it has two signatures on it. You cannot make out anything it says though."
+ITEM.name = "Нечитаемая Разорванная Записка"
+ITEM.description = "Клочок бумаги с неразборчивым почерком."
+ITEM.longdesc = "Записка, похоже, приказ или что-то в этом роде, так как на ней две подписи. Однако вы не можете разобрать ничего из того, что там написано."
 ITEM.model = "models/lostsignalproject/items/quest/notes_letter_1.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

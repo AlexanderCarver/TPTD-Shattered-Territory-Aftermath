@@ -1,6 +1,6 @@
-ITEM.name = "Pump Station Checklist"
-ITEM.description = "A technicians checklist for the pump station in the swamps."
-ITEM.longdesc = "This small document contains a detailed checklist of how to turn on parts of the pump station in the swamps."
+ITEM.name = "Контрольный список насосной станции"
+ITEM.description = "Контрольный список техников для насосной станции."
+ITEM.longdesc = "Этот небольшой документ содержит подробный контрольный список того, как включить части насосной станции."
 ITEM.model = "models/lostsignalproject/items/quest/notes_letter_3.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

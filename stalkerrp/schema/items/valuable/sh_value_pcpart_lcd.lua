@@ -1,6 +1,6 @@
-ITEM.name = "LCD Panel"
-ITEM.description = "An LCD panel for a laptop."
-ITEM.longdesc = "A liquid crystal display. It is an older model, using passive matrix addressing. It could still fetch a decent price on the second-hand market."
+ITEM.name = "LCD Панель"
+ITEM.description = "Жидкокристаллическая панель для ноутбука."
+ITEM.longdesc = "Жидкокристаллический дисплей. Это более старая модель, использующая пассивную матричную адресацию. Он все еще мог бы стоить прилично на вторичном рынке."
 ITEM.model = "models/illusion/eftcontainers/lcdclean.mdl"
 
 ITEM.width = 2

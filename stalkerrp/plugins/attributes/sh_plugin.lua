@@ -9,7 +9,12 @@ ix.config.Add("defaultMaxHealth", 100, "Максимальное количес�
 	category = "Characters"
 })
 
-ix.config.Add("constitutionMultiplier", 2, "Коэффициент множителя здоровья от соматической конституции.", nil, {
+ix.config.Add("constitutionMultiplier", 2, "Коэффициент множителя физического здоровья от навыка.", nil, {
+	data = {min = 0, max = 10.0, decimals = 1},
+	category = "Attributes"
+})
+
+ix.config.Add("psyMultiplier", 2, "Коэффициент множителя психического здоровья от навыка.", nil, {
 	data = {min = 0, max = 10.0, decimals = 1},
 	category = "Attributes"
 })
@@ -27,7 +32,7 @@ ix.command.Add("RollStat", {
 		if(ix.attributes.list[stat]) then
 		if (character and character:GetAttribute(stat, 0)) then
 			local bonus = character:GetAttribute(stat, 0)
-			local roll = tostring(math.random(0, 40))
+			local roll = tostring(math.random(0, 10))
 			ix.chat.Send(client, "rollstat", (roll + bonus).." ( "..roll.." + "..bonus.." )", nil, nil, { --tostring(math.random(0, 50))
 				max = maximum,
 				attribute = ix.attributes.list[stat].name,
@@ -40,7 +45,7 @@ ix.command.Add("RollStat", {
 })
 
 ix.chat.Register("rollstat", {
-	format = "** %s бросил кубик на навык %s, выбивая %s из 100.",
+	format = "[IC] %s бросил кубик на навык %s, выбивая %s.",
 	color = Color(155, 111, 176),
 	CanHear = ix.config.Get("chatRange", 280),
 	deadCanChat = true,
@@ -52,7 +57,7 @@ ix.chat.Register("rollstat", {
 	})
 	
 ix.chat.Register("roll", {
-	format = "** %s выбил %s из 100.",
+	format = "[IC] %s выбил %s.",
 	color = Color(155, 111, 176),
 	CanHear = ix.config.Get("chatRange", 280),
 	deadCanChat = true,

@@ -1,5 +1,5 @@
-ITEM.name = "Universal Glue"
-ITEM.description = "A long thin container with glue."
+ITEM.name = "Универсальный Клей"
+ITEM.description = "Длинный тонкий контейнер с клеем."
 ITEM.longdesc = ""
 ITEM.model = "models/lostsignalproject/items/repair/glue_a.mdl"
 

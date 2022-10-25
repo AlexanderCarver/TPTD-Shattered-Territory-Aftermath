@@ -1,5 +1,5 @@
-ITEM.name = "Firearm Lubricant"
-ITEM.description = "The small container is filled with lubricant for firearms."
+ITEM.name = "Смазка для огнестрельного оружия"
+ITEM.description = "Небольшой контейнер заполнен смазкой для огнестрельного оружия."
 ITEM.longdesc = ""
 ITEM.model = "models/lostsignalproject/items/repair/grease.mdl"
 

@@ -1,6 +1,6 @@
-ITEM.name = "9 Volt Battery"
-ITEM.description = "Worn and dirty, but seems to be in working condition."
-ITEM.longdesc = "A 9 volt battery, used for powering smaller electronic devices."
+ITEM.name = "9-Вольтовая батарея"
+ITEM.description = "Изношенная и грязная, но, похоже, в рабочем состоянии."
+ITEM.longdesc = "9-вольтовая батарея, используемая для питания небольших электронных устройств."
 ITEM.model = "models/lostsignalproject/items/misc/battery.mdl"
 
 ITEM.width = 1

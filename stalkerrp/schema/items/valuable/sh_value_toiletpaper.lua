@@ -1,6 +1,6 @@
-ITEM.name = "Toilet Paper"
-ITEM.description = "A tissue paper product for use in the bathroom."
-ITEM.longdesc = "A roll of tissue paper, important for every STALKER. Finding these when scavenging is quite common, so the going price isn't that high, despite the necessity."
+ITEM.name = "Туалетная Бумага"
+ITEM.description = "Изделие из папиросной бумаги для использования в ванной комнате."
+ITEM.longdesc = "Рулон папиросной бумаги, важный для каждого сталкера. Нахождение их при уборке мусора довольно распространено, поэтому текущая цена не так высока, несмотря на необходимость."
 ITEM.model = "models/illusion/eftcontainers/toiletpaper.mdl"
 
 ITEM.width = 1

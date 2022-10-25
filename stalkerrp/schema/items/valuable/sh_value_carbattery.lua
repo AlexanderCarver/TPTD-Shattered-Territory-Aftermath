@@ -1,6 +1,6 @@
-ITEM.name = "Car Battery"
-ITEM.description = "A battery for a car."
-ITEM.longdesc = "A 12V rechargeable lead-acid battery, probably lifted from some sort of automobile. Automotive batteries like this one are designed to deliver maximum current for a short period of time. They are sometimes referred to as \"SLI batteries\" for this reason, for starting, lighting, and ignition. SLI batteries are not designed for deep discharging, and a full discharge can reduce the battery's lifespan. Despite this, they're often used in the zone for powering lights and other appliances."
+ITEM.name = "Автомобильный Аккумулятор"
+ITEM.description = "Аккумулятор для автомобиля."
+ITEM.longdesc = "Перезаряжаемая свинцово-кислотная батарея 12 В, вероятно, снятая с какого-то автомобиля. Автомобильные аккумуляторы, подобные этому, рассчитаны на подачу максимального тока в течение короткого периода времени. По этой причине их иногда называют батареями SLI для запуска, освещения и зажигания. Батареи SLI не предназначены для глубокой разрядки, и полная разрядка может сократить срок службы батареи. Несмотря на это, они часто используются в зоне для питания светильников и других приборов."
 ITEM.model = "models/illusion/eftcontainers/carbattery.mdl"
 
 ITEM.width = 2

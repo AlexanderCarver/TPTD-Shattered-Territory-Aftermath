@@ -1,6 +1,6 @@
 ITEM.name = "GPU"
-ITEM.description = "A graphics card for a computer."
-ITEM.longdesc = "A modern graphics card for a desktop computer. This is a high end model, and as such is quite pricey."
+ITEM.description = "Видеокарта для компьютера."
+ITEM.longdesc = "Современная видеокарта для настольного компьютера. Это высококлассная модель, и поэтому она довольно дорогая."
 ITEM.model = "models/illusion/eftcontainers/graphicscard.mdl"
 
 ITEM.width = 2

@@ -1,6 +1,6 @@
-ITEM.name = "Soviet Manual of Arms"
-ITEM.description = "The classic firearm shooting manual. Quite worn."
-ITEM.longdesc = "This manual of arms contain a guide for soviet conscripts on how to shoot their weapon in a correct manner. Required to be read before getting any actual firearm training."
+ITEM.name = "Советский Справочник по оружию"
+ITEM.description = "Классическое руководство по стрельбе из огнестрельного оружия. Довольно изношенный."
+ITEM.longdesc = "Это руководство по оружию содержит руководство для советских призывников о том, как правильно стрелять из своего оружия. Необходимо прочитать, прежде чем проходить какую-либо реальную подготовку по огнестрельному оружию."
 ITEM.model = "models/lostsignalproject/items/misc/book1.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

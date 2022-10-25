@@ -1,5 +1,5 @@
-ITEM.name = "Cleaning Solvent"
-ITEM.desc = "Used by technicians to restore the durability of tools."
+ITEM.name = "Чистящий растворитель"
+ITEM.desc = "Используется техниками для восстановления долговечности инструментов."
 ITEM.model = "models/lostsignalproject/items/repair/gun_oil_ru_d.mdl"
 ITEM.width = 1
 ITEM.height = 1
@@ -9,7 +9,7 @@ ITEM.toolValue = 2
 
 
 ITEM.functions.repair = {
-	name = "Repair Tools",
+	name = "Починить инструмент",
 	icon = "icon16/stalker/repair.png",
 	isMulti = true,
 	multiOptions = function(item, client)

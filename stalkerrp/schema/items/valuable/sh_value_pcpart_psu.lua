@@ -1,6 +1,6 @@
 ITEM.name = "PSU"
-ITEM.description = "A power supply unit for a computer."
-ITEM.longdesc = "A power-supply unit from a personal computer. The internals are valuable and very useful in the zone for transforming power."
+ITEM.description = "Блок питания для компьютера."
+ITEM.longdesc = "Блок питания от персонального компьютера. Внутренние устройства ценны и очень полезны в зоне для преобразования энергии."
 ITEM.model = "models/illusion/eftcontainers/powersupplyunit.mdl"
 
 ITEM.width = 2

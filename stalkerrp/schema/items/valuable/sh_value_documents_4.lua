@@ -1,6 +1,6 @@
-ITEM.name = "Scribbled Scientific Notes"
-ITEM.description = "A small document containing some scientfic scribblings."
-ITEM.longdesc = "The document has, in poor handwriting, described some kind of zone-related anomalous event, but you cannot yourself understand it, partly due to the handwriting."
+ITEM.name = "Нацарапанные Научные Заметки"
+ITEM.description = "Небольшой документ, содержащий несколько научных каракулей."
+ITEM.longdesc = "В документе плохим почерком описано какое-то аномальное событие, связанное с зоной, но вы сами не можете его понять, отчасти из-за почерка."
 ITEM.model = "models/lostsignalproject/items/quest/notes_paper_2.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

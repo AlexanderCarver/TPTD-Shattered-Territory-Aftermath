@@ -1,6 +1,6 @@
-ITEM.name = "Artifact Research Ledger"
-ITEM.description = "A research ledger containing a catalogue of some common artifacts."
-ITEM.longdesc = "The research ledger contains little information of use to stalkers, but for researchers this is quite valuable."
+ITEM.name = "Книга исследований артефактов"
+ITEM.description = "Книга исследований, содержащая каталог некоторых распространенных артефактов."
+ITEM.longdesc = "Журнал исследований содержит мало полезной информации для сталкеров, но для исследователей это весьма ценно."
 ITEM.model = "models/lostsignalproject/items/quest/document_01.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

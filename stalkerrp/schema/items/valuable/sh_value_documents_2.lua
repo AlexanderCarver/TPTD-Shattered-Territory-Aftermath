@@ -1,6 +1,6 @@
-ITEM.name = "Trading Ledger"
-ITEM.description = "A noteblock with scribbles covering transactions."
-ITEM.longdesc = "The noteblock has many of its pages filled with scribblings, most unreadable. The pages contain mostly documentation of tradings done, including various income registrations along the pages."
+ITEM.name = "Торговая книга"
+ITEM.description = "Блокнот с каракулями, описывающими транзакции."
+ITEM.longdesc = "В блоке заметок многие страницы заполнены каракулями, большинство из которых нечитабельны. Страницы содержат в основном документацию о совершенных сделках, включая различные регистрации доходов на страницах."
 ITEM.model = "models/lostsignalproject/items/quest/notes_writing_book_1.mdl"
 
 ITEM.width = 1
@@ -20,7 +20,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

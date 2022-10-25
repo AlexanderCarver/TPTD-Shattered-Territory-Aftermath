@@ -1,6 +1,6 @@
-ITEM.name = "Swamps Research Documents"
-ITEM.description = "A file containing research documents about anomalous parts of the swamps."
-ITEM.longdesc = "This file contains some rather extensive research documents regarding parts of the swamps. There are surely someone willing to pay quite a bit for these."
+ITEM.name = "Документы по исследованию болот"
+ITEM.description = "Файл, содержащий исследовательские документы об аномальных частях болот."
+ITEM.longdesc = "Этот файл содержит несколько довольно обширных исследовательских документов, касающихся некоторых частей болот. Наверняка найдется кто-нибудь, готовый заплатить за них совсем немного."
 ITEM.model = "models/lostsignalproject/items/quest/document_03.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

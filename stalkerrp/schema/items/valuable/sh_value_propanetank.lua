@@ -1,5 +1,5 @@
-ITEM.name = "Propane Tank"
-ITEM.description = "A tank of propane, there is still some inside."
+ITEM.name = "Баллон с пропаном"
+ITEM.description = "Баллон с пропаном, внутри еще есть немного."
 ITEM.longdesc = ""
 ITEM.model = "models/illusion/eftcontainers/propanetank.mdl"
 

@@ -1,5 +1,5 @@
-ITEM.name = "Military-Grade Adhesive Tape"
-ITEM.description = "A roll of adhesive tape."
+ITEM.name = "Клейкая лента Военного Назначения"
+ITEM.description = "Рулон клейкой ленты."
 ITEM.longdesc = ""
 ITEM.model = "models/lostsignalproject/items/repair/armor_repair_fa.mdl"
 

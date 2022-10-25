@@ -1,6 +1,6 @@
-ITEM.name = "Cup of dice"
-ITEM.description = "A cup of dice"
-ITEM.longdesc = "A plastic container with a blue lid on the top that contains a total of 6 dices inside. The dices appear to have circles representing numbers on each face of an individual die. Many STALKERS tend to keep a cup of dice on them just in case they wish to entertain themselves, gamble with them or settle a dispute with a good game of dice."
+ITEM.name = "Игральные кости"
+ITEM.description = "Кам."
+ITEM.longdesc = " Кам."
 ITEM.model = "models/lostsignalproject/items/misc/jar.mdl"
 
 ITEM.width = 1
@@ -13,12 +13,13 @@ ITEM.maxDie = 6
 if (CLIENT) then
 	function ITEM:PaintOver(item, w, h)
 		if (item:GetData("diecount")) then
-			draw.SimpleText("d:"..item:GetData("diecount", 1), "stalkerregularinvfont", 3, h - 1, color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM, 1, color_black)
+			draw.SimpleText("d:"..item:GetData("diecount", 1), "ixSmallFont", 3, h - 1, color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM, 1, color_black)
 		end
 	end
 end
 
 ITEM.functions.Roll = {
+	name = "Разыграть",
 	icon = "icon16/stalker/dice.png",
 	sound = "stalkersound/inv_slot.mp3",
 	OnRun = function(item)
@@ -31,7 +32,7 @@ ITEM.functions.Roll = {
 			resultstr = resultstr.." "..randommeme
 			if i ~= item:GetData("diecount", 1) then
 				if i == (item:GetData("diecount", 1) - 1) then
-					resultstr = resultstr.." and a"
+					resultstr = resultstr.." и "
 				else
 					resultstr = resultstr..","
 				end
@@ -39,15 +40,16 @@ ITEM.functions.Roll = {
 		end
 
 		if item:GetData("diecount", 1) > 1 then
-			resultstr = resultstr.." for a total of "..resultsum
+			resultstr = resultstr.." тотально "..resultsum
 		end
 
-		ix.chat.Send(client, "iteminternal", "rolls the dice and gets a"..resultstr.."." , false)
+		ix.chat.Send(client, "iteminternal", "трясёт в руках игральные кости и выбрасвыает "..resultstr.."." , false)
 		return false
 	end,
 }
 
 ITEM.functions.Amount = {
+	name = "Кратность",
 	icon = "icon16/coins.png",
 	sound = "physics/body/body_medium_impact_soft1.wav",
 	isMulti = true,

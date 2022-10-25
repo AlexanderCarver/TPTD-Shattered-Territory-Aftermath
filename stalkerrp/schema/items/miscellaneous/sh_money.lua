@@ -7,7 +7,7 @@ ITEM.model = "models/illusion/eftcontainers/dollar.mdl"
 ITEM.width = 1
 ITEM.height = 1
 
-ITEM.quantity = 5000000
+ITEM.quantity = 100000
 ITEM.exRender = true
 ITEM.iconCam = {
 	pos = Vector(0, 0, 200),
@@ -22,7 +22,7 @@ if (CLIENT) then
 end
 
 ITEM.functions.use = {
-	name = "Положить в кошелек",
+	name = "Положить в кошелёк",
 	icon = "icon16/stalker/sell.png",
 	sound = "stalkersound/money_1.mp3",
 	OnRun = function(item)

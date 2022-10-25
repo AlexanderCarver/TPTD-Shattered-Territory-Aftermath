@@ -1,5 +1,5 @@
-ITEM.name = "Tool Cleaning Paste"
-ITEM.desc = "Used by technicians to restore the durability of tools."
+ITEM.name = "Паста для чистки инструментов"
+ITEM.desc = "Используется техниками для восстановления долговечности инструментов."
 ITEM.model = "models/lostsignalproject/items/repair/gun_oil_ru_d.mdl"
 ITEM.width = 1
 ITEM.height = 1
@@ -9,7 +9,7 @@ ITEM.toolValue = 3
 
 
 ITEM.functions.repair = {
-	name = "Repair Tools",
+	name = "Починить",
 	icon = "icon16/stalker/repair.png",
 	isMulti = true,
 	multiOptions = function(item, client)
@@ -26,7 +26,7 @@ ITEM.functions.repair = {
 				for k, v in pairs(items) do
 					if v.isTool and v:GetData("quantity", 0) < 100 then
 						table.insert(targets, {
-							name = L("Repair "..v.name.." with "..math.Clamp(v:GetData("quantity",0), 0 , 100).." percent durability to "..math.Clamp(v:GetData("quantity",0)+(item.toolValue*v.toolMult), 0, 100).." percent durability"),
+							name = L("Починка "..v.name.." используя "..math.Clamp(v:GetData("quantity",0), 0 , 100).." его прочность становится "..math.Clamp(v:GetData("quantity",0)+(item.toolValue*v.toolMult), 0, 100).." прочности."),
 							data = {v:GetID()},
 						})
 					else
@@ -56,7 +56,7 @@ ITEM.functions.repair = {
 					break
 				end
 			else
-				client:Notify("No tool selected.")
+				client:Notify("Инструмент не выбран!")
 				return false
 			end
 		end

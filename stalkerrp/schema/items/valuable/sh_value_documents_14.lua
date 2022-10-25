@@ -1,6 +1,6 @@
-ITEM.name = "Kevlar Sewing Manual"
-ITEM.description = "A manual for experienced body armor makers on how correctly repair and sew with kevlar."
-ITEM.longdesc = "This manual covers the basics on repairing body armor, sewing on attachments to it, and in general just manufacture body armor from the bottom up."
+ITEM.name = "Инструкция по пошиву кевлара"
+ITEM.description = "Руководство для опытных изготовителей бронежилетов о том, как правильно ремонтировать и шить из кевлара."
+ITEM.longdesc = "Это руководство охватывает основы ремонта бронежилетов, пришивания к ним приспособлений и в целом просто изготовления бронежилетов снизу вверх."
 ITEM.model = "models/lostsignalproject/items/misc/book3.mdl"
 
 ITEM.width = 1
@@ -19,7 +19,7 @@ ITEM.iconCam = {
 if (CLIENT) then
 	function ITEM:PopulateTooltipIndividual(tooltip)
 		if (!self.entity) then
-			ix.util.PropertyDesc(tooltip, "Documents", Color(200, 200, 200))
+			ix.util.PropertyDesc(tooltip, "Документ", Color(200, 200, 200))
 		end
 	end
 end

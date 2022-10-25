@@ -1,7 +1,7 @@
-ITEM.name = "Outfit Sewing Kit"
+ITEM.name = "Набор для шитья одежды"
 ITEM.model = "models/lostsignalproject/items/repair/sewing_kit_a.mdl"
-ITEM.description = "Common tools and materials for taking care of damaged outfits."
-ITEM.longdesc = "A light sewing kit consisting of a cloth reel, several steel needles and a pair of scissors. It can be used to sew up bullet holes or ruptures in soft fabrics of outfits. Its practical applications are limited due to the short length of the thread and subpar durability of needles, so the kit will be useless in case of more serious damage. For the same reason, it's compatible with only a handful of materials. Nonetheless, it is strongly advised to always use whatever is available to make the kit more effective."
+ITEM.description = "Общие инструменты и материалы для ухода за поврежденной одеждой."
+ITEM.longdesc = "Легкий швейный набор, состоящий из катушки для ткани, нескольких стальных игл и ножниц. С его помощью можно зашивать пулевые отверстия или разрывы в мягких тканях спецодежды. Его практическое применение ограничено из-за малой длины нити и невысокой прочности игл, поэтому при более серьезных повреждениях набор будет бесполезен. По той же причине он совместим лишь с несколькими материалами. Тем не менее, настоятельно рекомендуется всегда использовать все, что доступно, чтобы сделать набор более эффективным."
 ITEM.flag = "A"
 ITEM.price = "3000"
 ITEM.repairAmount = 5
@@ -10,7 +10,7 @@ ITEM.quantity = 3
 ITEM.sound = "stalkersound/inv_repair_sewing_kit_fast.mp3"
 
 ITEM.functions.use = {
-	name = "Stitch up outfit",
+	name = "Использовать",
 	tip = "useTip",
 	icon = "icon16/stalker/repair.png",
 	isMulti = true,
@@ -28,7 +28,7 @@ ITEM.functions.use = {
 				for k, v in pairs(items) do
 					if (v.isBodyArmor or v.isHelmet or v.isGasmask) and item.repairTreshhold < v:GetData("durability", 0) and v:GetData("durability", 0) < 100 then
 						table.insert(targets, {
-							name = L("Repair "..v.name.." with "..math.Round(v:GetData("durability",0), 2).." percent durability to "..math.Clamp(math.Round(v:GetData("durability",0), 2)+item.repairAmount*(1+(client:GetCharacter():GetAttribute("technician", 0)/100)), 0, 100).." percent durability."),
+							name = L("Починка "..v.name.." с прочностью "..math.Round(v:GetData("durability",0), 2).." и процентом стойкости "..math.Clamp(math.Round(v:GetData("durability",0), 2)+item.repairAmount*(1+(client:GetCharacter():GetAttribute("technician", 0)/100)), 0, 100).." процент стойкости."),
 							data = {v:GetID()},
 						})
 					else
@@ -41,7 +41,7 @@ ITEM.functions.use = {
 		return targets
 		end,
 	OnCanRun = function(item)				
-		return (!IsValid(item.entity)) and item.invID == item:GetOwner():GetCharacter():GetInventory():GetID()
+		return (!IsValid(item.entity))
 	end,
 	OnRun = function(item, data)
 		local client = item.player
@@ -59,7 +59,7 @@ ITEM.functions.use = {
 					break
 				end
 			else
-				client:Notify("No outfit selected.")
+				client:Notify("Вы не выбрали броню.")
 				return false
 			end
 		end
@@ -77,11 +77,11 @@ ITEM.functions.use = {
 					return true
 				end
 			else
-				client:Notify("Óutfit too damaged.")
+				client:Notify("Одежда слишком сильно повреждена.")
 				return false
 			end
 		else
-			client:Notify("Unequip the outfit first!")
+			client:Notify("Снимите снаряжение!")
 			return false	
 		end
 	end,
@@ -99,7 +99,7 @@ function ITEM:GetDescription()
 	if (self.entity) then
 		return self.description.."\n \nThis tool has "..math.Round(quant).." uses left durability."
 	else
-        return (str.."Amount of durability restored: "..self.repairAmount.."% \nMinimum durability percentage: "..self.repairTreshhold.."%".."\n \nThis tool has "..quant.."/"..self.quantity.." uses left.")
+        return (str.."Количество восстановленной прочности: "..self.repairAmount.."% \nМинимальный процент стойкости: "..self.repairTreshhold.."%".."\n \nЭтот инструмент имеет "..quant.."/"..self.quantity.." использований.")
 	end
 end
 
@@ -115,7 +115,7 @@ function ITEM:GetName()
 end
 
 ITEM.functions.Custom = {
-	name = "Customize",
+	name = "Изменить",
 	tip = "Customize this item",
 	icon = "icon16/wrench.png",
 	OnRun = function(item)		
@@ -131,7 +131,7 @@ ITEM.functions.Custom = {
 }
 
 ITEM.functions.Inspect = {
-	name = "Inspect",
+	name = "Осмотр",
 	tip = "Inspect this item",
 	icon = "icon16/picture.png",
 	OnClick = function(item, test)
@@ -165,30 +165,6 @@ ITEM.functions.Inspect = {
 		end
 		
 		return true
-	end
-}
-
-ITEM.functions.Clone = {
-	name = "Clone",
-	tip = "Clone this item",
-	icon = "icon16/wrench.png",
-	OnRun = function(item)
-		local client = item.player	
-	
-		client:requestQuery("Are you sure you want to clone this item?", "Clone", function(text)
-			if text then
-				local inventory = client:GetCharacter():GetInventory()
-				
-				if(!inventory:Add(item.uniqueID, 1, item.data)) then
-					client:Notify("Inventory is full")
-				end
-			end
-		end)
-		return false
-	end,
-	OnCanRun = function(item)
-		local client = item.player
-		return client:GetCharacter():HasFlags("N") and !IsValid(item.entity)
 	end
 }
 

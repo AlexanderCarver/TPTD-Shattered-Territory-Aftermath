@@ -1,6 +1,6 @@
-ITEM.name = "Diesel Engine"
-ITEM.description = "A diesel engine, probably from a lawn mower."
-ITEM.longdesc = "A diesel engine. Very useful for generating power, or performing other tasks."
+ITEM.name = "Дизельный двигатель"
+ITEM.description = "Дизельный двигатель, вероятно, от газонокосилки."
+ITEM.longdesc = "Дизельный двигатель очень полезен для выработки электроэнергии или выполнения других задач."
 ITEM.model = "models/illusion/eftcontainers/engine.mdl"
 
 ITEM.width = 2

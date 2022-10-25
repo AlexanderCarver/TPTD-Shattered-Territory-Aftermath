@@ -1,5 +1,5 @@
-ITEM.name = "Weapon Lubricant Spray"
-ITEM.description = "A metal canister containing weapon lubricant."
+ITEM.name = "Распылитель оружейной смазки"
+ITEM.description = "Металлическая канистра с оружейной смазкой."
 ITEM.longdesc = ""
 ITEM.model = "models/lostsignalproject/items/repair/gun_oil.mdl"
 

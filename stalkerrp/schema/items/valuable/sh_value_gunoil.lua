@@ -1,5 +1,5 @@
-ITEM.name = "Civilian-Grade Gun Oil"
-ITEM.description = "A small metal container with oil for firearms."
+ITEM.name = "Гражданское Оружейное Масло"
+ITEM.description = "Небольшой металлический контейнер с маслом для огнестрельного оружия."
 ITEM.longdesc = ""
 ITEM.model = "models/lostsignalproject/items/repair/gun_oil_ru_d.mdl"
 

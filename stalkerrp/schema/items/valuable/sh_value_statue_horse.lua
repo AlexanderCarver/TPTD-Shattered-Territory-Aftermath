@@ -1,6 +1,6 @@
-ITEM.name = "Horse Statuette"
-ITEM.description = "A metal statue of a horse."
-ITEM.longdesc = "A figurine of a horse, made out of metal. Is worth a decent price when sold to collectors outside the zone."
+ITEM.name = "Статуэтка Лошади"
+ITEM.description = "Металлическая статуя лошади."
+ITEM.longdesc = "Фигурка лошади, сделанная из металла. Стоит приличную цену, когда продается коллекционерам за пределами зоны."
 ITEM.model = "models/illusion/eftcontainers/horse.mdl"
 
 ITEM.width = 2

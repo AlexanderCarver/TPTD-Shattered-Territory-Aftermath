@@ -1,6 +1,6 @@
-ITEM.name = "Electric Tape"
-ITEM.description = "A roll of electrician's tape."
-ITEM.longdesc = "Electricians tape, used in electronics. Used by technicians when doing electric work."
+ITEM.name = "Электрическая лента"
+ITEM.description = "Рулон изоленты электрика."
+ITEM.longdesc = "Лента электриков, используемая в электронике. Используется техниками при выполнении электромонтажных работ."
 ITEM.model = "models/illusion/eftcontainers/insulatingtape.mdl"
 
 ITEM.width = 1

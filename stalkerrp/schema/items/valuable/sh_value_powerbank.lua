@@ -1,6 +1,6 @@
-ITEM.name = "Powerbank"
-ITEM.description = "A battery pack that can charge most modern electronics."
-ITEM.longdesc = "A powerbank, useful for storing power. Handy for recharging a PDA and other small electronic devices on the go."
+ITEM.name = "Зарядное устройство"
+ITEM.description = "Аккумулятор, способный заряжать большинство современных электронных устройств."
+ITEM.longdesc = "Powerbank, полезный для хранения энергии. Удобно для подзарядки КПК и других небольших электронных устройств на ходу."
 ITEM.model = "models/illusion/eftcontainers/powerbank.mdl"
 
 ITEM.width = 1

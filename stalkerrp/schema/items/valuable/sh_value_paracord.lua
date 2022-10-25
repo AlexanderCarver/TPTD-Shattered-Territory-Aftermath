@@ -1,6 +1,6 @@
-ITEM.name = "Paracord"
-ITEM.description = "A coil of strong cord."
-ITEM.longdesc = "A nice sturdy rope. Useful for many applications."
+ITEM.name = "Паракорд"
+ITEM.description = "Моток прочного шнура."
+ITEM.longdesc = "Хорошая прочная веревка. Полезно для многих приложений."
 ITEM.model = "models/illusion/eftcontainers/paracord.mdl"
 
 ITEM.width = 2
