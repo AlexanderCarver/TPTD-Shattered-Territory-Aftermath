@@ -26,10 +26,11 @@ function ITEM:PopulateTooltipIndividual(tooltip)
 end
 
 ITEM.functions.use = {
-    name = "Инъекция",
+    name = "Инъекция (себе)",
+    icon = "icon16/pill_go.png",
     OnRun = function(item)
         local quantity = item:GetData("quantity", item.quantity)
-        timer.Create(healingdelay, 1, 8, timer.Create(healingdelay, 1.5, 8, function()
+        timer.Create(healingdelay, 1.5, 8, timer.Create(healingdelay, 1.5, 8, function()
         if item.player:Alive() then
         item.player:SetHealth(item.player:GetMaxHealth() * 0.01 + item.player:Health() 
         end
@@ -37,7 +38,7 @@ ITEM.functions.use = {
 	else
 	return
 	end
-
+        client:GetCharacter():SetAttrib("medical", attribute + 5)
         item.player:GetCharacter():SatisfyAddictions("StrongerDrugs")
 
         quantity = quantity - 1
@@ -47,96 +48,61 @@ ITEM.functions.use = {
             return false
         end
 
-        ix.chat.Send(item.player, "iteminternal", "injects himself with the "..item.name..".", false)
+        ix.chat.Send(item.player, "iteminternal", "делает себе инъекцию"..item.name..".", false)
 
         return true
     end,
     OnCanRun = function(item)
         return (!IsValid(item.entity)) and item.invID == item:GetOwner():GetCharacter():GetInventory():GetID()
     end
-}
-
-
-
-
-ITEM.functions.use = {
-    name = "Инъекция (себе)",
-    OnRun = function(item)
-        local quantity = item:GetData("quantity", item.quantity)
-        local medical = client:GetCharacter():GetAttribute("medical", 0)
-            timer.Create(healingdelay, 1.5, 8, timer.Create(healingdelay, 1.5, 8, function()
-        if item.player:Alive() then
-            item.player:SetHealth(item.player:GetMaxHealth() * 0.01 + item.player:Health() + item
-        end
-    end)
-    else
-    return
-    end
-        
-        item.player:GetCharacter():SatisfyAddictions("StrongerDrugs")
-
-        quantity = quantity - 1
-        if (quantity >= 1) then
-            item:SetData("quantity", quantity)
-            return false
-        end
-
-        ix.chat.Send(item.player, "iteminternal", "делает инъекцию.", false)
-        return true
-    end,
-    OnCanRun = function(item)
-        return (!IsValid(item.entity)) and item.invID == item:GetOwner():GetCharacter():GetInventory():GetID()
-    end
-    client:GetCharacter():SetAttrib("medical", attribute + 0.08)
 }
 
 ITEM.functions.use_on = {
-	name = "Инъекция (напротив)",
-	icon = "icon16/pill_go.png",
-	OnRun = function(item)
-		local client = item.player
-		
-		local data = {}
-		data.start = client:GetShootPos()
-		data.endpos = data.start + client:GetAimVector() * 96
-		data.filter = client
-		
-		local target = util.TraceLine(data).Entity
-		data = nil
+    name = "Инъекция (напротив)",
+    icon = "icon16/pill_go.png",
+    OnRun = function(item)
+        local client = item.player
+        local data = {}
+        data.start = client:GetShootPos()
+        data.endpos = data.start + client:GetAimVector() * 96
+        data.filter = client
+        local target = util.TraceLine(data).Entity
+        local quantity = item:GetData("quantity", item.quantity)
+        data = nil
 
-		if (IsValid(target) and target:IsPlayer()) then
-            local quantity = item:GetData("quantity", item.quantity)
+        if (IsValid(target) and target:IsPlayer()) then
             timer.Create(healingdelay, 1.5, 8, timer.Create(healingdelay, 1.5, 8, function()
-        if item.player:Alive() then
-            item.player:SetHealth(item.player:GetMaxHealth() * 0.01 + item.player:Health() 
+        if target:Alive() then
+            target:SetHealth(target:GetMaxHealth() * 0.01 + target:Health() 
         end
-        end)
+            end)
         else
-        return
+            return
         end
         
-        item.player:GetCharacter():SatisfyAddictions("StrongerDrugs")
-        item.player:GetCharacter(Character:GetName(name))
+        client:GetCharacter():SetAttrib("medical", attribute + 0.08)
+        target:GetCharacter():SatisfyAddictions("StrongerDrugs")
+        target:Name(Character:GetName())
+
         quantity = quantity - 1
+
         if (quantity >= 1) then
             item:SetData("quantity", quantity)
             return false
         end
 
-        ix.chat.Send(item.player, "iteminternal", "делает инъекцию "..char.name..", false)
+        ix.chat.Send(item.player, "iteminternal", "делает инъекцию "..target.name.."., false)
         return true
             
-		end
-
-		return false
-	end,
-	OnCanRun = function(item)
-		local cur_item = item.player.beingUsed
-		if (IsValid(item.entity) or cur_item and cur_item == item) then
-			cur_item = nil
-			return false
-		end
-		
-		return true
-	end
+        end,
+    OnCanRun = function(item)
+        local cur_item = item.player.beingUsed
+        if (IsValid(item.entity) or cur_item and cur_item == item) then
+            cur_item = nil
+            return false
+        end
+        
+        return true
+    end
+end
 }
