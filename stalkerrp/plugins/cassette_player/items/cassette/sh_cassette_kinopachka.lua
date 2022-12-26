@@ -5,6 +5,6 @@ ITEM.price = 5794
 ITEM.model = "models/kek1ch/cassette_ad60.mdl"
 
 ITEM.cassette_options = {}
-ITEM.cassette_options['radio/bandit_r_1.ogg'] = {dur = 266}
+ITEM.cassette_options['kino/kinostuk.ogg'] = {dur = 231}
 
 
