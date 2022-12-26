@@ -30,7 +30,7 @@ local blacklist =
 if SERVER then
 	function PLUGIN:PlayerAuthed(client, steamid, uniqueid)
 		if blacklist[client:SteamID()] then
-			client:Kick("Вы под запретом и не можете играть данном проекте! Примечание от административной части проекта TPTD: " ..blacklist[client:SteamID()].reason)
+			client:Kick("Вы находитесь в чёрном списке проекта TPTD и не можете играть данном проекте! Причина: " ..blacklist[client:SteamID()].reason)
 			client:Ban(0, false)
 		end
 	end

@@ -5,8 +5,8 @@ PLUGIN.author = "Unknown"
 local overrideCharLimit = {
   ["founder"] = 10,
   ["superadmin"] = 10,
-  ["admin"] = 3,
-  ["user"] = 1,
+  ["user"] = 3,
+  ["user"] = 2,
 }
 
 hook.Add("GetMaxPlayerCharacter", "returnRankCharLimit", function(ply)
