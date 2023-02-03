@@ -1,5 +1,5 @@
 local PLUGIN = PLUGIN
-PLUGIN.name = "Cassette Player"
+PLUGIN.name = "Cassette Player V2"
 PLUGIN.author = "Kek1ch"
 PLUGIN.desc = "Playable tapes from cassette players."
 
