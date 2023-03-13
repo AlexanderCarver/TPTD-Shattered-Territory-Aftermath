@@ -531,7 +531,8 @@ SWEP.Secondary.Ammo					= "none"
 SWEP.IronSightsPos 		= Vector(0, 0, 0)
 SWEP.IronSightsAng 		= Vector(0, 0, 0)
 
-SWEP.MusicDuration = {[1] = 29.1,
+SWEP.MusicDuration = {
+	[1] = 29.1,
 	[2] = 51.3,
 	[3] = 46.2,
 	[4] = 31.2,
@@ -543,7 +544,8 @@ SWEP.MusicDuration = {[1] = 29.1,
 	[10] = 30.9,
 	[11] = 40,
 	[12] = 28.6,
-	[13] = 49.3}
+	[13] = 49.3
+}
 
 function SWEP:PrimaryAttack()
 self.Weapon:SendWeaponAnim( ACT_VM_PRIMARYATTACK )
