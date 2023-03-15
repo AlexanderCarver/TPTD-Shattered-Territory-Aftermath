@@ -1,15 +1,19 @@
-ITEM.name = ".357 SIG"
-ITEM.description = "Маленькая коробка паронов."
-ITEM.quantdesc =  "Количество: %s штук. "
-ITEM.longdesc = ""
+ITEM.name = "Коробка патронов"
+ITEM.description = "Патроны калибра .50 Action Express."
+ITEM.quantdesc =  "Количество паронов: %s штук."
+ITEM.longdesc = "Патрон калибра 12,7мм, разработанный в 1988 году для израильского пистолета Desert Eagle. Один из самых мощных унитарных пистолетных патронов в мире. Имеет тупоконечную пулю, которая обуславливает огромное останавливающее действие данного патрона."
 
-ITEM.ammo = ".357sig"
-ITEM.model = "models/lostsignalproject/items/ammo/357.mdl"
+ITEM.ammo = ".50ae"
+ITEM.model = "models/lostsignalproject/items/ammo/50cal_hs.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 60
+ITEM.ammoAmount = 45
 
-ITEM.price = 1950
+ITEM.price = 620
 
-ITEM.weight = 0.026
+ITEM.weight = 0.019
 ITEM.flatweight = 0.05
+
+function ITEM:GetWeight()
+    return self.flatweight + (self.weight * self:GetData("quantity", self.ammoAmount))
+  end
