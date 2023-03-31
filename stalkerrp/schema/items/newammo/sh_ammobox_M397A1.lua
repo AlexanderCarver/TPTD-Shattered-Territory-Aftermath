@@ -14,6 +14,12 @@ ITEM.price = 680
 ITEM.weight = 0.330
 ITEM.flatweight = 0.05
 
+function ITEM:PopulateTooltipIndividual(tooltip)
+  ix.util.PropertyDesc(tooltip, "Гранатомётный выстрел", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Содержит дробь", Color(64, 224, 208))
+end
+
 function ITEM:GetWeight()
     return self.flatweight + (self.weight * self:GetData("quantity", self.ammoAmount))
   end

@@ -44,7 +44,7 @@ end
 
 function ITEM:PopulateTooltip(tooltip)
     if (!self.entity) then
-        ix.util.PropertyDesc(tooltip, "Ammunition", Color(64, 224, 208))
+        ix.util.PropertyDesc(tooltip, "Аммуниция", Color(64, 224, 208))
     end
 
     if (self.PopulateTooltipIndividual) then

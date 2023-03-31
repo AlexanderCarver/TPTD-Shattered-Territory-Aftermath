@@ -18,7 +18,6 @@ ITEM.sounds = {
 
 ITEM.functions.use = { -- sorry, for name order.
 	name = "Сыграть",
-	icon = "icon16/stalker/sell.png",
 	OnRun = function(item)
 
 		if(item:GetData("cooldown", 0) < os.time()) then
