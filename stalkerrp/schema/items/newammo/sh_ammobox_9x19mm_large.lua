@@ -7,9 +7,9 @@ ITEM.ammo = "9x19mm"
 ITEM.model = "models/lostsignalproject/items/ammo/9x19.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 45
+ITEM.ammoAmount = 120
 
-ITEM.price = 1440
+ITEM.price = 4104
 
 ITEM.weight = 0.008
 ITEM.flatweight = 0.05

@@ -1,18 +1,18 @@
-ITEM.name = "Патроны калибра 9x18 мм"
+ITEM.name = "Патроны калибра 9x17 мм"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
-ITEM.longdesc = "Пистолетный унитарный патрон с бесфланцевой гильзой, созданный для замены патрона 7,62x25мм ТТ. Разработан Б.В. Сёминым в 1951 году."
+ITEM.longdesc = "Пистолетный унитарный патрон центрального воспламенения с бесфланцевой гильзой цилиндрической формы, разработанный Джоном Браунингом в 1908 году для фирмы Colt на основе патрона 9×20 мм SR Browning Long."
 
-ITEM.ammo = "9x18mm"
+ITEM.ammo = "9x17mm"
 ITEM.model = "models/lostsignalproject/items/ammo/9x18.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 45
+ITEM.ammoAmount = 40
 
 ITEM.price = 1280
 
-ITEM.weight = 0.011
-ITEM.flatweight = 0.05
+ITEM.weight = 0.010
+ITEM.flatweight = 0.05 --не трогать
 
 function ITEM:PopulateTooltipIndividual(tooltip)
   ix.util.PropertyDesc(tooltip, "Пистолетный калибр", Color(64, 224, 208))
