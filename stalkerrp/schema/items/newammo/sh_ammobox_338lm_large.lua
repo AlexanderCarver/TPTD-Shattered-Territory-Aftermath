@@ -7,9 +7,9 @@ ITEM.ammo = ".338lm"
 ITEM.model = "models/kek1ch/ammo_86x70_fmj.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 15
+ITEM.ammoAmount = 45
 
-ITEM.price = 975
+ITEM.price = 2778
 
 ITEM.weight = 0.020
 ITEM.flatweight = 0.05

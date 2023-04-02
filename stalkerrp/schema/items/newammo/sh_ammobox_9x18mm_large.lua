@@ -7,11 +7,11 @@ ITEM.ammo = "9x18mm"
 ITEM.model = "models/lostsignalproject/items/ammo/9x18.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 45
+ITEM.ammoAmount = 120
 
-ITEM.price = 1280
+ITEM.price = 3648
 
-ITEM.weight = 0.011
+ITEM.weight = 0.010
 ITEM.flatweight = 0.05
 
 function ITEM:PopulateTooltipIndividual(tooltip)
