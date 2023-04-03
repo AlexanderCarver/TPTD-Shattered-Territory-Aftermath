@@ -1,10 +1,10 @@
-ITEM.name = "Патроны калибра 5.56x45 мм NATO"
+ITEM.name = "Цинк под патроны калибра 5.56x45 мм NATO"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Малоимпульсный промежуточный патрон с бесфланцевой гильзой бутылочной формы, принятый на вооружение странами НАТО в 1980-х годах. Аналогами данного патрона являются: Советский патрон 5,45x39 мм, который создавался с учётом опыта американцев создания и применения этого типа патрона."
 
 ITEM.ammo = "5.56x45mm"
-ITEM.model = "models/lostsignalproject/items/ammo/556x45.mdl"
+ITEM.model = "models/lostsignalproject/items/misc/small_wood_box.mdl"
 ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 600

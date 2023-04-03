@@ -4,7 +4,7 @@ ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Пистолетный унитарный патрон центрального воспламенения с бесфланцевой гильзой цилиндрической формы, разработанный Джоном Браунингом в 1908 году для фирмы Colt на основе патрона 9×20 мм SR Browning Long."
 
 ITEM.ammo = "9x17mm"
-ITEM.model = "models/lostsignalproject/items/ammo/9x18.mdl"
+ITEM.model = "models/lostsignalproject/items/ammo/9x18_p.mdl"
 ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 40

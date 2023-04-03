@@ -1,10 +1,10 @@
-ITEM.name = "Патроны калибра 9x19 мм"
+ITEM.name = "Цинк под патроны калибра 9x19 мм"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Пистолетный унитарный патрон с бесфланцевой гильзой цилиндрической формы с небольшой конусностью, разработанный в 1902 году австрийским оружейником Георгом Люгером под созданный им в 1898 году самозарядный пистолет Пистолет Люгера."
 
 ITEM.ammo = "9x19mm"
-ITEM.model = "models/lostsignalproject/items/ammo/9x19.mdl"
+ITEM.model = "models/lostsignalproject/items/misc/small_wood_box.mdl"
 ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 800

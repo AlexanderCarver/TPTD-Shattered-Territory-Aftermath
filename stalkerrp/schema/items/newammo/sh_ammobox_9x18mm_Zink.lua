@@ -1,10 +1,10 @@
-ITEM.name = "Патроны калибра 9x18 мм"
+ITEM.name = "Цинк под патроны калибра 9x18 мм"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Пистолетный унитарный патрон с бесфланцевой гильзой, созданный для замены патрона 7,62x25мм ТТ. Разработан Б.В. Сёминым в 1951 году."
 
 ITEM.ammo = "9x18mm"
-ITEM.model = "models/lostsignalproject/items/ammo/9x18.mdl"
+ITEM.model = "models/lostsignalproject/items/misc/small_wood_box.mdl"
 ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 800
