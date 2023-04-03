@@ -64,7 +64,6 @@ AddAmmoType("7.62x54mm", "7.62x54 мм")
 AddAmmoType("7.62x54apmm", "7.62x54 мм (СНБ гж)")
 AddAmmoType("7.62x54blkmm", "7.62x54 мм (57-X-340)")
 AddAmmoType("7.62x54hpmm", "7.62x54 мм (ЛПС гж)")
-AddAmmoType("7.62x54tmjmm", "7.62x54 мм (БС гж)")
 AddAmmoType("7.62x54trgmm", "7.62x54 мм (Т-46М гж)")
 ---------------------------------------------------
 AddAmmoType("12.7x99mm", "12.7x99 мм")

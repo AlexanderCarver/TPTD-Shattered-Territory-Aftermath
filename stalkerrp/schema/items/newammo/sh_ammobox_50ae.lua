@@ -3,7 +3,7 @@ ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Патрон калибра 12,7мм, разработанный в 1988 году для израильского пистолета Desert Eagle. Один из самых мощных унитарных пистолетных патронов в мире. Имеет тупоконечную пулю, которая обуславливает огромное останавливающее действие данного патрона."
 
-ITEM.ammo = ".50ae"
+ITEM.ammo = "50ae"
 ITEM.model = "models/lostsignalproject/items/ammo/50cal_hs.mdl"
 ITEM.width = 1
 ITEM.height = 1
