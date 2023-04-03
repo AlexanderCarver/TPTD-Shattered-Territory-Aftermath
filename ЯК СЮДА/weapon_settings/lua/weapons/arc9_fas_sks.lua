@@ -77,7 +77,7 @@ SWEP.Ammo = "7.62x39mm" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 10 -- Self-explanatory.
-SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SupplyLimit = 0 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 

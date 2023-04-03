@@ -85,7 +85,7 @@ SWEP.Ammo = "9x19mm" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 32 -- Self-explanatory.
-SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SupplyLimit = 0 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 
 SWEP.ReloadWhileSprint = true -- This weapon can reload while the user is sprinting.
 SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
