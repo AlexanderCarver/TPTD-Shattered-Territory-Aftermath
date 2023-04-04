@@ -1,15 +1,15 @@
-ITEM.name = "Средний коробок под патроны калибра 9x17 JHP"
+ITEM.name = "Патроны калибра 9x17 мм (пачка)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Пистолетный унитарный патрон центрального воспламенения с бесфланцевой гильзой цилиндрической формы, разработанный Джоном Браунингом в 1908 году для фирмы Colt на основе патрона 9×20 мм SR Browning Long."
 
 ITEM.ammo = "9x17mm"
-ITEM.model = "models/lostsignalproject/items/misc/small_wood_box.mdl"
+ITEM.model = "models/lostsignalproject/items/ammo/9x18_p.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 120
+ITEM.ammoAmount = 40
 
-ITEM.price = 3648
+ITEM.price = 1280
 
 ITEM.weight = 0.010
 ITEM.flatweight = 0.05 --не трогать
