@@ -15,8 +15,9 @@ ITEM.weight = 0.010
 ITEM.flatweight = 0.05 --не трогать
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Пистолетный патрон калибра 9x17 мм", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Пистолетный патрон", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Пистолетная гильза", Color(64, 224, 208))
 end
 
 function ITEM:GetWeight()
