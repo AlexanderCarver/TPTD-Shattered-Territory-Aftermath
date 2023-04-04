@@ -1,4 +1,4 @@
-ITEM.name = "Патроны M962 калибра 12.7x99 мм"
+ITEM.name = "Патроны M962"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Разработан компанией Винчестер в середине 1980-х годов, пуля патрона состоит из полимерного поддона красного цвета, подкалиберного вольфрамового сердечника."
@@ -15,7 +15,7 @@ ITEM.weight = 0.046
 ITEM.flatweight = 0.05  
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Винтовочный патрон", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Винтовочный патрон калибра 12.7x99 мм", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
 end
 

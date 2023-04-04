@@ -1,4 +1,4 @@
-ITEM.name = "Патроны калибра .45 ACP"
+ITEM.name = "Патроны .45 ACP"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Американский пистолетный унитарный патрон с бесфланцевой гильзой цилиндрической формы, разработанный в 1904 году. Принят на снабжение Армии США в 1911 году вместе с принятием на вооружение пистолета M1911. Был основным армейским пистолетным патроном США обе мировые войны."
@@ -15,7 +15,7 @@ ITEM.weight = 0.021
 ITEM.flatweight = 0.05
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Пистолетный патрон", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Пистолетный патрон калибра .45 ACP", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
 end
 

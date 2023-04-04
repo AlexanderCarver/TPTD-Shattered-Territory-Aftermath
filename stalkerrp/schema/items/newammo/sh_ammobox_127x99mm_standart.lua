@@ -1,4 +1,4 @@
-ITEM.name = "Патроны калибра 12.7x99 мм"
+ITEM.name = "Патроны 12.7x99 мм"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Крупнокалиберный патрон, разработанный в США. Он был создан в 1920-х годах в качестве боеприпаса для крупнокалиберного пулемёта Browning M1921. После Второй мировой войны патрон стандартизован в НАТО и выпускается различными странами-участниками НАТО по единым техническим условиям."
@@ -15,7 +15,7 @@ ITEM.weight = 0.046
 ITEM.flatweight = 0.05  
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Винтовочный патрон", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Винтовочный патрон калибра 12.7x99 мм", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
 end
 

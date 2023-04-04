@@ -1,4 +1,4 @@
-ITEM.name = "Патроны калибра 7.92x57 мм"
+ITEM.name = "Патроны 7.92x57 мм"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Немецкий винтовочно-пулемётный унитарный патрон с гильзой бутылочной формы с невыступающей закраиной."
@@ -15,7 +15,7 @@ ITEM.weight = 0.013
 ITEM.flatweight = 0.05  
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Пистолетный патрон", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Пистолетный патрон калибра 7.92x57 мм", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
 end
 

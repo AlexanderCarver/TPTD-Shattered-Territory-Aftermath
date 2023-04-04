@@ -1,4 +1,4 @@
-ITEM.name = "Патроны калибра 23x75 мм"
+ITEM.name = "Патроны 23x75 мм"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Предназначен для стрельбы из специального карабина КС-23, имеющего нарезной ствол и подствольный магазин на 3 патрона. Калибр по дну нарезов 26 мм, что соответствует 4-му охотничьему калибру."
@@ -15,7 +15,7 @@ ITEM.weight = 0.010
 ITEM.flatweight = 0.05  
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Ружейный патрон", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Ружейный патрон калибра 23х75 мм", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
 end
 

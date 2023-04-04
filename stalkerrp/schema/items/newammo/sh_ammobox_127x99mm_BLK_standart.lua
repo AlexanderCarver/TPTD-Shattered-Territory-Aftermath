@@ -1,4 +1,4 @@
-ITEM.name = "Патроны «Blank Cartridge» калибра 12.7x99 мм"
+ITEM.name = "Патроны «Blank Cartridge»"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Принят на вооружение 25 мая 1935 года. Дульце гильзы закрывалось картонной прокладкой, фиксировавшейся каннелюрой и завальцовкой кромки дульца. Прокладка покрывалась красным лаком для герметизации."
@@ -15,7 +15,7 @@ ITEM.weight = 0.046
 ITEM.flatweight = 0.05  
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Винтовочный патрон", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Винтовочный патрон калибра 12.7x99 мм", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
 end
 

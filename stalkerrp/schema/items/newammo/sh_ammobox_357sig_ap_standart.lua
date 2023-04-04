@@ -1,4 +1,4 @@
-ITEM.name = "Патроны FMJ калибра .357 SIG"
+ITEM.name = "Патроны FMJ"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Американский револьверный патрон .357 Magnum большой мощности, созданный компанией Smith & Wesson."
@@ -15,7 +15,7 @@ ITEM.weight = 0.017
 ITEM.flatweight = 0.05
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Пистолетный патрон", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Револьверный патрон калибра .357 SIG", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
 end
 
