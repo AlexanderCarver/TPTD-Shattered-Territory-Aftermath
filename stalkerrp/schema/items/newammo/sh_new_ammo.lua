@@ -8,7 +8,7 @@ end
 
 ---------------------------------------------------
 AddAmmoType("9x17mm", "9x17 мм")
-AddAmmoType("9x17hpmm", "9x17 мм (HST 380)")
+AddAmmoType("9x17hpmm", "9x17 мм (JHP)")
 ---------------------------------------------------
 AddAmmoType("9x18mm", "9x18 мм")
 AddAmmoType("9x18apmm", "9x18 мм (ПБМ гж)")
