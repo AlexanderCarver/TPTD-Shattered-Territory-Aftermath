@@ -45,6 +45,7 @@ AddAmmoType("5.56x45apmm", "5.56x45 мм НАТО (M855)")
 AddAmmoType("5.56x45blkmm", "5.56x45 мм НАТО (M200)")
 AddAmmoType("5.56x45hpmm", "5.56x45 мм НАТО (HP)")
 AddAmmoType("5.56x45submm", "5.56x45 мм НАТО (MK 255 Mod 0)")
+AddAmmoType("5.56x45trr", "5.56x45 мм (M856)")
 ---------------------------------------------------
 AddAmmoType("7.62x39mm", "7.62x39 мм")
 AddAmmoType("7.62x39apmm", "7.62x39 мм (БП гж)")

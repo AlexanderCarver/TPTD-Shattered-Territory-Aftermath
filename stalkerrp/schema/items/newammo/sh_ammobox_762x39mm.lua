@@ -11,12 +11,13 @@ ITEM.ammoAmount = 20
 
 ITEM.price = 1040
 
-ITEM.weight = 0.018
+ITEM.weight = 0.017
 ITEM.flatweight = 0.05
 
 function ITEM:PopulateTooltipIndividual(tooltip)
   ix.util.PropertyDesc(tooltip, "Штурмовой патрон калибра 7.62x39 мм", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Содержит гильзу", Color(64, 224, 208))
 end
 
 function ITEM:GetWeight()

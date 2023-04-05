@@ -9,8 +9,7 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 10
 
-ITEM.price = 480
-
+ITEM.price = 580
 ITEM.weight = 0.010
 ITEM.flatweight = 0.05  
 
