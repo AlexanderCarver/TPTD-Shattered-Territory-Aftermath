@@ -44,7 +44,7 @@ end
 
 function ITEM:PopulateTooltip(tooltip)
     if (!self.entity) then
-        ix.util.PropertyDesc(tooltip, "Аммуниция", Color(64, 224, 208))
+        --ix.util.PropertyDesc(tooltip, "Аммуниция", Color(64, 224, 208))
     end
 
     if (self.PopulateTooltipIndividual) then
@@ -67,8 +67,8 @@ end
 
 ITEM.functions.split = {
     name = "Разделить",
-    tip = "useTip",
-    icon = "icon16/stalker/split.png",
+    --tip = "useTip",
+    --icon = "icon16/stalker/split.png",
     isMulti = true,
     multiOptions = function(item, client)
 		local targets = {}
