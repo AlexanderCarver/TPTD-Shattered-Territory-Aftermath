@@ -1,4 +1,4 @@
-ITEM.name = "Патроны HP"
+ITEM.name = "Патроны .357 (HP)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Американский револьверный патрон .357 Magnum большой мощности, созданный компанией Smith & Wesson."
@@ -9,9 +9,9 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 40
 
-ITEM.price = 1440
+ITEM.price = 1760
 
-ITEM.weight = 0.017
+ITEM.weight = 0.016
 ITEM.flatweight = 0.05
 
 function ITEM:PopulateTooltipIndividual(tooltip)

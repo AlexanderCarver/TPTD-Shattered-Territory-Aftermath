@@ -1,4 +1,4 @@
-ITEM.name = "Патроны FMJ"
+ITEM.name = "Патроны .357 (FMJ)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Американский револьверный патрон .357 Magnum большой мощности, созданный компанией Smith & Wesson."

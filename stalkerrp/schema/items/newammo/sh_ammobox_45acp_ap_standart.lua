@@ -1,4 +1,4 @@
-ITEM.name = "Патроны AP"
+ITEM.name = "Патроны .45 ACP (AP)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Патрон .45 ACP (11.43x23мм) AP с двухкомпонентной бронебойной пулей с латунным поддоном и 7мм наконечником из закаленной стали. Несмотря на то, что пуля имеет среднюю начальную скорость относительно других патронов того же калибра, она обладает отличной убойностью и пробивной способностью против брони базового и среднего уровня защиты."
@@ -7,11 +7,11 @@ ITEM.ammo = "45apacp"
 ITEM.model = "models/lostsignalproject/items/ammo/45cal.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 30
+ITEM.ammoAmount = 40
 
-ITEM.price = 1260
+ITEM.price = 1800
 
-ITEM.weight = 0.021
+ITEM.weight = 0.015
 ITEM.flatweight = 0.05
 
 function ITEM:PopulateTooltipIndividual(tooltip)

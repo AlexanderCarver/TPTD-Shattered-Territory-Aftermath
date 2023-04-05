@@ -9,13 +9,13 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 40
 
-ITEM.price = 1280
+ITEM.price = 1560 
 
-ITEM.weight = 0.010
+ITEM.weight = 0.007
 ITEM.flatweight = 0.05 --не трогать
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-  ix.util.PropertyDesc(tooltip, "Пистолетный патрон", Color(64, 224, 208))
+  ix.util.PropertyDesc(tooltip, "Пистолетный патрон калибра 9x17 мм", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Содержит порох", Color(64, 224, 208))
   ix.util.PropertyDesc(tooltip, "Пистолетная гильза", Color(64, 224, 208))
 end

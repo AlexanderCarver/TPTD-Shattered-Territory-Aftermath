@@ -1,4 +1,4 @@
-ITEM.name = "Патроны 10ТК"
+ITEM.name = "Патроны 9x18 мм (10ТК)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Данный патрон имеет калибр 10ТК т.е. его диаметр 10мм что является увеличенным диаметром патронника у СХП, длина патрона 21мм, вальцовка звездой - при выстреле немного раскрывается. (состоит из - гильза, капсуль и пороховой заряд)."
@@ -7,11 +7,11 @@ ITEM.ammo = "9x18blkmm"
 ITEM.model = "models/lostsignalproject/items/ammo/9x18_p.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 45
+ITEM.ammoAmount = 40
 
-ITEM.price = 1280
+ITEM.price = 640
 
-ITEM.weight = 0.011
+ITEM.weight = 0.005
 ITEM.flatweight = 0.05
 
 function ITEM:PopulateTooltipIndividual(tooltip)

@@ -1,4 +1,4 @@
-ITEM.name = "Патроны «Blank Cartridge»"
+ITEM.name = "Патроны 12.7x99 мм (Blank Cartridge)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Принят на вооружение 25 мая 1935 года. Дульце гильзы закрывалось картонной прокладкой, фиксировавшейся каннелюрой и завальцовкой кромки дульца. Прокладка покрывалась красным лаком для герметизации."
@@ -9,7 +9,7 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 10
 
-ITEM.price = 800
+ITEM.price = 450
 
 ITEM.weight = 0.046
 ITEM.flatweight = 0.05  

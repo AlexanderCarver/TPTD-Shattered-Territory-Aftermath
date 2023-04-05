@@ -7,7 +7,7 @@ ITEM.ammo = "45acp"
 ITEM.model = "models/lostsignalproject/items/ammo/45cal.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.ammoAmount = 30
+ITEM.ammoAmount = 40
 
 ITEM.price = 1260
 

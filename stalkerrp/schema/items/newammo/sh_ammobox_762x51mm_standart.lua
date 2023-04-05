@@ -11,7 +11,7 @@ ITEM.ammoAmount = 20
 
 ITEM.price = 1080
 
-ITEM.weight = 0.011
+ITEM.weight = 0.021
 ITEM.flatweight = 0.05
 
 function ITEM:PopulateTooltipIndividual(tooltip)

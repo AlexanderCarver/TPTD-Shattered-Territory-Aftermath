@@ -1,4 +1,4 @@
-ITEM.name = "Патроны «Баррикада»"
+ITEM.name = "Патроны 23x75 (Баррикада)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Патрон 23x75 мм R «Баррикада» с цельностальной остроконечной пулей, способной принудительно останавливать автомобили, повреждая их двигатель. Дальность применения до 100 метров."
@@ -9,7 +9,7 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 10
 
-ITEM.price = 480
+ITEM.price = 640
 
 ITEM.weight = 0.010
 ITEM.flatweight = 0.05  

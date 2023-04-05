@@ -1,4 +1,4 @@
-ITEM.name = "Патроны M962"
+ITEM.name = "Патроны 12.7x99 мм (M962)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Разработан компанией Винчестер в середине 1980-х годов, пуля патрона состоит из полимерного поддона красного цвета, подкалиберного вольфрамового сердечника."
@@ -9,7 +9,7 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 10
 
-ITEM.price = 800
+ITEM.price = 1000
 
 ITEM.weight = 0.046
 ITEM.flatweight = 0.05  

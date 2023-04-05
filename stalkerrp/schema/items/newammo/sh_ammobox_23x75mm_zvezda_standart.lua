@@ -1,4 +1,4 @@
-ITEM.name = "Патроны «Звезда»"
+ITEM.name = "Патроны 23x75 (Звезда)"
 ITEM.description = ""
 ITEM.quantdesc =  "Количество патронов: %s штук."
 ITEM.longdesc = "Светозвуковой патрон 23х75 мм R «Звезда», предназначенный для психологического воздействия на противника."
@@ -9,7 +9,7 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.ammoAmount = 10
 
-ITEM.price = 480
+ITEM.price = 1500
 
 ITEM.weight = 0.010
 ITEM.flatweight = 0.05  
