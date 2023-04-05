@@ -1,0 +1,10 @@
+﻿ITEM.name = "Набор для экстренной полевой реанимации"
+ITEM.description = "Тяжёлая сумка со всем необходимым, чтобы привести человека в чувство и реанимировать его."
+ITEM.model = "models/carlsmei/escapefromtarkov/medical/adrenaline.mdl"
+ITEM.width = 2
+ITEM.height = 2
+ITEM.price = 10
+ITEM.healAmount = 50
+ITEM.medAttr = 0
+ITEM.healRevive = true
+ITEM.healReviveSeconds = 30

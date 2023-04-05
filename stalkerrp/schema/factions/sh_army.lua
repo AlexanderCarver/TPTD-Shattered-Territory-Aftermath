@@ -1,11 +1,11 @@
-FACTION.name = "Неизвестные силы"
-FACTION.description = "Фракция для администрации проекта."
-FACTION.color = Color(0, 102, 0, 255)
+FACTION.name = "ВВ МВД РФ"
+FACTION.description = "Правительственные силы, которые поддерживают контроль государства над этой неуправляемой зоной."
+FACTION.color = Color(25, 115, 0, 255)
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = false
 FACTION.models = {
-    "models/half-dead/metroll/a1b1.mdl",
-    "models/half-dead/metroll/a2b1.mdl"
+    "models/Eli.mdl",
+    "models/monk.mdl"
 }
 
 function FACTION:OnTransfered(client)
@@ -22,4 +22,4 @@ function FACTION:OnCharacterCreated(client, character)
 end
 
 
-FACTION_UNKNOWN = FACTION.index
+FACTION_ARMY = FACTION.index
