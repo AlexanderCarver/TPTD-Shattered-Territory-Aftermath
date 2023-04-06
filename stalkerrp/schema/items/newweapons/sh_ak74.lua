@@ -3,17 +3,16 @@ ITEM.description= "A soviet-designed assault rifle chambered for 5.45x39mm."
 ITEM.longdesc = "The AK-74 is the replacement for the AKM and the most notable difference between the two is the drop in caliber from 7.62x39mm to 5.45x39mm.\nThis means the recoil is less intense but the penetration of the bullet also suffers slightly.\nThe 5.45x39mm cartridge is popular with many stalkers since it takes care of mutant and armored humans alike.\n\nAmmo: 5.45x39mm\nMagazine Capacity: 30"
 ITEM.model = "models/weapons/w_sako.mdl"
 ITEM.class = "cw_ak74"
-ITEM.weaponCategory = "primary"
+ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
 ITEM.price = 15000
-ITEM.width = 5
-ITEM.height = 2
-ITEM.validAttachments = {"md_kobra","md_pso1","md_microt1","md_eotech","md_aimpoint","md_cmore","md_schmidt_shortdot","md_acog","md_reflex","md_pbs1","md_foregrip"}
+ITEM.width = 5 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
+ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.011
-ITEM.unloadedweight = 3.07
+ITEM.bulletweight = 0.011 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 3.07 --Вес оружия
 
-ITEM.repair_PartsComplexity = 2
-ITEM.repair_PartsRarity = 2
+ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
+ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.
 
 function ITEM:GetWeight()
   return self.unloadedweight + (self.bulletweight * self:GetData("ammo", 0))
