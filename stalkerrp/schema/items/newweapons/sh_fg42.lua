@@ -1,15 +1,15 @@
-ITEM.name = "АК-74"
-ITEM.description= "Советский автомат АК-74 5.45x39 мм."
-ITEM.longdesc = "Автомат калибра 5,45 мм, разработанный в 1970 году советским конструктором М. Т. Калашниковым и принятый на вооружение вооружённых сил СССР в 1974 году."
-ITEM.model = "models/weapons/w_rif_ak47.mdl"
+ITEM.name = "FG 42"
+ITEM.description= "Немецкий автомамт FG 42 калибра 7.92x57 мм."
+ITEM.longdesc = "Немецкий автомат времён Второй мировой войны. Разрабатывался специально для десантников. Также поступали в части Ваффен-СС."
+ITEM.model = "models/weapons/w_mach_m249para.mdl"
 ITEM.class = "cw_ak74"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
-ITEM.price = 4000
+ITEM.price = 3500
 ITEM.width = 4 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
 ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.011 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 3.3 --Вес оружия
+ITEM.bulletweight = 0.009 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 4.8 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
 ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.
