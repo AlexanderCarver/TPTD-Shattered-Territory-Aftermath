@@ -1,15 +1,15 @@
-ITEM.name = "HK G36C"
-ITEM.description= "Немецкий штурмовой автомат StG 44 калибра 7.92x33 мм."
-ITEM.longdesc = "От пистолетов-пулемётов (ППШ и других) Второй мировой войны отличается значительно большей дальностью прицельной стрельбы."
-ITEM.model = "models/weapons/w_rif_m4a1.mdl"
-ITEM.class = "arc9_fas_g36c"
+ITEM.name = "Sterling L2A3"
+ITEM.description= "Британский пистолет-пулемет Sterling L2A3 калибра 9x19 мм."
+ITEM.longdesc = "Sterling L2A3 - это британский пистолет-пулемет, разработанный в 1944 году и использовавшийся британскими войсками с 1953 по 1994 годы. Он был создан на основе предыдущей модели Lanchester и имел несколько улучшений в виде измененной формы приклада и увеличенной скорострельности. Оружие работало на основе принципа открытого затвора и использовало пистолетные патроны 9x19 мм."
+ITEM.model = "models/weapons/w_smg_mac10.mdl"
+ITEM.class = "arc9_fas_sterling"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
-ITEM.price = 9000
+ITEM.price = 4300
 ITEM.width = 3 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
 ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.012 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 3.6 --Вес оружия
+ITEM.bulletweight = 0.008 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 3.1 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
 ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.

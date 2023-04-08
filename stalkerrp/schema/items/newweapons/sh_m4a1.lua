@@ -1,15 +1,15 @@
-ITEM.name = "HK G36C"
-ITEM.description= "Немецкий штурмовой автомат StG 44 калибра 7.92x33 мм."
-ITEM.longdesc = "От пистолетов-пулемётов (ППШ и других) Второй мировой войны отличается значительно большей дальностью прицельной стрельбы."
-ITEM.model = "models/weapons/w_rif_m4a1.mdl"
-ITEM.class = "arc9_fas_g36c"
+ITEM.name = "КС-23"
+ITEM.description= "Ружье КС-23 калибра 23 мм."
+ITEM.longdesc = "КС-23 - ружье калибра 23 мм, используемое в качестве оружия для самообороны, охоты и специальных операций."
+ITEM.model = "models/weapons/w_shot_m3super90.mdl"
+ITEM.class = "arc9_fas_ks23"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
-ITEM.price = 9000
-ITEM.width = 3 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
+ITEM.price = 15000
+ITEM.width = 4 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
 ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.012 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 3.6 --Вес оружия
+ITEM.bulletweight = 0.010 --Вес пули оставь дефолтный по калибру
+ITEM.weight = 3.8 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
 ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.

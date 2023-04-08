@@ -1,15 +1,15 @@
-ITEM.name = "HK G36C"
-ITEM.description= "Немецкий штурмовой автомат StG 44 калибра 7.92x33 мм."
-ITEM.longdesc = "От пистолетов-пулемётов (ППШ и других) Второй мировой войны отличается значительно большей дальностью прицельной стрельбы."
+ITEM.name = "CAR-15"
+ITEM.description= "Американский пистолет-пулемет семейства M16 калибра 9x19 мм."
+ITEM.longdesc = "CAR-15 был создан на основе M16 и имел компактный размер и лёгкий вес. Оружие работало на основе открытого затвора и имело магазин на 20-30 патронов калибра 9x19 мм."
 ITEM.model = "models/weapons/w_rif_m4a1.mdl"
-ITEM.class = "arc9_fas_g36c"
+ITEM.class = "arc9_fas_colt"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
-ITEM.price = 9000
+ITEM.price = 5500
 ITEM.width = 3 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
 ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.012 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 3.6 --Вес оружия
+ITEM.bulletweight = 0.008 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 2.7 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
 ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.

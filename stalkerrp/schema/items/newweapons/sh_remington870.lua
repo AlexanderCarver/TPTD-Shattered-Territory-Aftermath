@@ -1,15 +1,15 @@
-ITEM.name = "HK G36C"
-ITEM.description= "Немецкий штурмовой автомат StG 44 калибра 7.92x33 мм."
-ITEM.longdesc = "От пистолетов-пулемётов (ППШ и других) Второй мировой войны отличается значительно большей дальностью прицельной стрельбы."
-ITEM.model = "models/weapons/w_rif_m4a1.mdl"
-ITEM.class = "arc9_fas_g36c"
+ITEM.name = "Remington 870"
+ITEM.description= "Помповое ружье Benelli M3 12 калибра."
+ITEM.longdesc = "Remington 870 - популярное помповое ружье для спортивной и охотничьей стрельбы под 12 калибр."
+ITEM.model = "models/weapons/w_rif_ak47.mdl"
+ITEM.class = "arc9_fas_870"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
-ITEM.price = 9000
-ITEM.width = 3 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
+ITEM.price = 6000
+ITEM.width = 4 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
 ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.012 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 3.6 --Вес оружия
+ITEM.bulletweight = 0.010 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 3.5 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
 ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.

@@ -1,8 +1,8 @@
 ITEM.name = "АКМ"
-ITEM.description= "Советский автомат АКM 7.62x39 мм."
+ITEM.description= "Советский автомат АКM калибра 7.62x39 мм."
 ITEM.longdesc = "Автомат, принятый на вооружение ВС Союза ССР в 1959 году взамен автомата АК (Индекс ГРАУ — 56-А-212) и являющийся его дальнейшим развитием."
 ITEM.model = "models/weapons/w_rif_ak47.mdl"
-ITEM.class = "cw_ak74"
+ITEM.class = "arc9_fas_ak47"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
 ITEM.price = 4300
 ITEM.width = 4 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА

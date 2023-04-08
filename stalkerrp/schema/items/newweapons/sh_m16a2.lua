@@ -1,15 +1,15 @@
-ITEM.name = "HK G36C"
-ITEM.description= "Немецкий штурмовой автомат StG 44 калибра 7.92x33 мм."
-ITEM.longdesc = "От пистолетов-пулемётов (ППШ и других) Второй мировой войны отличается значительно большей дальностью прицельной стрельбы."
+ITEM.name = "M16A2"
+ITEM.description= "Штурмовая винтовка M16A2 калибра 5.56x45 мм."
+ITEM.longdesc = "Стандартная автоматическая винтовка для армии США с боевой дальностью до 550 метров"
 ITEM.model = "models/weapons/w_rif_m4a1.mdl"
-ITEM.class = "arc9_fas_g36c"
+ITEM.class = "arc9_fas_famas"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
-ITEM.price = 9000
-ITEM.width = 3 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
+ITEM.price = 8500
+ITEM.width = 4 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
 ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.012 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 3.6 --Вес оружия
+ITEM.bulletweight = 0.013 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 3.8 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
 ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.

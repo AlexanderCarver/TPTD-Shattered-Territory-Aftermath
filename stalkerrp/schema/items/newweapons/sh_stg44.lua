@@ -1,15 +1,15 @@
-ITEM.name = "RK 95 TP"
-ITEM.description= "Финская штурмовая винтовка RK-95 калибра 7.62x39 мм."
-ITEM.longdesc = "Cерия финской штурмовой винтовки, изготовляемый компаниями Valmet и SAKO, создан на базе автомата Калашникова."
+ITEM.name = "StG 44"
+ITEM.description= "Немецкий штурмовой автомат StG 44 калибра 7.92x33 мм."
+ITEM.longdesc = "От пистолетов-пулемётов (ППШ и других) Второй мировой войны отличается значительно большей дальностью прицельной стрельбы."
 ITEM.model = "models/weapons/w_rif_ak47.mdl"
-ITEM.class = "cw_ak74"
+ITEM.class = "arc9_doi_stg44"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
-ITEM.price = 4000
+ITEM.price = 3600
 ITEM.width = 4 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
 ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.017 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 3.7 --Вес оружия
+ITEM.bulletweight = 0.009 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 4.5 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
 ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.
