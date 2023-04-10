@@ -1,15 +1,15 @@
-ITEM.name = "АК-74"
-ITEM.description= "Советский автомат АК-74 5.45x39 мм."
-ITEM.longdesc = "Автомат калибра 5,45 мм, разработанный в 1970 году советским конструктором М. Т. Калашниковым и принятый на вооружение вооружённых сил СССР в 1974 году."
+ITEM.name = "Remington 870"
+ITEM.description= "Помповое ружье Benelli M3 12 калибра."
+ITEM.longdesc = "Remington 870 - популярное помповое ружье для спортивной и охотничьей стрельбы под 12 калибр."
 ITEM.model = "models/weapons/w_rif_ak47.mdl"
-ITEM.class = "cw_ak74"
+ITEM.class = "arc9_fas_870"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
-ITEM.price = 4000
+ITEM.price = 6000
 ITEM.width = 4 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
 ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
 
-ITEM.bulletweight = 0.011 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 3.3 --Вес оружия
+ITEM.bulletweight = 0.010 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 3.5 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
 ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.

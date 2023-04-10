@@ -1,8 +1,8 @@
-ITEM.name = "АК-74"
-ITEM.description= "Советский автомат АК-74 5.45x39 мм."
+ITEM.name = "АКc-74"
+ITEM.description= "Советский автомат АКc-74 калибра 5.45x39 мм."
 ITEM.longdesc = "Автомат калибра 5,45 мм, разработанный в 1970 году советским конструктором М. Т. Калашниковым и принятый на вооружение вооружённых сил СССР в 1974 году."
 ITEM.model = "models/weapons/w_rif_ak47.mdl"
-ITEM.class = "cw_ak74"
+ITEM.class = "arc9_fas_ak74"
 ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
 ITEM.price = 4000
 ITEM.width = 4 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
