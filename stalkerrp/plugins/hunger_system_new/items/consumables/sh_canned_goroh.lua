@@ -24,7 +24,7 @@ end
 
 ITEM:Hook("use", function(item)
 	item.player:EmitSound(item.sound or "items/battery_pickup.wav")
-	ix.chat.Send(item.player, "iteminternal", "достаёт консервированную банку и употребляет находяющуюся внутри сладкую кукурузу.", false)
+	ix.chat.Send(item.player, "iteminternal", "достаёт консервированную банку и употребляет находяющийся внутри зеленый горошек.", false)
 end)
 
 ITEM:DecideFunction()
