@@ -1,0 +1,29 @@
+ITEM.name = "Белая фасоль в томатном соусе, 160 гр"
+ITEM.description = "Консервированная пища, пригодная к употреблению."
+ITEM.longdesc = "Бобы белой фасоли, которые были подвергнуты процессу консерации вместе с томатным соусом. Достаточно соленые и отлично утоляют голод."
+ITEM.model = "models/lostsignalproject/items/consumable/beans.mdl"
+
+ITEM.price = 160
+ITEM.height = 1
+ITEM.width = 1
+ITEM.weight = 0.160
+ITEM.flatweight = 0.034
+
+ITEM.hunger = 22
+ITEM.thirst = -10
+ITEM.quantity = 1
+--ITEM.alcohol = 10
+
+ITEM.sound = "stalkersound/inv_flask.mp3" --cannedfoodeat.mp3
+
+function ITEM:PopulateTooltipIndividual(tooltip)
+    ix.util.PropertyDesc(tooltip, "Консервированная пища", Color(64, 224, 208))
+	ix.util.PropertyDesc(tooltip, "Хорошо утоляет голод", Color(64, 224, 208))
+end
+
+ITEM:Hook("use", function(item)
+	item.player:EmitSound(item.sound or "items/battery_pickup.wav")
+	ix.chat.Send(item.player, "iteminternal", "аккуратно вскрывает консервированную банку и употребляет находящийся внутри продукт. Фасоль в томатном соусе достаточно вкусная, чтобы утолить аппетит, однако ее лучше всего употреблять вместе с макаронами.", false)
+end)
+
+ITEM:DecideFunction()
