@@ -5,7 +5,7 @@ ITEM.model = "models/illusion/eftcontainers/bandage.mdl"
 
 ITEM.width = 1
 ITEM.height = 1
-ITEM.price = 0
+ITEM.price = 25
 
 ITEM.quantity = 1
 ITEM.restore = 60
@@ -14,12 +14,13 @@ ITEM.restore = 60
 ITEM.weight = 0.0004
 ITEM.flatweight = 0.010
 
-ITEM.exRender = true
+ITEM.exRender = false
 ITEM.iconCam = {
 	pos = Vector(0, 0, 200),
-	ang = Angle(90, 0, 45),
-	fov = 1.7,
+	ang = Angle(90, 0, 0),
+	fov = 2.43
 }
+
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc2(tooltip, "Гемостатик (слабый)", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/bleeding.png"))
@@ -36,7 +37,7 @@ end
 
 ITEM.functions.Apply = {
 	name = "Перевязка",
-	icon = "icon16/pill.png",
+	icon = "icon16/stalker/swallow.png",
 	sound = "stalkersound/inv_bandage.mp3",
 	OnRun = function(itemTable)
 		local player = itemTable.player

@@ -11,22 +11,22 @@ ITEM.price = 1650
 
 ITEM.quantity = 1
 ITEM.restore = 60
-ITEM.toxin = 40
+--ITEM.toxin = 40
 --ITEM.psyheal = 12
 
 ITEM.weight = 0.0015
 ITEM.flatweight = 0.015
 
-ITEM.exRender = true
+ITEM.exRender = false
 ITEM.iconCam = {
-	pos = Vector(0, 0, 200),
-	ang = Angle(90, 0, 45),
-	fov = 1.7,
+	pos = Vector(-200, 0, 0),
+	ang = Angle(0, 0, 0),
+	fov = 2.69
 }
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc2(tooltip, "Болеутоляющее", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/hpregen.png"))
-    ix.util.PropertyDesc2(tooltip, "Сильный опиат", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/psi.png"))
+    ix.util.PropertyDesc2(tooltip, "Опиат (сильный)", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/psi.png"))
 	ix.util.PropertyDesc2(tooltip, "Инъекция", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/impact.png"))
 end
 
@@ -38,11 +38,10 @@ ITEM.functions.use = {
 
 		ix.util.PlayerPerformBlackScreenAction(item.player, "Инъекция...", 2, function(player) 
 			player:AddBuff("buff_fastheal", 40, { amount = item.restore/60 }) --Делим на два.
-			player:IncreaseDrunkLevel(item.toxin)
-            player:GetCharacter():SatisfyAddictions("UniversalDrug")
-        end)
-
-		ix.chat.Send(item.player, "iteminternal", "достаёт шприц с оксикодоном и делает себе инъекцию, заметно зажмурившись.", false)
+			player:AddBuff("debuff_toxinadd", 80, { amount = item.restore/60 }) --Делим на два.
+            player:GetCharacter():SatisfyAddictions("StrongOpiate")
+			ix.chat.Send(player, "me", "достаёт шприц с оксикодоном и делает себе инъекцию, заметно зажмурившись.")
+		end)
 
 
 		quantity = quantity - 1

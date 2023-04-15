@@ -7,6 +7,9 @@ ITEM.height = 1
 ITEM.healAmount = 5
 ITEM.healSeconds = 3
 ITEM.quatity = 1
+--ITEM.sound = "takepills1.wav"
+ITEM.weight = 0.085
+ITEM.flatweight = 0.130
 
 ITEM.medAttr = 0
 
@@ -68,46 +71,53 @@ end
 ITEM.functions.use = {
 	name = "Обработать свои раны",
 	icon = "icon16/pill.png",
-	sound = "takepills1.wav",
+	sound = "stalkersound/inv_syringe.mp3",
 	OnRun = function(item)
-		local quantity = item:GetData("quantity", item.quantity)
-		local client = item.player
-
+	local quantity = item:GetData("quantity", item.quantity)
+	local client = item.player
 		if quantity == nil then
 			quantity = item.quantity
 		end
-
+	
 		if (IsValid(client)) then
 			local medical = client:GetCharacter():GetAttribute("medical", 0)
-
+	
 			if medical >= item.medAttr then
 				client.beingUsed = item
-
-				ix.util.PlayerPerformBlackScreenAction(item.player, "Обработка ран...", 4, function(player)
+	
+				ix.util.PlayerPerformBlackScreenAction(item.player, "Обработка ран...", 10, function(player)
 					if (not IsValid(client) or not client:Alive()) then
 						client.beingUsed = nil
 						return
 					end
-
-					healPlayer(client, client, item.healAmount, item.healSeconds, medical)
-
-					if item.healInfectationSeconds > 0 and client.HealInfectation then
-						client:HealInfectation(item.healInfectationSeconds)
+	
+					local chance = math.random(1, 2)
+					if chance == 1 then
+						ix.Wounds:SetBleeding(client)
+						client:Notify("Вы вызвали кровотечение во время полевой хирургии.")
+						healPlayer(client, client, item.healAmount, item.healSeconds, medical)
+						if item.healInfectationSeconds > 0 and client.HealInfectation then
+							client:HealInfectation(item.healInfectationSeconds)
+						end
+					else
+						healPlayer(client, client, item.healAmount, item.healSeconds, medical)
+						if item.healInfectationSeconds > 0 and client.HealInfectation then
+							client:HealInfectation(item.healInfectationSeconds)
+						end
 					end
-
+	
 					client.beingUsed = nil
-
+	
 					if quantity > 1 then
 						item:SetData("quantity", quantity - 1)
 					else
-						item.player:EmitSound(item.sound)
 						item:Remove()
 					end
 				end)
-
+	
 				local character = client:GetCharacter()
 				local name = character:GetName()
-
+	
 				if quantity > 1 then
 					ix.chat.Send(client, "me", " обрабатывает свои раны, используя хирургический набор. Осталось "..(quantity-1).." использований.")
 				else
@@ -117,22 +127,98 @@ ITEM.functions.use = {
 				client:Notify("Недостаточно медицинских знаний.")
 			end
 		end
-
+	
 		return false
 	end,
-
 	OnCanRun = function(item)
 		local cur_item = item.player.beingUsed
-
+	
 		if cur_item and cur_item == item then
 			cur_item = nil
 			return false
 		end
-
+	
 		return true
 	end
 }
 
+ITEM.functions.use_on = {
+	name = "Обработать чужие раны",
+	icon = "icon16/pill.png",
+	sound = "stalkersound/inv_syringe.mp3",
+	OnRun = function(item)
+	local client = item.player
+		local data = {}
+		data.start = client:GetShootPos()
+		data.endpos = data.start + client:GetAimVector() * 96
+		data.filter = client
+	
+		local target = util.TraceLine(data).Entity
+		data = nil
+	
+		if (IsValid(target) and target:IsPlayer()) then
+			local medical = client:GetCharacter():GetAttribute("medical", 0)
+	
+			if medical >= item.medAttr then
+				client.beingUsed = item
+	
+				ix.util.PlayerPerformBlackScreenAction(item.player, "Обработка ран...", 6, function(player)
+					if (not IsValid(client) or not client:Alive()) then
+						client.beingUsed = nil
+						return
+					end
+	
+					healPlayer(client, target, item.healAmount, item.healSeconds, medical)
+	
+					if item.healInfectationSeconds > 0 and target.HealInfectation then
+						target:HealInfectation(item.healInfectationSeconds)
+					end
+	
+					if math.random() <= 0.25 then
+						ix.Wounds:SetBleeding(target)
+						client:Notify("Вы вызвали кровотечение во время полевой хирургии. Используйте гемостатическое средство.")
+					end
+	
+					client.beingUsed = nil
+	
+					local quantity = item:GetData("quantity", item.quantity)
+					if quantity > 1 then
+						item:SetData("quantity", quantity - 1)
+					else
+						item:Remove()
+					end
+				end)
+	
+				local character = client:GetCharacter()
+				local name = character:GetName()
+	
+				local quantity = item:GetData("quantity", item.quantity)
+				if quantity > 1 then
+					ix.chat.Send(client, "me", " обрабатывает раны "..target:GetName()..", используя хирургический набор. Осталось "..(quantity-1).." использований.")
+				else
+					ix.chat.Send(client, "me", " обрабатывает раны "..target:GetName()..", используя последний хирургический набор.")
+				end
+			else
+				client:Notify("Недостаточно медицинских знаний.")
+			end
+		end
+	
+		return false
+	end,
+	
+	OnCanRun = function(item)
+		local cur_item = item.player.beingUsed
+	
+		if cur_item and cur_item == item then
+			cur_item = nil
+			return false
+		end
+	
+		return true
+	end
+}
+
+/*
 ITEM.functions.use_on = {
 	name = "Обработать чужие раны",
 	icon = "icon16/pill_go.png",
@@ -204,7 +290,7 @@ ITEM.functions.use_on = {
 		return true
 	end
 }
-
+*/
 function ITEM:GetDescription()
 	local quant = self:GetData("quantity", self.ammoAmount or self.quantity or 0)
 	local quantdesc = ""
@@ -235,14 +321,6 @@ function ITEM:PopulateTooltip(tooltip)
       self:PopulateTooltipIndividual(tooltip)
     end
 end
-
-ITEM:Hook("use", function(item)
-	item.player:EmitSound(item.sound or "items/battery_pickup.wav")
-end)
-
-ITEM:Hook("usetarget", function(item)
-	item.player:EmitSound(item.sound or "items/battery_pickup.wav")
-end)
 
 function ITEM:GetWeight()
   return self.flatweight + (self.weight * self:GetData("quantity", self.quantity))

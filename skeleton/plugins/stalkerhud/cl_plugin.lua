@@ -173,7 +173,7 @@ end;
 --hook.Add("PostRenderVGUI", "Draw_Cursor_Function_FGSHAR", cursorDraw) -- PostRenderVGUI makes our custom cursor be drawn after the UI elements, this will make it work properly.
 --hook.Add("Think", "Cursor_Think_Function_FGSHAR", cursorThink)
 hook.Add("HUDShouldDraw", "Damage_Direction_Suppressor", function(name) if (name == "CHudDamageIndicator") then return false end end)
-
+/*
 function PLUGIN:HUDPaint()
 	--// HUD Code exported by verne using Exho's HUD Designer //--
 	--// STALKER Hud Exported on 03/13/16 11:46:26 //--
@@ -276,17 +276,17 @@ function ix.hud.DrawDeath()
 			--surface.DrawRect(-1, -1, w+2, h+2)
 
 			ix.util.DrawText(
-				string.upper("Lost to the Zone"), w/2, h/2, Color(255, 0, 0), 1, 1, "stalkerregularbigfont", 255
+				string.upper("Вы были критически ранены..."), w/2, h/2, Color(255, 0, 0), 1, 1, "stalkerregularbigfont", 255
 			)
 
 			ix.util.DrawText(
-				"Hold [E] to bleed out and respawn", w/2, (h/5) * 4, Color(220, 220, 220), 1, 1, "stalkerregularfont", 255
+				"Удерживайте [E], чтобы принять свою судьбу.", w/2, (h/5) * 4, Color(220, 220, 220), 1, 1, "stalkerregularfont", 255
 			)
 		end
 	end
 end
 
-
+/*
 ix.hud.attackers = {}
 net.Receive( "cotz_ShotInd", function( len )
 	local attacker = net.ReadEntity()
@@ -316,3 +316,4 @@ local function shotIndicatorDrawHUD()
 	end
 end
 hook.Add("HUDPaint","StalkerHitIndicator", shotIndicatorDrawHUD )
+*/

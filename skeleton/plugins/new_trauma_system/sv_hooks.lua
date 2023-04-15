@@ -49,11 +49,9 @@ function ix.Wounds:SetBleeding(pl)
     local char = pl:GetCharacter() or false
     if IsValid(pl) and char then
         char:SetData("bIsBleeding", true)
-
-        pl:_SetTimer("bIsBleeding::"..pl:SteamID64(), 15, 0, function()
-            pl:SetHealth(pl:Health() - math.random(5,10))
-            pl:EmitSound("player/pl_drown2.wav")
-            pl:Notify("У Вас кровотечение. Найдите способ остановить его, пока не стало слишком поздно.")
+        pl:Notify("У Вас сильное кровотечение! Используйте гемостатические средства, пока не стало слишком поздно.")
+        pl:_SetTimer("bIsBleeding::"..pl:SteamID64(), 2, 0, function()
+            pl:SetHealth(pl:Health() - math.random(1,2))
 
             if pl:Health() <= 0 then
                 pl:Kill()
@@ -67,9 +65,10 @@ function ix.Wounds:SetFracture(pl)
     local char = pl:GetCharacter() or false
     if IsValid(pl) and char then
         char:SetData("bIsFractured", true)
+        pl:Notify("У Вас повреждение ноги! Используйте фиксатор, чтобы восстановить мобильность.")
 
-        pl:SetWalkSpeed(ix.config.Get("walkSpeed", 100) / 1.4)
-        pl:SetRunSpeed(ix.config.Get("walkSpeed", 100) / 1.4)
+        pl:SetWalkSpeed(ix.config.Get("walkSpeed", 100) / 4)
+        pl:SetRunSpeed(ix.config.Get("walkSpeed", 100) / 4)
     end
 end
 

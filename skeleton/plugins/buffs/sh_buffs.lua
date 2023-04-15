@@ -51,8 +51,8 @@ PLUGIN.buffs[ "buff_fastheal" ] = {
 }
 
 PLUGIN.buffs[ "buff_staminarestore" ] = {
-	name = "Energy",
-	desc = "You're restoring energy faster.",
+	name = "Восстановление энергии",
+	desc = "Вы восстанавливаете свою энергию.",
 	func = function( player, parameter)
 		player.timeNextTickStam = player.timeNextTickStam or CurTime()
 		if player.timeNextTickStam < CurTime() then
@@ -63,13 +63,39 @@ PLUGIN.buffs[ "buff_staminarestore" ] = {
 	end,
 }
 
-PLUGIN.buffs[ "buff_radiationremoval" ] = {
-	name = "Antirad",
-	desc = "You're becoming less radioactive.",
+PLUGIN.buffs[ "buff_toxinremoval" ] = {
+	name = "Выведение токсинов",
+	desc = "Токсины выходит из вашего организма.",
 	func = function( player, parameter)
 		player.timeNextTickRadRem = player.timeNextTickRadRem or CurTime()
 		if player.timeNextTickRadRem < CurTime() then
-			player:addRadiation(-parameter.amount)
+			player:DecreaseDrunkLevel(-parameter.amount)
+
+			player.timeNextTickRadRem = CurTime() + 2
+		end
+	end,
+}
+
+PLUGIN.buffs[ "debuff_toxinadd" ] = {
+	name = "Токсичность",
+	desc = "Токсины в Вашем организме.",
+	func = function( player, parameter)
+		player.timeNextTickRadRem = player.timeNextTickRadRem or CurTime()
+		if player.timeNextTickRadRem < CurTime() then
+			player:IncreaseDrunkLevel(parameter.amount)
+
+			player.timeNextTickRadRem = CurTime() + 2
+		end
+	end,
+}
+
+PLUGIN.buffs[ "buff_radiationremoval" ] = {
+	name = "Выведение радиации",
+	desc = "Радиация выходит из вашего организма.",
+	func = function( player, parameter)
+		player.timeNextTickRadRem = player.timeNextTickRadRem or CurTime()
+		if player.timeNextTickRadRem < CurTime() then
+			player:DecreaseDrunkLevel(-parameter.amount)
 
 			player.timeNextTickRadRem = CurTime() + 2
 		end
@@ -77,8 +103,8 @@ PLUGIN.buffs[ "buff_radiationremoval" ] = {
 }
 
 PLUGIN.buffs[ "buff_psyheal" ] = {
-	name = "Psyheal",
-	desc = "Your mind is clearing up.",
+	name = "Лечение психики",
+	desc = "Ваш разум медленно восстанавливается.",
 	func = function( player, parameter)
 		player.timeNextTickPsyHeal = player.timeNextTickPsyHeal or CurTime()
 		if player.timeNextTickPsyHeal < CurTime() then
@@ -90,16 +116,16 @@ PLUGIN.buffs[ "buff_psyheal" ] = {
 }
 
 PLUGIN.buffs[ "buff_radprotect" ] = {
-	name = "Radiation Protection",
-	desc = "You're protected from radiation.",
+	name = "Радиозащита",
+	desc = "Вы полностью защищены от радиации.",
 	func = function( player, parameter)
 		
 	end,
 }
 
 PLUGIN.buffs[ "buff_psysuppress" ] = {
-	name = "Psy Suppression",
-	desc = "Psychic effects are suppressed.",
+	name = "Подавление психики",
+	desc = "Психические эффекты больше не влияют на Вас.",
 	func = function( player, parameter)
 		
 	end,
@@ -112,8 +138,8 @@ PLUGIN.buffs[ "buff_psysuppress" ] = {
 }
 
 PLUGIN.buffs[ "buff_psyblock" ] = {
-	name = "Psyblock",
-	desc = "You're protected from psychic attacks.",
+	name = "Психическая защита",
+	desc = "Вы полностью защищены от психических атак.",
 	func = function( player, parameter)
 		
 	end,
@@ -126,8 +152,8 @@ PLUGIN.buffs[ "buff_psyblock" ] = {
 }
 
 PLUGIN.buffs[ "debuff_radiation" ] = {
-	name = "Radiation",
-	desc = "You're becoming radioactive.",
+	name = "Радиоактивность",
+	desc = "Излучение начинает пропитывать Ваш организм.",
 	func = function( player, parameter)
 		player.timeNextTickRad = player.timeNextTickRad or CurTime()
 		if player.timeNextTickRad < CurTime() then
@@ -139,8 +165,8 @@ PLUGIN.buffs[ "debuff_radiation" ] = {
 }
 
 PLUGIN.buffs[ "debuff_psy" ] = {
-	name = "Psychic",
-	desc = "You're becoming less sane.",
+	name = "Потеря психики",
+	desc = "Вы медленно сходите с ума.",
 	func = function( player, parameter)
 		player.timeNextTickPsyDmg = player.timeNextTickPsyDmg or CurTime()
 		if player.timeNextTickPsyDmg < CurTime() then
@@ -150,7 +176,7 @@ PLUGIN.buffs[ "debuff_psy" ] = {
 		end
 	end,
 }
-
+/*
 PLUGIN.buffs[ "leghurt" ] = {
 	name = "Leg Injury",
 	desc = "Your legs are injured and your movement has been handicapped.",
@@ -175,10 +201,10 @@ PLUGIN.buffs[ "leghurt" ] = {
 		end
 	end,
 }
-
+*/
 PLUGIN.buffs[ "buff_hijump" ] = {
-	name = "High Jump",
-	desc = "You can jump high.",
+	name = "Высокий прыжок",
+	desc = "Вы крайне высоко прыгаете.",
 	func = function( player, parameter)
 		
 	end,

@@ -32,7 +32,7 @@ if ix.bar then
 		end
 	end
 end
-
+/*
 PLUGIN.invalidDamagetypes = {
 	[DMG_SONIC] = true,
 	[DMG_RADIATION] = true
@@ -64,7 +64,7 @@ ix.option.Add("cw2crosshair", ix.type.bool, false, {
 	end
 })
 
-/*ix.command.Add("invtest", {
+ix.command.Add("invtest", {
 	OnRun = function(self, client)
 		netstream.Start(client, "invtest")
 	end
