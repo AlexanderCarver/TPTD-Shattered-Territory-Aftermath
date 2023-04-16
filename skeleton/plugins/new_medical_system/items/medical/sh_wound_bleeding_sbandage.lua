@@ -12,8 +12,8 @@ ITEM.quantity = 1
 ITEM.restore = 60
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.0004
-ITEM.flatweight = 0.010
+ITEM.weight = 0.120
+ITEM.flatweight = 0.000
 
 ITEM.exRender = false
 ITEM.iconCam = {
@@ -31,7 +31,7 @@ end
 
 ITEM.functions.Apply = {
 	name = "Перевязка",
-	icon = "icon16/stalker/swallow.png",
+	icon = "icon16/stalker/heal.png",
 	sound = "stalkersound/inv_bandage.mp3",
 	OnRun = function(itemTable)
 		local player = itemTable.player

@@ -14,7 +14,7 @@ ITEM.restore = 60
 --ITEM.toxin = 40
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.0015
+ITEM.weight = 0.015
 ITEM.flatweight = 0.015
 
 ITEM.exRender = false
@@ -39,7 +39,7 @@ ITEM.functions.use = {
 		ix.util.PlayerPerformBlackScreenAction(item.player, "Инъекция...", 2, function(player) 
 			player:AddBuff("buff_fastheal", 40, { amount = item.restore/60 }) --Делим на два.
 			player:AddBuff("debuff_toxinadd", 80, { amount = item.restore/60 }) --Делим на два.
-            player:GetCharacter():SatisfyAddictions("StrongOpiate")
+            player:GetCharacter():SatisfyAddictions("MediumDrugs")
 			ix.chat.Send(player, "me", "достаёт шприц с оксикодоном и делает себе инъекцию, заметно зажмурившись.")
 		end)
 
