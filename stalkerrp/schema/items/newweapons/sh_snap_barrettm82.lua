@@ -1,18 +1,18 @@
-ITEM.name = "Barrett M82"
-ITEM.description= "Немецкий пистолет-пулемёт MP 40 калибра 9x19 мм времен Второй мировой войны."
-ITEM.longdesc = "MP 40 был широко использован немецкими войсками в Второй мировой войне, обладал высокой точностью и надежностью. Его конструкция включала в себя откидной приклад и двуствольный тормоз. Оружие работало на основе открытого затвора, имело магазин на 32 патрона 9х19 мм."
-ITEM.model = "models/weapons/w_smg_mp5.mdl"
+ITEM.name = "Barrett M82" 
+ITEM.description= "Американская крупнокалиберная снайперская винтовка Barrett M82 калибра 12.7 x 99 мм" 
+ITEM.longdesc = "Американская самозарядная крупнокалиберная снайперская винтовка, выпускаемая компанией Barrett Firearms Manufacturing и состоящая на вооружении ряда стран мира. Относится к классу «антиматериальных» калибра 12.7 x 99 мм."
+ITEM.model = "models/weapons/w_snip_awp.mdl"
 ITEM.class = "arc9_fas_m82"
-ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
+ITEM.weaponCategory = "primary" 
 ITEM.price = 60000
-ITEM.width = 3 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
-ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
+ITEM.width = 6
+ITEM.height = 2
 
-ITEM.bulletweight = 0.008 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 4 --Вес оружия
+ITEM.bulletweight = 0.046 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 13.5 --Вес оружия
 
-ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
-ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.
+ITEM.repair_PartsComplexity = 2 
+ITEM.repair_PartsRarity = 2 
 
 function ITEM:GetWeight()
   return self.unloadedweight + (self.bulletweight * self:GetData("ammo", 0))

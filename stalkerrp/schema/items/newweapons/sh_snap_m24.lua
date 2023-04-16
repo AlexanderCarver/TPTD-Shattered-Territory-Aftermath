@@ -1,18 +1,18 @@
-ITEM.name = "M24"
-ITEM.description= "Немецкий пистолет-пулемёт MP 40 калибра 9x19 мм времен Второй мировой войны."
-ITEM.longdesc = "MP 40 был широко использован немецкими войсками в Второй мировой войне, обладал высокой точностью и надежностью. Его конструкция включала в себя откидной приклад и двуствольный тормоз. Оружие работало на основе открытого затвора, имело магазин на 32 патрона 9х19 мм."
-ITEM.model = "models/weapons/w_smg_mp5.mdl"
+ITEM.name = "M24" 
+ITEM.description= "Снайперская винтовка M24 калибра .338 Lapua Magnum." 
+ITEM.longdesc = "Американская снайперское винтовка со скользящим затвором калибра .338 Lapua Magnum, созданная на основе Remington 700."
+ITEM.model = "models/weapons/w_snip_scout.mdl"
 ITEM.class = "arc9_fas_m24"
-ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
+ITEM.weaponCategory = "primary" 
 ITEM.price = 11000
-ITEM.width = 3 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
-ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
+ITEM.width = 5
+ITEM.height = 2 
 
-ITEM.bulletweight = 0.008 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 4 --Вес оружия
+ITEM.bulletweight = 0.042 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 5.4 --Вес оружия
 
-ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
-ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.
+ITEM.repair_PartsComplexity = 2 
+ITEM.repair_PartsRarity = 2 
 
 function ITEM:GetWeight()
   return self.unloadedweight + (self.bulletweight * self:GetData("ammo", 0))
