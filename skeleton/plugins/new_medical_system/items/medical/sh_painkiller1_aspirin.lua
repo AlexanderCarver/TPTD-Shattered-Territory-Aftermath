@@ -14,7 +14,7 @@ ITEM.restore = 60
 --ITEM.toxin = 5
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.001
+ITEM.weight = 0.0004
 ITEM.flatweight = 0.010
 
 ITEM.exRender = false
@@ -26,7 +26,7 @@ ITEM.iconCam = {
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc2(tooltip, "Обезболивающее", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/hpregen.png"))
-	ix.util.PropertyDesc2(tooltip, "Таблетки", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/impact.png"))
+
 end
 
 ITEM.functions.use = {
@@ -35,7 +35,7 @@ ITEM.functions.use = {
 	OnRun = function(item)
 		local quantity = item:GetData("quantity", item.quantity)
 
-		ix.util.PlayerPerformBlackScreenAction(item.player, "Употребление...", 4, function(player) 
+		ix.util.PlayerPerformBlackScreenAction(item.player, "Употребление...", 3, function(player) 
 			player:AddBuff("buff_slowheal", 40, { amount = item.restore/60 }) --Делим на два.
 			player:AddBuff("debuff_toxinadd", 10, { amount = item.restore/60 }) --Делим на два.
 			ix.chat.Send(player, "me", "достаёт упаковку аспирина и выдавливает одну из таблеток в свою ладонь, после чего глотает её.")

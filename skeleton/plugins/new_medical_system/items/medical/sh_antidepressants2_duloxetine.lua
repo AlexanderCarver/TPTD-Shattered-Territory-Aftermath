@@ -14,7 +14,7 @@ ITEM.restore = 60
 --ITEM.toxin = 20
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.001
+ITEM.weight = 0.0004
 ITEM.flatweight = 0.010
 
 ITEM.exRender = false
@@ -27,7 +27,7 @@ ITEM.iconCam = {
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc2(tooltip, "Антидепрессант (слабый)", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/psiprot.png"))
-	ix.util.PropertyDesc2(tooltip, "Таблетки", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/impact.png"))
+
 end
 
 ITEM.functions.use = {
@@ -36,7 +36,7 @@ ITEM.functions.use = {
 	OnRun = function(item)
 		local quantity = item:GetData("quantity", item.quantity)
 
-		ix.util.PlayerPerformBlackScreenAction(item.player, "Употребление...", 4, function(player) 
+		ix.util.PlayerPerformBlackScreenAction(item.player, "Употребление...", 3, function(player) 
 			player:AddBuff("buff_psyheal", 90, { amount = item.restore/60 })
 			player:AddBuff("debuff_toxinadd", 40, { amount = item.restore/60 }) --Делим на два.
             player:GetCharacter():SatisfyAddictions("LightAntidepressants")

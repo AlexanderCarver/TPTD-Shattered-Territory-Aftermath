@@ -62,7 +62,7 @@ PLUGIN.addictionDefinitions["LightAlcoholic"] = {
 PLUGIN.addictionDefinitions["Alcoholic"] = {
 	name = "Алкоголизм",
 	checkChance = 60,
-	satisfyStruct = {{"LightAlcohol", 75, 2}, {"MediumAlcohol", 85, 4}, {"StrongAlcohol", 100, 6}},
+	satisfyStruct = {{"CheapAlcohol", 75, 2}, {"MediumAlcohol", 100, 2}, {"ExpensiveAlcohol", 100, 4}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
 		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
 			ply:DamagePsyHealth(20)
@@ -89,8 +89,8 @@ PLUGIN.addictionDefinitions["Alcoholic"] = {
 
 PLUGIN.addictionDefinitions["Smoker"] = {
 	name = "Никотиновая зависимость",
-	checkChance = 80,
-	satisfyStruct = {{"LightSmokes", 50, 2}, {"StrongSmokes", 75, 4}, {"SpecialSmokes", 100, 6}},
+	checkChance = 100,
+	satisfyStruct = {{"WeakSmokes", 50, 1}, {"StrongSmokes", 75, 3}, {"SpecialSmokes", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
 		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
 			ply:DamagePsyHealth(20)
@@ -120,7 +120,7 @@ PLUGIN.addictionDefinitions["Smoker"] = {
 PLUGIN.addictionDefinitions["DrugUser"] = {
 	name = "Наркомания",
 	checkChance = 100,
-	satisfyStruct = {{"LightDrugs", 80, 2}, {"MediumDrugs", 90, 4}, {"StrongDrugs", 100, 6}},
+	satisfyStruct = {{"PrescriptionDrugs", 75, 2}, {"Marijuana", 100, 2}, {"StrongerDrugs", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
 		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
 			ply:DamagePsyHealth(20)
@@ -137,7 +137,7 @@ PLUGIN.addictionDefinitions["DrugUser"] = {
 
 		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
 			ply:DamagePsyHealth(10)
-			ply:Notify("У меня дрожат руки... Начинается ломка. Мне срочно нужна доза хотя бы чего-нибудь.")
+			ply:Notify("У меня дрожат руки... Начинается ломка. Мне срочно нужны наркотики.")
 		end
 
 		if (lvl >= ADDICTION_STATE_WITHDRAWAL) then
@@ -147,10 +147,40 @@ PLUGIN.addictionDefinitions["DrugUser"] = {
 	end,
 }
 
+PLUGIN.addictionDefinitions["OpiateUser"] = {
+	name = "Зависимость от опиатов",
+	checkChance = 75,
+	satisfyStruct = {{"LightOpiate", 100, 2}, {"StrongOpiate", 100, 6}},
+	updateFunction 	= function(ply, oldlvl, newlvl)
+		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
+			ply:DamagePsyHealth(20)
+		end
+
+		if (newlvl < oldlvl) then
+			ply:DamagePsyHealth(-10 * (oldlvl - newlvl))
+		end
+	end,
+	tickFunction 	= function(ply, lvl)
+		if (lvl >= ADDICTION_STATE_NEED) then
+			ply:Notify("Мне нужно принять обезболивающее...")
+		end
+
+		if (lvl >= ADDICTION_STATE_WORSTWITHDRAWAL) then
+			ply:DamagePsyHealth(10)
+			ply:Notify("Блять, мне плохо. Нужно срочно принять опиаты, пока не стало только хуже.")
+		end
+
+		if (lvl >= ADDICTION_STATE_WITHDRAWAL) then
+			ply:DamagePsyHealth((lvl - ADDICTION_STATE_NEED)*2)
+			ply:Notify("У меня ломка из-за отсутствия опиатов.")
+		end
+	end,
+}
+
 PLUGIN.addictionDefinitions["AntidepressantUser"] = {
 	name = "Зависимость от антидепрессантов",
 	checkChance = 75,
-	satisfyStruct = {{"LightAntidepressants", 100, 4}, {"StrongAntidepressants", 100, 6}},
+	satisfyStruct = {{"LightAntidepressants", 100, 2}, {"StrongAntidepressants", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)
 		if (newlvl >= ADDICTION_STATE_HEAVYWITHDRAWAL) then
 			ply:DamagePsyHealth(20)
@@ -178,7 +208,7 @@ PLUGIN.addictionDefinitions["AntidepressantUser"] = {
 }
 
 PLUGIN.addictionDefinitions["AntipsychoticUser"] = {
-	name = "Зависимость от нейролептиков",
+	name = "Зависимость от антидепрессантов",
 	checkChance = 75,
 	satisfyStruct = {{"Antipsychotic", 100, 6}},
 	updateFunction 	= function(ply, oldlvl, newlvl)

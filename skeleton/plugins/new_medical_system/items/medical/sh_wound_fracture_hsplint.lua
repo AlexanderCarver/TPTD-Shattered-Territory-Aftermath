@@ -11,8 +11,8 @@ ITEM.quantity = 1
 ITEM.restore = 60
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.240
-ITEM.flatweight = 0.000
+ITEM.weight = 0.0004
+ITEM.flatweight = 0.010
 
 ITEM.exRender = false
 ITEM.iconCam = {
@@ -23,7 +23,7 @@ ITEM.iconCam = {
 
 
 function ITEM:PopulateTooltipIndividual(tooltip)
-    ix.util.PropertyDesc2(tooltip, "Фиксатор", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/runspeed.png"))
+    ix.util.PropertyDesc2(tooltip, "Фиксатор ног", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/runspeed.png"))
 
 end
 
@@ -37,14 +37,14 @@ end
 
 ITEM.functions.Apply = {
 	name = "Наложить шину",
-	icon = "icon16/stalker/heal.png",
+	icon = "icon16/stalker/swallow.png",
 	sound = "stalkersound/inv_bandage.mp3",
 	OnRun = function(itemTable)
 		local player = itemTable.player
 		local quantity = itemTable:GetData("quantity", itemTable.quantity)
 		local character = player:GetCharacter()
 
-		ix.util.PlayerPerformBlackScreenAction(player, "Наложение шины...", 8, function(player)
+		ix.util.PlayerPerformBlackScreenAction(player, "Наложение шины...", 12, function(player)
 					ix.Wounds:RemoveFracture(player)
 						player:Notify("Вы успешно зафиксировали повреждённую ногу.")
 					ix.chat.Send(player, "me", "накладывает шину на поврежденную конечность, туго затягивая её и фиксируя её положение.")
