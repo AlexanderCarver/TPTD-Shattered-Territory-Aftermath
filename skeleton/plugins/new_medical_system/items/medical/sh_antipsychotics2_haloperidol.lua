@@ -14,8 +14,8 @@ ITEM.restore = 60
 --ITEM.toxin = 35
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.0004
-ITEM.flatweight = 0.010
+ITEM.weight = 0.015
+ITEM.flatweight = 0.015
 
 ITEM.exRender = false
 ITEM.iconCam = {

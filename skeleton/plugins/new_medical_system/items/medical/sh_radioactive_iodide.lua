@@ -14,7 +14,7 @@ ITEM.restore = 60
 ITEM.toxin = 5
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.0004
+ITEM.weight = 0.002
 ITEM.flatweight = 0.010
 
 ITEM.exRender = false
@@ -28,7 +28,7 @@ ITEM.iconCam = {
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc2(tooltip, "Радиопротектор", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/radprot.png"))
-
+	ix.util.PropertyDesc2(tooltip, "Таблетки", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/impact.png"))
 end
 
 ITEM.functions.use = {

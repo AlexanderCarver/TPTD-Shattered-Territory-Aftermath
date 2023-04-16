@@ -11,6 +11,19 @@
 
 local PLUGIN = PLUGIN
 
+PLUGIN.buffs[ "debuff_slowdamage" ] = {
+	name = "Снижение здоровья",
+	desc = "Вы медленно умираете.",
+	func = function( player, parameter)
+        player.timeNextHeal = player.timeNextHeal or CurTime()
+        if player.timeNextHeal < CurTime() then
+            player:SetHealth(math.Clamp(player:Health() - (parameter.amount or 1), -player:GetMaxHealth(), player:GetMaxHealth()))
+
+            player.timeNextHeal = CurTime() + 2
+        end
+    end,
+}
+
 PLUGIN.buffs[ "buff_slowheal" ] = {
 	name = "Лечение",
 	desc = "Вы медленно излечиваетесь",
@@ -138,7 +151,7 @@ PLUGIN.buffs[ "buff_psysuppress" ] = {
 }
 
 PLUGIN.buffs[ "buff_psyblock" ] = {
-	name = "Психическая защита",
+	name = "Защита от безумия",
 	desc = "Вы полностью защищены от психических атак.",
 	func = function( player, parameter)
 		
@@ -153,7 +166,7 @@ PLUGIN.buffs[ "buff_psyblock" ] = {
 
 PLUGIN.buffs[ "debuff_radiation" ] = {
 	name = "Радиоактивность",
-	desc = "Излучение начинает пропитывать Ваш организм.",
+	desc = "Излучение наполняет Ваше тело.",
 	func = function( player, parameter)
 		player.timeNextTickRad = player.timeNextTickRad or CurTime()
 		if player.timeNextTickRad < CurTime() then
@@ -165,7 +178,7 @@ PLUGIN.buffs[ "debuff_radiation" ] = {
 }
 
 PLUGIN.buffs[ "debuff_psy" ] = {
-	name = "Потеря психики",
+	name = "Потеря рассудка",
 	desc = "Вы медленно сходите с ума.",
 	func = function( player, parameter)
 		player.timeNextTickPsyDmg = player.timeNextTickPsyDmg or CurTime()
@@ -203,8 +216,8 @@ PLUGIN.buffs[ "leghurt" ] = {
 }
 */
 PLUGIN.buffs[ "buff_hijump" ] = {
-	name = "Высокий прыжок",
-	desc = "Вы крайне высоко прыгаете.",
+	name = "Пёрышко",
+	desc = "Вы прыгаете очень высоко. Даже слишком.",
 	func = function( player, parameter)
 		
 	end,
