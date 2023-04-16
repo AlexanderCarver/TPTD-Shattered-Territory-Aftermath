@@ -11,8 +11,8 @@ ITEM.quantity = 1
 ITEM.restore = 60
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.0004
-ITEM.flatweight = 0.010
+ITEM.weight = 0.080
+ITEM.flatweight = 0.000
 
 ITEM.exRender = false
 ITEM.iconCam = {
@@ -37,14 +37,14 @@ end
 
 ITEM.functions.Apply = {
 	name = "Наложить жгут",
-	icon = "icon16/stalker/swallow.png",
+	icon = "icon16/stalker/heal.png",
 	sound = "stalkersound/inv_bandage.mp3",
 	OnRun = function(itemTable)
 		local player = itemTable.player
 		local quantity = itemTable:GetData("quantity", itemTable.quantity)
 		local character = player:GetCharacter()
 
-		ix.util.PlayerPerformBlackScreenAction(player, "Наложение жгута...", 6, function(player)
+		ix.util.PlayerPerformBlackScreenAction(player, "Наложение жгута...", 4, function(player)
 				if math.random() <= 0.9 then
 					ix.Wounds:RemoveBleeding(player)
 					player:Notify("Вы успешно остановили кровотечение.")

@@ -11,8 +11,8 @@ ITEM.quantity = 1
 ITEM.restore = 60
 --ITEM.psyheal = 12
 
-ITEM.weight = 0.0004
-ITEM.flatweight = 0.010
+ITEM.weight = 0.120
+ITEM.flatweight = 0.000
 
 ITEM.exRender = false
 ITEM.iconCam = {
@@ -37,14 +37,14 @@ end
 
 ITEM.functions.Apply = {
 	name = "Перевязка",
-	icon = "icon16/stalker/swallow.png",
+	icon = "icon16/stalker/heal.png",
 	sound = "stalkersound/inv_bandage.mp3",
 	OnRun = function(itemTable)
 		local player = itemTable.player
 		local quantity = itemTable:GetData("quantity", itemTable.quantity)
 		local character = player:GetCharacter()
 		if ix.Wounds:GetBleeding(player, true) then -- проверка на наличие кровотечения
-			ix.util.PlayerPerformBlackScreenAction(player, "Перевязка...", 6, function()
+			ix.util.PlayerPerformBlackScreenAction(player, "Перевязка...", 8, function()
 				if math.random() < 0.3 then
 					ix.Wounds:RemoveBleeding(player)
 					player:Notify("Вы успешно остановили кровотечение.")
