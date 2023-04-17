@@ -1,6 +1,6 @@
-RECIPE.name = "" -- Название
-RECIPE.description = "" -- Описание
-RECIPE.model = "" -- Модель (не менять)
+RECIPE.name = "Приготовить хлеб" -- Название
+RECIPE.description = "Разделать хлеб на части и приготовить его." -- Описание
+RECIPE.model = "models/lostsignalproject/items/consumable/bread_spoiled.mdl" -- Модель (не менять)
 RECIPE.requirements = { -- Необходимые для крафта предметы
     ["cloth"] = 23,
 }
@@ -14,4 +14,4 @@ RECIPE.results = { -- Результаты крафта
 }
 
 
-RECIPE.workbench = "table"
+RECIPE.workbench = "campfire"

@@ -1,9 +1,0 @@
-"stalkerrp"
-{
-	"base" 			"helix"
-	"title" 		"ST:A"
-	"author" 		"TPTD DevTeam"
-	"menusystem"	"1"
-	"category"		"pvp"
-	"workshopid"	"1972458913"
-}
