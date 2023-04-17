@@ -1,14 +1,14 @@
-ITEM.name = "СВД" 
-ITEM.description= "Самозарядная снайперская винтовка СВД под калибр 7.62x54 мм" 
-ITEM.longdesc = "Снайперская винтовка Драгунова — советская самозарядная снайперская винтовка, разработанная в 1957—1963 годах группой конструкторов под руководством Драгунова и принятая на вооружение Советской Армии."
+ITEM.name = "Кarabiner 98k" 
+ITEM.description= "Германская магазинная винтовка Кarabiner 98k времён Второй мировой войны под калибр 7.92x57 мм Маузер" 
+ITEM.longdesc = "Магазинная винтовка, официально принятая на вооружение в 1935 году. Являлась основным и наиболее массовым стрелковым оружием вермахта. Конструктивно является укороченной и незначительно изменённой модификацией винтовки Mauser 98."
 ITEM.model = "models/weapons/w_snip_scout.mdl"
-ITEM.class = "arc9_fas_svd"
+ITEM.class = "arc9_doi_k98"
 ITEM.weaponCategory = "primary" 
-ITEM.price = 14500
-ITEM.width = 5
+ITEM.price = 12000
+ITEM.width = 4
 ITEM.height = 2 
 
-ITEM.bulletweight = 0.025 --Вес пули оставь дефолтный по калибру
+ITEM.bulletweight = 0.013 --Вес пули оставь дефолтный по калибру
 ITEM.unloadedweight = 4.3 --Вес оружия
 
 ITEM.repair_PartsComplexity = 2 
@@ -16,7 +16,7 @@ ITEM.repair_PartsRarity = 2
 
 function ITEM:GetWeight()
   return self.unloadedweight + (self.bulletweight * self:GetData("ammo", 0))
-end
+end 
 
 ITEM.iconCam = {
 	pos = Vector(10, -205, 2),

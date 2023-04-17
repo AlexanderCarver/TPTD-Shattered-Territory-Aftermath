@@ -1,18 +1,18 @@
-ITEM.name = "Gewehr 43"
-ITEM.description= "Немецкий пистолет-пулемёт MP 40 калибра 9x19 мм времен Второй мировой войны."
-ITEM.longdesc = "MP 40 был широко использован немецкими войсками в Второй мировой войне, обладал высокой точностью и надежностью. Его конструкция включала в себя откидной приклад и двуствольный тормоз. Оружие работало на основе открытого затвора, имело магазин на 32 патрона 9х19 мм."
-ITEM.model = "models/weapons/w_smg_mp5.mdl"
+ITEM.name = "Gewehr 43" 
+ITEM.description= "Германская самозарядная винтовка Gewehr 43 времён Второй мировой войны под калибр 7.92x57 мм Маузер" 
+ITEM.longdesc = "Самозарядная винтовка времён Второй мировой войны, являющаяся модификацией более ранней винтовки Gewehr 41 с изменённой газоотводной системой, схожей с таковой у советской винтовки СВТ-40."
+ITEM.model = "models/weapons/w_snip_scout.mdl"
 ITEM.class = "arc9_doi_g43"
-ITEM.weaponCategory = "primary" --primary - основное; secondary - вторичное; melee - оружие ближнего боя;
+ITEM.weaponCategory = "primary" 
 ITEM.price = 9600
-ITEM.width = 3 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ДЛИНА
-ITEM.height = 2 --По кубикам распределение в инвентаре (измеряй кубиками модельку внутри гарриса); ЭТО ВЫСОТА
+ITEM.width = 4
+ITEM.height = 2 
 
-ITEM.bulletweight = 0.008 --Вес пули оставь дефолтный по калибру
-ITEM.unloadedweight = 4 --Вес оружия
+ITEM.bulletweight = 0.013 --Вес пули оставь дефолтный по калибру
+ITEM.unloadedweight = 4.3 --Вес оружия
 
-ITEM.repair_PartsComplexity = 2 --ХЗ, чё это. Оставь.
-ITEM.repair_PartsRarity = 2 --ХЗ, чё это. Оставь.
+ITEM.repair_PartsComplexity = 2 
+ITEM.repair_PartsRarity = 2 
 
 function ITEM:GetWeight()
   return self.unloadedweight + (self.bulletweight * self:GetData("ammo", 0))
