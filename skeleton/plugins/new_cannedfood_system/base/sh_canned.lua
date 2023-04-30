@@ -1,4 +1,4 @@
-﻿ITEM.name = "Food base"
+﻿ITEM.name = "Canned base"
 ITEM.description = "This is base a food."
 ITEM.longdesc = "This a long desc of base of food. SHIIIIET."
 ITEM.model = "models/props_junk/popcan01a.mdl"
@@ -6,17 +6,8 @@ ITEM.model = "models/props_junk/popcan01a.mdl"
 ITEM.width = 1
 ITEM.height = 1
 
-ITEM.quantity = 1
-
-ITEM.destroy_item = true
-
--- В процентах от -100 до 100.
-ITEM.thirst_amount = 0
-ITEM.hunger_amount = 0
-ITEM.drunk_amount = 0
-
-ITEM.weight = 0
-ITEM.flatweight = 0
+ITEM.weight = 0 --Не трогать.
+ITEM.flatweight = 0 --Указывать изначальный вес.
 
 ITEM.category = "Food"
 
@@ -36,12 +27,6 @@ function ITEM:GetDescription()
 		return (self.description)
 	else
         return (self.description..quantdesc..invdesc)
-	end
-end
-
-if (CLIENT) then
-	function ITEM:PaintOver(item, w, h)
-		draw.SimpleText(item:GetData("quantity", item.quantity).."/"..item.quantity, "stalkerregularinvfont", 3, h - 1, color_white, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM, 1, color_black)
 	end
 end
 
