@@ -7,82 +7,47 @@ ITEM.width = 1
 ITEM.height = 1
 
 ITEM.price = 260
-ITEM.destroy_item = true
 
-ITEM.thirst_amount = -10
-ITEM.hunger_amount = 22
-ITEM.drunk_amount = 0
-ITEM.staminaAmount = 10
-
-ITEM.quantity = 1
-
-ITEM.weight = 0.160
-ITEM.flatweight = 0.034
+ITEM.weight = 0.194
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc2(tooltip, "Съедобное", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/hunger.png"))
     ix.util.PropertyDesc2(tooltip, "Разогреваемое", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/thermprot.png"))
+    ix.util.PropertyDesc2(tooltip, "ПИЗДА", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/thermprot.png"))
 end
 
 ITEM.functions.use = {
-    name = "Употребить",
-    icon = "icon16/stalker/eat.png",
-    OnRun = function(item)
-        local quantity = item:GetData("quantity", item.quantity or 1)
-        
-        quantity = quantity - 1
-        item:SetData("quantity", quantity)
-        
-        local client = item.player
-        local mul = COOKLEVEL[item:GetData("cooklevel", 0)][1]
-        
-        if mul < 1 then
-            mul = 1
-        end
-        
-        if (item.thirst_amount ~= 0) then
-            client:AddThirstVar(item.thirst_amount * mul)
-        end
-        
-        if (item.hunger_amount ~= 0) then
-            client:AddHungerVar(item.hunger_amount * mul)
-        end
-        
-        if (item.drunk_amount ~= 0) then
-            client:AddDrunkVar(item.drunk_amount)
-        end
-        
-        if (math.random(1, 5) == 3) then
-            client:SetHealth(math.Clamp(client:Health() + math.random(1, 10), 0, client:GetMaxHealth()))
-        end
-        
-        client:EmitSound("stalkersound/inv_flask.mp3", 50, 75)
-        
-        ix.util.PlayerPerformBlackScreenAction(item.player, "Употребление...", 4, function(player) 
-			ix.chat.Send(player, "me", "аккуратно вскрывает консервированную банку и употребляет находящийся внутри продукт. Фасоль в томатном соусе достаточно вкусная, чтобы утолить аппетит, однако ее лучше всего употреблять вместе с макаронами.")
-		end)
+	name = "Вскрыть консервы",
+	OnRun = function(item)
+		local client = item.player
+		
+		if !client then
+			return false
+		end
+		
+		local inventory = client:GetCharacter():GetInventory()
+		if inventory:HasItem("surgery_pack") then
+			-- удаляем консервы
+			item:Remove()
 
-        if (quantity <= 0) then
-            if (item.empty_item and ix.item.Get(item.empty_item)) then
-                if (!client:GetCharacter():GetInventory():Add(item.empty_item)) then
-                    ix.item.Spawn(item.empty_item, client)
-                    return true
-                end
-            end
-            
-            if (item.destroy_item) then
-                return true
-            end
-        end
+			ix.util.PlayerPerformBlackScreenAction(item.player, "Вскрытие...", 12, function(player) 
+				ix.chat.Send(player, "me", "аккуратно вскрывает консервированную банку.")
+			end)
 
-        return false
-    end,
-    
-    OnCanRun = function(item)
-        if (item:GetData("quantity", item.quantity or 1) <= 0) then
-            return false
-        end
-        
-        return true
-    end
+			-- создаем новый предмет "opened_can"
+			local opened_can = ix.item.Spawn("canned_beansred", client)
+			if !opened_can then
+				client:Notify("Не удалось создать открытую банку!")
+				return false
+			end
+			client:Notify("Вы открыли консервы!")
+			return true
+		else
+			client:Notify("Вам нужен открывашка, чтобы открыть консервы.")
+			return false
+		end
+	end,
+	OnCanRun = function(item)
+		return (!IsValid(item.entity))
+	end
 }

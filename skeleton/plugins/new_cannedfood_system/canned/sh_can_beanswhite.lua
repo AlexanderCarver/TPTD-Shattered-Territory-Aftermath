@@ -7,17 +7,8 @@ ITEM.width = 1
 ITEM.height = 1
 
 ITEM.price = 260
-ITEM.destroy_item = true
 
-ITEM.thirst_amount = -10
-ITEM.hunger_amount = 22
-ITEM.drunk_amount = 0
-ITEM.staminaAmount = 10
-
-ITEM.quantity = 1
-
-ITEM.weight = 0.160
-ITEM.flatweight = 0.034
+ITEM.weight = 0.200
 
 function ITEM:PopulateTooltipIndividual(tooltip)
     ix.util.PropertyDesc2(tooltip, "Съедобное", Color(64, 224, 208), Material("vgui/ui/stalker/armorupgrades/hunger.png"))
