@@ -1,7 +1,7 @@
-﻿FACTION.name = "Diggers"
-FACTION.description = "Нелегалы и все те, кто проник на запретную территорию. Не стоит обращать на них серьезное внимание."
-FACTION.color = Color(128,128,128, 255)
-FACTION.isDefault = true
+﻿FACTION.name = "Slavic Pagan Cult"
+FACTION.description = "Язычники. Люди, что окончательно потеряли тропу и обрели свой путь..."
+FACTION.color = Color(128, 0, 0, 255)
+FACTION.isDefault = false
 FACTION.isGloballyRecognized = false
 FACTION.models = {
     "models/half-dead/metroll/a1b1.mdl",
@@ -23,4 +23,4 @@ function FACTION:OnCharacterCreated(client, character)
 end
 */
 
-FACTION_DIGGERS = FACTION.index
+FACTION_PAGANS = FACTION.index

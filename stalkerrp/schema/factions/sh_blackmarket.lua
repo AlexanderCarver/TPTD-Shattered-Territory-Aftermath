@@ -1,6 +1,6 @@
-FACTION.name = "Неизвестные силы"
-FACTION.description = "Фракция для администрации проекта."
-FACTION.color = Color(0, 102, 0, 255)
+FACTION.name = "Black Market Merchants"
+FACTION.description = "Люди с чёрного рынка. Серьёзные люди... Хорошо вооруженные, имеющие связи в государственных структурах и среди местных. Опасные люди."
+FACTION.color = Color(112,128,144, 255)
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = false
 FACTION.models = {
@@ -14,12 +14,13 @@ function FACTION:OnTransfered(client)
 	character:SetModel(self.models[1])
 end
 
+/*
 function FACTION:OnCharacterCreated(client, character)
 	local inventory = character:GetInventory()
 
 	--inventory:Add("ak47", 1)
 
 end
+*/
 
-
-FACTION_UNKNOWN = FACTION.index
+FACTION_BLACKMARKET = FACTION.index
