@@ -42,7 +42,7 @@ ix.command.Add("playSoundLocal", {
 })
 
 ix.command.Add("attachSound", {
-       description = "Проиграть звук, прикрепив его в энтити/персонажу.",
+       description = "Проиграть звук, прикрепив его в энтити/персонажу. Звук будет играть до момента окончания дорожки.",
        adminOnly = true,
        arguments = {ix.type.string, bit.bor(ix.type.number,ix.type.optional)},
        OnRun = function (self, client, soundstring, range)
@@ -63,14 +63,14 @@ ix.command.Add("attachSound", {
 
 
 ix.command.Add("playSoundGlobal",{
-       description = "Програть звук в глобальной зоне.",
+       description = "Проиграть звук в глобальной зоне.",
        arguments = ix.type.string,
        adminOnly = true,
        OnRun = function (self, client, path)
             PLUGIN:GlobalSound(path)
             for _, v in ipairs(player.GetAll()) do
                 if (v:IsAdmin()) then
-                    v:Notify(client:Name().." начал проигрывать звук в глобально.")
+                    v:Notify("Администратор "..client:Name().." начал проигрывать звук в глобально.")
                 end
             end
        end
@@ -84,14 +84,14 @@ ix.command.Add("playURL",{
         PLUGIN:GlobalURL(path)
         for _, v in ipairs(player.GetAll()) do
                 if (v:IsAdmin()) then
-                    v:Notify(client:Name().." начал проигрывать звук в глобально через URL.")
+                    v:Notify("Администратор "..client:Name().." начал проигрывать звук в глобально через URL.")
                 end
         end
   end
 })
 
 ix.command.Add("stopsounds",{
-       description = "Stops all sounds",
+       description = "Остановить все звуки в игре. Аналог stopsound, но для чата.",
        adminOnly = true,
        OnRun = function (self, client)
               for k, v in pairs (player.GetAll()) do

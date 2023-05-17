@@ -3,9 +3,9 @@ PLUGIN.name = "Message Flash"
 PLUGIN.description = "Flashes the client's Garry's Mod application when a message is posted in the chat."
 PLUGIN.author = "Aspect™"
 
-ix.lang.AddTable("english", {
-	optFlashWindow = "Flash Window",
-	optdFlashWindow = "Whether your Garry's Mod Application should flash when a message is posted in the chat."
+ix.lang.AddTable("russian", {
+	optFlashWindow = "Мигалка для экрана",
+	optdFlashWindow = "Должен ли твой значок ГМода в трее мигать, когда загрузка закончится/произойдёт какое-либо событие?"
 })
 
 ix.option.Add("flashWindow", ix.type.bool, true, {

@@ -1,2 +1,2 @@
-ATTRIBUTE.name = "Сила"
-ATTRIBUTE.description = ""
+ATTRIBUTE.name = "Strength"
+ATTRIBUTE.description = "A measure of how strong you are."

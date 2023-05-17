@@ -584,15 +584,7 @@ ix.chat.Register("pm", {
 ix.chat.Register("event", {
 	CanHear = 1000000,
 	OnChatAdd = function(self, speaker, text)
-		chat.AddText(Color(128, 0, 0), text)
-	end,
-	indicator = "chatPerforming"
-})
-
-ix.chat.Register("localevent", {
-	CanHear = ix.config.Get("localEventRange", 560),
-	OnChatAdd = function(self, speaker, text)
-		chat.AddText(Color(128, 0, 0), text)
+		chat.AddText(Color(255, 150, 0), text)
 	end,
 	indicator = "chatPerforming"
 })
@@ -604,7 +596,7 @@ ix.chat.Register("connect", {
 	OnChatAdd = function(self, speaker, text)
 		local icon = ix.util.GetMaterial("icon16/user_add.png")
 
-		chat.AddText(icon, Color(105, 105, 105), L("playerConnected", text))
+		chat.AddText(icon, Color(150, 150, 200), L("playerConnected", text))
 	end,
 	noSpaceAfter = true
 })
@@ -616,7 +608,7 @@ ix.chat.Register("disconnect", {
 	OnChatAdd = function(self, speaker, text)
 		local icon = ix.util.GetMaterial("icon16/user_delete.png")
 
-		chat.AddText(icon, Color(105, 105, 105), L("playerDisconnected", text))
+		chat.AddText(icon, Color(200, 150, 200), L("playerDisconnected", text))
 	end,
 	noSpaceAfter = true
 })

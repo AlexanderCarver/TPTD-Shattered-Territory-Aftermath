@@ -1,4 +1,4 @@
-﻿
+
 ix.command.Add("Roll", {
 	description = "@cmdRoll",
 	arguments = bit.bor(ix.type.number, ix.type.optional),
@@ -24,36 +24,27 @@ ix.command.Add("Event", {
 	end
 })
 
-ix.command.Add("LocalEvent", {
-	description = "Локальная версия команды /event для отыгровки событий.",
-	arguments = ix.type.text,
-	adminOnly = true,
-	OnRun = function(self, client, text)
-		ix.chat.Send(client, "localevent", text)
+ix.command.Add("PM", {
+	description = "@cmdPM",
+	arguments = {
+		ix.type.player,
+		ix.type.text
+	},
+	OnRun = function(self, client, target, message)
+		local voiceMail = target:GetData("vm")
+
+		if (voiceMail and voiceMail:find("%S")) then
+			return target:GetName()..": "..voiceMail
+		end
+
+		if ((client.ixNextPM or 0) < CurTime()) then
+			ix.chat.Send(client, "pm", message, false, {client, target}, {target = target})
+
+			client.ixNextPM = CurTime() + 0.5
+			target.ixLastPM = client
+		end
 	end
 })
-
---ix.command.Add("PM", {
---	description = "@cmdPM",
---	arguments = {
---		ix.type.player,
---		ix.type.text
---	},
---	OnRun = function(self, client, target, message)
---		local voiceMail = target:GetData("vm")
---
---		if (voiceMail and voiceMail:find("%S")) then
---			return target:GetName()..": "..voiceMail
---		end
---
---		if ((client.ixNextPM or 0) < CurTime()) then
---			ix.chat.Send(client, "pm", message, false, {client, target}, {target = target})
---
---			client.ixNextPM = CurTime() + 0.5
---			target.ixLastPM = client
---		end
---	end
---})
 
 ix.command.Add("Reply", {
 	description = "@cmdReply",
@@ -381,7 +372,13 @@ ix.command.Add("CharUnban", {
 					return "@charNotBanned"
 				end
 
-				return ix.util.NotifyLocalized("charUnBan", nil, client:GetName(), v:GetName())
+				for _, v2 in ipairs(player.GetAll()) do
+					if (self:OnCheckAccess(v2) or v2 == v:GetPlayer()) then
+						v2:NotifyLocalized("charUnBan", client:GetName(), v:GetName())
+					end
+				end
+
+				return
 			end
 		end
 
@@ -412,7 +409,11 @@ ix.command.Add("CharUnban", {
 						updateQuery:Where("id", characterID)
 					updateQuery:Execute()
 
-					ix.util.NotifyLocalized("charUnBan", nil, client:GetName(), name)
+					for _, v in ipairs(player.GetAll()) do
+						if (self:OnCheckAccess(v)) then
+							v:NotifyLocalized("charUnBan", client:GetName(), name)
+						end
+					end
 				end
 			end)
 		query:Execute()
@@ -481,8 +482,10 @@ do
 			OnRun = function(self, client, amount)
 				amount = math.Round(amount)
 
-				if (amount <= 0) then
-					return "@invalidArg", 1
+				local minDropAmount = ix.config.Get("minMoneyDropAmount", 1)
+
+				if (amount < minDropAmount) then
+					return "@belowMinMoneyDrop", minDropAmount
 				end
 
 				if (!client:GetCharacter():HasMoney(amount)) then
@@ -737,7 +740,9 @@ ix.command.Add("PlyTransfer", {
 				end
 
 				for _, v in ipairs(player.GetAll()) do
-					v:NotifyLocalized("cChangeFaction", client:GetName(), target:GetName(), L(faction.name, v))
+					if (self:OnCheckAccess(v) or v == target:GetPlayer()) then
+						v:NotifyLocalized("cChangeFaction", client:GetName(), target:GetName(), L(faction.name, v))
+					end
 				end
 			else
 				return "@charNotWhitelisted", target:GetName(), L(faction.name, client)

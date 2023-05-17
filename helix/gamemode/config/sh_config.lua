@@ -1,6 +1,6 @@
-﻿
+
 -- You can change the default language by setting this in your schema.
-ix.config.language = "russian"
+ix.config.language = "english"
 
 --[[
 	DO NOT CHANGE ANYTHING BELOW THIS.
@@ -11,11 +11,11 @@ ix.config.language = "russian"
 	Use the menu to change the variables, not this file.
 --]]
 
-ix.config.Add("maxCharacters", 1, "The maximum number of characters a player can have.", nil, {
+ix.config.Add("maxCharacters", 5, "The maximum number of characters a player can have.", nil, {
 	data = {min = 1, max = 50},
 	category = "characters"
 })
-ix.config.Add("color", Color(128, 128, 128, 255), "The main color theme for the framework.", function(oldValue, newValue)
+ix.config.Add("color", Color(75, 119, 190, 255), "The main color theme for the framework.", function(oldValue, newValue)
 	if (newValue.a != 255) then
 		ix.config.Set("color", ColorAlpha(newValue, 255))
 		return
@@ -37,49 +37,49 @@ ix.config.Add("genericFont", "Roboto", "The font used to display generic texts."
 	end
 end, {category = "appearance"})
 
-ix.config.Add("maxAttributes", 10, "The maximum amount each attribute can be.", nil, {
+ix.config.Add("maxAttributes", 100, "The maximum amount each attribute can be.", nil, {
 	data = {min = 0, max = 100},
 	category = "characters"
 })
 ix.config.Add("chatAutoFormat", true, "Whether or not to automatically capitalize and punctuate in-character text.", nil, {
 	category = "Chat"
 })
-ix.config.Add("chatRange", 250, "The maximum distance a person's IC chat message goes to.", nil, {
+ix.config.Add("chatRange", 280, "The maximum distance a person's IC chat message goes to.", nil, {
 	data = {min = 10, max = 5000, decimals = 1},
 	category = "chat"
 })
-ix.config.Add("chatMax", 2000, "The maximum amount of characters that can be sent in chat.", nil, {
-	data = {min = 32, max = 2050},
+ix.config.Add("chatMax", 256, "The maximum amount of characters that can be sent in chat.", nil, {
+	data = {min = 32, max = 1024},
 	category = "chat"
 })
-ix.config.Add("chatColor", Color(220, 220, 220), "The default color for IC chat.", nil, {category = "chat"})
-ix.config.Add("chatListenColor", Color(255, 228, 225), "The color for IC chat if you are looking at the speaker.", nil, {
+ix.config.Add("chatColor", Color(255, 255, 150), "The default color for IC chat.", nil, {category = "chat"})
+ix.config.Add("chatListenColor", Color(175, 255, 150), "The color for IC chat if you are looking at the speaker.", nil, {
 	category = "chat"
 })
-ix.config.Add("oocDelay", 60, "The delay before a player can use OOC chat again in seconds.", nil, {
+ix.config.Add("oocDelay", 10, "The delay before a player can use OOC chat again in seconds.", nil, {
 	data = {min = 0, max = 10000},
 	category = "chat"
 })
 ix.config.Add("allowGlobalOOC", true, "Whether or not Global OOC is enabled.", nil, {
 	category = "chat"
 })
-ix.config.Add("loocDelay", 10, "The delay before a player can use LOOC chat again in seconds.", nil, {
+ix.config.Add("loocDelay", 0, "The delay before a player can use LOOC chat again in seconds.", nil, {
 	data = {min = 0, max = 10000},
 	category = "chat"
 })
-ix.config.Add("spawnTime", 20, "The time it takes to respawn.", nil, {
+ix.config.Add("spawnTime", 5, "The time it takes to respawn.", nil, {
 	data = {min = 0, max = 10000},
 	category = "characters"
 })
-ix.config.Add("inventoryWidth", 8, "How many slots in a row there is in a default inventory.", nil, {
+ix.config.Add("inventoryWidth", 6, "How many slots in a row there is in a default inventory.", nil, {
 	data = {min = 0, max = 20},
 	category = "characters"
 })
-ix.config.Add("inventoryHeight", 16, "How many slots in a column there is in a default inventory.", nil, {
+ix.config.Add("inventoryHeight", 4, "How many slots in a column there is in a default inventory.", nil, {
 	data = {min = 0, max = 20},
 	category = "characters"
 })
-ix.config.Add("minNameLength", 1, "The minimum number of characters in a name.", nil, {
+ix.config.Add("minNameLength", 4, "The minimum number of characters in a name.", nil, {
 	data = {min = 4, max = 64},
 	category = "characters"
 })
@@ -87,11 +87,11 @@ ix.config.Add("maxNameLength", 32, "The maximum number of characters in a name."
 	data = {min = 16, max = 128},
 	category = "characters"
 })
-ix.config.Add("minDescriptionLength", 32, "The minimum number of characters in a description.", nil, {
+ix.config.Add("minDescriptionLength", 16, "The minimum number of characters in a description.", nil, {
 	data = {min = 0, max = 300},
 	category = "characters"
 })
-ix.config.Add("saveInterval", 90, "How often characters save in seconds.", nil, {
+ix.config.Add("saveInterval", 300, "How often characters save in seconds.", nil, {
 	data = {min = 60, max = 3600},
 	category = "characters"
 })
@@ -115,13 +115,13 @@ ix.config.Add("walkRatio", 0.5, "How fast one goes when holding ALT.", nil, {
 	data = {min = 0, max = 1, decimals = 1},
 	category = "characters"
 })
-ix.config.Add("intro", false, "Whether or not the Helix intro is enabled for new players.", nil, {
+ix.config.Add("intro", true, "Whether or not the Helix intro is enabled for new players.", nil, {
 	category = "appearance"
 })
-ix.config.Add("music", "", "The default music played in the character menu.", nil, {
+ix.config.Add("music", "music/hl2_song2.mp3", "The default music played in the character menu.", nil, {
 	category = "appearance"
 })
-ix.config.Add("communityURL", "", "The URL to navigate to when the community button is clicked.", nil, {
+ix.config.Add("communityURL", "https://nebulous.cloud/", "The URL to navigate to when the community button is clicked.", nil, {
 	category = "appearance"
 })
 ix.config.Add("communityText", "@community",
@@ -138,6 +138,10 @@ ix.config.Add("defaultMoney", 0, "The amount of money that players start with.",
 	category = "characters",
 	data = {min = 0, max = 1000}
 })
+ix.config.Add("minMoneyDropAmount", 1, "The minimum amount of money that can be dropped.", nil, {
+	category = "characters",
+	data = {min = 1, max = 1000}
+})
 ix.config.Add("allowVoice", false, "Whether or not voice chat is allowed.", function(oldValue, newValue)
 	if (SERVER) then
 		hook.Run("VoiceToggled", newValue)
@@ -145,7 +149,7 @@ ix.config.Add("allowVoice", false, "Whether or not voice chat is allowed.", func
 end, {
 	category = "server"
 })
-ix.config.Add("voiceDistance", 250.0, "How far can the voice be heard.", function(oldValue, newValue)
+ix.config.Add("voiceDistance", 600.0, "How far can the voice be heard.", function(oldValue, newValue)
 	if (SERVER) then
 		hook.Run("VoiceDistanceChanged", newValue)
 	end
@@ -160,7 +164,7 @@ ix.config.Add("weaponRaiseTime", 1, "The time it takes for a weapon to raise.", 
 	data = {min = 0.1, max = 60, decimals = 1},
 	category = "server"
 })
-ix.config.Add("maxHoldWeight", 60, "The maximum weight that a player can carry in their hands.", nil, {
+ix.config.Add("maxHoldWeight", 100, "The maximum weight that a player can carry in their hands.", nil, {
 	data = {min = 1, max = 500},
 	category = "interaction"
 })
@@ -171,11 +175,11 @@ ix.config.Add("throwForce", 732, "How hard a player can throw the item that they
 ix.config.Add("allowPush", true, "Whether or not pushing with hands is allowed.", nil, {
 	category = "interaction"
 })
-ix.config.Add("itemPickupTime", 1.5, "How long it takes to pick up and put an item in your inventory.", nil, {
+ix.config.Add("itemPickupTime", 0.5, "How long it takes to pick up and put an item in your inventory.", nil, {
 	data = {min = 0, max = 5, decimals = 1},
 	category = "interaction"
 })
-ix.config.Add("year", 2030, "The current in-game year.", function(oldValue, newValue)
+ix.config.Add("year", 2015, "The current in-game year.", function(oldValue, newValue)
 	if (SERVER and !ix.date.bSaving) then
 		ix.date.ResolveOffset()
 		ix.date.current:setyear(newValue)
@@ -213,9 +217,4 @@ ix.config.Add("secondsPerMinute", 60, "How many seconds it takes for a minute to
 end, {
 	data = {min = 0.01, max = 120},
 	category = "date"
-})
-
-ix.config.Add("localEventDistance", 600, "Максимальное расстояние для Local Event.", nil, {
-	data = {min = 10, max = 5000, decimals = 1},
-	category = "chat"
 })

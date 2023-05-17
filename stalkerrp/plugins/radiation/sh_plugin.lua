@@ -161,10 +161,10 @@ ix.command.Add("charsetradiation", {
 		target:setRadiation(radiation)
 
 		if client == target then
-            client:Notify("You have set your radiation to "..radiation)
+            client:Notify("Вы установили Ваш уровень радиации: "..radiation.."%.")
         else
-            client:Notify("You have set "..target:Name().."'s radiation to "..radiation)
-            target:Notify(client:Name().." has set your radiation to "..radiation)
+            client:Notify("Вы установили "..target:Name().." уровень радиации: "..radiation.."%.")
+            target:Notify("Администратор "..client:Name().." установил Ваш уровень радиации: "..radiation.."%.")
         end
 	end
 })

@@ -4,11 +4,11 @@ PLUGIN.author = "Black Tea (NS 1.0), Neon (NS 1.1),Port to helix by B4tr1p"
 PLUGIN.desc = "NPC Spawner."
 PLUGIN.spawnpoints = PLUGIN.spawnpoints or {}
 
-ix.config.Add("spawner_enabled", true, "Whether NPC spawners are on or not.", nil, {
+ix.config.Add("spawner_enabled", true, "Переключение спавна НПС.", nil, {
 	category = "NPC Spawner"
 })
 
-ix.config.Add("npc_spawnrate", 90, "How often an npc will be spawned at an npc spawn point.", nil, {
+ix.config.Add("npc_spawnrate", 90, "Как часто неписи должны спавнится на своих точках?", nil, {
 	data = {min = 1, max = 84600},
 	category = "NPC Spawner"
 })

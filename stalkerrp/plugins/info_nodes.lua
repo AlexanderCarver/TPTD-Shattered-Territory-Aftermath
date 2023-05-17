@@ -24,7 +24,7 @@ if (CLIENT) then
     function PLUGIN:EnteredCommentArea(data)
         local text = data['properties'].comment
         if (text and text ~= '') then
-            chat.AddText(Color(255, 150, 0), text)
+            chat.AddText(Color(255, 200, 0), text)
         end
     end
 end

@@ -18,8 +18,6 @@ ITEM.iconCam = {
 	fov = 2.1,
 }
 
-ITEM.equipIcon = ix.util.GetMaterial("materials/vgui/ui/stalker/misc/equip.png")
-
 if (CLIENT) then
 	function ITEM:PaintOver(item, w, h)
 		if (item:GetData("equip")) then
@@ -41,7 +39,6 @@ end
 
 ITEM.functions.Equip = { -- sorry, for name order.
 	name = "Включить",
-	tip = "useTip",
 	icon = "icon16/stalker/equip.png",
 	sound = "stalkersound/inv_dozimetr.ogg",
 	OnRun = function(item)
@@ -59,7 +56,6 @@ ITEM.functions.Equip = { -- sorry, for name order.
 
 ITEM.functions.EquipUn = { -- sorry, for name order.
 	name = "Выключить",
-	tip = "equipTip",
 	icon = "icon16/stalker/unequip.png",
 	OnRun = function(item)
 		item:UnEquip(item.player)

@@ -45,7 +45,7 @@ else
 end
 
 function PLUGIN:StashHide(client)
-	ix.util.PlayerPerformBlackScreenAction(client, "Вы прячете тайник...", 15, function(client) 
+	ix.util.PlayerPerformBlackScreenAction(client, "Вы прячете тайник...", 30, function(client) 
 		local trace = client:GetEyeTraceNoCursor()
 		local hitpos = trace.HitPos + trace.HitNormal*5
 		local stasheditem = ents.FindInSphere(hitpos, 32)
@@ -64,14 +64,14 @@ function PLUGIN:StashHide(client)
 			end
 			if mt > 0 then
 				client:Notify( "Вы спрятали ".. mt .. " предметов." )
-				ix.chat.Send(client, "iteminternal", "прячет что-то, делая едва заметный тайник.", false)
+				ix.chat.Send(client, "me", "прячет что-то, делая едва заметный тайник.", false)
 			end
 		end
 	end)
 end
 
 function PLUGIN:StashUnhide(client)
-	ix.util.PlayerPerformBlackScreenAction(client, "Вы ищете тайники...", 15, function(client) 
+	ix.util.PlayerPerformBlackScreenAction(client, "Вы ищете тайники...", 20, function(client) 
 		local trace = client:GetEyeTraceNoCursor()
 		local hitpos = trace.HitPos + trace.HitNormal*5
 		local dist = hitpos:Distance(client:GetPos())
@@ -97,6 +97,7 @@ function PLUGIN:StashUnhide(client)
 end
 
 ix.command.Add("stashhide", {
+	description = "Спрятать тайник (мгновенно). Только попробуй абузить этим - дам пизды.",
 	adminOnly = true,
 	OnRun = function(self, client)
 		PLUGIN:StashHide(client)
@@ -104,6 +105,7 @@ ix.command.Add("stashhide", {
 })
 
 ix.command.Add("stashunhide", {
+	description = "Раскрть тайник (мгновенно). Только попробуй абузить этим - дам пизды.",
 	adminOnly = true,
 	OnRun = function(self, client)
 		PLUGIN:StashUnhide(client)

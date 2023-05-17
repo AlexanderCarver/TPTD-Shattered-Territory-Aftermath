@@ -2,7 +2,7 @@
 PLUGIN.author = "Pokernut, Frosty"
 PLUGIN.description = "Disables player spray."
 
-ix.config.Add("disableSpray", true, "Разрешить или запретить использовать спрей игрокам?", nil, {
+ix.config.Add("disableSpray", true, "Запретить использовать спрей игрокам?", nil, {
 	category = "appearance"
 })
 

@@ -2,27 +2,27 @@ PLUGIN.name = "Container Item Spawner"
 PLUGIN.author = "gumlefar"
 PLUGIN.desc = "Spawns items in containers."
 
-ix.config.Add("containerSpawnChanceFlat", 1, "How many percent to spawn with zero players on the server.", nil, {
+ix.config.Add("containerSpawnChanceFlat", 1, "Процент того, будут ли спавнится предметы при нулевом количестве игроков.", nil, {
 	data = {min = 0, max = 100},
 	category = "Containers"
 })
 
-ix.config.Add("containerSpawnChanceScaling", 0.5, "How much the probability for spawning should be scaled per player.", nil, {
+ix.config.Add("containerSpawnChanceScaling", 0.5, "Насколько вероятность спавна должна масштабироваться для каждого игрока?", nil, {
 	data = {min = 0, max = 10},
 	category = "Containers"
 })
 
-ix.config.Add("containerSpawnRate", 900, "How many seconds between each attempted spawn.", nil, {
+ix.config.Add("containerSpawnRate", 900, "Сколько секунд между каждым спавном?", nil, {
 	data = {min = 10, max = 43200},
 	category = "Containers"
 })
 
-ix.config.Add("containerSpawnMaxItems", 1, "How many items the spawner will at most spawn in a container.", nil, {
+ix.config.Add("containerSpawnMaxItems", 1, "Максимальное количество предметов, которые спаунер может создать в контейнере?", nil, {
 	data = {min = 1, max = 10},
 	category = "Containers"
 })
 
-ix.config.Add("containerSpawnMaxItemsPerRun", 10, "How many items the spawner will at most spawn in any given attempt.", nil, {
+ix.config.Add("containerSpawnMaxItemsPerRun", 10, "Максимальное количество предметов, которые спаунер может создать за одну попытку?", nil, {
 	data = {min = 1, max = 50},
 	category = "Containers"
 })
@@ -67,7 +67,7 @@ ix.command.Add("containerspawnadd", {
 			local spawnCat = spawngroup
 
 			ent.spawnCategory = spawnCat
-			client:Notify("Storage spawngroup set to "..spawnCat)
+			client:Notify("Спавнер предметов был добавлен: "..spawnCat..".")
 		else
 			client:NotifyLocalized("invalid", "Entity")
 		end
@@ -83,7 +83,7 @@ ix.command.Add("containerspawnremove", {
 		if (ent and ent:IsValid() and ent:GetClass() == "ix_container") then
 
 			ent.spawnCategory = nil
-			client:Notify("Storage will no longer spawn items")
+			client:Notify("В данном хранилище больше не будут спавниться предметы.")
 		else
 			client:NotifyLocalized("invalid", "Entity")
 		end

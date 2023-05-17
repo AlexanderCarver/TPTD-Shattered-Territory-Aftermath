@@ -10,6 +10,11 @@ function playerMeta:IncreaseDrunkLevel(amount)
     self:SetLocalVar("drunklevel", math.Clamp(self:GetLocalVar("drunklevel", 0) + amount, 0, 100))
 end
 
+function playerMeta:DecreaseDrunkLevel(amount)
+    if not amount or not isnumber(amount) then return end
+    self:SetLocalVar("drunklevel", math.Clamp(self:GetLocalVar("drunklevel", 0) - amount, -100, 0))
+end
+
 function PLUGIN:Think()
     if not self.next_think then
         self.next_think = CurTime()
