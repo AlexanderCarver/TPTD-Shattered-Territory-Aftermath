@@ -6,7 +6,7 @@ ITEM.useSound = "weapons/cloth3.wav"
 
 ITEM.ammoAmount = 25 -- Количество патриков в коробке.
 ITEM.price = 1050 --Цена.
-ITEM.ammo = "ammo_12x70_buck" --Сами патрики.
+ITEM.ammo = "12x70mm" --Сами патрики.
 ITEM.model = "models/lostsignalproject/items/ammo/12x76.mdl" --Моделька.
 
 function ITEM:PopulateTooltipIndividual(tooltip)
@@ -22,7 +22,7 @@ ITEM.functions.use = {
     local rounds = item:GetData("rounds", item.ammoAmount)
 
     ix.util.PlayerPerformBlackScreenAction(item.player, "Заряжаем магазин...", 8, function(player) 
-      ix.chat.Send(player, "me", "заряжает картечью 12x70 мм")
+      ix.chat.Send(player, "me", "заряжает магазины патронами 5.45x39 мм.")
     end)
       item.player:GiveAmmo(rounds, item.ammo)
       item.player:EmitSound(item.useSound, 110)
