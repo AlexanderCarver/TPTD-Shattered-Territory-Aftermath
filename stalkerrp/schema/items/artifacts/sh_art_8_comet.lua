@@ -6,6 +6,7 @@ ITEM.width = 1
 ITEM.height = 1
 ITEM.price = 13000 
 
+/*
 ITEM.functions.use = {
 	name = "Активировать",
     icon = "icon16/stalker/accept.png",
@@ -26,3 +27,4 @@ ITEM.functions.use = {
         return !IsValid(item.entity) and item:GetData("cooldown",0) < os.time() and item.invID == item:GetOwner():GetCharacter():GetInventory():GetID()
     end
 }
+*/
